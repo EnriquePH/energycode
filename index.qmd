@@ -1,5 +1,5 @@
 ---
-title: "dataenergy"
+title: "Energy Code"
 ---
 
 This is a Quarto website.
