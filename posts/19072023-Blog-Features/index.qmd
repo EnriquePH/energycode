@@ -4,4 +4,45 @@ author: "Enrique Pérez Herrero"
 draft: false
 ---
 
-Test
+# Theme
+
+# Branding
+
+# Web Page
+
+# Blogging
+
+# Coding
+
+# Search Engine Optimization
+
+# Community
+
+# Hosting
+
+# Writing Style
+
+# Social Networks
+
+* R
+* Python
+* LaTeX
+* Highlight coding
+
+# Version Control
+
+# CD/CI
+
+# Important Files
+
+```{r}
+data("Formaldehyde")
+```
+
+
+```{python}
+for i in range(10):
+  print(i)
+```
+
+$\phi(n^2)$
