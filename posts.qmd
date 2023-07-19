@@ -1,0 +1,9 @@
+---
+title: "Blog"
+listing: 
+  contents: 
+    - posts
+  type: grid # or `default` or `table`;
+  sort: "date desc" 
+  categories: true # allows you to sort posts by assigned categories
+---
