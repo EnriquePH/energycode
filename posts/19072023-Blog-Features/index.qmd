@@ -30,10 +30,13 @@ draft: false
 * Highlight coding
 
 # Version Control
+ * Github:  https://github.com/EnriquePH/dataenergy
 
 # CD/CI
 
 # Important Files
+ * LICENSE
+ * 
 
 ```{r}
 data("Formaldehyde")
