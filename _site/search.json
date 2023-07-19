@@ -26,5 +26,12 @@
     "title": "Required Blog Features",
     "section": "",
     "text": "Theme\n\n\nBranding\n\n\nWeb Page\n\n\nBlogging\n\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\nCoding\n\n\nSearch Engine Optimization\n\n\nCommunity\n\n\nHosting\n\n\nWriting Style\n\n\nSocial Networks\n\nR\nPython\nLaTeX\nHighlight coding\n\n\n\nVersion Control\n\nGithub: https://github.com/EnriquePH/dataenergy\n\n\n\nCD/CI\n\n\nImportant Files\n\nLICENSE\n\n\n\ndata(\"Formaldehyde\")\n\n\nfor i in range(10):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\\(\\phi(n^2)\\)"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "No matching items"
   }
 ]

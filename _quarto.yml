@@ -2,17 +2,23 @@ project:
   type: website
 
 website:
-  title: "dataenergy"
+  title: "[dataenergy]"
   navbar:
+    tools:
+      - icon: github
+        href: https://github.com/EnriquePH
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
       - posts.qmd
+      - projects.qmd
       - about.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: lux
     css: styles.css
     toc: true
 

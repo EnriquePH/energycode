@@ -1,0 +1,10 @@
+---
+title: "Projects"
+author: "Enrique Pérez Herrero"
+listing: 
+  contents: 
+    - projects
+  type: grid
+  sort: "date desc" 
+  categories: true
+---
