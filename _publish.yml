@@ -1,4 +1,4 @@
 - source: project
   netlify:
     - id: "d638f799-bbf7-4905-99e0-7696e734c879"
-      url: "https://dataenergy.netlify.app/"
+      url: "https://energycodeorg.netlify.app"

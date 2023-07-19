@@ -4,6 +4,10 @@ title: "About"
 
 About this site
 
+\\sum\_{i=1}\^{n}{i\^2}
+
 ```{r}
-1 + 1
+1+1
 ```
+
+$$\sum_{i=1}^{n}{i^2}$$
