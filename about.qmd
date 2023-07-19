@@ -2,10 +2,9 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-1+1
+```{=html}
+<!-- Stackoverflow flair -->
+<a href="https://stackexchange.com/users/5949649"><img src="https://stackexchange.com/users/flair/5949649.png" width="208" height="58" alt="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
 ```
 
 $$\sum_{i=1}^{n}{i^2}$$
