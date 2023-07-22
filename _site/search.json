@@ -1,31 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Energy Code",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "\\[\\sum_{i=1}^{n}{i^2}\\]"
-  },
-  {
     "objectID": "posts.html",
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "Required Blog Features\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Required Blog Features\n\n\n\nblog\n\n\nquarto\n\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/19072023-Blog-Features/index.html",
     "href": "posts/19072023-Blog-Features/index.html",
     "title": "Required Blog Features",
     "section": "",
-    "text": "Theme\n\n\nBranding\n\n\nWeb Page\n\n\nBlogging\n\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\nCoding\n\n\nSearch Engine Optimization\n\n\nCommunity\n\n\nHosting\n\n\nWriting Style\n\n\nSocial Networks\n\nR\nPython\nLaTeX\nHighlight coding\n\n\n\nVersion Control\n\nGithub: https://github.com/EnriquePH/dataenergy\n\n\n\nCD/CI\n\n\nImportant Files\n\nLICENSE\n\n\n\ndata(\"Formaldehyde\")\n\n\nfor i in range(10):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\\(\\phi(n^2)\\)"
+    "text": "Theme\n\n\nBranding\n\n\nWeb Page\nhttps://quarto.org/docs/websites.\n\n\nBlogging\n\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\nCoding\n\n\nSearch Engine Optimization\n\n\nCommunity\n\n\nHosting\n\n\nWriting Style\n\n\nSocial Networks\n\nR\nPython\nLaTeX\nHighlight coding\n\n\n\nVersion Control\n\nGithub: https://github.com/EnriquePH/dataenergy\n\n\n\nCD/CI\nhttps://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/\n\n\nImportant Files\n\nLICENSE\n\n\n\ndata(\"Formaldehyde\")\n\n\nfor i in range(10):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9"
   },
   {
     "objectID": "projects.html",

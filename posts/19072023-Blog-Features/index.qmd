@@ -1,6 +1,11 @@
 ---
 title: "Required Blog Features"
 author: "Enrique Pérez Herrero"
+categories:
+  - blog
+  - quarto
+description: ''
+image: ''
 draft: false
 ---
 
@@ -10,8 +15,11 @@ draft: false
 
 # Web Page
 
+https://quarto.org/docs/websites.
+
 # Blogging
-* https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
+
+-   https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
 
 # Coding
 
@@ -25,30 +33,30 @@ draft: false
 
 # Social Networks
 
-* R
-* Python
-* LaTeX
-* Highlight coding
+-   R
+-   Python
+-   LaTeX
+-   Highlight coding
 
 # Version Control
- * Github:  https://github.com/EnriquePH/dataenergy
+
+-   Github: https://github.com/EnriquePH/dataenergy
 
 # CD/CI
 
 https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/
 
 # Important Files
- * LICENSE
- * 
+
+-   LICENSE
+-   
 
 ```{r}
 data("Formaldehyde")
 ```
-
 
 ```{python}
 for i in range(10):
   print(i)
 ```
 
-$\phi(n^2)$
