@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "Required Blog Features\n\n\n\nblog\n\n\nquarto\n\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Required Blog Features\n\n\n\nblog\n\n\nquarto\n\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\n\n\n\n\n\n\n\n\n\n\nMax Matrix Plot 3D image\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\nInvalid Date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nFormulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/19072023-Blog-Features/index.html",
@@ -14,10 +14,45 @@
     "text": "Theme\n\n\nBranding\n\n\nWeb Page\nhttps://quarto.org/docs/websites.\n\n\nBlogging\n\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\nCoding\n\n\nSearch Engine Optimization\n\n\nCommunity\n\n\nHosting\n\n\nWriting Style\n\n\nSocial Networks\n\nR\nPython\nLaTeX\nHighlight coding\n\n\n\nVersion Control\n\nGithub: https://github.com/EnriquePH/dataenergy\n\n\n\nCD/CI\nhttps://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/\n\n\nImportant Files\n\nLICENSE\n\n\n\ndata(\"Formaldehyde\")\n\n\nfor i in range(10):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9"
   },
   {
+    "objectID": "posts/05032022-max-determinant/docs/plot3dmaxmatrix.html",
+    "href": "posts/05032022-max-determinant/docs/plot3dmaxmatrix.html",
+    "title": "Max Matrix Plot 3D image",
+    "section": "",
+    "text": "## Load packages\nlibrary(plot3D)\n\n\nSquare Max Matrix\n\nmax_matrix = function(n) {\n  n &lt;- 10\n  max_m &lt;- c()\n  for(i in c(1:n)) {\n    for (j in c(1:n)) {\n      max_m &lt;- append(max_m, max(i, j))\n    }\n  }\n  dim(max_m) &lt;- c(n, n)\n  max_m\n}\n\nmax_matrix(10)\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1    2    3    4    5    6    7    8    9    10\n [2,]    2    2    3    4    5    6    7    8    9    10\n [3,]    3    3    3    4    5    6    7    8    9    10\n [4,]    4    4    4    4    5    6    7    8    9    10\n [5,]    5    5    5    5    5    6    7    8    9    10\n [6,]    6    6    6    6    6    6    7    8    9    10\n [7,]    7    7    7    7    7    7    7    8    9    10\n [8,]    8    8    8    8    8    8    8    8    9    10\n [9,]    9    9    9    9    9    9    9    9    9    10\n[10,]   10   10   10   10   10   10   10   10   10    10\n\n\n\n\n3D plot of max matrix\n\nhist3D(x = 1:n,\n      y = 1:n,\n      z = max_matrix(n),\n      phi = 45,\n      theta = -45,\n      border = \"black\",\n      d = 1,\n      # distance of the eyepoint from the centre of the plotting box\n      r = 1, \n      bg = \"b\",\n      box = FALSE,\n      # change background color\n      par(bg = \"black\"), \n      colkey = FALSE,\n      image = TRUE,\n      contour = FALSE\n      )"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html",
+    "href": "posts/05032022-max-determinant/index.html",
+    "title": "Max Determinant",
+    "section": "",
+    "text": "Plot3D of max matrix elements"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#references",
+    "href": "posts/05032022-max-determinant/index.html#references",
+    "title": "Max Determinant",
+    "section": "References",
+    "text": "References\n[1]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A051125: Table T(n,k) = max{n,k} read by antidiagonals (n &gt;= 1, k &gt;= 1).\n[2]- Michael Somos, Apr 04 2012, The On-Line Encyclopedia of Integer Sequences. A181983: -(-1)^n * n.\n[3]- Emeric Deutsch, Jun 05 2009, The On-Line Encyclopedia of Integer Sequences. A161124: Number of inversions in all fixed-point-free involutions of {1,2,…,2n}.\n[4]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A001147: Double factorial of odd numbers: (2n-1)!! = 135…(2n-1)"
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#problem",
+    "href": "posts/05032022-max-determinant/index.html#problem",
+    "title": "Max Determinant",
+    "section": "Problem",
+    "text": "Problem\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), with elements \\(m_{i,j}= \\max(i,j)\\), where \\(\\max\\) the is the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#proof",
+    "href": "posts/05032022-max-determinant/index.html#proof",
+    "title": "Max Determinant",
+    "section": "Proof",
+    "text": "Proof\nA new matrix with the same determinant can be created by subtracting row i from row i+1 starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element \\(m_{1,n}\\)\nThis can be better illustrated with an example:\nWe can transform:\n\\[ M_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right) \\]\nInto:\n\\[M^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\\]\nThis proof can be generalized to a very similar kind of matrices, resulting in:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]\n\\[\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]"
   }
 ]

@@ -7,8 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Enrique Pérez Herrero">
+<meta name="dcterms.date" content="2022-03-05">
+<meta name="description" content="Formulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.">
 
-<title>[energycode] - Blog</title>
+<title>[energycode] - Max Determinant</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,40 +61,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">[energycode]</span>
     </a>
   </div>
@@ -115,19 +86,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html" rel="" target="">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -139,138 +110,126 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Max Determinant</h1>
+                  <div>
+        <div class="description">
+          Formulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">math</div>
+                <div class="quarto-category">linear algebra</div>
+                <div class="quarto-category">determinant</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Enrique Pérez Herrero </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 5, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="blog">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="determinant">determinant <span class="quarto-category-count">(1)</span></div><div class="category" data-category="linear algebra">linear algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="math">math <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof">Proof</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Enrique Pérez Herrero </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-</header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plot3dmaxmatrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Plot3D of max matrix elements</figcaption>
+</figure>
+</div>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>The sequence <a href="https://oeis.org/A181983">A181983</a>(n) gives the determinants of the square matrices: <span class="math inline">\(M_{n}\)</span>, with elements <span class="math inline">\(m_{i,j}= \max(i,j)\)</span>, where <span class="math inline">\(\max\)</span> the is the maximum function.</p>
+<p>This identity appears as follows:</p>
+<p><span class="math display">\[\begin{equation}
+det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(n)
+\end{equation}\]</span></p>
+</section>
+<section id="proof" class="level2">
+<h2 class="anchored" data-anchor-id="proof">Proof</h2>
+<p>A new matrix with the same determinant can be created by subtracting row i from row i+1 starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element <span class="math inline">\(m_{1,n}\)</span></p>
+<p>This can be better illustrated with an example:</p>
+<p>We can transform:</p>
+<p><span class="math display">\[ M_{10} = \left(\begin{array}{cccccccccc}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+2 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+3 &amp; 3 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+4 &amp; 4 &amp; 4 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+6 &amp; 6 &amp; 6 &amp; 6 &amp; 6 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 10 \\
+9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 10 \\
+10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10
+\end{array} \right) \]</span></p>
+<p>Into:</p>
+<p><span class="math display">\[M^{*}_{10} =\left(\begin{array}{cccccccccc}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \end{array} \right)\]</span></p>
+<p>This proof can be generalized to a very similar kind of matrices, resulting in:</p>
+<p><span class="math display">\[\begin{equation}
+det{\bigg[ max(i,j)^k \bigg]}_{1\leq i,j \leq n} = {(-1)}^{n-1} \cdot n^{k} \cdot \prod_{s=1}^{n-1}{(s+1)^k-s^k}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+det{\bigg[ min(i,j)^k \bigg]}_{1\leq i,j \leq n} = \prod_{s=1}^{n-1}{(s+1)^k-s^k}
+\end{equation}\]</span></p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>[1]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A051125: Table T(n,k) = max{n,k} read by antidiagonals (n &gt;= 1, k &gt;= 1).<br>
+[2]- Michael Somos, Apr 04 2012, The On-Line Encyclopedia of Integer Sequences. A181983: -(-1)^n * n.<br>
+[3]- Emeric Deutsch, Jun 05 2009, The On-Line Encyclopedia of Integer Sequences. A161124: Number of inversions in all fixed-point-free involutions of {1,2,…,2n}.<br>
+[4]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A001147: Double factorial of odd numbers: (2<em>n-1)!! = 1</em>3<em>5</em>…<em>(2</em>n-1)</p>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="blog,quarto" data-listing-file-modified-sort="1689885071604" data-listing-reading-time-sort="1">
-<a href="./posts/19072023-Blog-Features/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/19072023-Blog-Features" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Required Blog Features
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('blog'); return false;">
-blog
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-</div>
-<div class="card-text listing-description">
-https://quarto.org/docs/websites.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Enrique Pérez Herrero
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="NaN" data-listing-file-modified-sort="1647804340215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<a href="./posts/05032022-max-determinant/docs/plot3dmaxmatrix.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Max Matrix Plot 3D image
-</h5>
-<div class="card-text listing-description">
 
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Enrique Pérez Herrero
-</div>
-<div class="listing-date">
-Invalid Date
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="math,linear algebra,determinant" data-listing-date-sort="1646434800000" data-listing-file-modified-sort="1690100149005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./posts/05032022-max-determinant/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/05032022-max-determinant/plot3dmaxmatrix.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Max Determinant
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('math'); return false;">
-math
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('linear algebra'); return false;">
-linear algebra
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('determinant'); return false;">
-determinant
-</div>
-</div>
-<div class="card-text listing-description">
-Formulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Enrique Pérez Herrero
-</div>
-<div class="listing-date">
-Mar 5, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
