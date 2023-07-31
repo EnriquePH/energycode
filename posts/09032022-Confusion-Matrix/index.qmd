@@ -10,7 +10,6 @@ categories:
   - machine learning
 ---
 
-![Classification Confusion Matrix](conf_matrix.png)
 
 # Confusion Matrix
 
@@ -65,7 +64,7 @@ ggplotConfusionMatrix <- function(m){
 }
 ```
 
-```{r include=FALSE}
+```{r}
 ggplotConfusionMatrix(cfm)
 ```
 

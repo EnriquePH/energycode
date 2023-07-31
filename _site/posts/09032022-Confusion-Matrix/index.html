@@ -199,12 +199,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="conf_matrix.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Classification Confusion Matrix</figcaption>
-</figure>
-</div>
 <section id="confusion-matrix" class="level1">
 <h1>Confusion Matrix</h1>
 <p>The R package <code>caret</code> includes the <code>confusionMatrix</code> function, which provides a comprehensive output.</p>
@@ -281,6 +275,12 @@ Balanced Accuracy           1.0000            0.9750           0.9500</code></pr
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(mytitle)</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotConfusionMatrix</span>(cfm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 </section>
 <section id="links" class="level2">
