@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Enrique Pérez Herrero">
-<meta name="dcterms.date" content="2023-07-31">
+<meta name="dcterms.date" content="2022-03-09">
+<meta name="description" content="Plotting the Confusion Matrix with ggplot and R">
 
-<title>[energycode] - Required Blog Features</title>
+<title>[energycode] - Confusion Matrix in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,10 +141,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Required Blog Features</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">blog</div>
-                <div class="quarto-category">quarto</div>
+      <h1 class="title">Confusion Matrix in R</h1>
+                  <div>
+        <div class="description">
+          Plotting the Confusion Matrix with ggplot and R
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">machine learning</div>
               </div>
                   </div>
   </div>
@@ -161,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 31, 2023</p>
+        <p class="date">March 9, 2022</p>
       </div>
     </div>
     
@@ -177,19 +184,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#theme" id="toc-theme" class="nav-link active" data-scroll-target="#theme">Theme</a></li>
-  <li><a href="#branding" id="toc-branding" class="nav-link" data-scroll-target="#branding">Branding</a></li>
-  <li><a href="#web-page" id="toc-web-page" class="nav-link" data-scroll-target="#web-page">Web Page</a></li>
-  <li><a href="#blogging" id="toc-blogging" class="nav-link" data-scroll-target="#blogging">Blogging</a></li>
-  <li><a href="#coding" id="toc-coding" class="nav-link" data-scroll-target="#coding">Coding</a></li>
-  <li><a href="#search-engine-optimization" id="toc-search-engine-optimization" class="nav-link" data-scroll-target="#search-engine-optimization">Search Engine Optimization</a></li>
-  <li><a href="#community" id="toc-community" class="nav-link" data-scroll-target="#community">Community</a></li>
-  <li><a href="#hosting" id="toc-hosting" class="nav-link" data-scroll-target="#hosting">Hosting</a></li>
-  <li><a href="#writing-style" id="toc-writing-style" class="nav-link" data-scroll-target="#writing-style">Writing Style</a></li>
-  <li><a href="#social-networks" id="toc-social-networks" class="nav-link" data-scroll-target="#social-networks">Social Networks</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
-  <li><a href="#cdci" id="toc-cdci" class="nav-link" data-scroll-target="#cdci">CD/CI</a></li>
-  <li><a href="#important-files" id="toc-important-files" class="nav-link" data-scroll-target="#important-files">Important Files</a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link active" data-scroll-target="#confusion-matrix">Confusion Matrix</a>
+  <ul class="collapse">
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -199,94 +199,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="theme" class="level1">
-<h1>Theme</h1>
-</section>
-<section id="branding" class="level1">
-<h1>Branding</h1>
-<ul>
-<li>Find a available domain</li>
-<li>Design an icon</li>
-<li>Design a logo</li>
-</ul>
-</section>
-<section id="web-page" class="level1">
-<h1>Web Page</h1>
-<p>https://quarto.org/docs/websites.</p>
-</section>
-<section id="blogging" class="level1">
-<h1>Blogging</h1>
-<ul>
-<li>https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/</li>
-</ul>
-</section>
-<section id="coding" class="level1">
-<h1>Coding</h1>
-<ul>
-<li>R</li>
-<li>Python</li>
-<li>LaTeX</li>
-<li>Highlight coding</li>
-</ul>
-</section>
-<section id="search-engine-optimization" class="level1">
-<h1>Search Engine Optimization</h1>
-</section>
-<section id="community" class="level1">
-<h1>Community</h1>
-</section>
-<section id="hosting" class="level1">
-<h1>Hosting</h1>
-</section>
-<section id="writing-style" class="level1">
-<h1>Writing Style</h1>
-</section>
-<section id="social-networks" class="level1">
-<h1>Social Networks</h1>
-<ul>
-<li>Stackoverflow</li>
-<li>Twitter</li>
-<li>LinkedIn</li>
-<li>Github</li>
-</ul>
-</section>
-<section id="version-control" class="level1">
-<h1>Version Control</h1>
-<ul>
-<li>Github: https://github.com/EnriquePH/energycode</li>
-</ul>
-</section>
-<section id="cdci" class="level1">
-<h1>CD/CI</h1>
-<p>https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/</p>
-</section>
-<section id="important-files" class="level1">
-<h1>Important Files</h1>
-<ul>
-<li>LICENSE</li>
-<li></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"Formaldehyde"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="conf_matrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Classification Confusion Matrix</figcaption>
+</figure>
 </div>
+<section id="confusion-matrix" class="level1">
+<h1>Confusion Matrix</h1>
+<p>The R package <code>caret</code> includes the <code>confusionMatrix</code> function, which provides a comprehensive output.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caTools)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="classification" class="level2">
+<h2 class="anchored" data-anchor-id="classification">Classification</h2>
+<p>We will perform a Naïve Bayes classification on the classical iris dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>spl <span class="ot">=</span> caTools<span class="sc">::</span><span class="fu">sample.split</span>(iris, <span class="at">SplitRatio =</span> <span class="fl">0.8</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, iris<span class="sc">$</span>spl <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, iris<span class="sc">$</span>spl <span class="sc">==</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>iris.nb <span class="ot">&lt;-</span> <span class="fu">naiveBayes</span>(Species <span class="sc">~</span> ., <span class="at">data =</span> train)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>nb_train_predict <span class="ot">&lt;-</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict</span>(iris.nb, test[, <span class="fu">names</span>(test) <span class="sc">!=</span> <span class="st">"Species"</span>])</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>cfm <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(nb_train_predict, test<span class="sc">$</span>Species)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>cfm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0
-1
-2
-3
-4
-5
-6
-7
-8
-9</code></pre>
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         10          0         0
+  versicolor      0         10         1
+  virginica       0          0         9
+
+Overall Statistics
+                                          
+               Accuracy : 0.9667          
+                 95% CI : (0.8278, 0.9992)
+    No Information Rate : 0.3333          
+    P-Value [Acc &gt; NIR] : 2.963e-13       
+                                          
+                  Kappa : 0.95            
+                                          
+ Mcnemar's Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            1.0000           0.9000
+Specificity                 1.0000            0.9500           1.0000
+Pos Pred Value              1.0000            0.9091           1.0000
+Neg Pred Value              1.0000            1.0000           0.9524
+Prevalence                  0.3333            0.3333           0.3333
+Detection Rate              0.3333            0.3333           0.3000
+Detection Prevalence        0.3333            0.3667           0.3000
+Balanced Accuracy           1.0000            0.9750           0.9500</code></pre>
 </div>
 </div>
+</section>
+<section id="plotting" class="level2">
+<h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+<p>To plot the obtained confusion matrix as a <code>ggplot</code> graphic, we will use the following function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ggplotConfusionMatrix <span class="ot">&lt;-</span> <span class="cf">function</span>(m){</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  mytitle <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Accuracy"</span>, <span class="fu">percent_format</span>()(m<span class="sc">$</span>overall[<span class="dv">1</span>]),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"Kappa"</span>, <span class="fu">percent_format</span>()(m<span class="sc">$</span>overall[<span class="dv">2</span>]))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">as.data.frame</span>(m<span class="sc">$</span>table) ,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">aes</span>(<span class="at">x =</span> Reference, <span class="at">y =</span> Prediction)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">log</span>(Freq)), <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> Reference, <span class="at">y =</span> Prediction, <span class="at">label =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(mytitle)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<ul>
+<li>StackOverflow: <a href="https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613">How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

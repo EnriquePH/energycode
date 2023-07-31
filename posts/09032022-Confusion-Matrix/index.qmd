@@ -1,0 +1,74 @@
+---
+title: Confusion Matrix in R
+description: Plotting the Confusion Matrix with ggplot and R
+author: 'Enrique Pérez Herrero'
+date: '2022-03-09'
+image: conf_matrix.png
+categories:
+  - R
+  - code
+  - machine learning
+---
+
+![Classification Confusion Matrix](conf_matrix.png)
+
+# Confusion Matrix
+
+The R package `caret` includes the `confusionMatrix` function, which provides a
+comprehensive output.
+
+```{r echo=TRUE, message=FALSE}
+library(e1071)
+library(caTools)
+library(ggplot2)
+library(scales)
+library(caret)
+```
+
+## Classification
+
+We will perform a Naïve Bayes classification on the classical iris dataset.
+
+```{r}
+iris$spl = caTools::sample.split(iris, SplitRatio = 0.8)
+train <- subset(iris, iris$spl == TRUE)
+test <- subset(iris, iris$spl == FALSE)
+
+iris.nb <- naiveBayes(Species ~ ., data = train)
+
+nb_train_predict <-
+  predict(iris.nb, test[, names(test) != "Species"])
+
+cfm <- confusionMatrix(nb_train_predict, test$Species)
+cfm
+```
+
+## Plotting
+
+To plot the obtained confusion matrix as a `ggplot` graphic, we will use the
+following function:
+
+
+```{r}
+ggplotConfusionMatrix <- function(m){
+  mytitle <- paste("Accuracy", percent_format()(m$overall[1]),
+                   "Kappa", percent_format()(m$overall[2]))
+  p <-
+    ggplot(data = as.data.frame(m$table) ,
+           aes(x = Reference, y = Prediction)) +
+    geom_tile(aes(fill = log(Freq)), colour = "white") +
+    scale_fill_gradient(low = "white", high = "steelblue") +
+    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +
+    theme(legend.position = "none") +
+    ggtitle(mytitle)
+  return(p)
+}
+```
+
+```{r include=FALSE}
+ggplotConfusionMatrix(cfm)
+```
+
+## Links
+
+* StackOverflow: [How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?](https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613)

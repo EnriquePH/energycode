@@ -4,46 +4,67 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Required Blog Features\n\n\n\nblog\n\n\nquarto\n\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\nJul 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMax Matrix Plot 3D image\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\nInvalid Date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nFormulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Confusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot and R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMax Matrix Plot 3D image\n\n\n\n\n\n\nEnrique Pérez Herrero\n\n\nInvalid Date\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nFormulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/19072023-Blog-Features/index.html",
-    "href": "posts/19072023-Blog-Features/index.html",
-    "title": "Required Blog Features",
+    "objectID": "posts/09032022-Confusion-Matrix/index.html",
+    "href": "posts/09032022-Confusion-Matrix/index.html",
+    "title": "Confusion Matrix in R",
     "section": "",
-    "text": "Theme\n\n\nBranding\n\n\nWeb Page\nhttps://quarto.org/docs/websites.\n\n\nBlogging\n\nhttps://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/\n\n\n\nCoding\n\n\nSearch Engine Optimization\n\n\nCommunity\n\n\nHosting\n\n\nWriting Style\n\n\nSocial Networks\n\nR\nPython\nLaTeX\nHighlight coding\n\n\n\nVersion Control\n\nGithub: https://github.com/EnriquePH/dataenergy\n\n\n\nCD/CI\nhttps://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/\n\n\nImportant Files\n\nLICENSE\n\n\n\ndata(\"Formaldehyde\")\n\n\nfor i in range(10):\n  print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9"
+    "text": "Classification Confusion Matrix"
   },
   {
-    "objectID": "posts/05032022-max-determinant/docs/plot3dmaxmatrix.html",
-    "href": "posts/05032022-max-determinant/docs/plot3dmaxmatrix.html",
+    "objectID": "posts/09032022-Confusion-Matrix/index.html#classification",
+    "href": "posts/09032022-Confusion-Matrix/index.html#classification",
+    "title": "Confusion Matrix in R",
+    "section": "Classification",
+    "text": "Classification\nWe will perform a Naïve Bayes classification on the classical iris dataset.\n\niris$spl = caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris.nb &lt;- naiveBayes(Species ~ ., data = train)\n\nnb_train_predict &lt;-\n  predict(iris.nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         1\n  virginica       0          0         9\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.9000\nSpecificity                 1.0000            0.9500           1.0000\nPos Pred Value              1.0000            0.9091           1.0000\nNeg Pred Value              1.0000            1.0000           0.9524\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.3000\nDetection Prevalence        0.3333            0.3667           0.3000\nBalanced Accuracy           1.0000            0.9750           0.9500"
+  },
+  {
+    "objectID": "posts/09032022-Confusion-Matrix/index.html#plotting",
+    "href": "posts/09032022-Confusion-Matrix/index.html#plotting",
+    "title": "Confusion Matrix in R",
+    "section": "Plotting",
+    "text": "Plotting\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nggplotConfusionMatrix &lt;- function(m){\n  mytitle &lt;- paste(\"Accuracy\", percent_format()(m$overall[1]),\n                   \"Kappa\", percent_format()(m$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(m$table) ,\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}"
+  },
+  {
+    "objectID": "posts/09032022-Confusion-Matrix/index.html#links",
+    "href": "posts/09032022-Confusion-Matrix/index.html#links",
+    "title": "Confusion Matrix in R",
+    "section": "Links",
+    "text": "Links\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
+  },
+  {
+    "objectID": "posts/05032022-Max-Determinant/docs/plot3dmaxmatrix.html",
+    "href": "posts/05032022-Max-Determinant/docs/plot3dmaxmatrix.html",
     "title": "Max Matrix Plot 3D image",
     "section": "",
     "text": "## Load packages\nlibrary(plot3D)\n\n\nSquare Max Matrix\n\nmax_matrix = function(n) {\n  n &lt;- 10\n  max_m &lt;- c()\n  for(i in c(1:n)) {\n    for (j in c(1:n)) {\n      max_m &lt;- append(max_m, max(i, j))\n    }\n  }\n  dim(max_m) &lt;- c(n, n)\n  max_m\n}\n\nmax_matrix(10)\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1    2    3    4    5    6    7    8    9    10\n [2,]    2    2    3    4    5    6    7    8    9    10\n [3,]    3    3    3    4    5    6    7    8    9    10\n [4,]    4    4    4    4    5    6    7    8    9    10\n [5,]    5    5    5    5    5    6    7    8    9    10\n [6,]    6    6    6    6    6    6    7    8    9    10\n [7,]    7    7    7    7    7    7    7    8    9    10\n [8,]    8    8    8    8    8    8    8    8    9    10\n [9,]    9    9    9    9    9    9    9    9    9    10\n[10,]   10   10   10   10   10   10   10   10   10    10\n\n\n\n\n3D plot of max matrix\n\nhist3D(x = 1:n,\n      y = 1:n,\n      z = max_matrix(n),\n      phi = 45,\n      theta = -45,\n      border = \"black\",\n      d = 1,\n      # distance of the eyepoint from the centre of the plotting box\n      r = 1, \n      bg = \"b\",\n      box = FALSE,\n      # change background color\n      par(bg = \"black\"), \n      colkey = FALSE,\n      image = TRUE,\n      contour = FALSE\n      )"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html",
-    "href": "posts/05032022-max-determinant/index.html",
+    "objectID": "posts/05032022-Max-Determinant/index.html",
+    "href": "posts/05032022-Max-Determinant/index.html",
     "title": "Max Determinant",
     "section": "",
     "text": "Plot3D of max matrix elements"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html#problem",
-    "href": "posts/05032022-max-determinant/index.html#problem",
+    "objectID": "posts/05032022-Max-Determinant/index.html#problem",
+    "href": "posts/05032022-Max-Determinant/index.html#problem",
     "title": "Max Determinant",
     "section": "Problem",
     "text": "Problem\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), with elements \\(m_{i,j}= \\max(i,j)\\), where \\(\\max\\) the is the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html#proof",
-    "href": "posts/05032022-max-determinant/index.html#proof",
+    "objectID": "posts/05032022-Max-Determinant/index.html#proof",
+    "href": "posts/05032022-Max-Determinant/index.html#proof",
     "title": "Max Determinant",
     "section": "Proof",
     "text": "Proof\nA new matrix with the same determinant can be created by subtracting row \\(i\\) from row \\(i+1\\) starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element \\(m_{1,n}\\)\nThis can be better illustrated with an example:\nWe can transform:\n\\[\\begin{equation}\nM_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right)\n\\end{equation}\\]\nInto:\n\\[\\begin{equation}\nM^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\n\\end{equation}\\]\nThis proof can be generalized to a very similar kind of matrices, resulting in:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]\n\\[\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html#references",
-    "href": "posts/05032022-max-determinant/index.html#references",
+    "objectID": "posts/05032022-Max-Determinant/index.html#references",
+    "href": "posts/05032022-Max-Determinant/index.html#references",
     "title": "Max Determinant",
     "section": "References",
     "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"

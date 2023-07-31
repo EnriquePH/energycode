@@ -8,12 +8,15 @@ categories:
   - quarto
 
 image: ''
-draft: false
+draft: true
 ---
 
 # Theme
 
 # Branding
+ * Find a available domain
+ * Design an icon
+ * Design a logo
 
 # Web Page
 
@@ -24,6 +27,10 @@ https://quarto.org/docs/websites.
 -   https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
 
 # Coding
+-   R
+-   Python
+-   LaTeX
+-   Highlight coding
 
 # Search Engine Optimization
 
@@ -35,14 +42,16 @@ https://quarto.org/docs/websites.
 
 # Social Networks
 
--   R
--   Python
--   LaTeX
--   Highlight coding
+  * Stackoverflow
+  * Twitter
+  * LinkedIn
+  * Github
+
+
 
 # Version Control
 
--   Github: https://github.com/EnriquePH/dataenergy
+-   Github: https://github.com/EnriquePH/energycode
 
 # CD/CI
 
