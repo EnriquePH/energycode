@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -87,10 +106,6 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -184,10 +199,11 @@ det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(
 </section>
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof">Proof</h2>
-<p>A new matrix with the same determinant can be created by subtracting row i from row i+1 starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element <span class="math inline">\(m_{1,n}\)</span></p>
+<p>A new matrix with the same determinant can be created by subtracting row <span class="math inline">\(i\)</span> from row <span class="math inline">\(i+1\)</span> starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element <span class="math inline">\(m_{1,n}\)</span></p>
 <p>This can be better illustrated with an example:</p>
 <p>We can transform:</p>
-<p><span class="math display">\[ M_{10} = \left(\begin{array}{cccccccccc}
+<p><span class="math display">\[\begin{equation}
+M_{10} = \left(\begin{array}{cccccccccc}
 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
 2 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
 3 &amp; 3 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
@@ -198,9 +214,11 @@ det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(
 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 10 \\
 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 10 \\
 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10
-\end{array} \right) \]</span></p>
+\end{array} \right)
+\end{equation}\]</span></p>
 <p>Into:</p>
-<p><span class="math display">\[M^{*}_{10} =\left(\begin{array}{cccccccccc}
+<p><span class="math display">\[\begin{equation}
+M^{*}_{10} =\left(\begin{array}{cccccccccc}
 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -210,7 +228,8 @@ det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \end{array} \right)\]</span></p>
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \end{array} \right)
+\end{equation}\]</span></p>
 <p>This proof can be generalized to a very similar kind of matrices, resulting in:</p>
 <p><span class="math display">\[\begin{equation}
 det{\bigg[ max(i,j)^k \bigg]}_{1\leq i,j \leq n} = {(-1)}^{n-1} \cdot n^{k} \cdot \prod_{s=1}^{n-1}{(s+1)^k-s^k}
@@ -221,10 +240,20 @@ det{\bigg[ min(i,j)^k \bigg]}_{1\leq i,j \leq n} = \prod_{s=1}^{n-1}{(s+1)^k-s^k
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[1]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A051125: Table T(n,k) = max{n,k} read by antidiagonals (n &gt;= 1, k &gt;= 1).<br>
-[2]- Michael Somos, Apr 04 2012, The On-Line Encyclopedia of Integer Sequences. A181983: -(-1)^n * n.<br>
-[3]- Emeric Deutsch, Jun 05 2009, The On-Line Encyclopedia of Integer Sequences. A161124: Number of inversions in all fixed-point-free involutions of {1,2,…,2n}.<br>
-[4]- N. J. A. Sloane, The On-Line Encyclopedia of Integer Sequences. A001147: Double factorial of odd numbers: (2<em>n-1)!! = 1</em>3<em>5</em>…<em>(2</em>n-1)</p>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-oeisA051125" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. J. A. Sloane, <span>“A051125: Table t(n,k) = max<span>n,k</span> read by antidiagonals (n &gt;= 1, k &gt;= 1).”</span> Available: <a href="https://oeis.org/A051125/">https://oeis.org/A051125/</a></div>
+</div>
+<div id="ref-oeisA181983" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M. Somos, <span>“A181983: A(n) = (-1)^(n+1) * n.”</span> 2012. Available: <a href="https://oeis.org/A181983/">https://oeis.org/A181983/</a></div>
+</div>
+<div id="ref-oeisA161124" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Deutsch, <span>“A161124: Number of inversions in all fixed-point-free involutions of <span>1,2,...,2n</span>.”</span> Jun. 2009. Available: <a href="https://oeis.org/A161124/">https://oeis.org/A161124/</a></div>
+</div>
+<div id="ref-oeisA001147" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">N. J. A. Sloane, <span>“A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).”</span> Available: <a href="https://oeis.org/A001147/">https://oeis.org/A001147/</a></div>
+</div>
+</div>
 
 
 </section>

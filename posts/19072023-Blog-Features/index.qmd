@@ -1,10 +1,12 @@
 ---
-title: "Required Blog Features"
-author: "Enrique Pérez Herrero"
+title: Required Blog Features
+description: ''
+author: 'Enrique Pérez Herrero'
+date: '2023-07-31'
 categories:
   - blog
   - quarto
-description: ''
+
 image: ''
 draft: false
 ---

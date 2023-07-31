@@ -1,5 +1,10 @@
 ---
-title: "Energy Code"
+title: "Blog"
+author: "Enrique Pérez Herrero"
+listing: 
+  contents: 
+    - posts
+  type: grid # or `default` or `table`;
+  sort: "date desc" 
+  categories: true 
 ---
-
-
