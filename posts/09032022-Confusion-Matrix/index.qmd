@@ -10,7 +10,6 @@ categories:
   - machine learning
 ---
 
-
 # Confusion Matrix
 
 The confusion matrix allows visualization of the performance of a classification
