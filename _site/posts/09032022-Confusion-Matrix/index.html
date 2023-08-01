@@ -210,6 +210,8 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 
 <section id="confusion-matrix" class="level1">
 <h1>Confusion Matrix</h1>
+<p>The confusion matrix allows visualization of the performance of a classification algorithm.</p>
+<p>In this blog post, a function is shown to create an image of the confusion matrix.</p>
 <p>The R package <code>caret</code> includes the <code>confusionMatrix</code> function, which provides a comprehensive output.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
@@ -220,7 +222,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 </div>
 <section id="classification" class="level2">
 <h2 class="anchored" data-anchor-id="classification">Classification</h2>
-<p>We will perform a Naïve Bayes classification on the classical iris dataset.</p>
+<p>We will perform a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classification</a> on the classical iris data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>spl <span class="ot">=</span> caTools<span class="sc">::</span><span class="fu">sample.split</span>(iris, <span class="at">SplitRatio =</span> <span class="fl">0.8</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, iris<span class="sc">$</span>spl <span class="sc">==</span> <span class="cn">TRUE</span>)</span>

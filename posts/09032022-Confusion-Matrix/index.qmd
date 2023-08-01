@@ -13,6 +13,12 @@ categories:
 
 # Confusion Matrix
 
+The confusion matrix allows visualization of the performance of a classification
+algorithm.
+
+In this blog post, a function is shown to create an image of the confusion
+matrix.
+
 The R package `caret` includes the `confusionMatrix` function, which provides a
 comprehensive output.
 
@@ -26,7 +32,9 @@ library(caret)
 
 ## Classification
 
-We will perform a Naïve Bayes classification on the classical iris dataset.
+We will perform a [Naive Bayes
+classification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) on the
+classical iris data set.
 
 ```{r}
 iris$spl = caTools::sample.split(iris, SplitRatio = 0.8)
