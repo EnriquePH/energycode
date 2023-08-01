@@ -22,7 +22,10 @@ matrix.
 The R package `caret` includes the `confusionMatrix` function, which provides a
 comprehensive output.
 
-```{r echo=TRUE, message=FALSE}
+```{r}
+#| label: load_packages
+#| echo: true
+#| message: false
 library(e1071)
 library(caTools)
 library(ggplot2)
@@ -37,14 +40,15 @@ classification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) on the
 classical iris data set.
 
 ```{r}
-iris$spl = caTools::sample.split(iris, SplitRatio = 0.8)
+#| label: classification
+
+# train and test data
+iris$spl <- caTools::sample.split(iris, SplitRatio = 0.8)
 train <- subset(iris, iris$spl == TRUE)
 test <- subset(iris, iris$spl == FALSE)
 
-iris.nb <- naiveBayes(Species ~ ., data = train)
-
-nb_train_predict <-
-  predict(iris.nb, test[, names(test) != "Species"])
+iris_nb <- naiveBayes(Species ~ ., data = train)
+nb_train_predict <- predict(iris_nb, test[, names(test) != "Species"])
 
 cfm <- confusionMatrix(nb_train_predict, test$Species)
 cfm
@@ -55,13 +59,14 @@ cfm
 To plot the obtained confusion matrix as a `ggplot` graphic, we will use the
 following function:
 
-
 ```{r}
-ggplotConfusionMatrix <- function(m){
-  mytitle <- paste("Accuracy", percent_format()(m$overall[1]),
-                   "Kappa", percent_format()(m$overall[2]))
+#| label: plot_confusion
+#| fig-alt: function for plotting confusion matrix
+ggplot_confusion_matrix <- function(cfm) {
+  mytitle <- paste("Accuracy", percent_format() (cfm$overall[1]),
+                   "Kappa", percent_format() (cfm$overall[2]))
   p <-
-    ggplot(data = as.data.frame(m$table) ,
+    ggplot(data = as.data.frame(cfm$table),
            aes(x = Reference, y = Prediction)) +
     geom_tile(aes(fill = log(Freq)), colour = "white") +
     scale_fill_gradient(low = "white", high = "steelblue") +
@@ -73,7 +78,7 @@ ggplotConfusionMatrix <- function(m){
 ```
 
 ```{r}
-ggplotConfusionMatrix(cfm)
+ggplot_confusion_matrix(cfm)
 ```
 
 ## Links
