@@ -4,6 +4,7 @@ project:
 website:
   title: "[energycode]"
   site-url: www.energycode.org
+  google-analytics: "G-6P3MCX2KHD"
   navbar:
     tools:
       - icon: github
