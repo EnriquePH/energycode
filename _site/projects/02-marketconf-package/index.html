@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Enrique Pérez Herrero">
-<meta name="dcterms.date" content="2022-03-05">
-<meta name="description" content="Determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.">
+<meta name="dcterms.date" content="2023-08-02">
+<meta name="description" content="R Package marketconf">
 
-<title>[energycode] - Max Determinant</title>
+<title>[energycode] - Stock Market Confidence Indexes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -90,8 +105,6 @@ gtag('js', new Date());
 gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -137,16 +150,16 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Max Determinant</h1>
+      <h1 class="title">Stock Market Confidence Indexes</h1>
                   <div>
         <div class="description">
-          Determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
+          R Package <code>marketconf</code>
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">math</div>
-                <div class="quarto-category">linear algebra</div>
-                <div class="quarto-category">determinant</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">package</div>
+                <div class="quarto-category">stock market</div>
               </div>
                   </div>
   </div>
@@ -164,7 +177,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 5, 2022</p>
+        <p class="date">August 2, 2023</p>
       </div>
     </div>
     
@@ -180,9 +193,17 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem" id="toc-problem" class="nav-link active" data-scroll-target="#problem">Problem</a></li>
-  <li><a href="#proof" id="toc-proof" class="nav-link" data-scroll-target="#proof">Proof</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#package-marketconf-stock-market-confidence-indexes" id="toc-package-marketconf-stock-market-confidence-indexes" class="nav-link active" data-scroll-target="#package-marketconf-stock-market-confidence-indexes">Package marketconf: Stock Market Confidence Indexes</a>
+  <ul class="collapse">
+  <li><a href="#package-installation" id="toc-package-installation" class="nav-link" data-scroll-target="#package-installation">Package installation</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#listing-confidence-indices" id="toc-listing-confidence-indices" class="nav-link" data-scroll-target="#listing-confidence-indices">Listing confidence indices</a></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
+  </ul></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -192,79 +213,97 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plot3dmaxmatrix.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Plot3D of max matrix elements</figcaption>
-</figure>
+<section id="package-marketconf-stock-market-confidence-indexes" class="level1">
+<h1>Package marketconf: Stock Market Confidence Indexes</h1>
+<p>The R package <code>marketconf</code> reads data on <strong>U. S. Stock Market Confidence Indexes</strong> from the <a href="https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence">Yale School of Management’s International Center for Finance</a> web page.</p>
+<p>This package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:</p>
+<p><a href="https://cran.r-project.org/web/packages/quantmod/index.html"><code>quantmod</code></a>, <a href="https://cran.r-project.org/web/packages/TTR/index.html"><code>TTR</code></a> or <a href="https://cran.r-project.org/web/packages/tidyquant/index.html"><code>tidyquant</code></a></p>
+<section id="package-installation" class="level2">
+<h2 class="anchored" data-anchor-id="package-installation">Package installation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"EnriquePH/marketconf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="problem" class="level2">
-<h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>The sequence <a href="https://oeis.org/A181983">A181983</a>(n) gives the determinants of the square matrices: <span class="math inline">\(M_{n}\)</span>, with elements <span class="math inline">\(m_{i,j}= \max(i,j)\)</span>, where <span class="math inline">\(\max\)</span> the is the maximum function.</p>
-<p>This identity appears as follows:</p>
-<p><span class="math display">\[\begin{equation}
-det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(n)
-\end{equation}\]</span></p>
 </section>
-<section id="proof" class="level2">
-<h2 class="anchored" data-anchor-id="proof">Proof</h2>
-<p>A new matrix with the same determinant can be created by subtracting row <span class="math inline">\(i\)</span> from row <span class="math inline">\(i+1\)</span> starting from the 2nd row. The determinant of this new matrix can then be computed easily using the expansion by minors technique at element <span class="math inline">\(m_{1,n}\)</span></p>
-<p>This can be better illustrated with an example:</p>
-<p>We can transform:</p>
-<p><span class="math display">\[\begin{equation}
-M_{10} = \left(\begin{array}{cccccccccc}
-1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-2 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-3 &amp; 3 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-4 &amp; 4 &amp; 4 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-5 &amp; 5 &amp; 5 &amp; 5 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-6 &amp; 6 &amp; 6 &amp; 6 &amp; 6 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 8 &amp; 9 &amp; 10 \\
-9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 9 &amp; 10 \\
-10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10 &amp; 10
-\end{array} \right)
-\end{equation}\]</span></p>
-<p>Into:</p>
-<p><span class="math display">\[\begin{equation}
-M^{*}_{10} =\left(\begin{array}{cccccccccc}
-1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
-1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \end{array} \right)
-\end{equation}\]</span></p>
-<p>This proof can be generalized to a very similar kind of matrices, resulting in:</p>
-<p><span class="math display">\[\begin{equation}
-det{\bigg[ max(i,j)^k \bigg]}_{1\leq i,j \leq n} = {(-1)}^{n-1} \cdot n^{k} \cdot \prod_{s=1}^{n-1}{(s+1)^k-s^k}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-det{\bigg[ min(i,j)^k \bigg]}_{1\leq i,j \leq n} = \prod_{s=1}^{n-1}{(s+1)^k-s^k}
-\end{equation}\]</span></p>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="listing-confidence-indices" class="level3">
+<h3 class="anchored" data-anchor-id="listing-confidence-indices">Listing confidence indices</h3>
+<p>The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(marketconf)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">US_confidence_indices</span>()[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 22%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Info</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">US1YI</td>
+<td style="text-align: left;">U.S. One Year Confidence Index</td>
+<td style="text-align: left;">The percent of the population expecting an increase in the Dow in the coming year.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USVI</td>
+<td style="text-align: left;">U.S. Valuation Confidence Index</td>
+<td style="text-align: left;">The percent of the population who think that the market is not too high.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USBODI</td>
+<td style="text-align: left;">U.S. Buy-On-Dips Confidence Index</td>
+<td style="text-align: left;">The percent of the population expecting a rebound the next day should the market ever drop 3% in one day.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USCI</td>
+<td style="text-align: left;">U.S. Crash Confidence Index</td>
+<td style="text-align: left;">The percent of the population who attach little probability to a stock market crash in the next-six months.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-oeisA051125" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">N. J. A. Sloane, <span>“A051125: Table t(n,k) = max<span>n,k</span> read by antidiagonals (n &gt;= 1, k &gt;= 1).”</span> Available: <a href="https://oeis.org/A051125/">https://oeis.org/A051125/</a></div>
+<section id="plotting" class="level3">
+<h3 class="anchored" data-anchor-id="plotting">Plotting</h3>
+<p>This is a basic example that plots the <strong>U.S. Valuation Confidence Index</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>index_symbol <span class="ot">&lt;-</span> <span class="st">"USVI"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>index_df <span class="ot">&lt;-</span> <span class="fu">get_index</span>(index_symbol)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(index_df, <span class="fu">aes</span>(<span class="at">x =</span> Date, <span class="at">y =</span> USVI.Value, <span class="at">color =</span> Investor)) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">get_index_description</span>(index_symbol))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/example-1.png" class="img-fluid" width="672"></p>
 </div>
-<div id="ref-oeisA181983" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">M. Somos, <span>“A181983: A(n) = (-1)^(n+1) * n.”</span> 2012. Available: <a href="https://oeis.org/A181983/">https://oeis.org/A181983/</a></div>
 </div>
-<div id="ref-oeisA161124" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">E. Deutsch, <span>“A161124: Number of inversions in all fixed-point-free involutions of <span>1,2,...,2n</span>.”</span> Jun. 2009. Available: <a href="https://oeis.org/A161124/">https://oeis.org/A161124/</a></div>
-</div>
-<div id="ref-oeisA001147" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">N. J. A. Sloane, <span>“A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).”</span> Available: <a href="https://oeis.org/A001147/">https://oeis.org/A001147/</a></div>
-</div>
-</div>
+</section>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>The <code>markerconf</code> package is licensed under the <a href="https://github.com/EnriquePH/marketconf/blob/master/LICENSE">MIT License (MIT)</a>, but the <strong>Stock Market Confidence Indexes</strong> are produced and copyrighted by the <strong>International Center of Finance at the Yale School of Management</strong>. Please refer to the <a href="https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices/united-states">TERMS OF USE</a> on <a href="https://som.yale.edu/">Yale University</a>’s web page for further information.</p>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/marketconf">Github marketconf R package</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

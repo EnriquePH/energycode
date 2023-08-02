@@ -1,10 +1,52 @@
 [
   {
+    "objectID": "TODO.html",
+    "href": "TODO.html",
+    "title": "energycode.org TODO.md",
+    "section": "",
+    "text": "energycode.org TODO.md\n\nTodo\n\nDesign a favicon\nTesting analytics\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Confusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot and R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nFormulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Confusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot and R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html",
+    "href": "projects/02-marketconf-package/index.html",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#package-installation",
+    "href": "projects/02-marketconf-package/index.html#package-installation",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "library(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#examples",
+    "href": "projects/02-marketconf-package/index.html#examples",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#license",
+    "href": "projects/02-marketconf-package/index.html#license",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#links",
+    "href": "projects/02-marketconf-package/index.html#links",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Github marketconf R package"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html",
@@ -67,6 +109,6 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "No matching items"
+    "text": "Stock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

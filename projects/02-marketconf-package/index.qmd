@@ -1,0 +1,78 @@
+---
+title: Stock Market Confidence Indexes
+description: R Package `marketconf`
+author: 'Enrique Pérez Herrero'
+date: '2023-08-02'
+image: 'USVI-plot.png'
+categories: 
+ - R
+ - package
+ - stock market
+editor: source
+---
+
+# Package marketconf: Stock Market Confidence Indexes
+
+The R package `marketconf` reads data on **U. S. Stock Market Confidence
+Indexes** from the [Yale School of Management's International Center for
+Finance](https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence)
+web page.
+
+This package is designed for stock market prediction and risk valuation,
+and it is compatible with other packages like:
+
+[`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html),
+[`TTR`](https://cran.r-project.org/web/packages/TTR/index.html) or
+[`tidyquant`](https://cran.r-project.org/web/packages/tidyquant/index.html)
+
+## Package installation
+
+```{r}
+#| eval: false
+library(devtools)
+devtools::install_github("EnriquePH/marketconf")
+```
+
+## Examples
+
+### Listing confidence indices
+
+The four U.S. stock market confidence indices are derived monthly from
+survey data on investors' behavior. These indices are:
+
+```{r}
+#| label: list indices
+library(marketconf)
+library(knitr)
+kable(US_confidence_indices()[c(1, 3, 4)])
+```
+
+### Plotting
+
+This is a basic example that plots the **U.S. Valuation Confidence Index**:
+
+```{r}
+#| label: example
+library(ggplot2)
+
+index_symbol <- "USVI"
+index_df <- get_index(index_symbol)
+
+ggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +
+  geom_line() +
+  ggtitle(get_index_description(index_symbol))
+```
+
+## License
+
+The `markerconf` package is licensed under the [MIT License
+(MIT)](https://github.com/EnriquePH/marketconf/blob/master/LICENSE), but the
+**Stock Market Confidence Indexes** are produced and copyrighted by the
+**International Center of Finance at the Yale School of Management**.
+Please refer to the [TERMS OF
+USE](https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices/united-states)
+on [Yale University](https://som.yale.edu/)'s web page for further information.
+
+## Links
+
+* [Github marketconf R package](https://github.com/EnriquePH/marketconf)

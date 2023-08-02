@@ -1,5 +1,6 @@
 ---
 title: "About"
+editor: source
 about:
   template: jolla
   links:
@@ -14,15 +15,17 @@ about:
       href: https://twitter.com/energycodeorg
     - icon: linkedin
       text: LinkedIn
-      href: https://twitter.com/energycodeorg
+      href: https://www.linkedin.com/in/eph3000
     - icon: envelope-at
       text: email
       href: mailto:energycode.org@gmail.com
 ---
 
 
+[![](./posts/01082023-Blog-Logo/logo.png){width=40%}](www.energycode.org)
+
 
 ```{=html}
 <!-- Stackoverflow flair -->
-<a href="https://stackexchange.com/users/5949649"><img src="https://stackexchange.com/users/flair/5949649.png" width="208" height="58" alt="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+<a href="https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero"><img src="https://stackexchange.com/users/flair/5949649.png" width="208" height="58" alt="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Enrique P&#233;rez Herrero on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
 ```

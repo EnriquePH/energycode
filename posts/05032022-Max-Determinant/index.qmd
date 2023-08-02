@@ -1,6 +1,6 @@
 ---
 title: Max Determinant
-description: Formulas for the determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
+description: Determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
 author: 'Enrique Pérez Herrero'
 date: '2022-03-05'
 image: plot3dmaxmatrix.png

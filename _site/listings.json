@@ -8,6 +8,8 @@
   },
   {
     "listing": "/projects.html",
-    "items": []
+    "items": [
+      "/projects/02-marketconf-package/index.html"
+    ]
   }
 ]

@@ -23,4 +23,4 @@ format:
     toc: true
 
 editor: source
-
+email-obfuscation: javascript

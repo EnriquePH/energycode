@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>www.energycode.org/TODO.html</loc>
+    <lastmod>2023-08-02T06:55:59.482Z</lastmod>
+  </url>
+  <url>
     <loc>www.energycode.org/index.html</loc>
-    <lastmod>2023-08-01T10:30:58.464Z</lastmod>
+    <lastmod>2023-08-02T06:56:00.142Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/about.html</loc>
-    <lastmod>2023-08-01T10:30:58.812Z</lastmod>
+    <lastmod>2023-08-02T06:56:00.474Z</lastmod>
+  </url>
+  <url>
+    <loc>www.energycode.org/projects/02-marketconf-package/index.html</loc>
+    <lastmod>2023-08-02T06:57:14.163Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/posts/09032022-Confusion-Matrix/index.html</loc>
-    <lastmod>2023-08-01T10:31:07.828Z</lastmod>
+    <lastmod>2023-08-02T06:56:06.962Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/posts/05032022-Max-Determinant/index.html</loc>
-    <lastmod>2023-08-01T10:31:12.484Z</lastmod>
+    <lastmod>2023-08-02T06:56:12.878Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/projects.html</loc>
-    <lastmod>2023-08-01T10:31:12.828Z</lastmod>
+    <lastmod>2023-08-02T06:57:29.744Z</lastmod>
   </url>
 </urlset>

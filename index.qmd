@@ -1,6 +1,5 @@
 ---
 title: "Blog"
-author: "Enrique Pérez Herrero"
 listing: 
   contents: 
     - posts

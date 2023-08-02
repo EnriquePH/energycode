@@ -1,6 +1,6 @@
 ---
 title: Required Blog Features
-description: ''
+description: 'Everything a Data Science Blog Should Have'
 editor: source
 author: 'Enrique Pérez Herrero'
 date: '2023-07-31'
@@ -8,16 +8,21 @@ categories:
   - blog
   - quarto
 
-image: ''
+image: '../01082023-Blog-Logo/logo.png'
 draft: true
 ---
+
+# Data Science web with Quarto
+
+[Quarto](https://quarto.org/) is a platform that solves many of the problems associated with creating a website about data science, where the intention is to use different programming languages such as Python, SQL, R, and mathematical equations with $\LaTeX$.
 
 # Theme
 
 # Branding
- * Find a available domain
- * Design an icon
- * Design a logo
+
+-   Find a available domain
+-   Design an icon
+-   Design a logo
 
 # Web Page
 
@@ -28,6 +33,7 @@ https://quarto.org/docs/websites.
 -   https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
 
 # Coding
+
 -   R
 -   Python
 -   LaTeX
@@ -43,12 +49,10 @@ https://quarto.org/docs/websites.
 
 # Social Networks
 
-  * Stackoverflow
-  * Twitter
-  * LinkedIn
-  * Github
-
-
+-   Stackoverflow
+-   Twitter
+-   LinkedIn
+-   Github
 
 # Version Control
 
@@ -71,4 +75,3 @@ data("Formaldehyde")
 for i in range(10):
   print(i)
 ```
-

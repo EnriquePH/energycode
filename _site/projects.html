@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Enrique Pérez Herrero">
 
 <title>[energycode] - Projects</title>
 <style>
@@ -71,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -149,7 +148,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="package">package <span class="quarto-category-count">(1)</span></div><div class="category" data-category="stock market">stock market <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -162,12 +161,6 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Enrique Pérez Herrero </p>
-          </div>
-  </div>
     
   
     
@@ -182,7 +175,42 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="R,package,stock market" data-listing-date-sort="1690927200000" data-listing-file-modified-sort="1690959426891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./projects/02-marketconf-package/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./projects/02-marketconf-package/USVI-plot.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stock Market Confidence Indexes
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('package'); return false;">
+package
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('stock market'); return false;">
+stock market
+</div>
+</div>
+<div class="card-text listing-description">
+R Package <code>marketconf</code>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Enrique Pérez Herrero
+</div>
+<div class="listing-date">
+Aug 2, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
