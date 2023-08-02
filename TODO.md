@@ -2,8 +2,7 @@
 
 ### Todo
 
--   [ ] Design a favicon
--   [ ] Testing analytics
+-   [ ] OEIS.R package 
 
 ### In Progress
 
@@ -13,3 +12,6 @@
 
 -   [x] Add analytics
 -   [x] Design a blog logo
+-   [x] R package marketconf project
+-   [X] Testing analytics
+-   [X] Post Nympy to LaTeX

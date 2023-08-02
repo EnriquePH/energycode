@@ -4,14 +4,14 @@
     "href": "TODO.html",
     "title": "energycode.org TODO.md",
     "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nDesign a favicon\nTesting analytics\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo"
+    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Confusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot and R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Convert Numpy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from numpy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot and R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements being the maximum or minimum between the indices of the elements.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",
@@ -110,5 +110,40 @@
     "title": "Projects",
     "section": "",
     "text": "Stock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/02082023-Numpy-LaTeX/index.html",
+    "href": "posts/02082023-Numpy-LaTeX/index.html",
+    "title": "Convert Numpy array to LaTeX",
+    "section": "",
+    "text": "Sierra de las Nieves (Málaga)"
+  },
+  {
+    "objectID": "posts/02082023-Numpy-LaTeX/index.html#functions-for-matrices-and-determinants",
+    "href": "posts/02082023-Numpy-LaTeX/index.html#functions-for-matrices-and-determinants",
+    "title": "Convert Numpy array to LaTeX",
+    "section": "Functions for matrices and determinants",
+    "text": "Functions for matrices and determinants\nThe functions matrix2latex and det2latex return an indented \\(LaTeX\\) string that can be copied or rendered in your math article.\nThe parameter INDENT_SPACES controls the number of indentation spaces.\n\nimport numpy as np\n\nINDENT_SPACES = 3\n\ndef indent(num_indent=1):\n    \"\"\"\n    Number of indentation spaces\n    \"\"\"\n    return num_indent * INDENT_SPACES * \" \"\n\n\ndef matrix2latex(matrix):\n    \"\"\"\n    Convert numpy array to latex code as a matrix\n    \"\"\"\n    left_latex = r\"\\left(\" + \"\\n\" + indent(1) + r\"\\begin{array}\"\n    right_latex = indent(1) + r\"\\end{array}\" + \"\\n\" + r\"\\right)\"\n    m_cols = matrix.shape[1]\n    array_cols = \"{\" + \"r\" * m_cols + \"}\\n\"\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(2) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + array_cols + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\ndef det2latex(matrix):\n    \"\"\"\n    Convert numpy array to latex code as a determinant\n    \"\"\"\n    left_latex = r\"\\begin{vmatrix}\" + \"\\n\"\n    right_latex = r\"\\end{vmatrix}\"\n    m_cols = matrix.shape[1]\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(1) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\nOutput string\nWith the NumPy function np.eye, we can create an identity matrix of the desired dimensions, and this seems to be a good way to test our functions.\n\nprint(matrix2latex(np.eye(3, dtype=int)))\n\n$$\n\\left(\n   \\begin{array}{rrr}\n      1 & 0 & 0 \\\\ \n      0 & 1 & 0 \\\\ \n      0 & 0 & 1 \\\\ \n   \\end{array}\n\\right)\n$$"
+  },
+  {
+    "objectID": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-in-a-document",
+    "href": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-in-a-document",
+    "title": "Convert Numpy array to LaTeX",
+    "section": "Rendering the output in a document",
+    "text": "Rendering the output in a document\nIf you are working within a Jupyter notebook you can render a latex string with the aid of the Math function included in the IPython library, which can be imported with:\n\nfrom IPython.display import Math\n\nBut if you are coding a Python chunk in a Quarto file on RStudio, you need to add the option #| output: asis at the top of the code chunk. This option controls how the output is rendered in the final document.\nprint(det2latex(np.eye(3, dtype=int)))\n\\[\n\\begin{vmatrix}\n   1 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   0 & 0 & 1 \\\\\n\\end{vmatrix}\n\\]\n# Identity 4x4 matrix\nidentity_4 = np.eye(4, dtype=int)\nidentity_4_latex = r\"$$I_4 = \" + f\"{matrix2latex(identity_4)}\"[2:]\nprint(identity_4_latex)\n\\[I_4 =\n\\left(\n   \\begin{array}{rrrr}\n      1 & 0 & 0 & 0 \\\\\n      0 & 1 & 0 & 0 \\\\\n      0 & 0 & 1 & 0 \\\\\n      0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-in-a-file",
+    "href": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-in-a-file",
+    "title": "Convert Numpy array to LaTeX",
+    "section": "Rendering the output in a file",
+    "text": "Rendering the output in a file\nThe \\(LaTeX\\) string can be rendered and saved into a file with the aid of the following function, based on the library sympy.\n\nfrom sympy import preview\n\ndef latex2png(latex, filename, fontsize=300):\n    \"\"\"\n    Render latex code to png image\n    \"\"\"\n    return preview(latex,\n                   viewer='file',\n                   filename=filename,\n                   euler=False,\n                   dvioptions=['-D', f'{str(fontsize)}'])"
+  },
+  {
+    "objectID": "posts/02082023-Numpy-LaTeX/index.html#other-automated-matrices",
+    "href": "posts/02082023-Numpy-LaTeX/index.html#other-automated-matrices",
+    "title": "Convert Numpy array to LaTeX",
+    "section": "Other automated matrices",
+    "text": "Other automated matrices\n\nMatrices with numbered elements\n\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with algebraic notation elements \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\nTriangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal (elements that lie on or below the main diagonal) are zeros.\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros\n\n\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeroes\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros\n\n\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeroes\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\nprint(matrix2latex(up_triangular_matrix(5)))\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
   }
 ]
