@@ -52,3 +52,6 @@ rsconnect/
 .quarto/
 
 /.quarto/
+
+# Jupyter Notebook
+.ipynb_checkpoints
