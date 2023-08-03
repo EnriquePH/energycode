@@ -9,6 +9,7 @@ categories:
  - package
  - stock market
 editor: source
+draft: false
 ---
 
 # Package marketconf: Stock Market Confidence Indexes

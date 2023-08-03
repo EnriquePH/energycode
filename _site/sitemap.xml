@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>www.energycode.org/TODO.html</loc>
-    <lastmod>2023-08-03T10:27:18.807Z</lastmod>
+    <lastmod>2023-08-03T11:39:19.885Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/index.html</loc>
-    <lastmod>2023-08-03T10:27:23.275Z</lastmod>
+    <lastmod>2023-08-03T11:39:21.409Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/about.html</loc>
-    <lastmod>2023-08-03T09:42:29.171Z</lastmod>
+    <lastmod>2023-08-03T11:39:21.749Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/projects/02-marketconf-package/index.html</loc>
-    <lastmod>2023-08-03T09:42:29.811Z</lastmod>
-  </url>
-  <url>
-    <loc>www.energycode.org/posts/09032022-Confusion-Matrix/index.html</loc>
-    <lastmod>2023-08-03T09:42:34.647Z</lastmod>
-  </url>
-  <url>
-    <loc>www.energycode.org/posts/05032022-Max-Determinant/index.html</loc>
-    <lastmod>2023-08-03T09:42:44.447Z</lastmod>
-  </url>
-  <url>
-    <loc>www.energycode.org/posts/02082023-Numpy-LaTeX/index.html</loc>
-    <lastmod>2023-08-03T09:42:45.139Z</lastmod>
-  </url>
-  <url>
-    <loc>www.energycode.org/projects.html</loc>
-    <lastmod>2023-08-03T11:25:38.681Z</lastmod>
+    <lastmod>2023-08-03T11:39:22.377Z</lastmod>
   </url>
   <url>
     <loc>www.energycode.org/projects/03-Holocene_Volcanic_Eruptions/index.html</loc>
-    <lastmod>2023-08-03T11:25:38.113Z</lastmod>
+    <lastmod>2023-08-03T11:39:22.773Z</lastmod>
+  </url>
+  <url>
+    <loc>www.energycode.org/posts/09032022-Confusion-Matrix/index.html</loc>
+    <lastmod>2023-08-03T11:39:31.505Z</lastmod>
+  </url>
+  <url>
+    <loc>www.energycode.org/posts/05032022-Max-Determinant/index.html</loc>
+    <lastmod>2023-08-03T11:39:38.013Z</lastmod>
+  </url>
+  <url>
+    <loc>www.energycode.org/posts/02082023-Numpy-LaTeX/index.html</loc>
+    <lastmod>2023-08-03T11:39:38.661Z</lastmod>
+  </url>
+  <url>
+    <loc>www.energycode.org/projects.html</loc>
+    <lastmod>2023-08-03T11:39:39.173Z</lastmod>
   </url>
 </urlset>

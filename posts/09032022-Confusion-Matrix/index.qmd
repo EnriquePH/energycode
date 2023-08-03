@@ -8,6 +8,8 @@ categories:
   - R
   - code
   - machine learning
+editor: source
+draft: false
 ---
 
 # Confusion Matrix

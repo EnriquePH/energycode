@@ -17,7 +17,7 @@ nocite: |
 
 ![Plot3D of max matrix elements](plot3dmaxmatrix.png)
 
-## Problem
+## Identity
 
 The sequence [A181983](https://oeis.org/A181983)(n) gives the determinants of
 the square matrices: $M_{n}$, with elements $m_{i,j}= \max(i,j)$, where $\max$

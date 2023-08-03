@@ -9,6 +9,7 @@ categories:
  - kaggle
  - EDA
 editor: source
+draft: false
 ---
 
 [![Volcán de Teneguía (La Palma)](20210115_131231.jpg){fig-align="center"}](https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration)

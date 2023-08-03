@@ -4,7 +4,7 @@
     "href": "TODO.html",
     "title": "energycode.org TODO.md",
     "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\nProject Holoce Volcano\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico"
+    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions"
   },
   {
     "objectID": "index.html",
@@ -49,18 +49,53 @@
     "text": "Github marketconf R package"
   },
   {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "",
+    "text": "Volcán de Teneguía (La Palma)"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Data source",
+    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest."
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Embeded Notebook",
+    "text": "Embeded Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize the data effectively."
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Comments",
+    "text": "Comments\nThis kaggle notebook is mentioned in the Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Links",
+    "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+  },
+  {
     "objectID": "posts/09032022-Confusion-Matrix/index.html",
     "href": "posts/09032022-Confusion-Matrix/index.html",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "The confusion matrix allows visualization of the performance of a classification algorithm.\nIn this blog post, a function is shown to create an image of the confusion matrix.\nThe R package caret includes the confusionMatrix function, which provides a comprehensive output.\n\nlibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\nWe will perform a Naive Bayes classification on the classical iris data set.\n\n# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         1\n  virginica       0          0         9\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.9000\nSpecificity                 1.0000            0.9500           1.0000\nPos Pred Value              1.0000            0.9091           1.0000\nNeg Pred Value              1.0000            1.0000           0.9524\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.3000\nDetection Prevalence        0.3333            0.3667           0.3000\nBalanced Accuracy           1.0000            0.9750           0.9500\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\nggplot_confusion_matrix(cfm)\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
+    "text": "The confusion matrix allows visualization of the performance of a classification algorithm.\nIn this blog post, a function is shown to create an image of the confusion matrix.\nThe R package caret includes the confusionMatrix function, which provides a comprehensive output.\n\nlibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\nWe will perform a Naive Bayes classification on the classical iris data set.\n\n# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0          9         0\n  virginica       0          1        10\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            0.9000           1.0000\nSpecificity                 1.0000            1.0000           0.9500\nPos Pred Value              1.0000            1.0000           0.9091\nNeg Pred Value              1.0000            0.9524           1.0000\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3000           0.3333\nDetection Prevalence        0.3333            0.3000           0.3667\nBalanced Accuracy           1.0000            0.9500           0.9750\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\nggplot_confusion_matrix(cfm)\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html#classification",
     "href": "posts/09032022-Confusion-Matrix/index.html#classification",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "We will perform a Naive Bayes classification on the classical iris data set.\n\n# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         1\n  virginica       0          0         9\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.9000\nSpecificity                 1.0000            0.9500           1.0000\nPos Pred Value              1.0000            0.9091           1.0000\nNeg Pred Value              1.0000            1.0000           0.9524\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.3000\nDetection Prevalence        0.3333            0.3667           0.3000\nBalanced Accuracy           1.0000            0.9750           0.9500"
+    "text": "We will perform a Naive Bayes classification on the classical iris data set.\n\n# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0          9         0\n  virginica       0          1        10\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            0.9000           1.0000\nSpecificity                 1.0000            1.0000           0.9500\nPos Pred Value              1.0000            1.0000           0.9091\nNeg Pred Value              1.0000            0.9524           1.0000\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3000           0.3333\nDetection Prevalence        0.3333            0.3000           0.3667\nBalanced Accuracy           1.0000            0.9500           0.9750"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html#plotting",
@@ -84,11 +119,11 @@
     "text": "Plot3D of max matrix elements"
   },
   {
-    "objectID": "posts/05032022-Max-Determinant/index.html#problem",
-    "href": "posts/05032022-Max-Determinant/index.html#problem",
+    "objectID": "posts/05032022-Max-Determinant/index.html#identity",
+    "href": "posts/05032022-Max-Determinant/index.html#identity",
     "title": "Max Determinant",
-    "section": "Problem",
-    "text": "Problem\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), with elements \\(m_{i,j}= \\max(i,j)\\), where \\(\\max\\) the is the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
+    "section": "Identity",
+    "text": "Identity\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), with elements \\(m_{i,j}= \\max(i,j)\\), where \\(\\max\\) the is the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
   },
   {
     "objectID": "posts/05032022-Max-Determinant/index.html#proof",
@@ -145,40 +180,5 @@
     "title": "Projects",
     "section": "",
     "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nData Exploration\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "",
-    "text": "Volcán de Teneguía (La Palma)"
-  },
-  {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Comments",
-    "text": "Comments\nThis kaggle notebook is mentioned in the Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
-  },
-  {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Links",
-    "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
-  },
-  {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Data source",
-    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest."
-  },
-  {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Embeded Notebook",
-    "text": "Embeded Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize the data effectively."
   }
 ]
