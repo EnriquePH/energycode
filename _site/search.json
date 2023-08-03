@@ -4,7 +4,7 @@
     "href": "TODO.html",
     "title": "energycode.org TODO.md",
     "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics"
+    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX"
   },
   {
     "objectID": "index.html",
@@ -105,13 +105,6 @@
     "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Stock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/02082023-Numpy-LaTeX/index.html",
     "href": "posts/02082023-Numpy-LaTeX/index.html",
     "title": "Convert Numpy array to LaTeX",
@@ -145,5 +138,12 @@
     "title": "Convert Numpy array to LaTeX",
     "section": "Other automated matrices",
     "text": "Other automated matrices\n\nMatrices with numbered elements\n\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with algebraic notation elements \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\nTriangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal (elements that lie on or below the main diagonal) are zeros.\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros\n\n\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeroes\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros\n\n\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeroes\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\nprint(matrix2latex(up_triangular_matrix(5)))\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Stock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

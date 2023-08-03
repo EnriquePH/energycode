@@ -4,11 +4,20 @@
 
 <!-- badges: end -->
 
-# Energy Code Blog
+# Energy Code Website
 
 https://www.energycode.org/
 
-In this blog, we will delve into the transformation power of data science in
-industrial settings. From predictive maintenance and anomaly detection to
-process optimization and supply chain management, data science is redefining how
-industries operate, collaborate, and grow.
+My Data Science site
+
+[![](/posts/01082023-Blog-Logo/logo.png){width="30%"}](https://www.energycode.org/)
+
+https://www.energycode.org/
+
+## Blog
+
+In this blog, we will delve into the transformation power of data science in industrial settings. From predictive maintenance and anomaly detection to process optimization and supply chain management, data science is redefining how industries operate, collaborate, and grow.
+
+## Projects
+
+Porjects portfolio
