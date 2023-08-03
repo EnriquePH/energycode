@@ -10,6 +10,12 @@ website:
     tools:
       - icon: github
         href: https://github.com/EnriquePH
+      - icon: stack-overflow
+        href: https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero
+      - icon: twitter
+        href: https://twitter.com/energycodeorg
+      - icon: envelope-at
+        href: mailto:energycode.org@gmail.com
     background: primary
     search: true
     left:

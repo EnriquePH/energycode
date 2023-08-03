@@ -42,7 +42,6 @@ def indent(num_indent=1):
     """
     return num_indent * INDENT_SPACES * " "
 
-
 def matrix2latex(matrix):
     """
     Convert numpy array to latex code as a matrix
@@ -58,7 +57,6 @@ def matrix2latex(matrix):
             r" \\ " + "\n"
     latex = left_latex + array_cols + elements_latex + right_latex
     return f"$$\n{latex}\n$$"
-
 
 def det2latex(matrix):
     """
