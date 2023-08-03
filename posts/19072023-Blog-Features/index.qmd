@@ -20,9 +20,24 @@ draft: true
 
 # Branding
 
--   Find an available domain
--   Design an icon
--   Design an favicon: https://realfavicongenerator.net/
+### Find an available domain
+
+### Design an icon
+
+### Design an favicon\*\*:
+
+A *favicon* is a small icon associated with a website. Favicons are displayed in
+the browser's address bar, next to the page title, and in the browser's tabs.
+There are websites where you can create you own favicon from an image:
+https://realfavicongenerator.net/
+
+To add a favicon to the Quarto website, you need to modify the `_quarto.yml`
+file as follows:"
+
+```         
+website:
+  favicon: favicon.png
+```
 
 # Web Page
 

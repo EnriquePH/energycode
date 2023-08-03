@@ -7,7 +7,6 @@
 ### In Progress
 
 -   [ ] Post about blog features
--   [ ] Project Holoce Volcano
 
 ### Done
 
@@ -17,4 +16,5 @@
 -   [X] Testing analytics
 -   [X] Post Nympy to LaTeX
 -   [X] favicon.ico
+-   [X] Project Holocene Volcanic Eruptions
  

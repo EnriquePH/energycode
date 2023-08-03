@@ -4,7 +4,7 @@
     "href": "TODO.html",
     "title": "energycode.org TODO.md",
     "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX"
+    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\nProject Holoce Volcano\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico"
   },
   {
     "objectID": "index.html",
@@ -144,6 +144,41 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Stock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nData Exploration\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "",
+    "text": "Volcán de Teneguía (La Palma)"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Comments",
+    "text": "Comments\nThis kaggle notebook is mentioned in the Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Links",
+    "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Data source",
+    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest."
+  },
+  {
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "Embeded Notebook",
+    "text": "Embeded Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize the data effectively."
   }
 ]

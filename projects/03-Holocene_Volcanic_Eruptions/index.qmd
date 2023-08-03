@@ -1,0 +1,44 @@
+---
+title: Volcanic Eruptions in the Holocene Period
+description: Data Exploration
+author: 'Enrique Pérez Herrero'
+date: '2023-08-03'
+image: 'dominant_rock_type.png'
+categories: 
+ - R
+ - kaggle
+ - EDA
+editor: source
+---
+
+[![Volcán de Teneguía (La Palma)](20210115_131231.jpg){fig-align="center"}](https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration)
+
+# Introduction
+
+## Data source
+
+The [Smithsonian Institution's Global Volcanism Program (GVP)](https://volcano.si.edu/) documents Earth's volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest.
+
+## Embeded Notebook
+
+This kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize the data effectively.
+
+```{=html}
+<iframe src="https://www.kaggle.com/embed/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Holocene Volcanic Eruptions: Data Exploration">
+</iframe>
+```
+## Comments
+
+This kaggle notebook is mentioned in the [Hidden Gems: A Collection of Underrated Notebooks](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks) **Volume 61 - 2021-07-06**
+
+*"A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals."*
+
+## Links
+
+-   [kaggle - Holocene Volcanic Eruptions: Data Exploration](https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498)
+
+-   [kaggle - Hidden Gems: A Collection of Underrated Notebooks](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks)
+
+-   [kaggle - Dataset: Volcanic Eruptions in the Holocene Period](https://www.kaggle.com/datasets/smithsonian/volcanic-eruptions)
+
+-   [Smithsonian Institution's Global Volcanism Program (GVP)](https://volcano.si.edu/)
