@@ -7,6 +7,7 @@
 ### In Progress
 
 -   [ ] Post about blog features
+-   [ ] Project Holoce Volcano
 
 ### Done
 
@@ -15,3 +16,5 @@
 -   [x] R package marketconf project
 -   [X] Testing analytics
 -   [X] Post Nympy to LaTeX
+-   [X] favicon.ico
+ 

@@ -19,11 +19,11 @@ about:
     - icon: envelope-at
       text: email
       href: mailto:energycode.org@gmail.com
+    - text: kaggle
+      href: https://www.kaggle.com/enrique1500
 ---
 
-
-[![](./posts/01082023-Blog-Logo/logo.png){width=40%}](www.energycode.org)
-
+[![](./posts/01082023-Blog-Logo/logo.png){width=35%}](www.energycode.org)
 
 ```{=html}
 <!-- Stackoverflow flair -->

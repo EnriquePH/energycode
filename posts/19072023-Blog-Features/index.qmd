@@ -20,9 +20,9 @@ draft: true
 
 # Branding
 
--   Find a available domain
+-   Find an available domain
 -   Design an icon
--   Design a logo
+-   Design an favicon: https://realfavicongenerator.net/
 
 # Web Page
 
