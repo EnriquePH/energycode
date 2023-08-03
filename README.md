@@ -1,18 +1,13 @@
 <!-- badges: start -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/d638f799-bbf7-4905-99e0-7696e734c879/deploy-status)](https://app.netlify.com/sites/energycodeorg/deploys)
-
+[![R-CMD-check](https://github.com/EnriquePH/energycode/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/energycode/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# Energy Code Website
-
-https://www.energycode.org/
-
-My Data Science site
-
-[![](/posts/01082023-Blog-Logo/logo.png){width="30%"}](https://www.energycode.org/)
-
-https://www.energycode.org/
+# Energy Code Website    
+https://www.energycode.org    
+My Data Science site    
+<a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=20% height=20%></a>
 
 ## Blog
 
