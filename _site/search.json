@@ -63,11 +63,11 @@
     "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest."
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#embeded-notebook",
+    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
     "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Embeded Notebook",
-    "text": "Embeded Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize the data effectively."
+    "section": "EDA (Exploratory Data Analysis) Notebook",
+    "text": "EDA (Exploratory Data Analysis) Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize and explore the data effectively."
   },
   {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
