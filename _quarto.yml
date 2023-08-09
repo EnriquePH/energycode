@@ -25,7 +25,9 @@ website:
 
 format:
   html:
-    theme: lux
+    theme:
+      light: lux
+      dark:  darkly
     css: styles.css
     toc: true
 
