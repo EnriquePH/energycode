@@ -8,7 +8,7 @@
 
 <meta name="author" content="Enrique Pérez Herrero">
 <meta name="dcterms.date" content="2023-08-03">
-<meta name="description" content="Data Exploration">
+<meta name="description" content="kaggle Data Exploration notebook">
 
 <title>Volcanic Eruptions in the Holocene Period – [energycode]</title>
 <style>
@@ -168,7 +168,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
       <div class="quarto-title-block"><div><h1 class="title">Volcanic Eruptions in the Holocene Period</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
         <div class="description">
-          Data Exploration
+          kaggle Data Exploration notebook
         </div>
       </div>
                           <div class="quarto-categories">
@@ -239,17 +239,17 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <h1>Volcanic Eruptions in the Holocene Period</h1>
 <section id="data-source" class="level2">
 <h2 class="anchored" data-anchor-id="data-source">Data source</h2>
-<p>The <a href="https://volcano.si.edu/">Smithsonian Institution’s Global Volcanism Program (GVP)</a> documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest.</p>
+<p>The <a href="https://volcano.si.edu/">Smithsonian Institution’s Global Volcanism Program (GVP)</a> documents Earth’s volcanoes and their eruptive history. The <em>Volcanoes of the World</em> database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest.</p>
 </section>
 <section id="eda-exploratory-data-analysis-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="eda-exploratory-data-analysis-notebook">EDA (Exploratory Data Analysis) Notebook</h2>
-<p>This kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize and explore the data effectively.</p>
+<p>This notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data.</p>
 <iframe src="https://www.kaggle.com/embed/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Holocene Volcanic Eruptions: Data Exploration">
 </iframe>
 </section>
 <section id="comments" class="level2">
 <h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>This kaggle notebook is mentioned in the <a href="https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks">Hidden Gems: A Collection of Underrated Notebooks</a> <strong>Volume 61 - 2021-07-06</strong></p>
+<p>This kaggle notebook is mentioned in <a href="https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks">Hidden Gems: A Collection of Underrated Notebooks</a> <strong>Volume 61 - 2021-07-06</strong></p>
 <p><em>“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”</em></p>
 </section>
 <section id="links" class="level2">
@@ -882,7 +882,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Volcanic Eruptions in the Holocene Period</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> Data Exploration</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> kaggle Data Exploration notebook</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> 'Enrique Pérez Herrero'</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> '2023-08-03'</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> 'dominant_rock_type.png'</span></span>
@@ -900,31 +900,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data source</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Smithsonian Institution's Global Volcanism Program (GVP)</span><span class="co">](https://volcano.si.edu/)</span> documents Earth's volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Smithsonian Institution's Global Volcanism Program (GVP)</span><span class="co">](https://volcano.si.edu/)</span> documents Earth’s volcanoes and their eruptive history. The _Volcanoes of the World_ database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest.</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## EDA (Exploratory Data Analysis) Notebook</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>This kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize and explore the data effectively.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>This notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="https://www.kaggle.com/embed/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Holocene Volcanic Eruptions: Data Exploration"&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/iframe&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comments</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>This kaggle notebook is mentioned in the <span class="co">[</span><span class="ot">Hidden Gems: A Collection of Underrated Notebooks</span><span class="co">](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks)</span> **Volume 61 - 2021-07-06**</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>*"A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals."*</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Holocene Volcanic Eruptions: Data Exploration</span><span class="co">](https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498)</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Hidden Gems: A Collection of Underrated Notebooks</span><span class="co">](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Dataset: Volcanic Eruptions in the Holocene Period</span><span class="co">](https://www.kaggle.com/datasets/smithsonian/volcanic-eruptions)</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Smithsonian Institution's Global Volcanism Program (GVP)</span><span class="co">](https://volcano.si.edu/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="https://www.kaggle.com/embed/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Holocene Volcanic Eruptions: Data Exploration"&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/iframe&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comments</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>This kaggle notebook is mentioned in <span class="co">[</span><span class="ot">Hidden Gems: A Collection of Underrated Notebooks</span><span class="co">](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks)</span> **Volume 61 - 2021-07-06**</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>*"A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals."*</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Holocene Volcanic Eruptions: Data Exploration</span><span class="co">](https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Hidden Gems: A Collection of Underrated Notebooks</span><span class="co">](https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">kaggle - Dataset: Volcanic Eruptions in the Holocene Period</span><span class="co">](https://www.kaggle.com/datasets/smithsonian/volcanic-eruptions)</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Smithsonian Institution's Global Volcanism Program (GVP)</span><span class="co">](https://volcano.si.edu/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

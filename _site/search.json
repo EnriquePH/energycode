@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nData Exploration\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-Numpy-LaTeX/index.html",
@@ -102,21 +102,21 @@
     "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
     "title": "Volcanic Eruptions in the Holocene Period",
     "section": "Data source",
-    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, and eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes with eruptions during the Holocene period or exhibiting current unrest."
+    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
   },
   {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
     "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
     "title": "Volcanic Eruptions in the Holocene Period",
     "section": "EDA (Exploratory Data Analysis) Notebook",
-    "text": "EDA (Exploratory Data Analysis) Notebook\nThis kernel tidies GVP data by performing some simplifications on the main variables. Additionally, it tests distinct map plotting systems in R to visualize and explore the data effectively."
+    "text": "EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
   },
   {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
     "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
     "title": "Volcanic Eruptions in the Holocene Period",
     "section": "Comments",
-    "text": "Comments\nThis kaggle notebook is mentioned in the Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+    "text": "Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
   },
   {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
