@@ -9,8 +9,13 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/18052024-Catalan-Numbers/index.html",
       "/posts/02082023-Numpy-LaTeX/index.html",
+      "/posts/01082023-Blog-Logo/index.html",
+      "/posts/19072023-Blog-Features/index.html",
+      "/posts/06122023-Depósito Cilíndrico/index.html",
       "/posts/09032022-Confusion-Matrix/index.html",
+      "/posts/05032022-Max-Determinant/docs/plot3dmaxmatrix.html",
       "/posts/05032022-Max-Determinant/index.html"
     ]
   }
