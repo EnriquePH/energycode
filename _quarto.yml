@@ -1,5 +1,9 @@
 project:
   type: website
+  output-dir: _site
+  preview:
+    port: 4444
+    browser: true
 
 website:
   title: "[energycode]"

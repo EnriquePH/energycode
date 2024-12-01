@@ -16,7 +16,7 @@ AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
 PythonType: system
-PythonVersion: 3.10.6
-PythonPath: /usr/bin/python3.10
+PythonVersion: 3.12.3
+PythonPath: /usr/bin/python3.12
 
 SpellingDictionary: en_US
