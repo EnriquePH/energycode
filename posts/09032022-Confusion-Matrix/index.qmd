@@ -1,6 +1,6 @@
 ---
 title: Confusion Matrix in R
-description: Plotting the Confusion Matrix with ggplot and R
+description: Plotting the Confusion Matrix with ggplot in R
 author: 'Enrique Pérez Herrero'
 date: '2022-03-09'
 image: conf_matrix.png
@@ -14,13 +14,11 @@ draft: false
 
 # Confusion Matrix
 
-The confusion matrix allows visualization of the performance of a classification
-algorithm.
-
-In this blog post, a function is shown to create an image of the confusion
+The confusion matrix allows for the visualization of a classification
+algorithm's performance.
+In this blog post, a function is provided to create an image of the confusion
 matrix.
-
-The R package `caret` includes the `confusionMatrix` function, which provides a
+The R package `caret` includes the `confusionMatrix` function, which generates a
 comprehensive output.
 
 ```{r}
@@ -38,7 +36,7 @@ library(caret)
 
 We will perform a [Naive Bayes
 classification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) on the
-classical iris data set.
+classical Iris dataset.
 
 ```{r}
 #| label: classification

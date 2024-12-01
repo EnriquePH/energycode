@@ -1,6 +1,6 @@
 ---
-title: Convert Numpy array to LaTeX
-description: LaTeX matrices and determinants from numpy arrays
+title: Convert a Numpy array to LaTeX
+description: LaTeX matrices and determinants from NumPy arrays
 author: 'Enrique Pérez Herrero'
 date: '08-02-2023'
 editor: source
@@ -18,17 +18,21 @@ categories:
 
 Sometimes, when you are writing a statistics or a math article, you must go
 through a tedious process of typing and testing numerous lines of text until
-your $LaTeX$ code works. This can be especially boring when dealing with long
-matrices. If you want to improve your productivity, automating this process
-comes in very handy, and Python is particularly useful for that.
+your $LaTeX$ code works.
+Sometimes, when you are writing a statistics or a math article, you must go
+through a tedious process of typing and testing numerous lines of text until
+your  code works. This can be especially boring when dealing with long matrices.
+If you want to improve your productivity, automating this process comes in very
+handy, and [Python](https://www.python.org/) is particularly useful for that.
 
 
 ## Functions for matrices and determinants
 
-The functions `matrix2latex` and `det2latex` return an indented $LaTeX$ string
-that can be copied or rendered in your math article.
+The functions `matrix2latex` and `det2latex` generate an indented $LaTeX$ string
+that can be copied or directly rendered in your math article.
 
-The parameter `INDENT_SPACES` controls the number of indentation spaces.
+The  `INDENT_SPACES` parameter specifies the number of spaces used for
+indentation.
 
 ```{python}
 #| label: latex_functions
@@ -38,13 +42,13 @@ INDENT_SPACES = 3
 
 def indent(num_indent=1):
     """
-    Number of indentation spaces
+    Number of spaces for indentation
     """
     return num_indent * INDENT_SPACES * " "
 
 def matrix2latex(matrix):
     """
-    Convert numpy array to latex code as a matrix
+    Convert a numpy array to LaTeX code as a matrix
     """
     left_latex = r"\left(" + "\n" + indent(1) + r"\begin{array}"
     right_latex = indent(1) + r"\end{array}" + "\n" + r"\right)"
@@ -60,7 +64,7 @@ def matrix2latex(matrix):
 
 def det2latex(matrix):
     """
-    Convert numpy array to latex code as a determinant
+    Convert a Numpy array to LaTeX code as a determinant
     """
     left_latex = r"\begin{vmatrix}" + "\n"
     right_latex = r"\end{vmatrix}"
@@ -76,27 +80,29 @@ def det2latex(matrix):
 
 ### Output string
 
-With the NumPy function `np.eye`, we can create an identity matrix of the
-desired dimensions, and this seems to be a good way to test our functions.
+Using the [NumPy](https://numpy.org/) function `np.eye`, we can create an
+identity matrix of the desired dimensions, making it a convenient tool for
+testing our functions.
 
 ```{python}
 print(matrix2latex(np.eye(3, dtype=int)))
 ```
 
-## Rendering the output in a document
+## Rendering output in a document
 
-If you are working within a [Jupyter](https://jupyter.org/) notebook you can
-render a latex string with the aid of the `Math` function included in the
-`IPython` library, which can be imported with:
+If you are working in a [Jupyter](https://jupyter.org/) notebook, you can render
+a $LaTeX$ string using the `Math` function from the `IPython` library, which can
+be imported as follows:
 
 ```{python}
 #| eval: false
 from IPython.display import Math
 ```
 
-But if you are coding a `Python` chunk in a `Quarto` file on RStudio, you need
-to add the option `#| output: asis` at the top of the code chunk. This option
-controls how the output is rendered in the final document.
+If you are writing a `Python` chunk in a `Quarto` file in
+[RStudio](https://posit.co/download/rstudio-desktop/), you need to include the
+option `#| output: asis` at the top of the code chunk. This option determines
+how the output is rendered in the final document.
 
 ```{python}
 #| label: identity_det
@@ -113,10 +119,10 @@ identity_4_latex = r"$$I_4 = " + f"{matrix2latex(identity_4)}"[2:]
 print(identity_4_latex)
 ```
 
-## Rendering the output in a file
+## Rendering the output to a file
 
-The $LaTeX$ string can be rendered and saved into a file with the aid of the
-following function, based on the library `sympy`.
+The $LaTeX$ string can be rendered and saved to a file using the
+following function, which is based on the `SymPy` library.
 
 ```{python}
 #| eval: false
@@ -124,7 +130,7 @@ from sympy import preview
 
 def latex2png(latex, filename, fontsize=300):
     """
-    Render latex code to png image
+    Render LaTeX code to a PNG image
     """
     return preview(latex,
                    viewer='file',
@@ -134,14 +140,14 @@ def latex2png(latex, filename, fontsize=300):
 ```
 
 
-## Other automated matrices
+## Other types of automated matrices
 
 ### Matrices with numbered elements
 
 ```{python}
 def element_matrix(n, notation=r"x"):
     """
-    Matrix with algebraic notation elements 
+    Matrix with elements in algebraic notation 
     """
     vec_function = \
       np.vectorize(lambda i, j: notation + "_{" + f"{i + 1}{j + 1}" + "}")
@@ -159,27 +165,27 @@ print(matrix2latex(element_matrix(5, notation=r"\theta")))
 
 ### Triangular matrices
 
-* Upper Triangular Matrix: In an upper triangular matrix, all elements below the
-main diagonal (elements that lie on or below the main diagonal) are zeros.
+* _Upper Triangular Matrix_: In an upper triangular matrix, all elements below the
+main diagonal are zero.
 
-* Lower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros
+
 
 ```{python}
 def up_triangular_matrix(n):
     """
-    Upper Triangular matrix filled with ones and zeroes
+    Upper Triangular matrix filled with ones and zeros
     """
     return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),
                            shape=(n, n),
                            dtype=int)
 ```
 
-* Lower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal (elements that lie on or above the main diagonal) are zeros
+* _Lower Triangular Matrix_: In a lower triangular matrix, all elements above the main diagonal are zero.
 
 ```{python}
 def lw_triangular_matrix(n):
     """
-    Lower Triangular matrix filled with ones and zeroes
+    Lower Triangular matrix filled with ones and zeros
     """
     return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),
                            shape=(n, n),

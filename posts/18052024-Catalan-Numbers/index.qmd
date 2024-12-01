@@ -1,0 +1,64 @@
+---
+title: A004782(n) = A014847(n) + 1
+description: Relación entre dos secuencias de enteros relacionadas con los números de Catalan
+author: 'Enrique Pérez Herrero'
+date: '2024-05-18'
+#image: conf_matrix.png
+categories:
+  - math
+  - blog
+  - Catalan's numbers
+  - binomial
+editor: source
+draft: true
+---
+
+La secuencia de números enteros, [A004782](https://oeis.org/A004782), está compuesta por los números $n$ que cumplen:
+
+$$
+n \in \{A004782\} \Leftrightarrow \frac{2  (2n-3)!}{n! (n-1)!} \in \mathbb{N}
+$${#eq-cat001}
+
+Esta secuencia está estrechamente relacionada con la secuencia [A014847](https://oeis.org/A014847), formada por los números $n$ dónde el enésimo número de Catalan $C_{n}$ es divisible por $n$
+
+$$
+n \in \{A014847\} \Leftrightarrow n \vert C_{n}
+$${#eq-cat002}
+
+Los [números de Catalan](https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan) están definidos por la expresión:
+$$
+C_{n} = \frac{1}{(n+1)}\binom{2n}{n}
+$${#eq-cat003}
+
+### Teorema
+
+$$
+A004782(n) = A014847(n) + 1
+$${#eq-cat004}
+
+### Demostración
+
+Partiendo de las funciones $f(n)$ y $g(n)$:
+
+$$
+f(n) =  \frac{2 (2n-3)!}{n! (n-1)!}
+$${#eq-cat005}
+
+$$
+g(n) = \frac{C_{n}}{n} = \binom{2n}{n}  \frac{1}{(n+1) n}
+$${#eq-cat006}
+
+Se puede comprobar como $f(n+1)$ es igual a $g(n)$ ya que:
+
+$$
+f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2}  \\ = \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
+$${#eq-cat007}
+
+Por lo tanto:
+
+$$f(n+1) \in \mathbb{N} \Longleftrightarrow g(n) \in \mathbb{N} \Longleftrightarrow n+1 \in \{A004782\} \Longleftrightarrow n \in \{A014847\}$${#eq-cat008}
+
+
+
+
+

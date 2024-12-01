@@ -1,0 +1,34 @@
+---
+title: Depósito Cilíndrico
+description: 'Depósito con Superficie Mínima'
+editor: source
+author: 'Enrique Pérez Herrero'
+date: '2023-07-31'
+categories:
+  - blog
+  - quarto
+  - ingeniería
+
+image: ''
+draft: true
+lang: es
+---
+
+## Enunciado del Problema
+
+¿Qué relación entre en diámetro y la altura debe tener un depósito de un volumen
+dado para que su superficie sea mínima?
+
+Para 
+
+## Fórmula para la superficie de un cilindro. 
+
+
+* $D$: Diámetro
+* $h$: Altura
+* $S$: Superficie
+* $V$: Volumen
+* $x = \frac{h}{D}$
+* $\tau$: depósito con tapa o sin tapa
+
+

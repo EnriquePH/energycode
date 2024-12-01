@@ -1,6 +1,6 @@
 ---
 title: Max Determinant
-description: Determinants of special square matrices with elements being the maximum or minimum between the indices of the elements.
+description: Determinants of special square matrices with elements defined as the Maximum or Minimum of the Indices.
 author: 'Enrique Pérez Herrero'
 date: '2022-03-05'
 image: plot3dmaxmatrix.png
@@ -20,8 +20,8 @@ nocite: |
 ## Identity
 
 The sequence [A181983](https://oeis.org/A181983)(n) gives the determinants of
-the square matrices: $M_{n}$, with elements $m_{i,j}= \max(i,j)$, where $\max$
-the is the maximum function.
+the square matrices: $M_{n}$, where the elements $m_{i,j}= \max(i,j)$ and
+$\max$ denotes the maximum function.
 
 This identity appears as follows:
 
@@ -33,7 +33,7 @@ det{\bigg[ max(i,j) \bigg] }_{1\leq i,j \leq n} = -n \cdot {(-1)}^{n} = A181983(
 
 A new matrix with the same determinant can be created by subtracting row $i$
 from row $i+1$ starting from the 2nd row. The determinant of this new matrix can
-then be computed easily using the expansion by minors technique at element
+then be easily computed using the expansion by minors technique at element
 $m_{1,n}$
 
 This can be better illustrated with an example:
@@ -71,7 +71,7 @@ M^{*}_{10} =\left(\begin{array}{cccccccccc}
 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \end{array} \right)
 \end{equation}
 
-This proof can be generalized to a very similar kind of matrices, resulting in:
+This proof can be generalized to a very similar type of matrices, resulting in:
 
 \begin{equation}
 det{\bigg[ max(i,j)^k \bigg]}_{1\leq i,j \leq n} = {(-1)}^{n-1} \cdot n^{k} \cdot \prod_{s=1}^{n-1}{(s+1)^k-s^k}
