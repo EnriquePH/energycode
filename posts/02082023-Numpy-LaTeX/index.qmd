@@ -1,5 +1,5 @@
 ---
-title: Convert a Numpy array to LaTeX
+title: Convert a NumPy array to LaTeX
 description: LaTeX matrices and determinants from NumPy arrays
 author: 'Enrique Pérez Herrero'
 date: '08-02-2023'
@@ -45,7 +45,7 @@ def indent(num_indent=1):
 
 def matrix2latex(matrix):
     """
-    Convert a numpy array to LaTeX code as a matrix
+    Convert a NumPy array to LaTeX code as a matrix
     """
     left_latex = r"\left(" + "\n" + indent(1) + r"\begin{array}"
     right_latex = indent(1) + r"\end{array}" + "\n" + r"\right)"
@@ -61,7 +61,7 @@ def matrix2latex(matrix):
 
 def det2latex(matrix):
     """
-    Convert a Numpy array to LaTeX code as a determinant
+    Convert a NumPy array to LaTeX code as a determinant
     """
     left_latex = r"\begin{vmatrix}" + "\n"
     right_latex = r"\end{vmatrix}"

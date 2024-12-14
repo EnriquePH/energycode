@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-08-02">
 <meta name="description" content="LaTeX matrices and determinants from NumPy arrays">
 
-<title>Convert a Numpy array to LaTeX – [energycode]</title>
+<title>Convert a NumPy array to LaTeX – [energycode]</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -194,7 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">Convert a Numpy array to LaTeX</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">Convert a NumPy array to LaTeX</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                   <div>
         <div class="description">
           LaTeX matrices and determinants from NumPy arrays
@@ -269,7 +269,7 @@ window.Quarto = {
 </div>
 <section id="convert-numpy-array-to-latex" class="level1">
 <h1>Convert Numpy array to <span class="math inline">\(LaTeX\)</span></h1>
-<p>Sometimes, when you are writing a statistics or a math article, you must go through a tedious process of typing and testing numerous lines of text until your <span class="math inline">\(LaTeX\)</span> code works. Sometimes, when you are writing a statistics or a math article, you must go through a tedious process of typing and testing numerous lines of text until your code works. This can be especially boring when dealing with long matrices. If you want to improve your productivity, automating this process comes in very handy, and <a href="https://www.python.org/">Python</a> is particularly useful for that.</p>
+<p>Sometimes, when you are writing a statistics or a math article, you must go through a tedious process of typing and testing numerous lines of text until your code works. This can be especially boring when dealing with long matrices. If you want to improve your productivity, automating this process comes in very handy, and <a href="https://www.python.org/">Python</a> is particularly useful for that.</p>
 <section id="functions-for-matrices-and-determinants" class="level2">
 <h2 class="anchored" data-anchor-id="functions-for-matrices-and-determinants">Functions for matrices and determinants</h2>
 <p>The functions <code>matrix2latex</code> and <code>det2latex</code> generate an indented <span class="math inline">\(LaTeX\)</span> string that can be copied or directly rendered in your math article.</p>
@@ -289,7 +289,7 @@ window.Quarto = {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matrix2latex(matrix):</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a numpy array to LaTeX code as a matrix</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a NumPy array to LaTeX code as a matrix</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    left_latex <span class="op">=</span> <span class="vs">r"\left("</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> indent(<span class="dv">1</span>) <span class="op">+</span> <span class="vs">r"\begin</span><span class="sc">{array}</span><span class="vs">"</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    right_latex <span class="op">=</span> indent(<span class="dv">1</span>) <span class="op">+</span> <span class="vs">r"\end</span><span class="sc">{array}</span><span class="vs">"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="vs">r"\right)"</span></span>
@@ -305,7 +305,7 @@ window.Quarto = {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> det2latex(matrix):</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a Numpy array to LaTeX code as a determinant</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a NumPy array to LaTeX code as a determinant</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    left_latex <span class="op">=</span> <span class="vs">r"\begin</span><span class="sc">{vmatrix}</span><span class="vs">"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    right_latex <span class="op">=</span> <span class="vs">r"\end</span><span class="sc">{vmatrix}</span><span class="vs">"</span></span>
@@ -322,7 +322,7 @@ window.Quarto = {
 <section id="output-string" class="level3">
 <h3 class="anchored" data-anchor-id="output-string">Output string</h3>
 <p>Using the <a href="https://numpy.org/">NumPy</a> function <code>np.eye</code>, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.</p>
-<div id="26c887fa" class="cell" data-execution_count="2">
+<div id="5375725c" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix2latex(np.eye(<span class="dv">3</span>, dtype<span class="op">=</span><span class="bu">int</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -344,7 +344,7 @@ $$</code></pre>
 <section id="rendering-output-in-a-document" class="level2">
 <h2 class="anchored" data-anchor-id="rendering-output-in-a-document">Rendering output in a document</h2>
 <p>If you are working in a <a href="https://jupyter.org/">Jupyter</a> notebook, you can render a <span class="math inline">\(LaTeX\)</span> string using the <code>Math</code> function from the <code>IPython</code> library, which can be imported as follows:</p>
-<div id="c4a8aad3" class="cell" data-execution_count="3">
+<div id="703f6382" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Math</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -387,7 +387,7 @@ $$</code></pre>
 <section id="rendering-the-output-to-a-file" class="level2">
 <h2 class="anchored" data-anchor-id="rendering-the-output-to-a-file">Rendering the output to a file</h2>
 <p>The <span class="math inline">\(LaTeX\)</span> string can be rendered and saved to a file using the following function, which is based on the <code>SymPy</code> library.</p>
-<div id="7dce88e6" class="cell" data-execution_count="6">
+<div id="e4070aed" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> preview</span>
@@ -408,7 +408,7 @@ $$</code></pre>
 <h2 class="anchored" data-anchor-id="other-types-of-automated-matrices">Other types of automated matrices</h2>
 <section id="matrices-with-numbered-elements" class="level3">
 <h3 class="anchored" data-anchor-id="matrices-with-numbered-elements">Matrices with numbered elements</h3>
-<div id="db884482" class="cell" data-execution_count="7">
+<div id="d947b8ce" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> element_matrix(n, notation<span class="op">=</span><span class="vs">r"x"</span>):</span>
@@ -445,7 +445,7 @@ $$</code></pre>
 <ul>
 <li><em>Upper Triangular Matrix</em>: In an upper triangular matrix, all elements below the main diagonal are zero.</li>
 </ul>
-<div id="f6d1337c" class="cell" data-execution_count="9">
+<div id="30e397e1" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> up_triangular_matrix(n):</span>
@@ -460,7 +460,7 @@ $$</code></pre>
 <ul>
 <li><em>Lower Triangular Matrix</em>: In a lower triangular matrix, all elements above the main diagonal are zero.</li>
 </ul>
-<div id="aaba79fe" class="cell" data-execution_count="10">
+<div id="1d8d1b0f" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lw_triangular_matrix(n):</span>
@@ -1111,7 +1111,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Convert a Numpy array to LaTeX</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Convert a NumPy array to LaTeX</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> LaTeX matrices and determinants from NumPy arrays</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> 'Enrique Pérez Herrero'</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> '08-02-2023'</span></span>
@@ -1157,7 +1157,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> matrix2latex(matrix):</span>
 <span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a numpy array to LaTeX code as a matrix</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a NumPy array to LaTeX code as a matrix</span></span>
 <span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>    left_latex <span class="op">=</span> <span class="vs">r"\left("</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> indent(<span class="dv">1</span>) <span class="op">+</span> <span class="vs">r"\begin</span><span class="sc">{array}</span><span class="vs">"</span></span>
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    right_latex <span class="op">=</span> indent(<span class="dv">1</span>) <span class="op">+</span> <span class="vs">r"\end</span><span class="sc">{array}</span><span class="vs">"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="vs">r"\right)"</span></span>
@@ -1173,7 +1173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> det2latex(matrix):</span>
 <span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a Numpy array to LaTeX code as a determinant</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert a NumPy array to LaTeX code as a determinant</span></span>
 <span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>    left_latex <span class="op">=</span> <span class="vs">r"\begin</span><span class="sc">{vmatrix}</span><span class="vs">"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
 <span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>    right_latex <span class="op">=</span> <span class="vs">r"\end</span><span class="sc">{vmatrix}</span><span class="vs">"</span></span>
