@@ -18,9 +18,6 @@ categories:
 
 Sometimes, when you are writing a statistics or a math article, you must go
 through a tedious process of typing and testing numerous lines of text until
-your $LaTeX$ code works.
-Sometimes, when you are writing a statistics or a math article, you must go
-through a tedious process of typing and testing numerous lines of text until
 your  code works. This can be especially boring when dealing with long matrices.
 If you want to improve your productivity, automating this process comes in very
 handy, and [Python](https://www.python.org/) is particularly useful for that.
