@@ -1,0 +1,101 @@
+---
+title: "Sumas parciales de los inversos de los repunits"
+description: Propiedades de las sumas parciales de la serie suma de los inversos de los primeros repunits
+author: 'Enrique Pérez Herrero'
+date: '2025-12-13'
+categories:
+  - math
+editor: source
+draft: true
+---
+
+
+
+```{python}
+from fractions import Fraction
+
+def repunit(n):
+    return int("1" * n)
+
+def sumas_repunit(n):
+    """
+    Devuelve la lista [A1, A2, ..., An],
+    donde S_n = sum_{k=1}^n 1/R_k en forma irreducible.
+    """
+    S = Fraction(0, 1)
+    A = []
+    B = []
+
+    for N in range(1, n + 1):
+        S += Fraction(1, repunit(N))
+        A.append(S.numerator)
+        B.append(S.denominator)
+    return A, B
+
+# Ejemplo
+n = 10
+A, B =sumas_repunit(n)
+print(A)
+print(B)
+```
+
+
+
+### Teorema de crecimiento de los numeradores de las sumas parciales de los inversos de los **repunits**
+
+Si $R_n$ es el entero positivo formado por $n$ cifras iguales a $1$ en base
+$10$, denominado **repunit**, entonces la sucesión de sumas parciales los
+inversos es:
+
+$$S_n = \sum_{k=1}^n \frac{1}{R_k}$$
+
+Si cada suma parcial se escribe en forma irreducible como
+
+$$S_n = \frac{A_n}{B_n}, \qquad A_n, B_n \in \mathbb{N}, \qquad
+\gcd(A_n,B_n)=1$$
+
+Entonces, la sucesión de numeradores $\(A_{n}\)_{n\ge 1}$ es estrictamente
+creciente; es decir, probar que
+
+$$
+A_{n+1} > A_n \quad \text{para todo } n \ge 1.
+$$
+
+
+## Enunciado
+
+Sea $R_n$ el *repunit* de longitud $n$,
+$$R_n=\underbrace{11\ldots1}_{n\text{ unos}}$$
+y sea
+$$S_n=\sum_{k=1}^{n}{\frac{1}{R_k}}$$
+Si escribimos $S_n=\dfrac{A_n}{B_n}$ en forma irreducible, demostrar que
+$$A_{n+1} \gt A_n$$
+
+## Demostración
+
+Partimos de la relación
+$$S_{n+1}=S_n+\frac{1}{R_{n+1}}$$
+Si $S_n=\dfrac{A_n}{B_n}$, entonces
+$$S_{n+1}=\frac{A_n}{B_n}+\frac{1}{R_{n+1}}
+=\frac{A_{n} \cdot R_{n+1}+B_n}{B_{n} \cdot R_{n+1}}$$
+
+Sea
+$$g=\gcd(B_{n},R_{n+1})$$
+Al reducir la fracción, el numerador de $S_{n+1}$ es
+$$A_{n+1}=\frac{A_{n} \cdot R_{n+1}+B_n}{g}$$
+
+Consideremos la diferencia
+$$A_{n+1}-A_{n}
+= A_n\left(\frac{R_{n+1}}{g}-1\right)+\frac{B_n}{g}$$
+
+Observamos que $\dfrac{B_n}{g}\ge 1$. Además, para $n\ge 1$, el repunit $R_{n+1}$ posee al menos un divisor primo que no divide a ninguno de los repunits $R_k$ con $k\le n$ (hecho estándar sobre repunits, consecuencia del teorema de Bang-Zsigmondy). En particular,
+$$\gcd(B_n,R_{n+1})<R_{n+1}$$, y por tanto
+$$
+\frac{R_{n+1}}{g}\ge 2
+$$
+
+De aquí se deduce que
+$$A_{n+1}-A_{n} \ge A_n+1>0$$
+
+Por consiguiente,
+$$A_{n+1} \gt A_ {n}$$

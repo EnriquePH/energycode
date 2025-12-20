@@ -1,0 +1,193 @@
+---
+title: "Análisis de Matrices Escalonadas: Potencias, Determinantes y Normas"
+draft: true
+---
+
+# Resumen
+
+Este artículo analiza cuatro matrices cuadradas de dimensión $n \times n$ con estructuras específicas sobre o bajo la diagonal principal y la diagonal secundaria. Se estudia su comportamiento al elevarlas a una potencia $k$, sus determinantes y varias normas matriciales. Se incluyen ejemplos concretos y aplicaciones en matemáticas y física.
+
+# Definición de las matrices
+
+Dado un entero $n \geq 1$, se definen las siguientes matrices:
+
+- **Matriz A** (triangular superior con unos):
+$$
+A_{i,j} = \begin{cases}
+    1 & \text{si } i \leq j \\
+    0 & \text{si } i > j
+\end{cases}
+$$
+
+- **Matriz B** (triangular inferior con unos):
+$$
+B_{i,j} = \begin{cases}
+    1 & \text{si } i \geq j \\
+    0 & \text{si } i < j
+\end{cases}
+$$
+
+- **Matriz C** (diagonal secundaria y superiores con unos):
+$$
+C_{i,j} = \begin{cases}
+    1 & \text{si } i + j \leq n + 1 \\
+    0 & \text{si } i + j > n + 1
+\end{cases}
+$$
+
+- **Matriz D** (diagonal secundaria e inferiores con unos):
+$$
+D_{i,j} = \begin{cases}
+    1 & \text{si } i + j \geq n + 1 \\
+    0 & \text{si } i + j < n + 1
+\end{cases}
+$$
+
+# Potencias de las matrices $M^k$
+
+## Matriz A
+
+$A$ es una matriz unipotente triangular superior. Sus potencias están dadas por:
+$$
+A^k = \sum_{m=0}^{k} \binom{k}{m} N^m, \quad \text{donde } N = A - I
+$$
+con entradas explícitas:
+$$
+(A^k)_{i,j} = \binom{k}{j - i}, \quad \text{si } j \geq i
+$$
+
+## Matriz B
+
+Análogamente para $B$ (triangular inferior):
+$$
+(B^k)_{i,j} = \binom{k}{i - j}, \quad \text{si } i \geq j
+$$
+
+## Matrices C y D
+
+Se relacionan con $A$ y $B$ mediante reflexión respecto a la diagonal secundaria:
+$$
+C = JAJ, \quad D = JBJ \quad \Rightarrow \quad C^k = JA^kJ, \quad D^k = JB^kJ
+$$
+donde $J$ es la matriz antidiagonal unitaria ($J_{i,j} = \delta_{i,n-j+1}$).
+
+# Determinantes de $M^k$
+
+- Para $A$ y $B$:
+$$
+\det(A^k) = \det(B^k) = 1 \quad (\text{matrices triangulares con diagonal unitaria})
+$$
+
+- Para $C$ y $D$:
+$$
+\det(C^k) = \det(D^k) = 0 \quad (\text{para } n \geq 2, \text{poseen filas/columnas linealmente dependientes})
+$$
+
+# Normas Matriciales de $M^k$
+
+Se analizan tres normas clave:
+
+1. **Norma 1** (máxima suma por columnas):
+$$
+\|M^k\|_1 = \max_{1 \leq j \leq n} \sum_{i=1}^n |(M^k)_{i,j}|
+$$
+
+2. **Norma $\infty$** (máxima suma por filas):
+$$
+\|M^k\|_\infty = \max_{1 \leq i \leq n} \sum_{j=1}^n |(M^k)_{i,j}|
+$$
+
+3. **Norma de Frobenius**:
+$$
+\|M^k\|_F = \sqrt{ \sum_{i,j=1}^n (M^k)_{i,j}^2 }
+$$
+
+**Resultados específicos:**
+
+- Para $A^k$ y $B^k$:
+$$
+\|A^k\|_1 = \|B^k\|_\infty = \sum_{m=0}^{\min(k, n-1)} \binom{k}{m}
+$$
+$$
+\|A^k\|_F^2 = \sum_{i=1}^n \sum_{j=i}^n \binom{k}{j-i}^2
+$$
+
+- Las matrices $C^k$ y $D^k$ heredan las normas de $A^k$ y $B^k$ respectivamente, por simetría de reflexión.
+
+# Ejemplos con $n = 5$
+
+## Matriz A
+$$
+A = \begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+
+## Matriz B
+$$
+B = \begin{pmatrix}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{pmatrix}
+$$
+
+## Matriz C
+$$
+C = \begin{pmatrix}
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+\end{pmatrix}
+$$
+
+## Matriz D
+$$
+D = \begin{pmatrix}
+0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{pmatrix}
+$$
+
+# Aplicaciones
+
+1. **Álgebra lineal computacional**: 
+   - Resolución eficiente de sistemas triangulares por sustitución hacia adelante/atrás [1].
+   
+2. **Modelos temporales**: 
+   - Matrices $A$ y $B$ modelan procesos acumulativos en series temporales [2].
+
+3. **Teoría de grafos**: 
+   - $C$ y $D$ representan conectividad en grafos dirigidos jerárquicos [3].
+
+4. **Física computacional**: 
+   - Discretización de operadores diferenciales unidireccionales [4].
+
+5. **Criptografía**: 
+   - Estructuras triangulares en algoritmos de cifrado por bloques [1].
+
+# Conclusión
+
+Las matrices con estructuras triangulares o antitriangulares exhiben propiedades algebraicas y combinatorias notables. Sus potencias revelan patrones vinculados a coeficientes binomiales, mientras que sus normas capturan crecimiento escalable. Las aplicaciones abarcan desde métodos numéricos hasta modelado de sistemas complejos, destacando su relevancia interdisciplinaria.
+
+# Referencias
+
+1. Golub, G. H., & Van Loan, C. F. (2013). *Matrix Computations* (4th ed.). [Johns Hopkins University Press](https://www.press.jhu.edu/books/title/10678/matrix-computations)
+
+2. Meyer, C. D. (2000). *Matrix Analysis and Applied Linear Algebra*. [SIAM](https://epubs.siam.org/doi/book/10.1137/1.9781611977448)
+
+3. Brualdi, R. A., & Ryser, H. J. (1991). *Combinatorial Matrix Theory*. [Cambridge University Press](https://link.springer.com/book/10.1007/978-3-319-70953-6)
+
+4. Strang, G. (2007). *Computational Science and Engineering*. Wellesley-Cambridge Press. [Enlace](https://math.mit.edu/~gs/cse/)
+

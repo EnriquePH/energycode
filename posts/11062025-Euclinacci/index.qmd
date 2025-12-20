@@ -1,0 +1,144 @@
+---
+title: "Euclinacci: Fibonacci y el Algoritmo de Euclides"
+author: "Tu Nombre"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-fold: false
+draft: true
+---
+
+# Introducción
+
+Quizá la lección más simple y profunda que alguien puede recibir es esta:
+
+$$
+1 + 1 = 2
+$$
+
+Las implicaciones de esta expresión pueden llenar bibliotecas enteras. Una de ellas es la **sucesión de Fibonacci**:
+
+$$
+\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots\}
+$$
+
+Esta secuencia se define recursivamente como:
+
+$$
+f_n = 
+\begin{cases}
+f_0 = 0 \\
+f_1 = 1 \\
+f_n = f_{n-1} + f_{n-2}, & \text{para } n \ge 2
+\end{cases}
+$$
+
+# Propiedades Observadas
+
+Al estudiar la razón entre términos consecutivos, surgen dos propiedades interesantes:
+
+1. Esta razón tiende a un **límite finito**.
+2. Dos números consecutivos de Fibonacci son **primos relativos**.
+
+## Tabla de Razones
+
+| \( n \) | \( f_n \) | \( f_n / f_{n-1} \) |
+|--------:|----------:|--------------------:|
+| 0       | 0         | -                   |
+| 1       | 1         | -                   |
+| 2       | 1         | 1.0000              |
+| 3       | 2         | 2.0000              |
+| 4       | 3         | 1.5000              |
+| 5       | 5         | 1.6667              |
+| 6       | 8         | 1.6000              |
+| 7       | 13        | 1.6250              |
+| 8       | 21        | 1.6154              |
+| 9       | 34        | 1.6190              |
+| 10      | 55        | 1.6176              |
+| 11      | 89        | 1.6182              |
+| 12      | 144       | 1.6180              |
+| 13      | 233       | 1.6181              |
+| 14      | 377       | 1.6180              |
+| 15      | 610       | 1.6180              |
+| 16      | 987       | 1.6180              |
+
+## Límite: La Razón Áurea
+
+Sea:
+
+$$
+I = \lim_{n \to \infty} \frac{f_n}{f_{n-1}}
+$$
+
+Entonces:
+
+$$
+I = 1 + \frac{1}{I}
+\Rightarrow I^2 = I + 1
+\Rightarrow I = \frac{1 + \sqrt{5}}{2} = \Phi
+$$
+
+Este número es conocido como la **razón áurea**.
+
+# Números Consecutivos y el MCD
+
+La segunda propiedad se puede probar usando el **Algoritmo de Euclides**, 
+una técnica claśica para hallar el máximo común divisor (MCD) entre dos enteros.
+
+## Definición del Algoritmo de Euclides
+
+Dados \( a \) y \( b \), el algoritmo genera la secuencia:
+
+$$
+(a, b) = (r_0, r_1) = (r_1, r_2) = \cdots = (r_{n-1}, r_n)
+$$
+
+donde:
+
+$$
+\begin{cases}
+r_0 = a \\
+r_1 = b \\
+r_{i+1} = r_{i-1} - r_i \cdot \left\lfloor \dfrac{r_{i-1}}{r_i} \right\rfloor
+\end{cases}
+$$
+
+Cuando \( r_{i+1} = 0 \), entonces \( \gcd(a, b) = r_i \).
+
+## Aplicación a Fibonacci
+
+Sea:
+
+$$
+(f_n, f_{n-1}) = (r_0, r_1)
+$$
+
+Entonces:
+
+$$
+\begin{aligned}
+r_2 &= f_n - f_{n-1} \cdot \left\lfloor \dfrac{f_n}{f_{n-1}} \right\rfloor \\
+&= f_n - f_{n-1} \cdot \left\lfloor 1 + \dfrac{f_{n-2}}{f_{n-1}} \right\rfloor \\
+&= f_n - f_{n-1} \cdot (1 + 0) = f_{n-2}
+\end{aligned}
+$$
+
+Repitiendo el proceso, obtenemos:
+
+$$
+(f_n, f_{n-1}) = (f_{n-1}, f_{n-2}) = \cdots = (2, 1) = 1
+$$
+
+Por lo tanto, dos números de Fibonacci consecutivos siempre son **primos relativos**.
+
+# Conclusión
+
+La sucesión de Fibonacci no sólo genera una proporción con propiedades estéticas, sino que también estructura una red de relaciones aritméticas profundas, como la coprimalidad entre términos consecutivos. El uso del Algoritmo de Euclides demuestra que las matemáticas más antiguas siguen revelando verdades fundamentales hoy.
+
+# Referencias
+
+1. LeVeque, W. J. *Fundamentals of Number Theory*. Courier Dover Publications, 1996. ISBN: 0486689069  
+2. Math Forum @ Drexel. *Consecutive Fibonacci Numbers Relatively Prime*.  
+3. Weisstein, E. W. *Floor Function*. From [MathWorld](http://mathworld.wolfram.com/FloorFunction.html)

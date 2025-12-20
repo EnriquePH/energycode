@@ -1,0 +1,391 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Análisis de Matrices Escalonadas: Potencias, Determinantes y Normas},
+  pdfauthor={Inteligencia Artificial Asistida},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Análisis de Matrices Escalonadas: Potencias, Determinantes y
+Normas}
+\author{Inteligencia Artificial Asistida}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Resumen}\label{resumen}
+
+Este artículo analiza cuatro matrices cuadradas de dimensión
+\(n \times n\) con estructuras específicas sobre o bajo la diagonal
+principal y la diagonal secundaria. Se estudia su comportamiento al
+elevarlas a una potencia \(k\), sus determinantes y varias normas
+matriciales. Se incluyen ejemplos concretos y aplicaciones en
+matemáticas y física.
+
+\section{Definición de las
+matrices}\label{definiciuxf3n-de-las-matrices}
+
+Dado un entero \(n \geq 1\), se definen las siguientes matrices:
+
+\begin{itemize}
+\item
+  \textbf{Matriz A} (triangular superior con unos): {[} A\_\{i,j\} =
+
+  \begin{cases}
+      1 & \text{si } i \le j \\
+      0 & \text{si } i > j
+  \end{cases}
+
+  {]}
+\item
+  \textbf{Matriz B} (triangular inferior con unos): {[} B\_\{i,j\} =
+
+  \begin{cases}
+      1 & \text{si } i \ge j \\
+      0 & \text{si } i < j
+  \end{cases}
+
+  {]}
+\item
+  \textbf{Matriz C} (diagonal secundaria y superiores con unos): {[}
+  C\_\{i,j\} =
+
+  \begin{cases}
+      1 & \text{si } i + j \le n - 1 \\
+      0 & \text{si } i + j > n - 1
+  \end{cases}
+
+  {]}
+\item
+  \textbf{Matriz D} (diagonal secundaria e inferiores con unos): {[}
+  D\_\{i,j\} =
+
+  \begin{cases}
+      1 & \text{si } i + j \ge n - 1 \\
+      0 & \text{si } i + j < n - 1
+  \end{cases}
+
+  {]}
+\end{itemize}
+
+\section{\texorpdfstring{Potencias de las matrices
+\(M^k\)}{Potencias de las matrices M\^{}k}}\label{potencias-de-las-matrices-mk}
+
+\subsection{Matriz A}\label{matriz-a}
+
+\(A\) es una matriz unipotente triangular superior. Sus potencias están
+dadas por: {[} A\^{}k = \sum\emph{\{m=0\}\^{}\{k\} \binom{k}{m} N\^{}m,
+\quad \text{donde } N = A - I {]} {[} (A\^{}k)}\{i,j\} =
+\binom{k}{j - i}, \quad \text{si } j \ge i {]}
+
+\subsection{Matriz B}\label{matriz-b}
+
+Simétricamente: {[} (B\^{}k)\_\{i,j\} = \binom{k}{i - j},
+\quad \text{si } i \ge j {]}
+
+\subsection{Matriz C y D}\label{matriz-c-y-d}
+
+Ambas se obtienen como reflexión respecto a la diagonal secundaria: {[}
+C = JAJ, \quad D = JBJ \quad \Rightarrow \quad C\^{}k = JA\^{}kJ,
+\quad D\^{}k = JB\^{}kJ {]} donde \(J\) es la matriz de reverso de
+orden.
+
+\section{\texorpdfstring{Determinantes de
+\(M^k\)}{Determinantes de M\^{}k}}\label{determinantes-de-mk}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\det(A^k) = \det(B^k) = 1\), por ser triangulares unipotentes.
+\item
+  \(\det(C^k) = \det(D^k) = 0\), ya que tienen filas linealmente
+  dependientes o ceros en la diagonal secundaria.
+\end{itemize}
+
+\section{\texorpdfstring{Normas Matriciales de
+\(M^k\)}{Normas Matriciales de M\^{}k}}\label{normas-matriciales-de-mk}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Norma 1:} \(\|M^k\|_1 = \max_j \sum_i |(M^k)_{i,j}|\)
+\item
+  \textbf{Norma \(\infty\):}
+  \(\|M^k\|_\infty = \max_i \sum_j |(M^k)_{i,j}|\)
+\item
+  \textbf{Norma de Frobenius:}
+  \(\|M^k\|_F = \sqrt{ \sum_{i,j} (M^k)_{i,j}^2 }\)
+\end{itemize}
+
+Para \(A^k\) y \(B^k\), estas normas se expresan mediante combinatorias:
+{[} \textbar A\textsuperscript{k\textbar{}\emph{1 =
+\textbar B\textsuperscript{k\textbar{}\emph{\infty =
+\sum}\{m=0\}}\{\min(k, n-1)\} \binom{k}{m} {]} {[}
+\textbar A\textsuperscript{k\textbar{}\emph{F\^{}2 =
+\sum}\{i=0\}}\{n-1\} \sum}\{j=i\}}\{n-1\} \binom{k}{j-i}\^{}2 {]}
+
+\(C^k\) y \(D^k\) tienen las mismas normas que \(A^k\) y \(B^k\)
+respectivamente, por simetría.
+
+\section{\texorpdfstring{Ejemplos con
+\(n = 5\)}{Ejemplos con n = 5}}\label{ejemplos-con-n-5}
+
+\subsection{Matriz A}\label{matriz-a-1}
+
+{[}
+
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{bmatrix}
+
+{]}
+
+\subsection{Matriz B}\label{matriz-b-1}
+
+{[}
+
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{bmatrix}
+
+{]}
+
+\subsection{Matriz C}\label{matriz-c}
+
+{[}
+
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+
+{]}
+
+\subsection{Matriz D}\label{matriz-d}
+
+{[}
+
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 & 1 \\
+1 & 1 & 1 & 1 & 1 \\
+\end{bmatrix}
+
+{]}
+
+\section{Aplicaciones}\label{aplicaciones}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Álgebra lineal computacional:} resolución eficiente de
+  sistemas por sustitución.
+\item
+  \textbf{Modelos temporales:} propagación acumulativa (memoria), series
+  autoregresivas.
+\item
+  \textbf{Teoría de grafos:} conteo de caminos jerárquicos o cruzados.
+\item
+  \textbf{Física computacional:} flujos unidireccionales, redes de
+  difusión, operadores diferenciales discretizados.
+\item
+  \textbf{Criptografía:} codificación lineal y matrices de
+  transformación escalonadas.
+\end{itemize}
+
+\section{Conclusión}\label{conclusiuxf3n}
+
+Las matrices con estructuras triangulares o antitriangulares son
+fundamentales en múltiples disciplinas. Su comportamiento bajo potencias
+revela patrones combinatorios precisos. Mientras que \(A\) y \(B\)
+conservan determinantes unitarios, \(C\) y \(D\) pierden rango. Las
+normas crecen exponencialmente según combinaciones binomiales,
+reflejando acumulación jerárquica. Estas propiedades las hacen
+esenciales en teoría, aplicaciones y cómputo.
+
+\section{Referencias}\label{referencias}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Horn, R. A., \& Johnson, C. R. (2012). \emph{Matrix Analysis}.
+  Cambridge University Press.
+\item
+  Meyer, C. D. (2000). \emph{Matrix Analysis and Applied Linear
+  Algebra}. SIAM.
+\item
+  Strang, G. (2016). \emph{Introduction to Linear Algebra}.
+  Wellesley-Cambridge Press.
+\item
+  Lay, D. C. et al.~(2016). \emph{Linear Algebra and Its Applications}.
+  Pearson.
+\end{enumerate}
+
+
+
+
+\end{document}

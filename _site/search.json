@@ -42,55 +42,6 @@
     "text": "Other types of automated matrices\n\nMatrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\n\nTriangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html",
-    "href": "projects/02-marketconf-package/index.html",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#package-installation",
-    "href": "projects/02-marketconf-package/index.html#package-installation",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#examples",
-    "href": "projects/02-marketconf-package/index.html#examples",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#license",
-    "href": "projects/02-marketconf-package/index.html#license",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#links",
-    "href": "projects/02-marketconf-package/index.html#links",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Github marketconf R package"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Convert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "TODO.html",
-    "href": "TODO.html",
-    "title": "energycode.org TODO.md",
-    "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions"
-  },
-  {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
     "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
     "title": "Volcanic Eruptions in the Holocene Period",
@@ -124,6 +75,55 @@
     "title": "Volcanic Eruptions in the Holocene Period",
     "section": "Links",
     "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+  },
+  {
+    "objectID": "TODO.html",
+    "href": "TODO.html",
+    "title": "energycode.org TODO.md",
+    "section": "",
+    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Convert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html",
+    "href": "projects/02-marketconf-package/index.html",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#package-installation",
+    "href": "projects/02-marketconf-package/index.html#package-installation",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#examples",
+    "href": "projects/02-marketconf-package/index.html#examples",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#license",
+    "href": "projects/02-marketconf-package/index.html#license",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#links",
+    "href": "projects/02-marketconf-package/index.html#links",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Github marketconf R package"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html",
@@ -180,5 +180,40 @@
     "title": "Max Determinant",
     "section": "References",
     "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html",
+    "href": "posts/18052024-Catalan-Numbers/index.html",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "",
+    "text": "Relacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#introducción",
+    "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "",
+    "text": "Relacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#teorema",
+    "href": "posts/18052024-Catalan-Numbers/index.html#teorema",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Teorema",
+    "text": "Teorema\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#demostración",
+    "href": "posts/18052024-Catalan-Numbers/index.html#demostración",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Demostración",
+    "text": "Demostración\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}  \\\\ = \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#footnotes",
+    "href": "posts/18052024-Catalan-Numbers/index.html#footnotes",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Notas",
+    "text": "Notas\n\n\nEste artículo es una traducción del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
   }
 ]
