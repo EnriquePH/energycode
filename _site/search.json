@@ -215,5 +215,19 @@
     "title": "A004782(n) = A014847(n) + 1",
     "section": "Notas",
     "text": "Notas\n\n\nEste artículo es una traducción del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "energyCode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
+  },
+  {
+    "objectID": "about.html#author",
+    "href": "about.html#author",
+    "title": "About",
+    "section": "Author",
+    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
   }
 ]
