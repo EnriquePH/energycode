@@ -3,10 +3,14 @@ title: "Sumas parciales de los inversos de los repunits"
 description: Propiedades de las sumas parciales de la serie suma de los inversos de los primeros repunits
 author: 'Enrique Pérez Herrero'
 date: '2025-12-13'
+lang: es
 categories:
   - math
+  - repunits
+  - series
+  - OEIS
 editor: source
-draft: true
+draft: false
 ---
 
 

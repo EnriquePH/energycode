@@ -88,7 +88,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Sumas parciales de los inversos de los repunits\n\n\n\nmath\n\n\nrepunits\n\n\nseries\n\n\nOEIS\n\n\n\nPropiedades de las sumas parciales de la serie suma de los inversos de los primeros repunits\n\n\n\nEnrique Pérez Herrero\n\n\nDec 13, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",
@@ -236,5 +236,26 @@
     "title": "A004782(n) = A014847(n) + 1",
     "section": "ENUNCIADO",
     "text": "ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
+  },
+  {
+    "objectID": "posts/13122025-Sumas parciales Repunits/index.html",
+    "href": "posts/13122025-Sumas parciales Repunits/index.html",
+    "title": "Sumas parciales de los inversos de los repunits",
+    "section": "",
+    "text": "Código\nfrom fractions import Fraction\n\ndef repunit(n):\n    return int(\"1\" * n)\n\ndef sumas_repunit(n):\n    \"\"\"\n    Devuelve la lista [A1, A2, ..., An],\n    donde S_n = sum_{k=1}^n 1/R_k en forma irreducible.\n    \"\"\"\n    S = Fraction(0, 1)\n    A = []\n    B = []\n\n    for N in range(1, n + 1):\n        S += Fraction(1, repunit(N))\n        A.append(S.numerator)\n        B.append(S.denominator)\n    return A, B\n\n# Ejemplo\nn = 10\nA, B =sumas_repunit(n)\nprint(A)\nprint(B)\n\n\n[1, 12, 1343, 135754, 1508486015, 4159798472, 4622001618506829, 508471061621036163926, 1526940135943883485339887199, 13881412787213891890676978500420]\n[1, 11, 1221, 123321, 1370219631, 3778484437, 4198315621279507, 461860899812579844577, 1386969667719876711004264731, 12608941249241399179739770669521]"
+  },
+  {
+    "objectID": "posts/13122025-Sumas parciales Repunits/index.html#enunciado",
+    "href": "posts/13122025-Sumas parciales Repunits/index.html#enunciado",
+    "title": "Sumas parciales de los inversos de los repunits",
+    "section": "Enunciado",
+    "text": "Enunciado\nSea \\(R_n\\) el repunit de longitud \\(n\\), \\[R_n=\\underbrace{11\\ldots1}_{n\\text{ unos}}\\] y sea \\[S_n=\\sum_{k=1}^{n}{\\frac{1}{R_k}}\\] Si escribimos \\(S_n=\\dfrac{A_n}{B_n}\\) en forma irreducible, demostrar que \\[A_{n+1} \\gt A_n\\]"
+  },
+  {
+    "objectID": "posts/13122025-Sumas parciales Repunits/index.html#demostración",
+    "href": "posts/13122025-Sumas parciales Repunits/index.html#demostración",
+    "title": "Sumas parciales de los inversos de los repunits",
+    "section": "Demostración",
+    "text": "Demostración\nPartimos de la relación \\[S_{n+1}=S_n+\\frac{1}{R_{n+1}}\\] Si \\(S_n=\\dfrac{A_n}{B_n}\\), entonces \\[S_{n+1}=\\frac{A_n}{B_n}+\\frac{1}{R_{n+1}}\n=\\frac{A_{n} \\cdot R_{n+1}+B_n}{B_{n} \\cdot R_{n+1}}\\]\nSea \\[g=\\gcd(B_{n},R_{n+1})\\] Al reducir la fracción, el numerador de \\(S_{n+1}\\) es \\[A_{n+1}=\\frac{A_{n} \\cdot R_{n+1}+B_n}{g}\\]\nConsideremos la diferencia \\[A_{n+1}-A_{n}\n= A_n\\left(\\frac{R_{n+1}}{g}-1\\right)+\\frac{B_n}{g}\\]\nObservamos que \\(\\dfrac{B_n}{g}\\ge 1\\). Además, para \\(n\\ge 1\\), el repunit \\(R_{n+1}\\) posee al menos un divisor primo que no divide a ninguno de los repunits \\(R_k\\) con \\(k\\le n\\) (hecho estándar sobre repunits, consecuencia del teorema de Bang-Zsigmondy). En particular, \\[\\gcd(B_n,R_{n+1})&lt;R_{n+1}\\], y por tanto \\[\n\\frac{R_{n+1}}{g}\\ge 2\n\\]\nDe aquí se deduce que \\[A_{n+1}-A_{n} \\ge A_n+1&gt;0\\]\nPor consiguiente, \\[A_{n+1} \\gt A_ {n}\\]"
   }
 ]
