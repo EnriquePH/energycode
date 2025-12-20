@@ -15,7 +15,7 @@ categories:
   - Catalan's numbers
   - binomial
 editor: source
-draft: true
+draft: false
 ---
 
 ## INTRODUCCIÓN
