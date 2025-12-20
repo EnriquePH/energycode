@@ -18,6 +18,8 @@ editor: source
 draft: false
 ---
 
+![](A014847_plot.png)
+
 ## INTRODUCCIÓN
 
 Relacionar dos secuencias distintas de números enteros en la _On-Line Encyclopedia of Integer Sequences (OEIS)_ abre conexiones entre dentro de la información matemática disponible[^1].

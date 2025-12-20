@@ -186,14 +186,14 @@
     "href": "posts/18052024-Catalan-Numbers/index.html",
     "title": "A004782(n) = A014847(n) + 1",
     "section": "",
-    "text": "Relacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
+    "text": "Secuencia A014847 de OEIS"
   },
   {
     "objectID": "posts/18052024-Catalan-Numbers/index.html#introducción",
     "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
     "title": "A004782(n) = A014847(n) + 1",
-    "section": "",
-    "text": "Relacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
+    "section": "INTRODUCCIÓN",
+    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
   },
   {
     "objectID": "posts/18052024-Catalan-Numbers/index.html#teorema",
