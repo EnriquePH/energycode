@@ -5,16 +5,17 @@
 
 # Energy Code Website    
 https://www.energycode.org    
-My Data Science Website   
+My Data Science, Math and Engineering Website   
 <a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=20% height=20%></a>
 
 ## Blog
 
-In this blog, we will explore the transformative power of data science in
-industrial settings. From predictive maintenance and anomaly detection to
-process optimization and supply chain management, data science is reshaping how
-industries operate, collaborate, and grow.
+[energyCode.org](https://www.energycode.org/) is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.
 
 ## Projects
 
-Projects portfolio
+* Volcanic Eruptions in the Holocene Period
+* Stock Market Confidence Indexes
+
+## Author
+The site is maintained by _Enrique Pérez Herrero_.

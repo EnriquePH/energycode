@@ -23,7 +23,12 @@ about:
       href: https://www.kaggle.com/enrique1500
 ---
 
+[energyCode.org](https://www.energycode.org/) is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.
+
 [![](./posts/01082023-Blog-Logo/logo.png){width=35%}](www.energycode.org)
+
+## Author
+The site is maintained by _Enrique Pérez Herrero_.
 
 ```{=html}
 <!-- Stackoverflow flair -->
