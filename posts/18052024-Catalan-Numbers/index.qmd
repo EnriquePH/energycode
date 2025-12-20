@@ -1,7 +1,7 @@
 ---
 title: <span style='text-transform:none'>A004782(n) = A014847(n) + 1</span>
 title-case: false
-description: Relación entre dos secuencias de enteros asociadas con los números de Catalan
+description: Relación entre dos secuencias asociadas con los números de Catalan
 author: 'Enrique Pérez Herrero'
 date: '2024-05-18'
 lang: es
@@ -22,38 +22,46 @@ draft: false
 
 ## INTRODUCCIÓN
 
-Relacionar dos secuencias distintas de números enteros en la _On-Line Encyclopedia of Integer Sequences (OEIS)_ abre conexiones entre dentro de la información matemática disponible[^1].
-
-La secuencia de números enteros, [A004782](https://oeis.org/A004782) [@OEIS_A004782], está compuesta por los números $n$ que cumplen:
+Relacionar dos secuencias distintas de números enteros en la _On-Line
+Encyclopedia of Integer Sequences (OEIS)_ abre conexiones entre dentro de la
+información matemática disponible[^1].
+La secuencia de números enteros, [A004782](https://oeis.org/A004782)
+[@OEIS_A004782], está compuesta por los números $n$ que cumplen:
 
 $$
 n \in \{A004782\} \Leftrightarrow \frac{2 (2n-3)!}{n! (n-1)!} \in \mathbb{N}
 $${#eq-cat001}
 
-Y está estrechamente relacionada con la secuencia [A014847](https://oeis.org/A014847) [@OEIS_A014847], formada por los números $n$ dónde el enésimo número de Catalan $C_{n}$ es divisible por $n$
+Y está estrechamente relacionada con la secuencia
+[A014847](https://oeis.org/A014847) [@OEIS_A014847], formada por los números $n$
+dónde el enésimo número de Catalan $C_{n}$ es divisible por $n$
 
 $$
 n \in \{A014847\} \Leftrightarrow n \vert C_{n}
 $${#eq-cat002}
 
-Los [números de Catalan](https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan) [@OEIS_A000108] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión:
+Los [números de Catalan](https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan)
+[@OEIS_A000108] aparecen con mucha frecuencia en combinatoria y otras áreas de
+las matemáticas y están definidos por la expresión:
 $$
 C_{n} = \frac{1}{(n+1)}\binom{2n}{n}
 $${#eq-cat003}
 
-están relacionados con los *coeficientes binomiales centrales* [@OEIS_A000984] y los primeros términos son:
+están relacionados con los *coeficientes binomiales centrales* [@OEIS_A000984] y
+los primeros términos de la secuencia de los números de Catalan son:
 
 $$
-1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796
+1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \dots
 $$
 
-## Teorema
+## ENUNCIADO
 
 $$
 A004782(n) = A014847(n) + 1
 $${#eq-cat004}
 
-## Demostración
+
+## DEMOSTRACIÓN
 
 Partiendo de las funciones $f(n)$ y $g(n)$:
 
@@ -68,7 +76,8 @@ $${#eq-cat006}
 Se puede comprobar como $f(n+1)$ es igual a $g(n)$ por cálculo directo:
 
 $$
-f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2}  \\ = \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
+f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2} 
+= \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
 $${#eq-cat007}
 
 Por lo tanto:
@@ -78,6 +87,8 @@ f(n+1) \in \mathbb{N} \Longleftrightarrow g(n) \in \mathbb{N} \Longleftrightarro
 $${#eq-cat008}
 
 
-[^1]: Este artículo es una **traducción** del post original titulado *A004782(n)=A014847(n)+1* publicado el **viernes 29 de noviembre de 2013** en el blog *Psychedelic Geometry* [@psychedelic_geometry_2013].
+[^1]: Este artículo es una **traducción** del post original titulado
+*A004782(n)=A014847(n)+1* publicado el **viernes 29 de noviembre de 2013** en el
+blog *Psychedelic Geometry* [@psychedelic_geometry_2013].
 
 ## REFERENCIAS

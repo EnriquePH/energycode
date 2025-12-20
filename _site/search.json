@@ -88,7 +88,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias de enteros asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",
@@ -193,7 +193,7 @@
     "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
     "title": "A004782(n) = A014847(n) + 1",
     "section": "INTRODUCCIÓN",
-    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1.\nLa secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796\n\\]"
+    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
   },
   {
     "objectID": "posts/18052024-Catalan-Numbers/index.html#teorema",
@@ -206,8 +206,8 @@
     "objectID": "posts/18052024-Catalan-Numbers/index.html#demostración",
     "href": "posts/18052024-Catalan-Numbers/index.html#demostración",
     "title": "A004782(n) = A014847(n) + 1",
-    "section": "Demostración",
-    "text": "Demostración\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}  \\\\ = \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+    "section": "DEMOSTRACIÓN",
+    "text": "DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
   },
   {
     "objectID": "posts/18052024-Catalan-Numbers/index.html#footnotes",
@@ -229,5 +229,12 @@
     "title": "About",
     "section": "Author",
     "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#enunciado",
+    "href": "posts/18052024-Catalan-Numbers/index.html#enunciado",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "ENUNCIADO",
+    "text": "ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
   }
 ]
