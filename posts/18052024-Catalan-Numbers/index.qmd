@@ -8,10 +8,10 @@ lang: es
 bibliography: 18052024-Catalan-Numbers.bib
 nocite: |
   @*
-#image: conf_matrix.png
+image: A014847_plot.png
 categories:
   - math
-  - blog
+  - OEIS
   - Catalan's numbers
   - binomial
 editor: source
