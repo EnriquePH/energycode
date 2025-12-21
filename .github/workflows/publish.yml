@@ -58,7 +58,7 @@ jobs:
       - name: Install required CRAN packages
         run: |
           Rscript -e "
-            pkgs <- c('devtools', 'remotes', 'plot3D', 'ggplot2', 'e1071', 'hexSticker', 'caTools', 'caret')
+            pkgs <- c('devtools', 'remotes', 'plot3D', 'ggplot2', 'e1071', 'hexSticker', 'caTools', 'caret', 'reticulate')
             install.packages(pkgs, repos = 'https://cloud.r-project.org')
           "
       - name: Install marketconf from GitHub
