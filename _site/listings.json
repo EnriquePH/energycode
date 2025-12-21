@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/03-Holocene_Volcanic_Eruptions/index.html",
+      "/projects/02-marketconf-package/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/18052024-Catalan-Numbers/index.html",
+      "/posts/02082023-Numpy-LaTeX/index.html",
+      "/posts/09032022-Confusion-Matrix/index.html",
+      "/posts/05032022-Max-Determinant/index.html"
+    ]
+  }
+]
