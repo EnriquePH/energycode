@@ -7,7 +7,7 @@
 https://www.energycode.org    
 My Data Science, Math and Engineering Website
 <p align="center">
-<a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=10% height=10%></a>
+<a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=30% height=30%></a>
 </p>
 
 This repository contains the source code of https://www.energycode.org, a
