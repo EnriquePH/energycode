@@ -5,6 +5,9 @@ project:
     port: 4444
     browser: true
 
+execute:
+  freeze: auto
+
 website:
   title: "[energycode]"
   site-url: www.energycode.org
