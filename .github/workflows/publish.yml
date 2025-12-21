@@ -50,10 +50,13 @@ jobs:
           Rscript -e "
             if (file.exists('packages.txt')) {
               pkgs <- readLines('packages.txt')
-              pkgs <- trimws(pkgs)
-              pkgs <- pkgs[nzchar(pkgs) & !grepl('^\\s*#', pkgs)]
+              pkgs <- trimws(pkgs)                     # Quita espacios al inicio/final
+              pkgs <- pkgs[nzchar(pkgs)]               # Elimina líneas vacías
+              pkgs <- pkgs[!grepl('^#', pkgs)]         # Elimina líneas que empiecen por #
               if (length(pkgs) > 0) {
                 install.packages(pkgs, repos = 'https://cloud.r-project.org')
+              } else {
+                message('No packages to install after filtering')
               }
             } else {
               message('packages.txt not found – skipping')
