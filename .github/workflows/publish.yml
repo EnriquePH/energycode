@@ -45,24 +45,13 @@ jobs:
           sudo apt-get update -q
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libpng-dev
 
-      - name: Install R packages from packages.txt
+      - name: Install required CRAN packages
         run: |
           Rscript -e "
-            if (file.exists('packages.txt')) {
-              pkgs <- readLines('packages.txt')
-              pkgs <- trimws(pkgs)                     # Quita espacios al inicio/final
-              pkgs <- pkgs[nzchar(pkgs)]               # Elimina líneas vacías
-              pkgs <- pkgs[!grepl('^#', pkgs)]         # Elimina líneas que empiecen por #
-              if (length(pkgs) > 0) {
-                install.packages(pkgs, repos = 'https://cloud.r-project.org')
-              } else {
-                message('No packages to install after filtering')
-              }
-            } else {
-              message('packages.txt not found – skipping')
+            pkgs <- c('devtools', 'remotes', 'plot3D', 'ggplot2', 'e1071', 'hexSticker', 'caTools', 'caret')
+            install.packages(pkgs, repos = 'https://cloud.r-project.org')
             }
           "
-
       - name: Install marketconf from GitHub
         run: |
           Rscript -e "remotes::install_github('EnriquePH/marketconf@master')"
