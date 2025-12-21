@@ -1,46 +1,135 @@
 ---
 title: Blog Logo Sticker
 description: Blog logo with hexSticker
-draft: true
+draft: false
 author: 'Enrique Pérez Herrero'
 date: '08-01-2023'
+lang: es
+bibliography: hexSticker.bib
+nocite: |
+  @*
 editor: source
 categories:
   - R
   - logo
+image: logo.png
+image-alt: "Logo hexagonal de ENERGYCODE"
 ---
 
-# Blog logo with `hexSticker`
+## El paquete `hexSticker`
+
+El paquete `hexSticker` creado por *Guangchuang Yu* [@hexSticker] es una
+herramienta para generar _stickers_ hexagonales reproducibles en R. Estos
+stickers son ideales como logos para paquetes de programación, blogs, proyectos
+o presentaciones. En este artículo post se muestra cómo crear el logo del la web
+[ENERGYCODE](https://www.energycode.org/) usando una imagen extraída de un icono
+de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado
+deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde
+hexagonal a veces se recorta al guardar en PNG o SVG (ver [issue
+#155](https://github.com/GuangchuangYu/hexSticker/issues/155?referrer=grok.com)).
+
 
 ```{r}
 #| label: load_packages
+#| echo: true
+#| eval: true
+
 library(hexSticker)
-library(magrittr)
+library(ggplot2)  # Para solución issue #155
 ```
 
-## File names
+## Archivos de entrada y salida
 
 ```{r}
 #| label: file names
-file_image <- "lightning_icon_white.png"
+#| eval: true
+file_icon <- "lightning_icon_white.png"
 file_name <- "logo.png"
 ```
 
+## Solución al recorte del borde del hexágono
+El problema del borde recortado se soluciona ampliando ligeramente los límites
+del gráfico y es necesario modificar la función del tema gráfico que viene en el
+paquete `hexSticker`por defecto.
+La siguiente función, adaptada de una contribución comunitaria, añade un margen
+extra para garantizar que el hexágono quede completo.
 
-## Create sticker
 
 ```{r}
-#| label: create sticker
-file_image %>%
-  sticker(package = '[ENERGYCODE]',
-          p_size = 19,
-          p_y = 1.3, 
-          h_fill = 'black',
-          h_color = 'grey',
-          s_x = 1,
-          s_y = 0.7,
-          filename = file_name)
+# Solves issue:
+# Border always cut off in .png or .svg #155
+# https://github.com/GuangchuangYu/hexSticker/issues/155
+# by https://github.com/emilioxavier
+#| label: tema-personalizado
+
+my_theme_sticker <- function(size=1.2, ...) {
+    center <- 1
+    radius <- 1
+    h <- radius
+    w <- sqrt(3)/2 * radius
+    m <- 1.05
+    list(
+      theme_transparent() +
+        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = "lines"),
+              strip.text = element_blank(),
+              line = element_blank(),
+              text = element_blank(),
+              title = element_blank(), ...),
+      coord_fixed(),
+      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),
+      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))
+    )
+}
+```
+
+## Creación del sticker
+
+Ahora generamos el logo ajustando posiciones, tamaños y colores.
+
+```{r}
+#| label: crear-sticker
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+#| fig-align: center
+#| fig-alt: Logo final ENERGYCODE
+#| out-width: 300px
+
+sticker(
+  subplot = file_icon,
+  package = "ENERGYCODE",
+  p_size = 18,      # Tamaño del texto
+  p_y = 1.3,        # Posición vertical del texto
+  p_color = "white",
+  h_fill = "black", # Fondo del hexágono
+  h_color = "grey", # Color del borde
+  h_size = 1.5,     # Grosor del borde
+  s_x = 1,          # Posición horizontal del icono
+  s_y = 0.75,       # Posición vertical del icono
+  s_width = 0.35,   # Ancho del icono
+  s_height = 0.35,  # Alto del icono
+  spotlight = TRUE, # Efecto de luz opcional
+  l_x = 1.0,        # Posición de la luz (ajustar si usas spotlight)
+  dpi = 300,        # Alta resolución
+  filename = file_name,
+  asp = 1,          # Relación de aspecto
+  theme = my_theme_sticker()
+)
 ```
 
 
+## Resultado final
 
+El logo generado tiene un aspecto sencillo, con el borde completo y listo para
+usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un
+sitio Quarto añadiendo en `_quarto.yml`:
+
+```
+website:
+  title: "ENERGYCODE"
+  navbar:
+    logo: logo.png
+```
+
+## Referencias

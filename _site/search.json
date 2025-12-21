@@ -42,6 +42,48 @@
     "text": "Other types of automated matrices\n\nMatrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\n\nTriangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
   },
   {
+    "objectID": "posts/01082023-Blog-Logo/index.html",
+    "href": "posts/01082023-Blog-Logo/index.html",
+    "title": "Blog Logo Sticker",
+    "section": "",
+    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(ggplot2)  # Para solución issue #155"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#el-paquete-hexsticker",
+    "href": "posts/01082023-Blog-Logo/index.html#el-paquete-hexsticker",
+    "title": "Blog Logo Sticker",
+    "section": "",
+    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(ggplot2)  # Para solución issue #155"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#nombres-de-los-archivos",
+    "href": "posts/01082023-Blog-Logo/index.html#nombres-de-los-archivos",
+    "title": "Blog Logo Sticker",
+    "section": "Nombres de los archivos",
+    "text": "Nombres de los archivos\n\nCódigofile_icon &lt;- \"lightning_icon_white.png\"\nfile_name &lt;- \"logo.png\""
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#tema-personalizado-solución-al-recorte-del-borde",
+    "href": "posts/01082023-Blog-Logo/index.html#tema-personalizado-solución-al-recorte-del-borde",
+    "title": "Blog Logo Sticker",
+    "section": "Tema personalizado: solución al recorte del borde",
+    "text": "Tema personalizado: solución al recorte del borde\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n#| echo: true\n\nmy_theme_sticker &lt;- function(size=1.2, ...) {\n    center &lt;- 1\n    radius &lt;- 1\n    h &lt;- radius\n    w &lt;- sqrt(3)/2 * radius\n    m &lt;- 1.05\n    list(\n      theme_transparent() +\n        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = \"lines\"),\n              strip.text = element_blank(),\n              line = element_blank(),\n              text = element_blank(),\n              title = element_blank(), ...),\n      coord_fixed(),\n      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),\n      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))\n    )\n}"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#creación-del-sticker",
+    "href": "posts/01082023-Blog-Logo/index.html#creación-del-sticker",
+    "title": "Blog Logo Sticker",
+    "section": "Creación del sticker",
+    "text": "Creación del sticker\nAhora generamos el logo ajustando posiciones, tamaños y colores.\n\nCódigosticker(\n  subplot = file_icon,\n  package = \"ENERGYCODE\",\n  p_size = 18,      # Tamaño del texto\n  p_y = 1.3,        # Posición vertical del texto\n  p_color = \"white\",\n  h_fill = \"black\", # Fondo del hexágono\n  h_color = \"grey\", # Color del borde\n  h_size = 1.5,     # Grosor del borde\n  s_x = 1,          # Posición horizontal del icono\n  s_y = 0.75,       # Posición vertical del icono\n  s_width = 0.35,   # Ancho del icono\n  s_height = 0.35,  # Alto del icono\n  spotlight = TRUE, # Efecto de luz opcional\n  l_x = 1.0,        # Posición de la luz (ajustar si usas spotlight)\n  dpi = 300,        # Alta resolución\n  filename = file_name,\n  asp = 1,          # Relación de aspecto\n  theme = my_theme_sticker()\n)"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#resultado-final",
+    "href": "posts/01082023-Blog-Logo/index.html#resultado-final",
+    "title": "Blog Logo Sticker",
+    "section": "Resultado final",
+    "text": "Resultado final\nEl logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en _quarto.yml:\nwebsite:\n  title: \"ENERGYCODE\"\n  navbar:\n    logo: logo.png"
+  },
+  {
     "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
     "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
     "title": "Volcanic Eruptions in the Holocene Period",
@@ -102,7 +144,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nlogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",
@@ -222,5 +264,33 @@
     "title": "Max Determinant",
     "section": "References",
     "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#olución-al-recorte-del-borde",
+    "href": "posts/01082023-Blog-Logo/index.html#olución-al-recorte-del-borde",
+    "title": "Blog Logo Sticker",
+    "section": "olución al recorte del borde",
+    "text": "olución al recorte del borde\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n#| echo: true\n\nmy_theme_sticker &lt;- function(size=1.2, ...) {\n    center &lt;- 1\n    radius &lt;- 1\n    h &lt;- radius\n    w &lt;- sqrt(3)/2 * radius\n    m &lt;- 1.05\n    list(\n      theme_transparent() +\n        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = \"lines\"),\n              strip.text = element_blank(),\n              line = element_blank(),\n              text = element_blank(),\n              title = element_blank(), ...),\n      coord_fixed(),\n      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),\n      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))\n    )\n}"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-de-hexágono",
+    "href": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-de-hexágono",
+    "title": "Blog Logo Sticker",
+    "section": "Solución al recorte del borde de hexágono",
+    "text": "Solución al recorte del borde de hexágono\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete hexStickerpor defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n\nmy_theme_sticker &lt;- function(size=1.2, ...) {\n    center &lt;- 1\n    radius &lt;- 1\n    h &lt;- radius\n    w &lt;- sqrt(3)/2 * radius\n    m &lt;- 1.05\n    list(\n      theme_transparent() +\n        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = \"lines\"),\n              strip.text = element_blank(),\n              line = element_blank(),\n              text = element_blank(),\n              title = element_blank(), ...),\n      coord_fixed(),\n      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),\n      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))\n    )\n}"
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#archivos-de-entrada-y-salida",
+    "href": "posts/01082023-Blog-Logo/index.html#archivos-de-entrada-y-salida",
+    "title": "Blog Logo Sticker",
+    "section": "Archivos de entrada y salida",
+    "text": "Archivos de entrada y salida\n\nCódigofile_icon &lt;- \"lightning_icon_white.png\"\nfile_name &lt;- \"logo.png\""
+  },
+  {
+    "objectID": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-del-hexágono",
+    "href": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-del-hexágono",
+    "title": "Blog Logo Sticker",
+    "section": "Solución al recorte del borde del hexágono",
+    "text": "Solución al recorte del borde del hexágono\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete hexStickerpor defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n\nmy_theme_sticker &lt;- function(size=1.2, ...) {\n    center &lt;- 1\n    radius &lt;- 1\n    h &lt;- radius\n    w &lt;- sqrt(3)/2 * radius\n    m &lt;- 1.05\n    list(\n      theme_transparent() +\n        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = \"lines\"),\n              strip.text = element_blank(),\n              line = element_blank(),\n              text = element_blank(),\n              title = element_blank(), ...),\n      coord_fixed(),\n      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),\n      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))\n    )\n}"
   }
 ]
