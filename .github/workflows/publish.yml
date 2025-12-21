@@ -47,7 +47,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          Rscript -e "install.packages(c('devtools', 'remotes', 'plot3D'), repos = 'https://cloud.r-project.org')"
+          Rscript -e "install.packages(c('devtools', 'remotes', 'plot3D', 'ggplot2'), repos = 'https://cloud.r-project.org')"
 
       - name: Install marketconf from GitHub
         run: |
