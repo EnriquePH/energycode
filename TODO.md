@@ -7,14 +7,16 @@
 ### In Progress
 
 -   [ ] Post about blog features
+-   [ ] Github pages publish.yaml
 
 ### Done
 
--   [x] Add analytics
--   [x] Design a blog logo
--   [x] R package marketconf project
+-   [X] Add analytics
+-   [X] Design a blog logo
+-   [X] R package marketconf project
 -   [X] Testing analytics
 -   [X] Post Nympy to LaTeX
 -   [X] favicon.ico
 -   [X] Project Holocene Volcanic Eruptions
+-   [X] Post about sticker
  

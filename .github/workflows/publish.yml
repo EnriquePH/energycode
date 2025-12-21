@@ -11,14 +11,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}  # Token automático de GitHub Actions (suficiente y seguro)
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}  # Token automático (suficiente y seguro)
 
     steps:
       - name: Check out repository
@@ -40,32 +40,47 @@ jobs:
           key: r-packages-${{ runner.os }}-${{ hashFiles('**/*.R') }}
           restore-keys: r-packages-${{ runner.os }}-
 
-      - name: Install system dependencies (for plot3D and others)
+      - name: Install system dependencies
         run: |
-          sudo apt-get update
+          sudo apt-get update -q
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libpng-dev
 
-      - name: Install R dependencies
+      - name: Install R packages from packages.txt
         run: |
-          Rscript -e "install.packages(c('devtools', 'remotes', 'plot3D', 'ggplot2'), repos = 'https://cloud.r-project.org')"
+          Rscript -e "
+            if (file.exists('packages.txt')) {
+              pkgs <- readLines('packages.txt')
+              pkgs <- trimws(pkgs)
+              pkgs <- pkgs[nzchar(pkgs) & !grepl('^\\s*#', pkgs)]
+              if (length(pkgs) > 0) {
+                install.packages(pkgs, repos = 'https://cloud.r-project.org')
+              }
+            } else {
+              message('packages.txt not found – skipping')
+            }
+          "
 
       - name: Install marketconf from GitHub
         run: |
           Rscript -e "remotes::install_github('EnriquePH/marketconf@master')"
 
-      - name: Set up Python
+      - name: Set up Python (solo si usas Jupyter)
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
+          cache: pip
 
-      - name: Install Jupyter (for Quarto)
+      - name: Install Jupyter dependencies
         run: |
-          pip install jupyter ipykernel nbclient nbformat
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install --quiet --no-input jupyter ipykernel nbclient nbformat
+          if [ -f requirements.txt ]; then
+            pip install --quiet --no-input -r requirements.txt
+          fi
 
       - name: Render Quarto site
-        run: quarto render
+        run: |
+          export _R_CHECK_NO_TK_=TRUE   # Elimina warning de Tk
+          quarto render
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,8 @@
+# ENERGYCODE (c) 2025
+devtools
+remotes
+plot3D
+ggplot2
+e1071
+hexSticker
+quarto
