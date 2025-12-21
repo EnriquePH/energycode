@@ -50,7 +50,7 @@ rsconnect/
 
 # Quarto
 .quarto/
-_site/
+_freeze/
 
 # Jupyter Notebook
 .ipynb_checkpoints
