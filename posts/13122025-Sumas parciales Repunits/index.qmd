@@ -156,7 +156,8 @@ $$
 
 
 ## Enunciado
-
+[energyCode.org](https://www.energycode.org/) is a specialized blog and
+informational site that focuses on programming, mathematics, engineering and
 Sea $R_n$ el *repunit* de longitud $n$,
 $$R_n=\underbrace{11\ldots1}_{n\text{ unos}}$$
 y sea

@@ -53,11 +53,14 @@ jobs:
         run: |
           Rscript -e "remotes::install_github('EnriquePH/marketconf@master')"
 
-      # Opcional: solo si tu proyecto Quarto usa Python
-      # - name: Set up Python
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install Jupyter (for Quarto)
+        run: pip install jupyter jupyterlab nbclient nbformat ipykernel
 
       - name: Render Quarto site
         run: quarto render
