@@ -6,6 +6,8 @@
 [![Last commit](https://img.shields.io/github/last-commit/EnriquePH/energycode?color=blue)](https://github.com/EnriquePH/energycode/commits)
 [![Repo Size](https://img.shields.io/github/repo-size/EnriquePH/energycode)](https://github.com/EnriquePH/energycode)
 [![Built with Quarto](https://img.shields.io/badge/Built_with-Quarto-1f77b4?logo=quarto&logoColor=white)](https://quarto.org)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d638f799-bbf7-4905-99e0-7696e734c879/deploy-status)](https://app.netlify.com/sites/energycodeorg/deploys)
+[![Quarto Publish](https://github.com/EnriquePH/energycode/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/EnriquePH/energycode/actions/workflows/publish.yml)
 
 </div>
 

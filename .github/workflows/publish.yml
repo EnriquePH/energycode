@@ -43,14 +43,23 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update -q
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libpng-dev
+          sudo apt-get install -y \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libpng-dev \
+            libfreetype6-dev \
+            libfontconfig1-dev \
+            libcairo2-dev \
+            libmagick++-dev \
+            libharfbuzz-dev \
+            libfribidi-dev libpng-dev
 
       - name: Install required CRAN packages
         run: |
           Rscript -e "
             pkgs <- c('devtools', 'remotes', 'plot3D', 'ggplot2', 'e1071', 'hexSticker', 'caTools', 'caret')
             install.packages(pkgs, repos = 'https://cloud.r-project.org')
-            }
           "
       - name: Install marketconf from GitHub
         run: |
