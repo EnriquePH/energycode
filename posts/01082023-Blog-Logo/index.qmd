@@ -12,7 +12,7 @@ editor: source
 categories:
   - R
   - logo
-image: logo.png
+image: ../../img/logo/web_logo.png
 image-alt: "Logo hexagonal de ENERGYCODE"
 ---
 
@@ -35,7 +35,7 @@ hexagonal a veces se recorta al guardar en PNG o SVG (ver [issue
 #| eval: true
 
 library(hexSticker)
-library(ggplot2)  # Para solución issue #155
+library(magrittr)
 ```
 
 ## Archivos de entrada y salida
@@ -56,29 +56,49 @@ extra para garantizar que el hexágono quede completo.
 
 
 ```{r}
+#| message: false
+#| warning: false
 # Solves issue:
 # Border always cut off in .png or .svg #155
 # https://github.com/GuangchuangYu/hexSticker/issues/155
 # by https://github.com/emilioxavier
 #| label: tema-personalizado
+#| echo: true
 
-my_theme_sticker <- function(size=1.2, ...) {
-    center <- 1
-    radius <- 1
-    h <- radius
-    w <- sqrt(3)/2 * radius
-    m <- 1.05
-    list(
-      theme_transparent() +
-        theme(plot.margin = margin(t=0, r=0, b=0, l=0, unit = "lines"),
-              strip.text = element_blank(),
-              line = element_blank(),
-              text = element_blank(),
-              title = element_blank(), ...),
-      coord_fixed(),
-      scale_y_continuous(expand = c(0, 0), limits = c(center-h*m , center+h*m )),
-      scale_x_continuous(expand = c(0, 0), limits = c(center-w*m , center+w*m ))
+library(ggplot2)  # Para solución issue #155
+
+my_theme_sticker <- function(size = 1.2, ...) {
+  center <- 1
+  radius <- 1
+  h <- radius
+  w <- sqrt(3) / 2 * radius
+  m <- 1.05
+  list(
+    theme_transparent() +
+      ggplot2::theme(
+        plot.margin = margin(
+          t = 0,
+          r = 0,
+          b = 0,
+          l = 0,
+          unit = "lines"
+        ),
+        strip.text = element_blank(),
+        line = element_blank(),
+        text = element_blank(),
+        title = element_blank(),
+        ...
+      ),
+    coord_fixed(),
+    scale_y_continuous(
+      expand = c(0, 0),
+      limits = c(center - h * m , center + h * m)
+    ),
+    scale_x_continuous(
+      expand = c(0, 0),
+      limits = c(center - w * m , center + w * m)
     )
+  )
 }
 ```
 
@@ -88,13 +108,8 @@ Ahora generamos el logo ajustando posiciones, tamaños y colores.
 
 ```{r}
 #| label: crear-sticker
-#| eval: true
-#| echo: true
 #| message: false
 #| warning: false
-#| fig-align: center
-#| fig-alt: Logo final ENERGYCODE
-#| out-width: 300px
 
 sticker(
   subplot = file_icon,
@@ -113,13 +128,35 @@ sticker(
   l_x = 1.0,        # Posición de la luz (ajustar si usas spotlight)
   dpi = 300,        # Alta resolución
   filename = file_name,
-  asp = 1,          # Relación de aspecto
   theme = my_theme_sticker()
 )
 ```
 
 
+```{r}
+#| label: create sticker
+file_icon %>% sticker(package = 'ENERGYCODE',
+          p_size = 18, # font size for package name
+          p_y = 1.3,
+          h_fill = 'black',
+          h_color = 'grey',
+          h_size = 1.5,
+          s_x = 1,
+          s_y = 0.75,
+          spotlight = TRUE,
+          spot.size = 0.1,
+          s_width = 0.35,
+          s_height = 0.35,
+          dpi = 300,
+          asp = 1,
+          theme = my_theme_sticker(),
+          filename = file_name)
+```
+
+
 ## Resultado final
+
+![HexSticker logo](../../img/logo/web_logo.png){fig-align="left"}]
 
 El logo generado tiene un aspecto sencillo, con el borde completo y listo para
 usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un

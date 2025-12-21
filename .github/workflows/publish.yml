@@ -51,7 +51,7 @@ jobs:
 
       - name: Install marketconf from GitHub
         run: |
-          Rscript -e "remotes::install_github('EnriquePH/marketconf@main')"
+          Rscript -e "remotes::install_github('EnriquePH/marketconf@master')"
 
       # Opcional: solo si tu proyecto Quarto usa Python
       # - name: Set up Python
