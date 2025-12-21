@@ -6,7 +6,7 @@
 # Energy Code Website    
 https://www.energycode.org    
 My Data Science, Math and Engineering Website   
-<a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=20% height=20%></a>
+  <a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=20% height=20%></a>
 
 This repository contains the source code of https://www.energycode.org, a
 personal academic website featuring articles and resources on mathematics, data
