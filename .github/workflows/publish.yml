@@ -33,8 +33,8 @@ jobs:
       - name: Install R packages
         run: |
           Rscript -e 'install.packages("devtools", repos="https://cloud.r-project.org")'
-          Rscript -e 'install.packages("Plot3D", repos="https://cloud.r-project.org")'
-          Rscript -e 'remotes::install_github("EnriquePH/marketconf")'
+          Rscript -e 'install.packages("plot3D", repos="https://cloud.r-project.org")'
+          Rscript -e 'remotes::install_github("EnriquePH/marketconf@main")'
 
       # Opcional: solo si usas Python
       - name: Set up Python
