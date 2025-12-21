@@ -1,11 +1,14 @@
 <!-- badges: start -->
-<p align="center">
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) &nbsp;
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d638f799-bbf7-4905-99e0-7696e734c879/deploy-status)](https://app.netlify.com/sites/energycodeorg/deploys) &nbsp;
-[![Last commit](https://img.shields.io/github/last-commit/EnriquePH/energycode?color=blue)](https://github.com/EnriquePH/energycode/commits) &nbsp;
-![Repo Size](https://img.shields.io/github/repo-size/EnriquePH/energycode) &nbsp;
-![Built with Quarto](https://img.shields.io/badge/Built_with-Quarto-1f77b4?logo=quarto&logoColor=white) &nbsp;
-</p>
+
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Last commit](https://img.shields.io/github/last-commit/EnriquePH/energycode?color=blue)](https://github.com/EnriquePH/energycode/commits)
+[![Repo Size](https://img.shields.io/github/repo-size/EnriquePH/energycode)](https://github.com/EnriquePH/energycode)
+[![Built with Quarto](https://img.shields.io/badge/Built_with-Quarto-1f77b4?logo=quarto&logoColor=white)](https://quarto.org)
+
+</div>
+
 <!-- badges: end -->
 
 # ENERGYCODE Website
@@ -74,5 +77,6 @@ Enrique Pérez Herrero
 
 * GitHub: [@EnriquePH](https://github.com/EnriquePH)
 * Website: [www.energycode.org](https://www.energycode.org)
+* LinkedIn: [eph3000](https://www.linkedin.com/in/eph3000)
 
 **Built with [Quarto](https://quarto.org)** • Licensed under the [MIT License](LICENSE)

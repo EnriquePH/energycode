@@ -5,6 +5,5 @@ plot3D
 ggplot2
 e1071
 hexSticker
-quarto
 caTools
 caret
