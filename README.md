@@ -8,14 +8,36 @@ https://www.energycode.org
 My Data Science, Math and Engineering Website   
 <a href="https://www.energycode.org"><img src="/posts/01082023-Blog-Logo/logo.png"  width=20% height=20%></a>
 
+This repository contains the source code of https://www.energycode.org, a
+personal academic website featuring articles and resources on mathematics, data
+science, engineering, and programming.
+
 ## Blog
 
-[energyCode.org](https://www.energycode.org/) is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.
+[energyCode.org](https://www.energycode.org/) is a specialized blog and
+informational site that focuses on programming, mathematics, engineering and
+technical topics relevant to developers and data scientists.
 
-## Projects
+## Contents
+- ✏️ Blog posts written in Quarto format (`.qmd`)
+- 💡 Projects and technical resources organized by topic
+- 🌐 Website configuration files and custom styling
 
-* Volcanic Eruptions in the Holocene Period
-* Stock Market Confidence Indexes
+## How to clone and render
+
+### Load packages
+
+```R
+library(devtools)
+devtools::install_github("EnriquePH/marketconf")
+install.packages("plot3D")
+```
+
+```bash
+git clone https://github.com/EnriquePH/energycode.git
+cd energycode
+quarto render
+```
 
 ## Author
 The site is maintained by _Enrique Pérez Herrero_.

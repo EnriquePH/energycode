@@ -322,7 +322,7 @@ window.Quarto = {
 <section id="output-string" class="level3">
 <h3 class="anchored" data-anchor-id="output-string">Output string</h3>
 <p>Using the <a href="https://numpy.org/">NumPy</a> function <code>np.eye</code>, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.</p>
-<div id="76634c5b" class="cell" data-execution_count="2">
+<div id="136b5c0f" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix2latex(np.eye(<span class="dv">3</span>, dtype<span class="op">=</span><span class="bu">int</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -344,7 +344,7 @@ $$</code></pre>
 <section id="rendering-output-in-a-document" class="level2">
 <h2 class="anchored" data-anchor-id="rendering-output-in-a-document">Rendering output in a document</h2>
 <p>If you are working in a <a href="https://jupyter.org/">Jupyter</a> notebook, you can render a <span class="math inline">\(LaTeX\)</span> string using the <code>Math</code> function from the <code>IPython</code> library, which can be imported as follows:</p>
-<div id="1be9c5a0" class="cell" data-execution_count="3">
+<div id="82606cef" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Math</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -387,7 +387,7 @@ $$</code></pre>
 <section id="rendering-the-output-to-a-file" class="level2">
 <h2 class="anchored" data-anchor-id="rendering-the-output-to-a-file">Rendering the output to a file</h2>
 <p>The <span class="math inline">\(LaTeX\)</span> string can be rendered and saved to a file using the following function, which is based on the <code>SymPy</code> library.</p>
-<div id="670ebd59" class="cell" data-execution_count="6">
+<div id="b4eb18c6" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> preview</span>
@@ -408,7 +408,7 @@ $$</code></pre>
 <h2 class="anchored" data-anchor-id="other-types-of-automated-matrices">Other types of automated matrices</h2>
 <section id="matrices-with-numbered-elements" class="level3">
 <h3 class="anchored" data-anchor-id="matrices-with-numbered-elements">Matrices with numbered elements</h3>
-<div id="66637589" class="cell" data-execution_count="7">
+<div id="d90aac08" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> element_matrix(n, notation<span class="op">=</span><span class="vs">r"x"</span>):</span>
@@ -445,7 +445,7 @@ $$</code></pre>
 <ul>
 <li><em>Upper Triangular Matrix</em>: In an upper triangular matrix, all elements below the main diagonal are zero.</li>
 </ul>
-<div id="e2fb9ea1" class="cell" data-execution_count="9">
+<div id="14eb4451" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> up_triangular_matrix(n):</span>
@@ -460,7 +460,7 @@ $$</code></pre>
 <ul>
 <li><em>Lower Triangular Matrix</em>: In a lower triangular matrix, all elements above the main diagonal are zero.</li>
 </ul>
-<div id="c7e69e51" class="cell" data-execution_count="10">
+<div id="5f32eec1" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lw_triangular_matrix(n):</span>

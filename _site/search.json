@@ -77,6 +77,20 @@
     "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "energyCode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
+  },
+  {
+    "objectID": "about.html#author",
+    "href": "about.html#author",
+    "title": "About",
+    "section": "Author",
+    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
+  },
+  {
     "objectID": "TODO.html",
     "href": "TODO.html",
     "title": "energycode.org TODO.md",
@@ -126,18 +140,46 @@
     "text": "Github marketconf R package"
   },
   {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#introducción",
+    "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "INTRODUCCIÓN",
+    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#enunciado",
+    "href": "posts/18052024-Catalan-Numbers/index.html#enunciado",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "ENUNCIADO",
+    "text": "ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#demostración",
+    "href": "posts/18052024-Catalan-Numbers/index.html#demostración",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "DEMOSTRACIÓN",
+    "text": "DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+  },
+  {
+    "objectID": "posts/18052024-Catalan-Numbers/index.html#footnotes",
+    "href": "posts/18052024-Catalan-Numbers/index.html#footnotes",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Notas",
+    "text": "Notas\n\n\nEste artículo es una traducción del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
     "objectID": "posts/09032022-Confusion-Matrix/index.html",
     "href": "posts/09032022-Confusion-Matrix/index.html",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "The confusion matrix allows for the visualization of a classification algorithm’s performance. In this blog post, a function is provided to create an image of the confusion matrix. The R package caret includes the confusionMatrix function, which generates a comprehensive output.\n\nCodelibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\n\nWe will perform a Naive Bayes classification on the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         2\n  virginica       0          0         8\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.8000\nSpecificity                 1.0000            0.9000           1.0000\nPos Pred Value              1.0000            0.8333           1.0000\nNeg Pred Value              1.0000            1.0000           0.9091\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.2667\nDetection Prevalence        0.3333            0.4000           0.2667\nBalanced Accuracy           1.0000            0.9500           0.9000\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)\n\n\n\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
+    "text": "The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package caret includes the confusionMatrix function, which produces a detailed output.\n\nCodelibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\n\nWe will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0          8         0\n  virginica       0          2        10\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            0.8000           1.0000\nSpecificity                 1.0000            1.0000           0.9000\nPos Pred Value              1.0000            1.0000           0.8333\nNeg Pred Value              1.0000            0.9091           1.0000\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.2667           0.3333\nDetection Prevalence        0.3333            0.2667           0.4000\nBalanced Accuracy           1.0000            0.9000           0.9500\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)\n\n\n\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html#classification",
     "href": "posts/09032022-Confusion-Matrix/index.html#classification",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "We will perform a Naive Bayes classification on the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         2\n  virginica       0          0         8\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.8000\nSpecificity                 1.0000            0.9000           1.0000\nPos Pred Value              1.0000            0.8333           1.0000\nNeg Pred Value              1.0000            1.0000           0.9091\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.2667\nDetection Prevalence        0.3333            0.4000           0.2667\nBalanced Accuracy           1.0000            0.9500           0.9000"
+    "text": "We will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0          8         0\n  virginica       0          2        10\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            0.8000           1.0000\nSpecificity                 1.0000            1.0000           0.9000\nPos Pred Value              1.0000            1.0000           0.8333\nNeg Pred Value              1.0000            0.9091           1.0000\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.2667           0.3333\nDetection Prevalence        0.3333            0.2667           0.4000\nBalanced Accuracy           1.0000            0.9000           0.9500"
   },
   {
     "objectID": "posts/09032022-Confusion-Matrix/index.html#plotting",
@@ -180,61 +222,5 @@
     "title": "Max Determinant",
     "section": "References",
     "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html",
-    "href": "posts/18052024-Catalan-Numbers/index.html",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "",
-    "text": "Secuencia A014847 de OEIS"
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#introducción",
-    "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "INTRODUCCIÓN",
-    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#teorema",
-    "href": "posts/18052024-Catalan-Numbers/index.html#teorema",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "Teorema",
-    "text": "Teorema\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#demostración",
-    "href": "posts/18052024-Catalan-Numbers/index.html#demostración",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "DEMOSTRACIÓN",
-    "text": "DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#footnotes",
-    "href": "posts/18052024-Catalan-Numbers/index.html#footnotes",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "Notas",
-    "text": "Notas\n\n\nEste artículo es una traducción del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "energyCode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
-  },
-  {
-    "objectID": "about.html#author",
-    "href": "about.html#author",
-    "title": "About",
-    "section": "Author",
-    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
-  },
-  {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#enunciado",
-    "href": "posts/18052024-Catalan-Numbers/index.html#enunciado",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "ENUNCIADO",
-    "text": "ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
   }
 ]

@@ -201,7 +201,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content"><section id="confusion-matrix" class="level1"><h1>Confusion Matrix</h1>
-<p>The confusion matrix allows for the visualization of a classification algorithm’s performance. In this blog post, a function is provided to create an image of the confusion matrix. The R package <code>caret</code> includes the <code>confusionMatrix</code> function, which generates a comprehensive output.</p>
+<p>The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package <code>caret</code> includes the <code>confusionMatrix</code> function, which produces a detailed output.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">e1071</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">caTools</span><span class="op">)</span></span>
@@ -211,7 +211,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 </details>
 </div>
 <section id="classification" class="level2"><h2 class="anchored" data-anchor-id="classification">Classification</h2>
-<p>We will perform a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classification</a> on the classical Iris dataset.</p>
+<p>We will conduct a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classification</a> using the classical Iris dataset.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># train and test data</span></span>
 <span><span class="va">iris</span><span class="op">$</span><span class="va">spl</span> <span class="op">&lt;-</span> <span class="fu">caTools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/caTools/man/sample.split.html">sample.split</a></span><span class="op">(</span><span class="va">iris</span>, SplitRatio <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span></span>
@@ -229,8 +229,8 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
             Reference
 Prediction   setosa versicolor virginica
   setosa         10          0         0
-  versicolor      0         10         2
-  virginica       0          0         8
+  versicolor      0          8         0
+  virginica       0          2        10
 
 Overall Statistics
                                           
@@ -246,14 +246,14 @@ Overall Statistics
 Statistics by Class:
 
                      Class: setosa Class: versicolor Class: virginica
-Sensitivity                 1.0000            1.0000           0.8000
-Specificity                 1.0000            0.9000           1.0000
-Pos Pred Value              1.0000            0.8333           1.0000
-Neg Pred Value              1.0000            1.0000           0.9091
+Sensitivity                 1.0000            0.8000           1.0000
+Specificity                 1.0000            1.0000           0.9000
+Pos Pred Value              1.0000            1.0000           0.8333
+Neg Pred Value              1.0000            0.9091           1.0000
 Prevalence                  0.3333            0.3333           0.3333
-Detection Rate              0.3333            0.3333           0.2667
-Detection Prevalence        0.3333            0.4000           0.2667
-Balanced Accuracy           1.0000            0.9500           0.9000</code></pre>
+Detection Rate              0.3333            0.2667           0.3333
+Detection Prevalence        0.3333            0.2667           0.4000
+Balanced Accuracy           1.0000            0.9000           0.9500</code></pre>
 </div>
 </div>
 </section><section id="plotting" class="level2"><h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
@@ -278,7 +278,7 @@ Balanced Accuracy           1.0000            0.9500           0.9000</code></pr
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ggplot_confusion_matrix</span><span class="op">(</span><span class="va">cfm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
