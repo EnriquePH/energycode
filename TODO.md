@@ -7,7 +7,6 @@
 ### In Progress
 
 -   [ ] Post about blog features
--   [ ] Github pages publish.yaml
 
 ### Done
 
@@ -19,4 +18,5 @@
 -   [X] favicon.ico
 -   [X] Project Holocene Volcanic Eruptions
 -   [X] Post about sticker
- 
+-   [X] Github pages publish.yaml
+-   [X] add DESCRPTION file

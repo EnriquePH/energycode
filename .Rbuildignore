@@ -1,1 +1,45 @@
+# [ENERGYCODE] (c) 2025
+# .Rbuildignore
+# Ignorar archivos y carpetas que no deben incluirse en un paquete R
+
+# Carpetas de CI/CD y configuración
 ^\.github$
+
+# Outputs de Quarto (renderizados)
+^_site$
+^_book$
+^_freeze$
+
+# Archivos temporales y de editor
+^\.Rproj\.user$
+^\.Rhistory$
+^\.RData$
+^.*\.Rproj$
+^.*\.swp$
+^.*~$
+
+# Archivos de lock y dependencias (opcional, pero común)
+^renv\.lock$          # lockfile de renv (no se incluye en builds)
+^renv/activate\.R$    # script de activación de renv
+
+# Carpetas de paquetes instalados localmente
+^library$
+^Rlibs$
+
+# Archivos de Netlify / hosting
+^netlify\.toml$
+^netlify\.yml$
+
+# Logs y archivos temporales de compilación
+^\.quarto$
+^quarto\.log$
+
+# Archivos sensibles o de configuración local
+^\.env$
+^\.gitignore$
+^.*\.DS_Store$        # macOS
+^Thumbs\.db$          # Windows
+
+# Opcional: si usas paquetes desde GitHub, ignorar sus clones temporales
+^.*\.tar\.gz$
+^.*\.tgz$

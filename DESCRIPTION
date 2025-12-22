@@ -1,0 +1,21 @@
+Package: energycode
+Title: Personal technical blog using Quarto
+Version: 0.1.0
+Authors@R: person("Enrique", "Pérez Herrero", email = "energycode.org@gmail.com", role = c("aut", "cre"))
+Description: Personal blog with R and Python content.
+License: MIT
+Encoding: UTF-8
+
+Imports:
+    devtools,
+    remotes,
+    plot3D,
+    ggplot2,
+    e1071,
+    hexSticker,
+    caTools,
+    caret,
+    reticulate
+
+Suggests:
+    marketconf   # from GitHub, no need to list here
