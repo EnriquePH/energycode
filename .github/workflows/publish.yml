@@ -59,9 +59,17 @@ jobs:
         run: Rscript .github/install_packages.R
 
       - name: Install marketconf from GitHub
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          Rscript -e "remotes::install_github('EnriquePH/marketconf@master', \
-            upgrade = 'never', quiet = TRUE)"
+          Rscript -e "
+            remotes::install_github(
+              'EnriquePH/marketconf@master',
+              auth_token = Sys.getenv('GITHUB_PAT'),
+              upgrade = 'never',
+              quiet = TRUE
+            )
+          "
 
       - name: Setup Python
         uses: actions/setup-python@v5
