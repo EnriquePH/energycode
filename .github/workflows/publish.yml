@@ -47,12 +47,16 @@ jobs:
           key: r-${{ runner.os }}-${{ hashFiles('packages.txt', 'DESCRIPTION', 'renv.lock') }}
           restore-keys: r-${{ runner.os }}-
 
-      - name: Install minimal system dependencies (solo si cache miss)
-        if: steps.cache-r.outputs.cache-hit != 'true'
+      - name: Install system dependencies required by packages
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
-            libcurl4-openssl-dev libssl-dev libxml2-dev libpng-dev libjpeg-dev
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libpng-dev \
+            libjpeg-dev \
+            libmagick++-dev
 
       - name: Install CRAN packages from packages.txt
         run: Rscript .github/install_packages.R
