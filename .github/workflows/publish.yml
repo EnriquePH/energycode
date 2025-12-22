@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # Required for Quarto to correctly detect history
+          fetch-depth: 0
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -51,21 +51,25 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libpng-dev \
-            libjpeg-dev \
-            libtiff-dev \
-            libfreetype6-dev \
-            libfontconfig1-dev \
-            libharfbuzz-dev \
-            libfribidi-dev \
-            libcairo2-dev \
-            libmagick++-dev \
-            libmagick++-6.q16-dev
-          echo "System libraries installed. Checking for Magick++..."
-          ldconfig -p | grep Magick++ || echo "WARNING: libMagick++ not found in ldconfig"
+            libcurl4-openssl-dev libssl-dev libxml2-dev \
+            libpng-dev libjpeg-dev libtiff-dev \
+            libfreetype6-dev libfontconfig1-dev \
+            libharfbuzz-dev libfribidi-dev libcairo2-dev \
+            libmagick++-dev libmagick++-6.q16-dev
+          echo "System libraries installed. Checking Magick++..."
+          ldconfig -p | grep Magick++ || echo "WARNING: libMagick++ not found"
+
+      # ← NUEVO PASO: fuerza binario de magick
+      - name: Install magick with binary support (fixes hexSticker)
+        run: |
+          Rscript -e "
+            install.packages(
+              'magick',
+              repos = 'https://cloud.r-project.org',
+              type = 'binary',
+              quiet = TRUE
+            )
+          "
 
       - name: Install CRAN packages from packages.txt
         run: Rscript .github/install_packages.R
@@ -100,7 +104,7 @@ jobs:
         run: pip install --no-cache-dir --quiet -r requirements.txt
 
       - name: Check Quarto project
-        continue-on-error: true                # Does not stop deployment on minor warnings
+        continue-on-error: true
         run: quarto check
 
       - name: Render Quarto site
@@ -123,6 +127,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# Note: Netlify deployment is triggered automatically if you have the webhook configured
-# Alternatively, you can add a manual step using netlify-cli if preferred
