@@ -79,6 +79,7 @@ Enrique Pérez Herrero
 
 * GitHub: [@EnriquePH](https://github.com/EnriquePH)
 * Website: [www.energycode.org](https://www.energycode.org)
+* GitHub pages: [https://enriqueph.github.io/energycode/](https://enriqueph.github.io/energycode/)
 * LinkedIn: [eph3000](https://www.linkedin.com/in/eph3000)
 
 **Built with [Quarto](https://quarto.org)** • Licensed under the [MIT License](LICENSE)

@@ -1,3 +1,5 @@
+# [ENERGYCODE] (c) 2025
+
 name: Publish Quarto site
 
 on:
@@ -11,14 +13,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}  # Token automático (suficiente y seguro)
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Check out repository
@@ -33,57 +35,70 @@ jobs:
           r-version: '4.4'
           use-public-rspm: true
 
+      # Cache más inteligente: incluye packages.txt y DESCRIPTION
       - name: Cache R packages
         uses: actions/cache@v4
+        id: cache-r
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: r-packages-${{ runner.os }}-${{ hashFiles('**/*.R') }}
-          restore-keys: r-packages-${{ runner.os }}-
+          key: r-packages-${{ runner.os }}-r-${{ hashFiles('**/*.R', 'packages.txt', 'DESCRIPTION') }}
+          restore-keys: r-packages-${{ runner.os }}-r-
 
       - name: Install system dependencies
+        if: steps.cache-r.outputs.cache-hit != 'true'
         run: |
-          sudo apt-get update -q
-          sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libpng-dev \
-            libfreetype6-dev \
-            libfontconfig1-dev \
-            libcairo2-dev \
-            libmagick++-dev \
-            libharfbuzz-dev \
-            libfribidi-dev libpng-dev
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev libssl-dev libxml2-dev \
+            libpng-dev libjpeg-dev libfreetype6-dev \
+            libfontconfig1-dev libcairo2-dev \
+            libharfbuzz-dev libfribidi-dev \
+            libmagick++-dev
 
-      - name: Install required CRAN packages
+      - name: Install CRAN packages from packages.txt
         run: |
           Rscript -e "
-            pkgs <- c('devtools', 'remotes', 'plot3D', 'ggplot2', 'e1071', 'hexSticker', 'caTools', 'caret', 'reticulate')
-            install.packages(pkgs, repos = 'https://cloud.r-project.org')
+            pkgs_file <- 'packages.txt'
+            if (!file.exists(pkgs_file)) stop('Archivo packages.txt no encontrado')
+
+            pkgs <- readLines(pkgs_file)
+            pkgs <- trimws(pkgs[!grepl('^#|^\\s*$', pkgs)])
+            pkgs <- pkgs[nzchar(pkgs)]
+
+            if (length(pkgs) > 0) {
+              cat('Instalando', length(pkgs), 'paquetes CRAN:\\n')
+              print(pkgs)
+              install.packages(pkgs,
+                             repos = 'https://packagemanager.posit.co/cran/__linux__/jammy/latest',
+                             Ncpus = parallel::detectCores(logical = TRUE),
+                             quiet = TRUE)
+            } else {
+              message('No se encontraron paquetes válidos en packages.txt')
+            }
           "
+
       - name: Install marketconf from GitHub
         run: |
-          Rscript -e "remotes::install_github('EnriquePH/marketconf@master')"
+          Rscript -e "remotes::install_github('EnriquePH/marketconf@master', upgrade = 'never', quiet = TRUE)"
 
-      - name: Set up Python (solo si usas Jupyter)
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
 
-      - name: Install Jupyter dependencies
+      - name: Install Python dependencies
         run: |
-          pip install --quiet --no-input jupyter ipykernel nbclient nbformat
-          if [ -f requirements.txt ]; then
-            pip install --quiet --no-input -r requirements.txt
-          fi
+          pip install --no-cache-dir --quiet \
+            -r requirements.txt \
+            jupyter ipykernel nbformat nbconvert jupyterlab
 
       - name: Render Quarto site
-        run: |
-          export _R_CHECK_NO_TK_=TRUE   # Elimina warning de Tk
-          quarto render
+        env:
+          _R_CHECK_NO_TK_: "TRUE"
+        run: quarto render --no-prompt
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site

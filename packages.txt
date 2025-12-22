@@ -1,4 +1,4 @@
-# ENERGYCODE (c) 2025
+# [ENERGYCODE] (c) 2025
 devtools
 remotes
 plot3D
@@ -7,3 +7,4 @@ e1071
 hexSticker
 caTools
 caret
+reticulate
