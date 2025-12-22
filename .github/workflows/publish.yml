@@ -3,6 +3,7 @@
 # - Render → GitHub Pages (automatic on every push to main and manual dispatch)
 # - Render → Netlify (automatically triggered via webhook if configured)
 # Last updated: December 2025
+# test nº24
 
 name: Publish Quarto site
 
