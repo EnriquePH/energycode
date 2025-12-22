@@ -74,12 +74,24 @@ Contributions, suggestions and corrections are welcome! Feel free to:
 * Submit a pull request
 * Share feedback on any post
 
+## Deployment
+
+The site is published automatically to:
+
+- **GitHub Pages**  
+  [https://enriqueph.github.io/energycode/](https://enriqueph.github.io/energycode/)    
+  Triggered by pushes to `main` via `.github/workflows/publish.yml`
+
+- **Netlify** (custom domain)  
+  [www.energycode.org](https://www.energycode.org)    
+  Auto-deployed via Netlify webhook  
+  Build command: `quarto render`  
+  Output directory: `_site`
+
 ## Author
 Enrique Pérez Herrero
 
 * GitHub: [@EnriquePH](https://github.com/EnriquePH)
-* Website: [www.energycode.org](https://www.energycode.org)
-* GitHub pages: [https://enriqueph.github.io/energycode/](https://enriqueph.github.io/energycode/)
 * LinkedIn: [eph3000](https://www.linkedin.com/in/eph3000)
 
 **Built with [Quarto](https://quarto.org)** • Licensed under the [MIT License](LICENSE)
