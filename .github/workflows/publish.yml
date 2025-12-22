@@ -3,7 +3,6 @@
 # - Render → GitHub Pages (automatic on every push to main and manual dispatch)
 # - Render → Netlify (automatically triggered via webhook if configured)
 # Last updated: December 2025
-# test nº24
 
 name: Publish Quarto site
 
@@ -33,6 +32,8 @@ jobs:
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 'latest'
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
@@ -123,7 +124,8 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}# [ENERGYCODE] (c) 2025
+# Workflow to render and deploy the Quarto site
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
