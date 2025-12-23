@@ -7,116 +7,130 @@
     "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/02082023-Numpy-LaTeX/index.html",
-    "href": "posts/02082023-Numpy-LaTeX/index.html",
+    "objectID": "posts/02082023-numpy-latex/index.html",
+    "href": "posts/02082023-numpy-latex/index.html",
     "title": "Convert a NumPy array to LaTeX",
     "section": "",
     "text": "Sierra de las Nieves (Málaga)"
   },
   {
-    "objectID": "posts/02082023-Numpy-LaTeX/index.html#functions-for-matrices-and-determinants",
-    "href": "posts/02082023-Numpy-LaTeX/index.html#functions-for-matrices-and-determinants",
+    "objectID": "posts/02082023-numpy-latex/index.html#functions-for-matrices-and-determinants",
+    "href": "posts/02082023-numpy-latex/index.html#functions-for-matrices-and-determinants",
     "title": "Convert a NumPy array to LaTeX",
-    "section": "Functions for matrices and determinants",
-    "text": "Functions for matrices and determinants\nThe functions matrix2latex and det2latex generate an indented \\(LaTeX\\) string that can be copied or directly rendered in your math article.\nThe INDENT_SPACES parameter specifies the number of spaces used for indentation.\n\n\nCode\nimport numpy as np\n\nINDENT_SPACES = 3\n\ndef indent(num_indent=1):\n    \"\"\"\n    Number of spaces for indentation\n    \"\"\"\n    return num_indent * INDENT_SPACES * \" \"\n\ndef matrix2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a matrix\n    \"\"\"\n    left_latex = r\"\\left(\" + \"\\n\" + indent(1) + r\"\\begin{array}\"\n    right_latex = indent(1) + r\"\\end{array}\" + \"\\n\" + r\"\\right)\"\n    m_cols = matrix.shape[1]\n    array_cols = \"{\" + \"r\" * m_cols + \"}\\n\"\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(2) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + array_cols + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\ndef det2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a determinant\n    \"\"\"\n    left_latex = r\"\\begin{vmatrix}\" + \"\\n\"\n    right_latex = r\"\\end{vmatrix}\"\n    m_cols = matrix.shape[1]\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(1) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\n\nOutput string\nUsing the NumPy function np.eye, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.\n\n\nCode\nprint(matrix2latex(np.eye(3, dtype=int)))\n\n\n$$\n\\left(\n   \\begin{array}{rrr}\n      1 & 0 & 0 \\\\ \n      0 & 1 & 0 \\\\ \n      0 & 0 & 1 \\\\ \n   \\end{array}\n\\right)\n$$"
+    "section": "1.1 Functions for matrices and determinants",
+    "text": "1.1 Functions for matrices and determinants\nThe functions matrix2latex and det2latex generate an indented \\(LaTeX\\) string that can be copied or directly rendered in your math article.\nThe INDENT_SPACES parameter specifies the number of spaces used for indentation.\n\n\nCode\nimport numpy as np\n\nINDENT_SPACES = 3\n\ndef indent(num_indent=1):\n    \"\"\"\n    Number of spaces for indentation\n    \"\"\"\n    return num_indent * INDENT_SPACES * \" \"\n\ndef matrix2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a matrix\n    \"\"\"\n    left_latex = r\"\\left(\" + \"\\n\" + indent(1) + r\"\\begin{array}\"\n    right_latex = indent(1) + r\"\\end{array}\" + \"\\n\" + r\"\\right)\"\n    m_cols = matrix.shape[1]\n    array_cols = \"{\" + \"r\" * m_cols + \"}\\n\"\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(2) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + array_cols + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\ndef det2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a determinant\n    \"\"\"\n    left_latex = r\"\\begin{vmatrix}\" + \"\\n\"\n    right_latex = r\"\\end{vmatrix}\"\n    m_cols = matrix.shape[1]\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(1) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\n\n1.1.1 Output string\nUsing the NumPy function np.eye, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.\n\n\nCode\nprint(matrix2latex(np.eye(3, dtype=int)))\n\n\n$$\n\\left(\n   \\begin{array}{rrr}\n      1 & 0 & 0 \\\\ \n      0 & 1 & 0 \\\\ \n      0 & 0 & 1 \\\\ \n   \\end{array}\n\\right)\n$$"
   },
   {
-    "objectID": "posts/02082023-Numpy-LaTeX/index.html#rendering-output-in-a-document",
-    "href": "posts/02082023-Numpy-LaTeX/index.html#rendering-output-in-a-document",
+    "objectID": "posts/02082023-numpy-latex/index.html#rendering-output-in-a-document",
+    "href": "posts/02082023-numpy-latex/index.html#rendering-output-in-a-document",
     "title": "Convert a NumPy array to LaTeX",
-    "section": "Rendering output in a document",
-    "text": "Rendering output in a document\nIf you are working in a Jupyter notebook, you can render a \\(LaTeX\\) string using the Math function from the IPython library, which can be imported as follows:\n\n\nCode\nfrom IPython.display import Math\n\n\nIf you are writing a Python chunk in a Quarto file in RStudio, you need to include the option #| output: asis at the top of the code chunk. This option determines how the output is rendered in the final document.\n\n\nCode\nprint(det2latex(np.eye(3, dtype=int)))\n\n\\[\n\\begin{vmatrix}\n   1 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   0 & 0 & 1 \\\\\n\\end{vmatrix}\n\\]\n\n\n\nCode\n# Identity 4x4 matrix\nidentity_4 = np.eye(4, dtype=int)\nidentity_4_latex = r\"$$I_4 = \" + f\"{matrix2latex(identity_4)}\"[2:]\nprint(identity_4_latex)\n\n\\[I_4 =\n\\left(\n   \\begin{array}{rrrr}\n      1 & 0 & 0 & 0 \\\\\n      0 & 1 & 0 & 0 \\\\\n      0 & 0 & 1 & 0 \\\\\n      0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+    "section": "1.2 Rendering output in a document",
+    "text": "1.2 Rendering output in a document\nIf you are working in a Jupyter notebook, you can render a \\(LaTeX\\) string using the Math function from the IPython library, which can be imported as follows:\n\n\nCode\nfrom IPython.display import Math\n\n\nIf you are writing a Python chunk in a Quarto file in RStudio, you need to include the option #| output: asis at the top of the code chunk. This option determines how the output is rendered in the final document.\n\n\nCode\nprint(det2latex(np.eye(3, dtype=int)))\n\n\\[\n\\begin{vmatrix}\n   1 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   0 & 0 & 1 \\\\\n\\end{vmatrix}\n\\]\n\n\n\nCode\n# Identity 4x4 matrix\nidentity_4 = np.eye(4, dtype=int)\nidentity_4_latex = r\"$$I_4 = \" + f\"{matrix2latex(identity_4)}\"[2:]\nprint(identity_4_latex)\n\n\\[I_4 =\n\\left(\n   \\begin{array}{rrrr}\n      1 & 0 & 0 & 0 \\\\\n      0 & 1 & 0 & 0 \\\\\n      0 & 0 & 1 & 0 \\\\\n      0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
   },
   {
-    "objectID": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-to-a-file",
-    "href": "posts/02082023-Numpy-LaTeX/index.html#rendering-the-output-to-a-file",
+    "objectID": "posts/02082023-numpy-latex/index.html#rendering-the-output-to-a-file",
+    "href": "posts/02082023-numpy-latex/index.html#rendering-the-output-to-a-file",
     "title": "Convert a NumPy array to LaTeX",
-    "section": "Rendering the output to a file",
-    "text": "Rendering the output to a file\nThe \\(LaTeX\\) string can be rendered and saved to a file using the following function, which is based on the SymPy library.\n\n\nCode\nfrom sympy import preview\n\ndef latex2png(latex, filename, fontsize=300):\n    \"\"\"\n    Render LaTeX code to a PNG image\n    \"\"\"\n    return preview(latex,\n                   viewer='file',\n                   filename=filename,\n                   euler=False,\n                   dvioptions=['-D', f'{str(fontsize)}'])"
+    "section": "1.3 Rendering the output to a file",
+    "text": "1.3 Rendering the output to a file\nThe \\(LaTeX\\) string can be rendered and saved to a file using the following function, which is based on the SymPy library.\n\n\nCode\nfrom sympy import preview\n\ndef latex2png(latex, filename, fontsize=300):\n    \"\"\"\n    Render LaTeX code to a PNG image\n    \"\"\"\n    return preview(latex,\n                   viewer='file',\n                   filename=filename,\n                   euler=False,\n                   dvioptions=['-D', f'{str(fontsize)}'])"
   },
   {
-    "objectID": "posts/02082023-Numpy-LaTeX/index.html#other-types-of-automated-matrices",
-    "href": "posts/02082023-Numpy-LaTeX/index.html#other-types-of-automated-matrices",
+    "objectID": "posts/02082023-numpy-latex/index.html#other-types-of-automated-matrices",
+    "href": "posts/02082023-numpy-latex/index.html#other-types-of-automated-matrices",
     "title": "Convert a NumPy array to LaTeX",
-    "section": "Other types of automated matrices",
-    "text": "Other types of automated matrices\n\nMatrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\n\nTriangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+    "section": "1.4 Other types of automated matrices",
+    "text": "1.4 Other types of automated matrices\n\n1.4.1 Matrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\n\n1.4.2 Triangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html",
-    "href": "posts/01082023-Blog-Logo/index.html",
-    "title": "Blog Logo Sticker",
+    "objectID": "posts/05032022-max-determinant/index.html",
+    "href": "posts/05032022-max-determinant/index.html",
+    "title": "Max Determinant",
     "section": "",
-    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(magrittr)"
+    "text": "Plot3D of max matrix elements"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html#el-paquete-hexsticker",
-    "href": "posts/01082023-Blog-Logo/index.html#el-paquete-hexsticker",
-    "title": "Blog Logo Sticker",
-    "section": "",
-    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(magrittr)"
+    "objectID": "posts/05032022-max-determinant/index.html#identity",
+    "href": "posts/05032022-max-determinant/index.html#identity",
+    "title": "Max Determinant",
+    "section": "1 Identity",
+    "text": "1 Identity\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), where the elements \\(m_{i,j}= \\max(i,j)\\) and \\(\\max\\) denotes the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html#archivos-de-entrada-y-salida",
-    "href": "posts/01082023-Blog-Logo/index.html#archivos-de-entrada-y-salida",
-    "title": "Blog Logo Sticker",
-    "section": "Archivos de entrada y salida",
-    "text": "Archivos de entrada y salida\n\nCódigofile_icon &lt;- \"lightning_icon_white.png\"\nfile_name &lt;- \"logo.png\""
+    "objectID": "posts/05032022-max-determinant/index.html#proof",
+    "href": "posts/05032022-max-determinant/index.html#proof",
+    "title": "Max Determinant",
+    "section": "2 Proof",
+    "text": "2 Proof\nA new matrix with the same determinant can be created by subtracting row \\(i\\) from row \\(i+1\\) starting from the 2nd row. The determinant of this new matrix can then be easily computed using the expansion by minors technique at element \\(m_{1,n}\\)\nThis can be better illustrated with an example:\nWe can transform:\n\\[\\begin{equation}\nM_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right)\n\\end{equation}\\]\nInto:\n\\[\\begin{equation}\nM^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\n\\end{equation}\\]\nThis proof can be generalized to a very similar type of matrices, resulting in:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]\n\\[\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-del-hexágono",
-    "href": "posts/01082023-Blog-Logo/index.html#solución-al-recorte-del-borde-del-hexágono",
-    "title": "Blog Logo Sticker",
-    "section": "Solución al recorte del borde del hexágono",
-    "text": "Solución al recorte del borde del hexágono\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete hexStickerpor defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n#| echo: true\n\nlibrary(ggplot2)  # Para solución issue #155\n\nmy_theme_sticker &lt;- function(size = 1.2, ...) {\n  center &lt;- 1\n  radius &lt;- 1\n  h &lt;- radius\n  w &lt;- sqrt(3) / 2 * radius\n  m &lt;- 1.05\n  list(\n    theme_transparent() +\n      ggplot2::theme(\n        plot.margin = margin(\n          t = 0,\n          r = 0,\n          b = 0,\n          l = 0,\n          unit = \"lines\"\n        ),\n        strip.text = element_blank(),\n        line = element_blank(),\n        text = element_blank(),\n        title = element_blank(),\n        ...\n      ),\n    coord_fixed(),\n    scale_y_continuous(\n      expand = c(0, 0),\n      limits = c(center - h * m , center + h * m)\n    ),\n    scale_x_continuous(\n      expand = c(0, 0),\n      limits = c(center - w * m , center + w * m)\n    )\n  )\n}"
+    "objectID": "posts/05032022-max-determinant/index.html#references",
+    "href": "posts/05032022-max-determinant/index.html#references",
+    "title": "Max Determinant",
+    "section": "3 References",
+    "text": "3 References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html#creación-del-sticker",
-    "href": "posts/01082023-Blog-Logo/index.html#creación-del-sticker",
-    "title": "Blog Logo Sticker",
-    "section": "Creación del sticker",
-    "text": "Creación del sticker\nAhora generamos el logo ajustando posiciones, tamaños y colores.\n\nCódigosticker(\n  subplot = file_icon,\n  package = \"ENERGYCODE\",\n  p_size = 18,      # Tamaño del texto\n  p_y = 1.3,        # Posición vertical del texto\n  p_color = \"white\",\n  h_fill = \"black\", # Fondo del hexágono\n  h_color = \"grey\", # Color del borde\n  h_size = 1.5,     # Grosor del borde\n  s_x = 1,          # Posición horizontal del icono\n  s_y = 0.75,       # Posición vertical del icono\n  s_width = 0.35,   # Ancho del icono\n  s_height = 0.35,  # Alto del icono\n  spotlight = TRUE, # Efecto de luz opcional\n  l_x = 1.0,        # Posición de la luz (ajustar si usas spotlight)\n  dpi = 300,        # Alta resolución\n  filename = file_name,\n  theme = my_theme_sticker()\n)"
+    "objectID": "posts/18052024-catalan-numbers/index.html#introducción",
+    "href": "posts/18052024-catalan-numbers/index.html#introducción",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "1 INTRODUCCIÓN",
+    "text": "1 INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
   },
   {
-    "objectID": "posts/01082023-Blog-Logo/index.html#resultado-final",
-    "href": "posts/01082023-Blog-Logo/index.html#resultado-final",
-    "title": "Blog Logo Sticker",
-    "section": "Resultado final",
-    "text": "Resultado final\n]\nEl logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en _quarto.yml:\nwebsite:\n  title: \"ENERGYCODE\"\n  navbar:\n    logo: logo.png"
+    "objectID": "posts/18052024-catalan-numbers/index.html#enunciado",
+    "href": "posts/18052024-catalan-numbers/index.html#enunciado",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "2 ENUNCIADO",
+    "text": "2 ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html",
+    "objectID": "posts/18052024-catalan-numbers/index.html#demostración",
+    "href": "posts/18052024-catalan-numbers/index.html#demostración",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "3 DEMOSTRACIÓN",
+    "text": "3 DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+  },
+  {
+    "objectID": "posts/18052024-catalan-numbers/index.html#footnotes",
+    "href": "posts/18052024-catalan-numbers/index.html#footnotes",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Notas",
+    "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html",
     "title": "Volcanic Eruptions in the Holocene Period",
     "section": "",
     "text": "Volcán de Teneguía (La Palma)"
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#data-source",
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
     "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Data source",
-    "text": "Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
+    "section": "1.1 Data source",
+    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
     "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "EDA (Exploratory Data Analysis) Notebook",
-    "text": "EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
+    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
+    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#comments",
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
     "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Comments",
-    "text": "Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+    "section": "1.3 Comments",
+    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
   },
   {
-    "objectID": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
-    "href": "projects/03-Holocene_Volcanic_Eruptions/index.html#links",
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
     "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "Links",
-    "text": "Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+    "section": "1.4 Links",
+    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
   },
   {
     "objectID": "about.html",
@@ -129,15 +143,15 @@
     "objectID": "about.html#author",
     "href": "about.html#author",
     "title": "About",
-    "section": "Author",
-    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
+    "section": "1 Author",
+    "text": "1 Author\nThe site is maintained by Enrique Pérez Herrero."
   },
   {
     "objectID": "TODO.html",
     "href": "TODO.html",
-    "title": "energycode.org TODO.md",
+    "title": "1 energycode.org TODO.md",
     "section": "",
-    "text": "energycode.org TODO.md\n\nTodo\n\nOEIS.R package\n\n\n\nIn Progress\n\nPost about blog features\n\n\n\nDone\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions"
+    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
   },
   {
     "objectID": "index.html",
@@ -182,87 +196,73 @@
     "text": "Github marketconf R package"
   },
   {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#introducción",
-    "href": "posts/18052024-Catalan-Numbers/index.html#introducción",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "INTRODUCCIÓN",
-    "text": "INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
+    "objectID": "posts/01082023-blog-logo/index.html",
+    "href": "posts/01082023-blog-logo/index.html",
+    "title": "Blog Logo Sticker",
+    "section": "",
+    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(magrittr)"
   },
   {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#enunciado",
-    "href": "posts/18052024-Catalan-Numbers/index.html#enunciado",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "ENUNCIADO",
-    "text": "ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
+    "objectID": "posts/01082023-blog-logo/index.html#el-paquete-hexsticker",
+    "href": "posts/01082023-blog-logo/index.html#el-paquete-hexsticker",
+    "title": "Blog Logo Sticker",
+    "section": "",
+    "text": "El paquete hexSticker creado por Guangchuang Yu [1] es una herramienta para generar stickers hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web ENERGYCODE usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver issue #155).\n\nCódigolibrary(hexSticker)\nlibrary(magrittr)"
   },
   {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#demostración",
-    "href": "posts/18052024-Catalan-Numbers/index.html#demostración",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "DEMOSTRACIÓN",
-    "text": "DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+    "objectID": "posts/01082023-blog-logo/index.html#archivos-de-entrada-y-salida",
+    "href": "posts/01082023-blog-logo/index.html#archivos-de-entrada-y-salida",
+    "title": "Blog Logo Sticker",
+    "section": "\n2 Archivos de entrada y salida",
+    "text": "2 Archivos de entrada y salida\n\nCódigofile_icon &lt;- \"lightning_icon_white.png\"\nfile_name &lt;- \"logo.png\""
   },
   {
-    "objectID": "posts/18052024-Catalan-Numbers/index.html#footnotes",
-    "href": "posts/18052024-Catalan-Numbers/index.html#footnotes",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "Notas",
-    "text": "Notas\n\n\nEste artículo es una traducción del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+    "objectID": "posts/01082023-blog-logo/index.html#solución-al-recorte-del-borde-del-hexágono",
+    "href": "posts/01082023-blog-logo/index.html#solución-al-recorte-del-borde-del-hexágono",
+    "title": "Blog Logo Sticker",
+    "section": "\n3 Solución al recorte del borde del hexágono",
+    "text": "3 Solución al recorte del borde del hexágono\nEl problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete hexStickerpor defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.\n\nCódigo# Solves issue:\n# Border always cut off in .png or .svg #155\n# https://github.com/GuangchuangYu/hexSticker/issues/155\n# by https://github.com/emilioxavier\n#| label: tema-personalizado\n#| echo: true\n\nlibrary(ggplot2)  # Para solución issue #155\n\nmy_theme_sticker &lt;- function(size = 1.2, ...) {\n  center &lt;- 1\n  radius &lt;- 1\n  h &lt;- radius\n  w &lt;- sqrt(3) / 2 * radius\n  m &lt;- 1.05\n  list(\n    theme_transparent() +\n      ggplot2::theme(\n        plot.margin = margin(\n          t = 0,\n          r = 0,\n          b = 0,\n          l = 0,\n          unit = \"lines\"\n        ),\n        strip.text = element_blank(),\n        line = element_blank(),\n        text = element_blank(),\n        title = element_blank(),\n        ...\n      ),\n    coord_fixed(),\n    scale_y_continuous(\n      expand = c(0, 0),\n      limits = c(center - h * m , center + h * m)\n    ),\n    scale_x_continuous(\n      expand = c(0, 0),\n      limits = c(center - w * m , center + w * m)\n    )\n  )\n}"
   },
   {
-    "objectID": "posts/09032022-Confusion-Matrix/index.html",
-    "href": "posts/09032022-Confusion-Matrix/index.html",
+    "objectID": "posts/01082023-blog-logo/index.html#creación-del-sticker",
+    "href": "posts/01082023-blog-logo/index.html#creación-del-sticker",
+    "title": "Blog Logo Sticker",
+    "section": "\n4 Creación del sticker",
+    "text": "4 Creación del sticker\nAhora generamos el logo ajustando posiciones, tamaños y colores.\n\nCódigosticker(\n  subplot = file_icon,\n  package = \"ENERGYCODE\",\n  p_size = 18,      # Tamaño del texto\n  p_y = 1.3,        # Posición vertical del texto\n  p_color = \"white\",\n  h_fill = \"black\", # Fondo del hexágono\n  h_color = \"grey\", # Color del borde\n  h_size = 1.5,     # Grosor del borde\n  s_x = 1,          # Posición horizontal del icono\n  s_y = 0.75,       # Posición vertical del icono\n  s_width = 0.35,   # Ancho del icono\n  s_height = 0.35,  # Alto del icono\n  spotlight = TRUE, # Efecto de luz opcional\n  l_x = 1.0,        # Posición de la luz (ajustar si usas spotlight)\n  dpi = 300,        # Alta resolución\n  filename = file_name,\n  theme = my_theme_sticker()\n)"
+  },
+  {
+    "objectID": "posts/01082023-blog-logo/index.html#resultado-final",
+    "href": "posts/01082023-blog-logo/index.html#resultado-final",
+    "title": "Blog Logo Sticker",
+    "section": "\n5 Resultado final",
+    "text": "5 Resultado final\n]\nEl logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en _quarto.yml:\nwebsite:\n  title: \"ENERGYCODE\"\n  navbar:\n    logo: logo.png"
+  },
+  {
+    "objectID": "posts/09032022-confusion-matrix/index.html",
+    "href": "posts/09032022-confusion-matrix/index.html",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package caret includes the confusionMatrix function, which produces a detailed output.\n\nCodelibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\n\nWe will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         2\n  virginica       0          0         8\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.8000\nSpecificity                 1.0000            0.9000           1.0000\nPos Pred Value              1.0000            0.8333           1.0000\nNeg Pred Value              1.0000            1.0000           0.9091\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.2667\nDetection Prevalence        0.3333            0.4000           0.2667\nBalanced Accuracy           1.0000            0.9500           0.9000\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)\n\n\n\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
+    "text": "The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package caret includes the confusionMatrix function, which produces a detailed output.\n\nCodelibrary(e1071)\nlibrary(caTools)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(caret)\n\n\n\nWe will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         1\n  virginica       0          0         9\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.9000\nSpecificity                 1.0000            0.9500           1.0000\nPos Pred Value              1.0000            0.9091           1.0000\nNeg Pred Value              1.0000            1.0000           0.9524\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.3000\nDetection Prevalence        0.3333            0.3667           0.3000\nBalanced Accuracy           1.0000            0.9750           0.9500\n\n\n\nTo plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)\n\n\n\n\n\n\n\n\n\nStackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
   },
   {
-    "objectID": "posts/09032022-Confusion-Matrix/index.html#classification",
-    "href": "posts/09032022-Confusion-Matrix/index.html#classification",
+    "objectID": "posts/09032022-confusion-matrix/index.html#classification",
+    "href": "posts/09032022-confusion-matrix/index.html#classification",
     "title": "Confusion Matrix in R",
     "section": "",
-    "text": "We will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         2\n  virginica       0          0         8\n\nOverall Statistics\n                                          \n               Accuracy : 0.9333          \n                 95% CI : (0.7793, 0.9918)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 8.747e-12       \n                                          \n                  Kappa : 0.9             \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.8000\nSpecificity                 1.0000            0.9000           1.0000\nPos Pred Value              1.0000            0.8333           1.0000\nNeg Pred Value              1.0000            1.0000           0.9091\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.2667\nDetection Prevalence        0.3333            0.4000           0.2667\nBalanced Accuracy           1.0000            0.9500           0.9000"
+    "text": "We will conduct a Naive Bayes classification using the classical Iris dataset.\n\nCode# train and test data\niris$spl &lt;- caTools::sample.split(iris, SplitRatio = 0.8)\ntrain &lt;- subset(iris, iris$spl == TRUE)\ntest &lt;- subset(iris, iris$spl == FALSE)\n\niris_nb &lt;- naiveBayes(Species ~ ., data = train)\nnb_train_predict &lt;- predict(iris_nb, test[, names(test) != \"Species\"])\n\ncfm &lt;- confusionMatrix(nb_train_predict, test$Species)\ncfm\n\nConfusion Matrix and Statistics\n\n            Reference\nPrediction   setosa versicolor virginica\n  setosa         10          0         0\n  versicolor      0         10         1\n  virginica       0          0         9\n\nOverall Statistics\n                                          \n               Accuracy : 0.9667          \n                 95% CI : (0.8278, 0.9992)\n    No Information Rate : 0.3333          \n    P-Value [Acc &gt; NIR] : 2.963e-13       \n                                          \n                  Kappa : 0.95            \n                                          \n Mcnemar's Test P-Value : NA              \n\nStatistics by Class:\n\n                     Class: setosa Class: versicolor Class: virginica\nSensitivity                 1.0000            1.0000           0.9000\nSpecificity                 1.0000            0.9500           1.0000\nPos Pred Value              1.0000            0.9091           1.0000\nNeg Pred Value              1.0000            1.0000           0.9524\nPrevalence                  0.3333            0.3333           0.3333\nDetection Rate              0.3333            0.3333           0.3000\nDetection Prevalence        0.3333            0.3667           0.3000\nBalanced Accuracy           1.0000            0.9750           0.9500"
   },
   {
-    "objectID": "posts/09032022-Confusion-Matrix/index.html#plotting",
-    "href": "posts/09032022-Confusion-Matrix/index.html#plotting",
+    "objectID": "posts/09032022-confusion-matrix/index.html#plotting",
+    "href": "posts/09032022-confusion-matrix/index.html#plotting",
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the obtained confusion matrix as a ggplot graphic, we will use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
   },
   {
-    "objectID": "posts/09032022-Confusion-Matrix/index.html#links",
-    "href": "posts/09032022-Confusion-Matrix/index.html#links",
+    "objectID": "posts/09032022-confusion-matrix/index.html#links",
+    "href": "posts/09032022-confusion-matrix/index.html#links",
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "StackOverflow: How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?"
-  },
-  {
-    "objectID": "posts/05032022-Max-Determinant/index.html",
-    "href": "posts/05032022-Max-Determinant/index.html",
-    "title": "Max Determinant",
-    "section": "",
-    "text": "Plot3D of max matrix elements"
-  },
-  {
-    "objectID": "posts/05032022-Max-Determinant/index.html#identity",
-    "href": "posts/05032022-Max-Determinant/index.html#identity",
-    "title": "Max Determinant",
-    "section": "Identity",
-    "text": "Identity\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), where the elements \\(m_{i,j}= \\max(i,j)\\) and \\(\\max\\) denotes the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "posts/05032022-Max-Determinant/index.html#proof",
-    "href": "posts/05032022-Max-Determinant/index.html#proof",
-    "title": "Max Determinant",
-    "section": "Proof",
-    "text": "Proof\nA new matrix with the same determinant can be created by subtracting row \\(i\\) from row \\(i+1\\) starting from the 2nd row. The determinant of this new matrix can then be easily computed using the expansion by minors technique at element \\(m_{1,n}\\)\nThis can be better illustrated with an example:\nWe can transform:\n\\[\\begin{equation}\nM_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right)\n\\end{equation}\\]\nInto:\n\\[\\begin{equation}\nM^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\n\\end{equation}\\]\nThis proof can be generalized to a very similar type of matrices, resulting in:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]\n\\[\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "posts/05032022-Max-Determinant/index.html#references",
-    "href": "posts/05032022-Max-Determinant/index.html#references",
-    "title": "Max Determinant",
-    "section": "References",
-    "text": "References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
   }
 ]

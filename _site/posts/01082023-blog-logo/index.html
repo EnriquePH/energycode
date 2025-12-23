@@ -207,16 +207,17 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-<li><a href="#el-paquete-hexsticker" id="toc-el-paquete-hexsticker" class="nav-link active" data-scroll-target="#el-paquete-hexsticker">El paquete <code>hexSticker</code></a></li>
-  <li><a href="#archivos-de-entrada-y-salida" id="toc-archivos-de-entrada-y-salida" class="nav-link" data-scroll-target="#archivos-de-entrada-y-salida">Archivos de entrada y salida</a></li>
-  <li><a href="#soluci%C3%B3n-al-recorte-del-borde-del-hex%C3%A1gono" id="toc-solución-al-recorte-del-borde-del-hexágono" class="nav-link" data-scroll-target="#soluci%C3%B3n-al-recorte-del-borde-del-hex%C3%A1gono">Solución al recorte del borde del hexágono</a></li>
-  <li><a href="#creaci%C3%B3n-del-sticker" id="toc-creación-del-sticker" class="nav-link" data-scroll-target="#creaci%C3%B3n-del-sticker">Creación del sticker</a></li>
-  <li><a href="#resultado-final" id="toc-resultado-final" class="nav-link" data-scroll-target="#resultado-final">Resultado final</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+<li><a href="#el-paquete-hexsticker" id="toc-el-paquete-hexsticker" class="nav-link active" data-scroll-target="#el-paquete-hexsticker"><span class="header-section-number">1</span> El paquete <code>hexSticker</code></a></li>
+  <li><a href="#archivos-de-entrada-y-salida" id="toc-archivos-de-entrada-y-salida" class="nav-link" data-scroll-target="#archivos-de-entrada-y-salida"><span class="header-section-number">2</span> Archivos de entrada y salida</a></li>
+  <li><a href="#soluci%C3%B3n-al-recorte-del-borde-del-hex%C3%A1gono" id="toc-solución-al-recorte-del-borde-del-hexágono" class="nav-link" data-scroll-target="#soluci%C3%B3n-al-recorte-del-borde-del-hex%C3%A1gono"><span class="header-section-number">3</span> Solución al recorte del borde del hexágono</a></li>
+  <li><a href="#creaci%C3%B3n-del-sticker" id="toc-creación-del-sticker" class="nav-link" data-scroll-target="#creaci%C3%B3n-del-sticker"><span class="header-section-number">4</span> Creación del sticker</a></li>
+  <li><a href="#resultado-final" id="toc-resultado-final" class="nav-link" data-scroll-target="#resultado-final"><span class="header-section-number">5</span> Resultado final</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">6</span> Referencias</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="el-paquete-hexsticker" class="level2"><h2 class="anchored" data-anchor-id="el-paquete-hexsticker">El paquete <code>hexSticker</code>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="el-paquete-hexsticker" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="el-paquete-hexsticker">
+<span class="header-section-number">1</span> El paquete <code>hexSticker</code>
 </h2>
 <p>El paquete <code>hexSticker</code> creado por <em>Guangchuang Yu</em> <span class="citation" data-cites="hexSticker"><a href="#ref-hexSticker" role="doc-biblioref">[1]</a></span> es una herramienta para generar <em>stickers</em> hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web <a href="https://www.energycode.org/">ENERGYCODE</a> usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver <a href="https://github.com/GuangchuangYu/hexSticker/issues/155?referrer=grok.com">issue #155</a>).</p>
 <div class="cell">
@@ -224,13 +225,15 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op">)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="archivos-de-entrada-y-salida" class="level2"><h2 class="anchored" data-anchor-id="archivos-de-entrada-y-salida">Archivos de entrada y salida</h2>
+</section><section id="archivos-de-entrada-y-salida" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="archivos-de-entrada-y-salida">
+<span class="header-section-number">2</span> Archivos de entrada y salida</h2>
 <div class="cell">
 <details open="" class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">file_icon</span> <span class="op">&lt;-</span> <span class="st">"lightning_icon_white.png"</span></span>
 <span><span class="va">file_name</span> <span class="op">&lt;-</span> <span class="st">"logo.png"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="solución-al-recorte-del-borde-del-hexágono" class="level2"><h2 class="anchored" data-anchor-id="solución-al-recorte-del-borde-del-hexágono">Solución al recorte del borde del hexágono</h2>
+</section><section id="solución-al-recorte-del-borde-del-hexágono" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="solución-al-recorte-del-borde-del-hexágono">
+<span class="header-section-number">3</span> Solución al recorte del borde del hexágono</h2>
 <p>El problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete <code>hexSticker</code>por defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Solves issue:</span></span>
@@ -277,7 +280,8 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <span><span class="op">}</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="creación-del-sticker" class="level2"><h2 class="anchored" data-anchor-id="creación-del-sticker">Creación del sticker</h2>
+</section><section id="creación-del-sticker" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="creación-del-sticker">
+<span class="header-section-number">4</span> Creación del sticker</h2>
 <p>Ahora generamos el logo ajustando posiciones, tamaños y colores.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/hexSticker/man/sticker.html">sticker</a></span><span class="op">(</span></span>
@@ -301,20 +305,22 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <span><span class="op">)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="resultado-final" class="level2"><h2 class="anchored" data-anchor-id="resultado-final">Resultado final</h2>
+</section><section id="resultado-final" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="resultado-final">
+<span class="header-section-number">5</span> Resultado final</h2>
 <p><img src="../../img/logo/web_logo.png" class="img-fluid quarto-figure quarto-figure-left" alt="HexSticker logo">]</p>
 <p>El logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en <code>_quarto.yml</code>:</p>
 <pre><code>website:
   title: "ENERGYCODE"
   navbar:
     logo: logo.png</code></pre>
-</section><section id="referencias" class="level2">
+</section><section id="referencias" class="level2" data-number="6">
 
 
 <!-- -->
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">
+6 Referencias</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-hexSticker" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div>
 <div class="csl-right-inline">G. Yu, <em>hexSticker: Create Hexagon Sticker in R</em>. 2025. Disponible en: <a href="https://CRAN.R-project.org/package=hexSticker">https://CRAN.R-project.org/package=hexSticker</a>

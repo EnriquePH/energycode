@@ -87,8 +87,9 @@ f(n+1) \in \mathbb{N} \Longleftrightarrow g(n) \in \mathbb{N} \Longleftrightarro
 $${#eq-cat008}
 
 
-[^1]: Este artículo es una **traducción** del post original titulado
-*A004782(n)=A014847(n)+1* publicado el **viernes 29 de noviembre de 2013** en el
+[^1]: Este artículo es una *traducción y actualización* del post original
+titulado
+*A004782(n)=A014847(n)+1* publicado el *viernes 29 de noviembre de 2013* en el
 blog *Psychedelic Geometry* [@psychedelic_geometry_2013].
 
 ## REFERENCIAS

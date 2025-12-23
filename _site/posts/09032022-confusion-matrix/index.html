@@ -190,17 +190,18 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
    
   <ul>
 <li>
-<a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link active" data-scroll-target="#confusion-matrix">Confusion Matrix</a>
+<a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link active" data-scroll-target="#confusion-matrix"><span class="header-section-number">1</span> Confusion Matrix</a>
   <ul class="collapse">
-<li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">Classification</a></li>
-  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+<li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification"><span class="header-section-number">1.1</span> Classification</a></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting"><span class="header-section-number">1.2</span> Plotting</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">1.3</span> Links</a></li>
   </ul>
 </li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="confusion-matrix" class="level1"><h1>Confusion Matrix</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="confusion-matrix" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Confusion Matrix</h1>
 <p>The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package <code>caret</code> includes the <code>confusionMatrix</code> function, which produces a detailed output.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">e1071</span><span class="op">)</span></span>
@@ -210,7 +211,8 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/topepo/caret/">caret</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="classification" class="level2"><h2 class="anchored" data-anchor-id="classification">Classification</h2>
+<section id="classification" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="classification">
+<span class="header-section-number">1.1</span> Classification</h2>
 <p>We will conduct a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classification</a> using the classical Iris dataset.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># train and test data</span></span>
@@ -229,34 +231,35 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
             Reference
 Prediction   setosa versicolor virginica
   setosa         10          0         0
-  versicolor      0         10         2
-  virginica       0          0         8
+  versicolor      0         10         1
+  virginica       0          0         9
 
 Overall Statistics
                                           
-               Accuracy : 0.9333          
-                 95% CI : (0.7793, 0.9918)
+               Accuracy : 0.9667          
+                 95% CI : (0.8278, 0.9992)
     No Information Rate : 0.3333          
-    P-Value [Acc &gt; NIR] : 8.747e-12       
+    P-Value [Acc &gt; NIR] : 2.963e-13       
                                           
-                  Kappa : 0.9             
+                  Kappa : 0.95            
                                           
  Mcnemar's Test P-Value : NA              
 
 Statistics by Class:
 
                      Class: setosa Class: versicolor Class: virginica
-Sensitivity                 1.0000            1.0000           0.8000
-Specificity                 1.0000            0.9000           1.0000
-Pos Pred Value              1.0000            0.8333           1.0000
-Neg Pred Value              1.0000            1.0000           0.9091
+Sensitivity                 1.0000            1.0000           0.9000
+Specificity                 1.0000            0.9500           1.0000
+Pos Pred Value              1.0000            0.9091           1.0000
+Neg Pred Value              1.0000            1.0000           0.9524
 Prevalence                  0.3333            0.3333           0.3333
-Detection Rate              0.3333            0.3333           0.2667
-Detection Prevalence        0.3333            0.4000           0.2667
-Balanced Accuracy           1.0000            0.9500           0.9000</code></pre>
+Detection Rate              0.3333            0.3333           0.3000
+Detection Prevalence        0.3333            0.3667           0.3000
+Balanced Accuracy           1.0000            0.9750           0.9500</code></pre>
 </div>
 </div>
-</section><section id="plotting" class="level2"><h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+</section><section id="plotting" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="plotting">
+<span class="header-section-number">1.2</span> Plotting</h2>
 <p>To plot the obtained confusion matrix as a <code>ggplot</code> graphic, we will use the following function:</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ggplot_confusion_matrix</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">cfm</span><span class="op">)</span> <span class="op">{</span></span>
@@ -283,7 +286,8 @@ Balanced Accuracy           1.0000            0.9500           0.9000</code></pr
 </div>
 </div>
 </div>
-</section><section id="links" class="level2"><h2 class="anchored" data-anchor-id="links">Links</h2>
+</section><section id="links" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="links">
+<span class="header-section-number">1.3</span> Links</h2>
 <ul>
 <li>StackOverflow: <a href="https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613">How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?</a>
 </li>

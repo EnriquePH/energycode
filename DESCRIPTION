@@ -1,11 +1,11 @@
 Package: energycode
 Title: Personal technical blog using Quarto
 Version: 0.1.0
-Authors@R: person("Enrique", "Pérez Herrero", email = "energycode.org@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Enrique", "Perez Herrero", email = "energycode.org@gmail.com", role = c("aut", "cre"))
 Description: Personal blog with R and Python content.
-License: MIT
+Config/Description: This is not a conventional R package. It is a Quarto blog/site.
+License: MIT + file LICENSE
 Encoding: UTF-8
-
 Imports:
     devtools,
     remotes,
@@ -16,6 +16,9 @@ Imports:
     caTools,
     caret,
     reticulate
-
 Suggests:
-    marketconf   # from GitHub, no need to list here
+    testthat,
+    knitr,
+    rmarkdown
+Remotes:
+    EnriquePH/marketconf@master

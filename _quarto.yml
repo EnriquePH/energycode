@@ -37,6 +37,8 @@ format:
       dark:  darkly
     css: styles.css
     toc: true
+    number-sections: true
+    code-fold: false
 
 editor: source
 email-obfuscation: javascript

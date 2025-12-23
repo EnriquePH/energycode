@@ -1,45 +1,67 @@
-# [ENERGYCODE] (c) 2025
 # .Rbuildignore
-# Ignorar archivos y carpetas que no deben incluirse en un paquete R
+# Ignorar archivos y carpetas que NO deben incluirse en el paquete al hacer R CMD build/check
+# (proyecto Quarto/blog con pretensión de check limpio)
 
-# Carpetas de CI/CD y configuración
-^\.github$
+# ── Configuración y metadatos del proyecto ───────────────────────────────────────
+^\.github$                  # workflows y acciones de GitHub
+^\.quarto$                  # caché interno de Quarto (muy común desde 2023+)
+^_quarto\.yml$              # configuración principal de Quarto
+^_publish\.yml$             # si usas publish.yml antiguo
+^_freeze$                   # caché de renderizado incremental
+^_site$                     # salida por defecto de render (html)
+^_book$                     # salida si usas formato book
 
-# Outputs de Quarto (renderizados)
-^_site$
-^_book$
-^_freeze$
+# ── Archivos y carpetas de contenido del blog (no son parte del paquete) ─────────
+^site$                      # subcarpeta recomendada para todo el sitio
+^posts$                     # carpeta de posts .qmd
+^projects$                  # si tienes sección projects
+^img$                       # imágenes estáticas
+^about\.qmd$
+^index\.qmd$
+^projects\.qmd$
 
-# Archivos temporales y de editor
+# ── Archivos generados por renderizado y previews ───────────────────────────────
+^README\.html$
+^README_files$
+^.*\.html$                  # todos los .html generados (salvo si los quieres)
+^preview\.png$              # miniaturas de preview
+
+# ── Dependencias y entornos locales ─────────────────────────────────────────────
+^renv\.lock$
+^renv/activate\.R$
+^renv$
+^requirements\.txt$
+^packages\.txt$
+^\.env$
+
+# ── Editor, IDE y temporales ─────────────────────────────────────────────────────
 ^\.Rproj\.user$
+^.*\.Rproj$
 ^\.Rhistory$
 ^\.RData$
-^.*\.Rproj$
 ^.*\.swp$
 ^.*~$
+^\.DS_Store$                # macOS
+^Thumbs\.db$                # Windows
+^\.vscode$
+^\.idea$
 
-# Archivos de lock y dependencias (opcional, pero común)
-^renv\.lock$          # lockfile de renv (no se incluye en builds)
-^renv/activate\.R$    # script de activación de renv
-
-# Carpetas de paquetes instalados localmente
-^library$
-^Rlibs$
-
-# Archivos de Netlify / hosting
+# ── Hosting y despliegue externo ─────────────────────────────────────────────────
 ^netlify\.toml$
 ^netlify\.yml$
+^\.vercel$
+^vercel\.json$
+^vercel\.project$
 
-# Logs y archivos temporales de compilación
-^\.quarto$
+# ── Logs, backups y archivos temporales de compilación ───────────────────────────
 ^quarto\.log$
+^.*\.log$
+^.*\.bak$
+^.*\.old$
 
-# Archivos sensibles o de configuración local
-^\.env$
-^\.gitignore$
-^.*\.DS_Store$        # macOS
-^Thumbs\.db$          # Windows
-
-# Opcional: si usas paquetes desde GitHub, ignorar sus clones temporales
-^.*\.tar\.gz$
-^.*\.tgz$
+# ── Archivos sobrantes que suelen generar warning/note ───────────────────────────
+^TODO\.md$
+^LICENSE\.md$               # si existe versión markdown del license
+^styles\.css$
+^theme-dark\.scss$
+^theme-light\.scss$

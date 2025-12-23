@@ -1,0 +1,155 @@
+---
+title: "Euclinacci"
+descripton: "Fibonacci y el Algoritmo de Euclides"
+author: 'Enrique Pérez Herrero'
+date: '2025-06-11'
+lang: es
+bibliography: euclinacci.bib
+nocite: |
+  @*
+draft: true
+---
+
+## INTRODUCCIÓN
+
+Quizá la lección más simple y profunda que alguien puede recibir es esta [^1]:
+
+$$
+1 + 1 = 2
+$$
+
+Las implicaciones de esta expresión pueden llenar bibliotecas enteras. Una de
+ellas es la **sucesión de Fibonacci** [@oeis-fibonacci]:
+
+$$
+\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots\}
+$$
+
+La sucesión de _Fibonacci_ se define de forma recursiva mediante la siguiente
+expresión:
+
+$$
+f_n = 
+\begin{cases}
+F_0 = 0 \\
+F_1 = 1 \\
+F_n = F_{n-1} + F_{n-2}, & \text{para } n \ge 2
+\end{cases}
+$$
+
+## PROPIEDADES FUNDAMENTALES
+
+El análisis de la razón entre términos consecutivos de la sucesión de Fibonacci
+revela dos propiedades importantes:
+
+1. La sucesión de razones $\frac{F_{n+1}}{F_n}$ converge a un límite finito
+cuando $n$ tiende a infinito.
+
+2. Dos números de _Fibonacci_ consecutivos
+son coprimos: $\gcd(F_{n}, F_{n+1}) = 1$.
+
+## TABLA DE RAZONES
+
+| $n$     | $F_n$     |$\frac{F_n}{F_{n-1}}$|    |
+|--------:|----------:|--------------------:|
+| 0       | 0         | -                   |
+| 1       | 1         | -                   |
+| 2       | 1         | 1.0000              |
+| 3       | 2         | 2.0000              |
+| 4       | 3         | 1.5000              |
+| 5       | 5         | 1.6667              |
+| 6       | 8         | 1.6000              |
+| 7       | 13        | 1.6250              |
+| 8       | 21        | 1.6154              |
+| 9       | 34        | 1.6190              |
+| 10      | 55        | 1.6176              |
+| 11      | 89        | 1.6182              |
+| 12      | 144       | 1.6180              |
+| 13      | 233       | 1.6181              |
+| 14      | 377       | 1.6180              |
+| 15      | 610       | 1.6180              |
+| 16      | 987       | 1.6180              |
+
+## LA RAZÓN AUREA
+
+Sea:
+
+$$
+I = \lim_{n \to \infty} \frac{F_n}{F_{n-1}}
+$$
+
+Entonces:
+
+$$
+I = 1 + \frac{1}{I}
+\Rightarrow I^2 = I + 1
+\Rightarrow I = \frac{1 + \sqrt{5}}{2} = \Phi
+$$
+
+Este número es conocido como la *razón áurea*.
+
+## NÚMEROS CONSECUTIVOS Y EL MCD
+
+La segunda propiedad se puede probar usando el *Algoritmo de Euclides*, 
+una técnica claśica para hallar el máximo común divisor (MCD) entre dos enteros.
+
+## EL ALGORITMO DE EUCLIDES
+
+Dados $a$ y $b$, el algoritmo genera la secuencia:
+
+$$
+(a, b) = (r_0, r_1) = (r_1, r_2) = \cdots = (r_{n-1}, r_n)
+$$
+
+donde:
+
+$$
+\begin{cases}
+r_0 = a \\
+r_1 = b \\
+r_{i+1} = r_{i-1} - r_i \cdot \left\lfloor \dfrac{r_{i-1}}{r_i} \right\rfloor
+\end{cases}
+$$
+
+Cuando $r_{i+1} = 0$, entonces $\gcd(a, b) = r_i$.
+
+La notación $\lfloor x \rfloor$ es la denominada función suelo
+[@weisstein-floor]
+
+## APLICACIÓN A LOS NÚMEROS DE FIBONACCI
+
+Sea:
+
+$$
+(F_n, F_{n-1}) = (r_0, r_1)
+$$
+
+Entonces:
+
+$$
+\begin{aligned}
+r_2 &= F_n - F_{n-1} \cdot \left\lfloor \dfrac{F_n}{F_{n-1}} \right\rfloor \\
+&= F_n - F_{n-1} \cdot \left\lfloor 1 + \dfrac{F_{n-2}}{F_{n-1}} \right\rfloor \\
+&= F_n - F_{n-1} \cdot (1 + 0) = F_{n-2}
+\end{aligned}
+$$
+
+Repitiendo el proceso, obtenemos:
+
+$$
+(F_n, F_{n-1}) = (F_{n-1}, F_{n-2}) = \cdots = (2, 1) = 1
+$$
+
+Por lo tanto, dos números de _Fibonacci_ consecutivos siempre son coprimos.
+
+## CONCLUSIÓN
+
+El algoritmo de Euclides proporciona una demostración elegante y alternativa de
+la coprimalidad de dos términos de la sucesión de fibonacci consecutivos.
+
+
+[^1]: Este artículo es una *traducción y actualización* del post original
+titulado *EUCLINACCI - [1]* publicado el *domingo 1 de febrero de 2009* en el
+blog *Psychedelic Geometry* [@psychedelic_geometry_2009].
+
+## REFERENCIAS

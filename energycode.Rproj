@@ -16,6 +16,8 @@ LaTeX: pdfLaTeX
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
+BuildType: None
+
 PythonType: system
 PythonVersion: 3.12.3
 PythonPath: /usr/bin/python3.12
