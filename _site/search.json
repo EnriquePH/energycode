@@ -98,6 +98,69 @@
     "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
   },
   {
+    "objectID": "posts/11062025-euclinacci/index.html",
+    "href": "posts/11062025-euclinacci/index.html",
+    "title": "Euclinacci",
+    "section": "",
+    "text": "Una igualdad aparentemente trivial como \\(1+1=2\\) encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\\[\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\\]\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\\[\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}\\]"
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#introducción",
+    "href": "posts/11062025-euclinacci/index.html#introducción",
+    "title": "Euclinacci",
+    "section": "",
+    "text": "Una igualdad aparentemente trivial como \\(1+1=2\\) encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\\[\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\\]\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\\[\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}\\]"
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
+    "href": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
+    "title": "Euclinacci",
+    "section": "\n2 PROPIEDADES FUNDAMENTALES",
+    "text": "2 PROPIEDADES FUNDAMENTALES\nEl análisis de la razón entre términos consecutivos de la sucesión de Fibonacci tiene dos propiedades importantes:\n\nLa sucesión de razones \\(\\frac{F_{n+1}}{F_n}\\) converge a un límite finito cuando \\(n\\) tiende a infinito.\nDos números de Fibonacci consecutivos son coprimos: \\(\\gcd(F_{n}, F_{n+1}) = 1\\)."
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#tabla-de-razones",
+    "href": "posts/11062025-euclinacci/index.html#tabla-de-razones",
+    "title": "Euclinacci",
+    "section": "\n3 TABLA DE RAZONES",
+    "text": "3 TABLA DE RAZONES\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(F_n\\)\n\\(\\frac{F_{n+1}}{F_n}\\)\nError absoluto \\(\\left| \\frac{F_{n+1}}{F_n} - \\phi \\right|\\)\n\n\n\n\n5\n5\n1.6666667\n0.0486327\n\n\n10\n55\n1.6176471\n0.0003869\n\n\n15\n610\n1.6180339\n≈ 2.7 × 10⁻⁷\n\n\n20\n6765\n1.6180339887\n≈ 1.3 × 10⁻¹⁰\n\n\n\nTabla 1: Convergencia de la razón \\(\\frac{F_{n+1}}{F_n}\\) hacia el número áureo \\(\\phi = \\frac{1+\\sqrt{5}}{2} \\approx 1.6180339887\\ldots\\)"
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#la-razón-aurea",
+    "href": "posts/11062025-euclinacci/index.html#la-razón-aurea",
+    "title": "Euclinacci",
+    "section": "\n4 LA RAZÓN AUREA",
+    "text": "4 LA RAZÓN AUREA\nSea \\(I\\) el límite de la relación entre dos números de Fibonacci consecutivos:\n\\[\nI = \\lim_{n \\to \\infty} \\frac{F_n}{F_{n-1}}\n\\tag{3}\\]\nComo:\n\\[\n\\frac{F_{n}}{F_{n-1}} = \\frac{F_{n-1}+F_{n-2}}{F_{n-1}} = 1 + \\frac{F_{n-2}}{F_{n-1}} (n \\geq 2)\n\\tag{4}\\]\nTomando límites se obtiene:\n\\[\nI = 1 + \\frac{1}{I}\n\\Rightarrow I^2 = I + 1\n\\Rightarrow I = \\frac{1 + \\sqrt{5}}{2} = \\phi\n\\tag{5}\\]\nEl número \\(\\phi\\) es conocido como la proporción áurea.\n\nCódigolibrary(ggplot2)\n\nfibonacci &lt;- function(n) {\n  F &lt;- numeric(n)\n  F[1] &lt;- 1\n  F[2] &lt;- 1\n  for (i in 3:n) {\n    F[i] &lt;- F[i - 1] + F[i - 2]\n  }\n  return(F)\n}\n\nn &lt;- 20\nF &lt;- fibonacci(n)\nratio &lt;- F[-1] / F[-length(F)]\ndata &lt;- data.frame(n = 2:n, ratio = ratio)\nphi &lt;- (1 + sqrt(5)) / 2\n\nggplot(data, aes(x = n, y = ratio)) +\n  geom_point(color = \"steelblue\", size = 2) +\n  geom_line(color = \"steelblue\") +\n  geom_hline(yintercept = phi,\n             linetype = \"dashed\",\n             color = \"red\") +\n  labs(title = \"Razón entre números consecutivos de Fibonacci\",\n       x = \"n\",\n       y = expression(F[n] / F[n - 1])) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
+    "href": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
+    "title": "Euclinacci",
+    "section": "\n5 EL ALGORITMO DE EUCLIDES",
+    "text": "5 EL ALGORITMO DE EUCLIDES\nLa segunda propiedad se puede demostrar empleando el Algoritmo de Euclides, que es técnica milenaria para encontrar el máximo común divisor (MCD) entre dos números enteros.\nDados \\(a\\) y \\(b\\), el algoritmo genera la secuencia:\n\\[\n(a, b) = (r_0, r_1) = (r_1, r_2) = \\cdots = (r_{n-1}, r_n)\n\\tag{6}\\]\nCon la siguiente relación de recurrencia:\n\\[\n\\begin{cases}\nr_0 = a \\\\\nr_1 = b \\\\\nr_{i+1} = r_{i-1} - r_i \\cdot \\left\\lfloor \\dfrac{r_{i-1}}{r_i} \\right\\rfloor\n\\end{cases}\n\\tag{7}\\]\nCuando \\(r_{i+1} = 0\\), entonces \\(\\gcd(a, b) = r_i\\) y el algoritmo se detiene.\nLa notación \\(\\lfloor x \\rfloor\\) corresponde a la denominada función suelo [3] que devuelve el mayor entero menor o igual que \\(x\\)"
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
+    "href": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
+    "title": "Euclinacci",
+    "section": "\n6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI",
+    "text": "6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI\nSea:\n\\[\n(F_n, F_{n-1}) = (r_0, r_1)\n\\tag{8}\\]\nEntonces:\n\\[\n\\begin{aligned}\nr_2 &= F_n - F_{n-1} \\cdot \\left\\lfloor \\dfrac{F_n}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot \\left\\lfloor 1 + \\dfrac{F_{n-2}}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot (1 + 0) = F_{n-2}\n\\end{aligned}\n\\tag{9}\\]\nRepitiendo el proceso, se obtiene:\n\\[\n(F_n, F_{n-1}) = (F_{n-1}, F_{n-2}) = \\cdots = (2, 1) = 1\n\\tag{10}\\]\nPor lo tanto, dos números de Fibonacci consecutivos son siempre coprimos."
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#conclusión",
+    "href": "posts/11062025-euclinacci/index.html#conclusión",
+    "title": "Euclinacci",
+    "section": "\n7 CONCLUSIÓN",
+    "text": "7 CONCLUSIÓN\nEl algoritmo de Euclides proporciona una demostración elegante y alternativa de la coprimalidad de dos términos consecutivos de la sucesión de Fibonacci."
+  },
+  {
+    "objectID": "posts/11062025-euclinacci/index.html#footnotes",
+    "href": "posts/11062025-euclinacci/index.html#footnotes",
+    "title": "Euclinacci",
+    "section": "Notas",
+    "text": "Notas\n\nEste artículo es una traducción y actualización del post original titulado EUCLINACCI - [1] publicado el domingo 1 de febrero de 2009 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
     "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
     "href": "projects/03-holocene-volcanic-eruptions/index.html",
     "title": "Volcanic Eruptions in the Holocene Period",
@@ -158,7 +221,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "A004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nlogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Euclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nlogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",

@@ -1,107 +1,135 @@
 ---
 title: "Euclinacci"
-descripton: "Fibonacci y el Algoritmo de Euclides"
+description: "La sucesión de Fibonacci y el Algoritmo de Euclides"
 author: 'Enrique Pérez Herrero'
 date: '2025-06-11'
 lang: es
+categories:
+  - R
+  - Fibonacci
+  - Euclid
+  - Math
 bibliography: euclinacci.bib
 nocite: |
   @*
-draft: true
+draft: false
 ---
 
 ## INTRODUCCIÓN
 
-Quizá la lección más simple y profunda que alguien puede recibir es esta [^1]:
+Una igualdad aparentemente trivial como $1+1=2$ encierra consecuencias tan
+profundas que han ocupado bibliotecas enteras[^1]:
 
-$$
-1 + 1 = 2
-$$
-
-Las implicaciones de esta expresión pueden llenar bibliotecas enteras. Una de
-ellas es la **sucesión de Fibonacci** [@oeis-fibonacci]:
+Entre ellas destaca la famosa _sucesión de Fibonacci_ [@oeis-fibonacci]:
 
 $$
 \{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots\}
-$$
+$${#eq-fib001}
 
 La sucesión de _Fibonacci_ se define de forma recursiva mediante la siguiente
 expresión:
 
 $$
-f_n = 
+F_n = 
 \begin{cases}
 F_0 = 0 \\
 F_1 = 1 \\
 F_n = F_{n-1} + F_{n-2}, & \text{para } n \ge 2
 \end{cases}
-$$
+$${#eq-fib002}
 
 ## PROPIEDADES FUNDAMENTALES
 
-El análisis de la razón entre términos consecutivos de la sucesión de Fibonacci
-revela dos propiedades importantes:
+El análisis de la razón entre términos consecutivos de la
+_sucesión de Fibonacci_ tiene dos propiedades importantes:
 
-1. La sucesión de razones $\frac{F_{n+1}}{F_n}$ converge a un límite finito
+  1. La sucesión de razones $\frac{F_{n+1}}{F_n}$ converge a un límite finito
 cuando $n$ tiende a infinito.
 
-2. Dos números de _Fibonacci_ consecutivos
-son coprimos: $\gcd(F_{n}, F_{n+1}) = 1$.
+  2. Dos números de _Fibonacci_ consecutivos
+son *coprimos*: $\gcd(F_{n}, F_{n+1}) = 1$.
 
 ## TABLA DE RAZONES
 
-| $n$     | $F_n$     |$\frac{F_n}{F_{n-1}}$|    |
-|--------:|----------:|--------------------:|
-| 0       | 0         | -                   |
-| 1       | 1         | -                   |
-| 2       | 1         | 1.0000              |
-| 3       | 2         | 2.0000              |
-| 4       | 3         | 1.5000              |
-| 5       | 5         | 1.6667              |
-| 6       | 8         | 1.6000              |
-| 7       | 13        | 1.6250              |
-| 8       | 21        | 1.6154              |
-| 9       | 34        | 1.6190              |
-| 10      | 55        | 1.6176              |
-| 11      | 89        | 1.6182              |
-| 12      | 144       | 1.6180              |
-| 13      | 233       | 1.6181              |
-| 14      | 377       | 1.6180              |
-| 15      | 610       | 1.6180              |
-| 16      | 987       | 1.6180              |
+
+| $n$ | $F_n$ | $\frac{F_{n+1}}{F_n}$ | Error absoluto $\left| \frac{F_{n+1}}{F_n} - \phi \right|$ |
+|-----|-------|------------------------|-------------------------------------------------------------|
+| 5   | 5     | 1.6666667              | 0.0486327                                                   |
+| 10  | 55    | 1.6176471              | 0.0003869                                                   |
+| 15  | 610   | 1.6180339              | ≈ 2.7 × 10⁻⁷                                               |
+| 20  | 6765  | 1.6180339887           | ≈ 1.3 × 10⁻¹⁰                                              |
+Tabla 1: Convergencia de la razón $\frac{F_{n+1}}{F_n}$ hacia el número áureo $\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887\ldots$
 
 ## LA RAZÓN AUREA
 
-Sea:
+Sea $I$ el límite de la relación entre dos números de _Fibonacci_ consecutivos:
 
 $$
 I = \lim_{n \to \infty} \frac{F_n}{F_{n-1}}
-$$
+$${#eq-fib003}
 
-Entonces:
+Como:
+
+$$
+\frac{F_{n}}{F_{n-1}} = \frac{F_{n-1}+F_{n-2}}{F_{n-1}} = 1 + \frac{F_{n-2}}{F_{n-1}} (n \geq 2)
+$${#eq-fib004}
+
+Tomando límites se obtiene:
 
 $$
 I = 1 + \frac{1}{I}
 \Rightarrow I^2 = I + 1
-\Rightarrow I = \frac{1 + \sqrt{5}}{2} = \Phi
-$$
+\Rightarrow I = \frac{1 + \sqrt{5}}{2} = \phi
+$${#eq-fib005}
 
-Este número es conocido como la *razón áurea*.
+El número $\phi$ es conocido como la [proporción áurea](https://es.wikipedia.org/wiki/N%C3%BAmero_%C3%A1ureo).
 
-## NÚMEROS CONSECUTIVOS Y EL MCD
 
-La segunda propiedad se puede probar usando el *Algoritmo de Euclides*, 
-una técnica claśica para hallar el máximo común divisor (MCD) entre dos enteros.
+```{r}
+library(ggplot2)
+
+fibonacci <- function(n) {
+  F <- numeric(n)
+  F[1] <- 1
+  F[2] <- 1
+  for (i in 3:n) {
+    F[i] <- F[i - 1] + F[i - 2]
+  }
+  return(F)
+}
+
+n <- 20
+F <- fibonacci(n)
+ratio <- F[-1] / F[-length(F)]
+data <- data.frame(n = 2:n, ratio = ratio)
+phi <- (1 + sqrt(5)) / 2
+
+ggplot(data, aes(x = n, y = ratio)) +
+  geom_point(color = "steelblue", size = 2) +
+  geom_line(color = "steelblue") +
+  geom_hline(yintercept = phi,
+             linetype = "dashed",
+             color = "red") +
+  labs(title = "Razón entre números consecutivos de Fibonacci",
+       x = "n",
+       y = expression(F[n] / F[n - 1])) +
+  theme_minimal()
+```
+
 
 ## EL ALGORITMO DE EUCLIDES
+
+La segunda propiedad se puede demostrar empleando el *Algoritmo de Euclides*,
+que es técnica milenaria para encontrar el máximo común divisor (MCD) entre dos
+números enteros.
 
 Dados $a$ y $b$, el algoritmo genera la secuencia:
 
 $$
 (a, b) = (r_0, r_1) = (r_1, r_2) = \cdots = (r_{n-1}, r_n)
-$$
+$${#eq-fib006}
 
-donde:
+Con la siguiente relación de recurrencia:
 
 $$
 \begin{cases}
@@ -109,12 +137,12 @@ r_0 = a \\
 r_1 = b \\
 r_{i+1} = r_{i-1} - r_i \cdot \left\lfloor \dfrac{r_{i-1}}{r_i} \right\rfloor
 \end{cases}
-$$
+$${#eq-fib007}
 
-Cuando $r_{i+1} = 0$, entonces $\gcd(a, b) = r_i$.
+Cuando $r_{i+1} = 0$, entonces $\gcd(a, b) = r_i$ y el algoritmo se detiene.
 
-La notación $\lfloor x \rfloor$ es la denominada función suelo
-[@weisstein-floor]
+La notación $\lfloor x \rfloor$ corresponde a la denominada _función suelo_
+[@weisstein-floor] que devuelve el mayor entero menor o igual que $x$
 
 ## APLICACIÓN A LOS NÚMEROS DE FIBONACCI
 
@@ -122,7 +150,7 @@ Sea:
 
 $$
 (F_n, F_{n-1}) = (r_0, r_1)
-$$
+$${#eq-fib008}
 
 Entonces:
 
@@ -132,20 +160,20 @@ r_2 &= F_n - F_{n-1} \cdot \left\lfloor \dfrac{F_n}{F_{n-1}} \right\rfloor \\
 &= F_n - F_{n-1} \cdot \left\lfloor 1 + \dfrac{F_{n-2}}{F_{n-1}} \right\rfloor \\
 &= F_n - F_{n-1} \cdot (1 + 0) = F_{n-2}
 \end{aligned}
-$$
+$${#eq-fib009}
 
-Repitiendo el proceso, obtenemos:
+Repitiendo el proceso, se obtiene:
 
 $$
 (F_n, F_{n-1}) = (F_{n-1}, F_{n-2}) = \cdots = (2, 1) = 1
-$$
+$${#eq-fib010}
 
-Por lo tanto, dos números de _Fibonacci_ consecutivos siempre son coprimos.
+Por lo tanto, dos números de _Fibonacci_ consecutivos son siempre _coprimos_.
 
 ## CONCLUSIÓN
 
-El algoritmo de Euclides proporciona una demostración elegante y alternativa de
-la coprimalidad de dos términos de la sucesión de fibonacci consecutivos.
+El _algoritmo de Euclides_ proporciona una demostración elegante y alternativa
+de la coprimalidad de dos términos consecutivos de la _sucesión de Fibonacci_.
 
 
 [^1]: Este artículo es una *traducción y actualización* del post original
