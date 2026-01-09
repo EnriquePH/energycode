@@ -1,0 +1,141 @@
+---
+title: 'Suma de los recíprocos de los números tetraédricos'
+description: 'Sumas de la serie de los recíprocos de los números tetraédricos'
+date: '2026-01-08'
+author: 'Enrique Pérez Herrero'
+image: tetrahedral_numbers.png
+lang: es
+categories:
+  - Python
+  - Math
+  - Series
+  - Especial numbers
+bibliography: tetrahedral.bib
+nocite: |
+  @*
+draft: false
+---
+
+![Tetrahedral Numbers](tetrahedral_numbers.png)
+
+## INTRODUCCIÓN
+
+Esta entrada en el blog continúa con ejercicios sobre series relacionadas con
+los recíprocos de números especiales, siguiendo trabajos previos[^1] sobre los
+_números piramidales cuadrados_ y los _números poligonales_. En esta ocasión
+consideramos un ejemplo sencillo: la suma de los recíprocos de los _números
+tetraédricos_.
+
+Aunque el resultado no es particularmente profundo, sirve como una buena
+ilustración del uso de *fracciones parciales* y *series telescópicas*.
+
+## NÚMEROS TETRAÉDRICOS
+
+Los números tetraédricos representan el número de esferas que pueden apilarse
+formando un _tetraedro regular_ [@wikiTetrahedralNumber]
+[@mathworldTetrahedralNumber] y están definidos por la fórmula
+
+
+$$
+T_n = \frac{n(n+1)(n+2)}{6} = \binom{n+2}{3}
+$${#eq-tet001}
+
+
+## LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS
+
+Nos interesa estudiar la suma parcial
+
+$$
+S(n) = \sum_{k=1}^{n} \frac{1}{T_k}.
+$${#eq-tet002}
+
+Sustituyendo la expresión explícita de $T_k$, obtenemos
+
+$$
+S(n) = \sum_{k=1}^{n} \frac{6}{k(k+1)(k+2)}.
+$${#eq-tet003}
+
+## DESCOMPOSICIÓN EN FRACCIONES PARCIALES
+
+La fracción racional puede descomponerse en una suma de otras como
+
+$$
+\frac{6}{k(k+1)(k+2)} =
+\frac{A}{k} + \frac{B}{k+1} + \frac{C}{k+2}.
+$${#eq-tet004}
+
+Resolviendo el sistema lineal correspondiente se obtiene
+
+$$
+A = \frac{1}{2}, \qquad
+B = -1, \qquad
+C = \frac{1}{2}
+$${#eq-tet005}
+
+Por lo tanto,
+
+$$
+\frac{6}{k(k+1)(k+2)}
+= \frac{1}{2k} - \frac{1}{k+1} + \frac{1}{2(k+2)}
+$${#eq-tet006}
+
+## NÚMEROS ARMÓNICOS
+
+Estas tres series se pueden sumar facilmente teniendo en cuenta las siguientes
+identidades para los _números armónicos_ $H_n$ [@wikiHarmonicNumber]:
+
+$$
+\sum_{k=1}^{n} \frac{1}{k} = H_n
+$${#eq-tet007}
+
+$$
+\sum_{k=1}^{n} \frac{1}{k+1} = H_n - 1 + \frac{1}{n+1}
+$${#eq-tet008}
+
+$$ \sum_{k=1}^{n} \frac{1}{k+2} = H_n - \frac{3}{2} + \frac{1}{n+1} + \frac{1}{n+2}
+$${#eq-tet009}
+Sustituyendo estas expresiones en la identidad ([@eq-tet006]), se obtiene
+
+$$
+\begin{align}
+\frac{S(n)}{6}
+= \frac{n}{n+1}
+- \frac{1}{2}
+- \frac{1}{4}
++ \frac{1}{2(n+1)}
++ \frac{1}{2(n+2)}
+\end{align}
+$${#eq-tet010}
+
+
+Aquí se observa claramente el carácter **telescópico** de la serie: los términos
+$H_n$ se cancelan, evitando la aparición de constantes como $\gamma$ o funciones especiales.
+
+## FÓRMULA CERRADA
+
+Simplificando ([@eq-tet010]), se obtiene una expresión cerrada para la suma
+parcial:
+
+$$
+S(n) = \frac{3n(n+3)}{2(n+1)(n+2)}
+$${#eq-tet011}
+
+## SUMA INFINITA
+
+Finalmente, tomando el límite de ([@eq-tet011]) cuando $n \to \infty$,
+
+
+$$
+\lim_{n \to \infty} S(n)
+= \frac{3}{2}
+$${#eq-tet012}
+
+Esto muestra que la serie de los recíprocos de los números tetraédricos
+**converge**, y su suma infinita es igual a $\frac{3}{2}$.
+
+[^1]: Este artículo es una *traducción y actualización* del post original
+titulado *TETRAHEDRAL NUMBERS RECIPROCALS SUM* publicado el *viernes 25 de
+diciembre de 2009* en el blog *Psychedelic Geometry* [@psychedelic2009].
+
+## REFERENCIAS
+

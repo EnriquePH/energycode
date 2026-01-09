@@ -18,147 +18,154 @@
     "href": "posts/02082023-numpy-latex/index.html#functions-for-matrices-and-determinants",
     "title": "Convert a NumPy array to LaTeX",
     "section": "1.1 Functions for matrices and determinants",
-    "text": "1.1 Functions for matrices and determinants\nThe functions matrix2latex and det2latex generate an indented \\(LaTeX\\) string that can be copied or directly rendered in your math article.\nThe INDENT_SPACES parameter specifies the number of spaces used for indentation.\n\n\nCode\nimport numpy as np\n\nINDENT_SPACES = 3\n\ndef indent(num_indent=1):\n    \"\"\"\n    Number of spaces for indentation\n    \"\"\"\n    return num_indent * INDENT_SPACES * \" \"\n\ndef matrix2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a matrix\n    \"\"\"\n    left_latex = r\"\\left(\" + \"\\n\" + indent(1) + r\"\\begin{array}\"\n    right_latex = indent(1) + r\"\\end{array}\" + \"\\n\" + r\"\\right)\"\n    m_cols = matrix.shape[1]\n    array_cols = \"{\" + \"r\" * m_cols + \"}\\n\"\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(2) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + array_cols + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\ndef det2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a determinant\n    \"\"\"\n    left_latex = r\"\\begin{vmatrix}\" + \"\\n\"\n    right_latex = r\"\\end{vmatrix}\"\n    m_cols = matrix.shape[1]\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(1) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\n\n1.1.1 Output string\nUsing the NumPy function np.eye, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.\n\n\nCode\nprint(matrix2latex(np.eye(3, dtype=int)))\n\n\n$$\n\\left(\n   \\begin{array}{rrr}\n      1 & 0 & 0 \\\\ \n      0 & 1 & 0 \\\\ \n      0 & 0 & 1 \\\\ \n   \\end{array}\n\\right)\n$$"
+    "text": "1.1 Functions for matrices and determinants\nThe functions matrix2latex and det2latex generate an indented LaTeX string that can be copied or directly rendered in your math article.\nThe INDENT_SPACES parameter specifies the number of spaces used for indentation.\n\n\nCode\nimport numpy as np\n\nINDENT_SPACES = 3\n\ndef indent(num_indent=1):\n    \"\"\"\n    Number of spaces for indentation\n    \"\"\"\n    return num_indent * INDENT_SPACES * \" \"\n\ndef matrix2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a matrix\n    \"\"\"\n    left_latex = r\"\\left(\" + \"\\n\" + indent(1) + r\"\\begin{array}\"\n    right_latex = indent(1) + r\"\\end{array}\" + \"\\n\" + r\"\\right)\"\n    m_cols = matrix.shape[1]\n    array_cols = \"{\" + \"r\" * m_cols + \"}\\n\"\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(2) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + array_cols + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\ndef det2latex(matrix):\n    \"\"\"\n    Convert a NumPy array to LaTeX code as a determinant\n    \"\"\"\n    left_latex = r\"\\begin{vmatrix}\" + \"\\n\"\n    right_latex = r\"\\end{vmatrix}\"\n    m_cols = matrix.shape[1]\n    elements_latex = \"\"\n    for row in matrix:\n        elements_latex = \\\n          elements_latex + indent(1) + \" & \".join([str(x) for x in row]) + \\\n            r\" \\\\ \" + \"\\n\"\n    latex = left_latex + elements_latex + right_latex\n    return f\"$$\\n{latex}\\n$$\"\n\n\n\n1.1.1 Output string\nUsing the NumPy function np.eye, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.\n\n\nCode\nprint(matrix2latex(np.eye(3, dtype=int)))\n\n\n$$\n\\left(\n   \\begin{array}{rrr}\n      1 & 0 & 0 \\\\ \n      0 & 1 & 0 \\\\ \n      0 & 0 & 1 \\\\ \n   \\end{array}\n\\right)\n$$"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html#rendering-output-in-a-document",
     "href": "posts/02082023-numpy-latex/index.html#rendering-output-in-a-document",
     "title": "Convert a NumPy array to LaTeX",
     "section": "1.2 Rendering output in a document",
-    "text": "1.2 Rendering output in a document\nIf you are working in a Jupyter notebook, you can render a \\(LaTeX\\) string using the Math function from the IPython library, which can be imported as follows:\n\n\nCode\nfrom IPython.display import Math\n\n\nIf you are writing a Python chunk in a Quarto file in RStudio, you need to include the option #| output: asis at the top of the code chunk. This option determines how the output is rendered in the final document.\n\n\nCode\nprint(det2latex(np.eye(3, dtype=int)))\n\n\\[\n\\begin{vmatrix}\n   1 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   0 & 0 & 1 \\\\\n\\end{vmatrix}\n\\]\n\n\n\nCode\n# Identity 4x4 matrix\nidentity_4 = np.eye(4, dtype=int)\nidentity_4_latex = r\"$$I_4 = \" + f\"{matrix2latex(identity_4)}\"[2:]\nprint(identity_4_latex)\n\n\\[I_4 =\n\\left(\n   \\begin{array}{rrrr}\n      1 & 0 & 0 & 0 \\\\\n      0 & 1 & 0 & 0 \\\\\n      0 & 0 & 1 & 0 \\\\\n      0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+    "text": "1.2 Rendering output in a document\nIf you are working in a Jupyter notebook, you can render a LaTeX string using the Math function from the IPython library, which can be imported as follows:\n\n\nCode\nfrom IPython.display import Math\n\n\nIf you are writing a Python chunk in a Quarto file in RStudio, you need to include the option #| output: asis at the top of the code chunk. This option determines how the output is rendered in the final document.\n\n\nCode\nprint(det2latex(np.eye(3, dtype=int)))\n\n\n\\begin{vmatrix}\n   1 & 0 & 0 \\\\\n   0 & 1 & 0 \\\\\n   0 & 0 & 1 \\\\\n\\end{vmatrix}\n\n\n\n\nCode\n# Identity 4x4 matrix\nidentity_4 = np.eye(4, dtype=int)\nidentity_4_latex = r\"$$I_4 = \" + f\"{matrix2latex(identity_4)}\"[2:]\nprint(identity_4_latex)\n\nI_4 =\n\\left(\n   \\begin{array}{rrrr}\n      1 & 0 & 0 & 0 \\\\\n      0 & 1 & 0 & 0 \\\\\n      0 & 0 & 1 & 0 \\\\\n      0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html#rendering-the-output-to-a-file",
     "href": "posts/02082023-numpy-latex/index.html#rendering-the-output-to-a-file",
     "title": "Convert a NumPy array to LaTeX",
     "section": "1.3 Rendering the output to a file",
-    "text": "1.3 Rendering the output to a file\nThe \\(LaTeX\\) string can be rendered and saved to a file using the following function, which is based on the SymPy library.\n\n\nCode\nfrom sympy import preview\n\ndef latex2png(latex, filename, fontsize=300):\n    \"\"\"\n    Render LaTeX code to a PNG image\n    \"\"\"\n    return preview(latex,\n                   viewer='file',\n                   filename=filename,\n                   euler=False,\n                   dvioptions=['-D', f'{str(fontsize)}'])"
+    "text": "1.3 Rendering the output to a file\nThe LaTeX string can be rendered and saved to a file using the following function, which is based on the SymPy library.\n\n\nCode\nfrom sympy import preview\n\ndef latex2png(latex, filename, fontsize=300):\n    \"\"\"\n    Render LaTeX code to a PNG image\n    \"\"\"\n    return preview(latex,\n                   viewer='file',\n                   filename=filename,\n                   euler=False,\n                   dvioptions=['-D', f'{str(fontsize)}'])"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html#other-types-of-automated-matrices",
     "href": "posts/02082023-numpy-latex/index.html#other-types-of-automated-matrices",
     "title": "Convert a NumPy array to LaTeX",
     "section": "1.4 Other types of automated matrices",
-    "text": "1.4 Other types of automated matrices\n\n1.4.1 Matrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\\]\n\n\n\n1.4.2 Triangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\\[\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)\n\\]"
+    "text": "1.4 Other types of automated matrices\n\n1.4.1 Matrices with numbered elements\n\n\nCode\ndef element_matrix(n, notation=r\"x\"):\n    \"\"\"\n    Matrix with elements in algebraic notation \n    \"\"\"\n    vec_function = \\\n      np.vectorize(lambda i, j: notation + \"_{\" + f\"{i + 1}{j + 1}\" + \"}\")\n    return np.fromfunction(vec_function,\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(element_matrix(5, notation=r\"\\theta\")))\n\n\n\\left(\n   \\begin{array}{rrrrr}\n      \\theta_{11} & \\theta_{12} & \\theta_{13} & \\theta_{14} & \\theta_{15} \\\\\n      \\theta_{21} & \\theta_{22} & \\theta_{23} & \\theta_{24} & \\theta_{25} \\\\\n      \\theta_{31} & \\theta_{32} & \\theta_{33} & \\theta_{34} & \\theta_{35} \\\\\n      \\theta_{41} & \\theta_{42} & \\theta_{43} & \\theta_{44} & \\theta_{45} \\\\\n      \\theta_{51} & \\theta_{52} & \\theta_{53} & \\theta_{54} & \\theta_{55} \\\\\n   \\end{array}\n\\right)\n\n\n\n\n1.4.2 Triangular matrices\n\nUpper Triangular Matrix: In an upper triangular matrix, all elements below the main diagonal are zero.\n\n\n\nCode\ndef up_triangular_matrix(n):\n    \"\"\"\n    Upper Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.less_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\nLower Triangular Matrix: In a lower triangular matrix, all elements above the main diagonal are zero.\n\n\n\nCode\ndef lw_triangular_matrix(n):\n    \"\"\"\n    Lower Triangular matrix filled with ones and zeros\n    \"\"\"\n    return np.fromfunction(lambda i, j:  1 * np.greater_equal(i , j),\n                           shape=(n, n),\n                           dtype=int)\n\n\n\n\nCode\nprint(matrix2latex(up_triangular_matrix(5)))\n\n\n\\left(\n   \\begin{array}{rrrrr}\n      1 & 1 & 1 & 1 & 1 \\\\\n      0 & 1 & 1 & 1 & 1 \\\\\n      0 & 0 & 1 & 1 & 1 \\\\\n      0 & 0 & 0 & 1 & 1 \\\\\n      0 & 0 & 0 & 0 & 1 \\\\\n   \\end{array}\n\\right)"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html",
-    "href": "posts/05032022-max-determinant/index.html",
-    "title": "Max Determinant",
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html",
+    "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "",
-    "text": "Plot3D of max matrix elements"
+    "text": "Tetrahedral Numbers"
   },
   {
-    "objectID": "posts/05032022-max-determinant/index.html#identity",
-    "href": "posts/05032022-max-determinant/index.html#identity",
-    "title": "Max Determinant",
-    "section": "1 Identity",
-    "text": "1 Identity\nThe sequence A181983(n) gives the determinants of the square matrices: \\(M_{n}\\), where the elements \\(m_{i,j}= \\max(i,j)\\) and \\(\\max\\) denotes the maximum function.\nThis identity appears as follows:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "posts/05032022-max-determinant/index.html#proof",
-    "href": "posts/05032022-max-determinant/index.html#proof",
-    "title": "Max Determinant",
-    "section": "2 Proof",
-    "text": "2 Proof\nA new matrix with the same determinant can be created by subtracting row \\(i\\) from row \\(i+1\\) starting from the 2nd row. The determinant of this new matrix can then be easily computed using the expansion by minors technique at element \\(m_{1,n}\\)\nThis can be better illustrated with an example:\nWe can transform:\n\\[\\begin{equation}\nM_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right)\n\\end{equation}\\]\nInto:\n\\[\\begin{equation}\nM^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\n\\end{equation}\\]\nThis proof can be generalized to a very similar type of matrices, resulting in:\n\\[\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]\n\\[\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "posts/05032022-max-determinant/index.html#references",
-    "href": "posts/05032022-max-determinant/index.html#references",
-    "title": "Max Determinant",
-    "section": "3 References",
-    "text": "3 References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
-  },
-  {
-    "objectID": "posts/18052024-catalan-numbers/index.html#introducción",
-    "href": "posts/18052024-catalan-numbers/index.html#introducción",
-    "title": "A004782(n) = A014847(n) + 1",
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#introducción",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#introducción",
+    "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "1 INTRODUCCIÓN",
-    "text": "1 INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números \\(n\\) que cumplen:\n\\[\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\\]\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números \\(n\\) dónde el enésimo número de Catalan \\(C_{n}\\) es divisible por \\(n\\)\n\\[\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\\]\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \\[\nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\\]\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\\[\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots\n\\]"
+    "text": "1 INTRODUCCIÓN\nEsta entrada en el blog continúa con ejercicios sobre series relacionadas con los recíprocos de números especiales, siguiendo trabajos previos1 sobre los números piramidales cuadrados y los números poligonales. En esta ocasión consideramos un ejemplo sencillo: la suma de los recíprocos de los números tetraédricos.\nAunque el resultado no es particularmente profundo, sirve como una buena ilustración del uso de fracciones parciales y series telescópicas."
   },
   {
-    "objectID": "posts/18052024-catalan-numbers/index.html#enunciado",
-    "href": "posts/18052024-catalan-numbers/index.html#enunciado",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "2 ENUNCIADO",
-    "text": "2 ENUNCIADO\n\\[\nA004782(n) = A014847(n) + 1\n\\tag{4}\\]"
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-tetraédricos",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-tetraédricos",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "2 NÚMEROS TETRAÉDRICOS",
+    "text": "2 NÚMEROS TETRAÉDRICOS\nLos números tetraédricos representan el número de esferas que pueden apilarse formando un tetraedro regular [2] [3] y están definidos por la fórmula\n\nT_n = \\frac{n(n+1)(n+2)}{6} = \\binom{n+2}{3}\n\\tag{1}"
   },
   {
-    "objectID": "posts/18052024-catalan-numbers/index.html#demostración",
-    "href": "posts/18052024-catalan-numbers/index.html#demostración",
-    "title": "A004782(n) = A014847(n) + 1",
-    "section": "3 DEMOSTRACIÓN",
-    "text": "3 DEMOSTRACIÓN\nPartiendo de las funciones \\(f(n)\\) y \\(g(n)\\):\n\\[\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\\]\n\\[\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\\]\nSe puede comprobar como \\(f(n+1)\\) es igual a \\(g(n)\\) por cálculo directo:\n\\[\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\\]\nPor lo tanto:\n\\[\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}\\]"
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#la-serie-de-los-recíprocos-de-números-tetraédricos",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#la-serie-de-los-recíprocos-de-números-tetraédricos",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS",
+    "text": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS\nNos interesa estudiar la suma parcial\n\nS(n) = \\sum_{k=1}^{n} \\frac{1}{T_k}.\n\\tag{2}\nSustituyendo la expresión explícita de T_k, obtenemos\n\nS(n) = \\sum_{k=1}^{n} \\frac{6}{k(k+1)(k+2)}.\n\\tag{3}"
   },
   {
-    "objectID": "posts/18052024-catalan-numbers/index.html#footnotes",
-    "href": "posts/18052024-catalan-numbers/index.html#footnotes",
-    "title": "A004782(n) = A014847(n) + 1",
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#descomposición-en-fracciones-parciales",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#descomposición-en-fracciones-parciales",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "4 DESCOMPOSICIÓN EN FRACCIONES PARCIALES",
+    "text": "4 DESCOMPOSICIÓN EN FRACCIONES PARCIALES\nLa fracción racional puede descomponerse en una suma de otras como\n\n\\frac{6}{k(k+1)(k+2)} =\n\\frac{A}{k} + \\frac{B}{k+1} + \\frac{C}{k+2}.\n\\tag{4}\nResolviendo el sistema lineal correspondiente se obtiene\n\nA = \\frac{1}{2}, \\qquad\nB = -1, \\qquad\nC = \\frac{1}{2}\n\\tag{5}\nPor lo tanto,\n\n\\frac{6}{k(k+1)(k+2)}\n= \\frac{1}{2k} - \\frac{1}{k+1} + \\frac{1}{2(k+2)}\n\\tag{6}"
+  },
+  {
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-armónicos",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-armónicos",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "5 NÚMEROS ARMÓNICOS",
+    "text": "5 NÚMEROS ARMÓNICOS\nEstas tres series se pueden sumar facilmente teniendo en cuenta las siguientes identidades para los números armónicos H_n [4]:\n\n\\sum_{k=1}^{n} \\frac{1}{k} = H_n\n\\tag{7}\n\n\\sum_{k=1}^{n} \\frac{1}{k+1} = H_n - 1 + \\frac{1}{n+1}\n\\tag{8}\n \\sum_{k=1}^{n} \\frac{1}{k+2} = H_n - \\frac{3}{2} + \\frac{1}{n+1} + \\frac{1}{n+2}\n\\tag{9} Sustituyendo estas expresiones en la identidad (6), se obtiene\n\n\\begin{align}\n\\frac{S(n)}{6}\n= \\frac{n}{n+1}\n- \\frac{1}{2}\n- \\frac{1}{4}\n+ \\frac{1}{2(n+1)}\n+ \\frac{1}{2(n+2)}\n\\end{align}\n\\tag{10}\nAquí se observa claramente el carácter telescópico de la serie: los términos H_n se cancelan, evitando la aparición de constantes como \\gamma o funciones especiales."
+  },
+  {
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#fórmula-cerrada",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#fórmula-cerrada",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "6 FÓRMULA CERRADA",
+    "text": "6 FÓRMULA CERRADA\nSimplificando (10), se obtiene una expresión cerrada para la suma parcial:\n\nS(n) = \\frac{3n(n+3)}{2(n+1)(n+2)}\n\\tag{11}"
+  },
+  {
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#suma-infinita",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#suma-infinita",
+    "title": "Suma de los recíprocos de los números tetraédricos",
+    "section": "7 SUMA INFINITA",
+    "text": "7 SUMA INFINITA\nFinalmente, tomando el límite de (11) cuando n \\to \\infty,\n\n\\lim_{n \\to \\infty} S(n)\n= \\frac{3}{2}\n\\tag{12}\nEsto muestra que la serie de los recíprocos de los números tetraédricos converge, y su suma infinita es igual a \\frac{3}{2}."
+  },
+  {
+    "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#footnotes",
+    "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#footnotes",
+    "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "Notas",
-    "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+    "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado TETRAHEDRAL NUMBERS RECIPROCALS SUM publicado el viernes 25 de diciembre de 2009 en el blog Psychedelic Geometry [1].↩︎"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html",
-    "href": "posts/11062025-euclinacci/index.html",
-    "title": "Euclinacci",
+    "objectID": "projects/02-marketconf-package/index.html",
+    "href": "projects/02-marketconf-package/index.html",
+    "title": "Stock Market Confidence Indexes",
     "section": "",
-    "text": "Una igualdad aparentemente trivial como \\(1+1=2\\) encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\\[\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\\]\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\\[\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}\\]"
+    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#introducción",
-    "href": "posts/11062025-euclinacci/index.html#introducción",
-    "title": "Euclinacci",
+    "objectID": "projects/02-marketconf-package/index.html#package-installation",
+    "href": "projects/02-marketconf-package/index.html#package-installation",
+    "title": "Stock Market Confidence Indexes",
     "section": "",
-    "text": "Una igualdad aparentemente trivial como \\(1+1=2\\) encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\\[\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\\]\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\\[\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}\\]"
+    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
-    "href": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
-    "title": "Euclinacci",
-    "section": "\n2 PROPIEDADES FUNDAMENTALES",
-    "text": "2 PROPIEDADES FUNDAMENTALES\nEl análisis de la razón entre términos consecutivos de la sucesión de Fibonacci tiene dos propiedades importantes:\n\nLa sucesión de razones \\(\\frac{F_{n+1}}{F_n}\\) converge a un límite finito cuando \\(n\\) tiende a infinito.\nDos números de Fibonacci consecutivos son coprimos: \\(\\gcd(F_{n}, F_{n+1}) = 1\\)."
+    "objectID": "projects/02-marketconf-package/index.html#examples",
+    "href": "projects/02-marketconf-package/index.html#examples",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#tabla-de-razones",
-    "href": "posts/11062025-euclinacci/index.html#tabla-de-razones",
-    "title": "Euclinacci",
-    "section": "\n3 TABLA DE RAZONES",
-    "text": "3 TABLA DE RAZONES\n\n\n\n\n\n\n\n\n\\(n\\)\n\\(F_n\\)\n\\(\\frac{F_{n+1}}{F_n}\\)\nError absoluto \\(\\left| \\frac{F_{n+1}}{F_n} - \\phi \\right|\\)\n\n\n\n\n5\n5\n1.6666667\n0.0486327\n\n\n10\n55\n1.6176471\n0.0003869\n\n\n15\n610\n1.6180339\n≈ 2.7 × 10⁻⁷\n\n\n20\n6765\n1.6180339887\n≈ 1.3 × 10⁻¹⁰\n\n\n\nTabla 1: Convergencia de la razón \\(\\frac{F_{n+1}}{F_n}\\) hacia el número áureo \\(\\phi = \\frac{1+\\sqrt{5}}{2} \\approx 1.6180339887\\ldots\\)"
+    "objectID": "projects/02-marketconf-package/index.html#license",
+    "href": "projects/02-marketconf-package/index.html#license",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#la-razón-aurea",
-    "href": "posts/11062025-euclinacci/index.html#la-razón-aurea",
-    "title": "Euclinacci",
-    "section": "\n4 LA RAZÓN AUREA",
-    "text": "4 LA RAZÓN AUREA\nSea \\(I\\) el límite de la relación entre dos números de Fibonacci consecutivos:\n\\[\nI = \\lim_{n \\to \\infty} \\frac{F_n}{F_{n-1}}\n\\tag{3}\\]\nComo:\n\\[\n\\frac{F_{n}}{F_{n-1}} = \\frac{F_{n-1}+F_{n-2}}{F_{n-1}} = 1 + \\frac{F_{n-2}}{F_{n-1}} (n \\geq 2)\n\\tag{4}\\]\nTomando límites se obtiene:\n\\[\nI = 1 + \\frac{1}{I}\n\\Rightarrow I^2 = I + 1\n\\Rightarrow I = \\frac{1 + \\sqrt{5}}{2} = \\phi\n\\tag{5}\\]\nEl número \\(\\phi\\) es conocido como la proporción áurea.\n\nCódigolibrary(ggplot2)\n\nfibonacci &lt;- function(n) {\n  F &lt;- numeric(n)\n  F[1] &lt;- 1\n  F[2] &lt;- 1\n  for (i in 3:n) {\n    F[i] &lt;- F[i - 1] + F[i - 2]\n  }\n  return(F)\n}\n\nn &lt;- 20\nF &lt;- fibonacci(n)\nratio &lt;- F[-1] / F[-length(F)]\ndata &lt;- data.frame(n = 2:n, ratio = ratio)\nphi &lt;- (1 + sqrt(5)) / 2\n\nggplot(data, aes(x = n, y = ratio)) +\n  geom_point(color = \"steelblue\", size = 2) +\n  geom_line(color = \"steelblue\") +\n  geom_hline(yintercept = phi,\n             linetype = \"dashed\",\n             color = \"red\") +\n  labs(title = \"Razón entre números consecutivos de Fibonacci\",\n       x = \"n\",\n       y = expression(F[n] / F[n - 1])) +\n  theme_minimal()"
+    "objectID": "projects/02-marketconf-package/index.html#links",
+    "href": "projects/02-marketconf-package/index.html#links",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Github marketconf R package"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
-    "href": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
-    "title": "Euclinacci",
-    "section": "\n5 EL ALGORITMO DE EUCLIDES",
-    "text": "5 EL ALGORITMO DE EUCLIDES\nLa segunda propiedad se puede demostrar empleando el Algoritmo de Euclides, que es técnica milenaria para encontrar el máximo común divisor (MCD) entre dos números enteros.\nDados \\(a\\) y \\(b\\), el algoritmo genera la secuencia:\n\\[\n(a, b) = (r_0, r_1) = (r_1, r_2) = \\cdots = (r_{n-1}, r_n)\n\\tag{6}\\]\nCon la siguiente relación de recurrencia:\n\\[\n\\begin{cases}\nr_0 = a \\\\\nr_1 = b \\\\\nr_{i+1} = r_{i-1} - r_i \\cdot \\left\\lfloor \\dfrac{r_{i-1}}{r_i} \\right\\rfloor\n\\end{cases}\n\\tag{7}\\]\nCuando \\(r_{i+1} = 0\\), entonces \\(\\gcd(a, b) = r_i\\) y el algoritmo se detiene.\nLa notación \\(\\lfloor x \\rfloor\\) corresponde a la denominada función suelo [3] que devuelve el mayor entero menor o igual que \\(x\\)"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nPython\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nlogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
-    "href": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
-    "title": "Euclinacci",
-    "section": "\n6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI",
-    "text": "6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI\nSea:\n\\[\n(F_n, F_{n-1}) = (r_0, r_1)\n\\tag{8}\\]\nEntonces:\n\\[\n\\begin{aligned}\nr_2 &= F_n - F_{n-1} \\cdot \\left\\lfloor \\dfrac{F_n}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot \\left\\lfloor 1 + \\dfrac{F_{n-2}}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot (1 + 0) = F_{n-2}\n\\end{aligned}\n\\tag{9}\\]\nRepitiendo el proceso, se obtiene:\n\\[\n(F_n, F_{n-1}) = (F_{n-1}, F_{n-2}) = \\cdots = (2, 1) = 1\n\\tag{10}\\]\nPor lo tanto, dos números de Fibonacci consecutivos son siempre coprimos."
+    "objectID": "TODO.html",
+    "href": "TODO.html",
+    "title": "1 energycode.org TODO.md",
+    "section": "",
+    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#conclusión",
-    "href": "posts/11062025-euclinacci/index.html#conclusión",
-    "title": "Euclinacci",
-    "section": "\n7 CONCLUSIÓN",
-    "text": "7 CONCLUSIÓN\nEl algoritmo de Euclides proporciona una demostración elegante y alternativa de la coprimalidad de dos términos consecutivos de la sucesión de Fibonacci."
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
   },
   {
-    "objectID": "posts/11062025-euclinacci/index.html#footnotes",
-    "href": "posts/11062025-euclinacci/index.html#footnotes",
-    "title": "Euclinacci",
-    "section": "Notas",
-    "text": "Notas\n\nEste artículo es una traducción y actualización del post original titulado EUCLINACCI - [1] publicado el domingo 1 de febrero de 2009 en el blog Psychedelic Geometry [1].↩︎"
+    "objectID": "about.html#author",
+    "href": "about.html#author",
+    "title": "About",
+    "section": "1 Author",
+    "text": "1 Author\nThe site is maintained by Enrique Pérez Herrero."
   },
   {
     "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
@@ -196,67 +203,123 @@
     "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/11062025-euclinacci/index.html",
+    "href": "posts/11062025-euclinacci/index.html",
+    "title": "Euclinacci",
     "section": "",
-    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
+    "text": "Una igualdad aparentemente trivial como 1+1=2 encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}"
   },
   {
-    "objectID": "about.html#author",
-    "href": "about.html#author",
-    "title": "About",
-    "section": "1 Author",
-    "text": "1 Author\nThe site is maintained by Enrique Pérez Herrero."
+    "objectID": "posts/11062025-euclinacci/index.html#introducción",
+    "href": "posts/11062025-euclinacci/index.html#introducción",
+    "title": "Euclinacci",
+    "section": "",
+    "text": "Una igualdad aparentemente trivial como 1+1=2 encierra consecuencias tan profundas que han ocupado bibliotecas enteras1:\nEntre ellas destaca la famosa sucesión de Fibonacci [2]:\n\n\\{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \\ldots\\}\n\\tag{1}\nLa sucesión de Fibonacci se define de forma recursiva mediante la siguiente expresión:\n\nF_n =\n\\begin{cases}\nF_0 = 0 \\\\\nF_1 = 1 \\\\\nF_n = F_{n-1} + F_{n-2}, & \\text{para } n \\ge 2\n\\end{cases}\n\\tag{2}"
   },
   {
-    "objectID": "TODO.html",
-    "href": "TODO.html",
-    "title": "1 energycode.org TODO.md",
-    "section": "",
-    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
+    "objectID": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
+    "href": "posts/11062025-euclinacci/index.html#propiedades-fundamentales",
+    "title": "Euclinacci",
+    "section": "\n2 PROPIEDADES FUNDAMENTALES",
+    "text": "2 PROPIEDADES FUNDAMENTALES\nEl análisis de la razón entre términos consecutivos de la sucesión de Fibonacci tiene dos propiedades importantes:\n\nLa sucesión de razones \\frac{F_{n+1}}{F_n} converge a un límite finito cuando n tiende a infinito.\nDos números de Fibonacci consecutivos son coprimos: \\gcd(F_{n}, F_{n+1}) = 1."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Euclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nmath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nbinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\npython\n\n\nnumpy\n\n\nlatex\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nlogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\ncode\n\n\nmachine learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nmath\n\n\nlinear algebra\n\n\ndeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/11062025-euclinacci/index.html#tabla-de-razones",
+    "href": "posts/11062025-euclinacci/index.html#tabla-de-razones",
+    "title": "Euclinacci",
+    "section": "\n3 TABLA DE RAZONES",
+    "text": "3 TABLA DE RAZONES\n\n\n\n\n\n\n\n\n\nn\nF_n\n\\frac{F_{n+1}}{F_n}\nError absoluto \\left| \\frac{F_{n+1}}{F_n} - \\phi \\right|\n\n\n\n\n5\n5\n1.6666667\n0.0486327\n\n\n10\n55\n1.6176471\n0.0003869\n\n\n15\n610\n1.6180339\n≈ 2.7 × 10⁻⁷\n\n\n20\n6765\n1.6180339887\n≈ 1.3 × 10⁻¹⁰\n\n\n\n\nTabla 1: Convergencia de la razón \\frac{F_{n+1}}{F_n} hacia el número áureo \\phi = \\frac{1+\\sqrt{5}}{2} \\approx 1.6180339887\\ldots"
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html",
-    "href": "projects/02-marketconf-package/index.html",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+    "objectID": "posts/11062025-euclinacci/index.html#la-razón-aurea",
+    "href": "posts/11062025-euclinacci/index.html#la-razón-aurea",
+    "title": "Euclinacci",
+    "section": "\n4 LA RAZÓN AUREA",
+    "text": "4 LA RAZÓN AUREA\nSea I el límite de la relación entre dos números de Fibonacci consecutivos:\n\nI = \\lim_{n \\to \\infty} \\frac{F_n}{F_{n-1}}\n\\tag{3}\nComo:\n\n\\frac{F_{n}}{F_{n-1}} = \\frac{F_{n-1}+F_{n-2}}{F_{n-1}} = 1 + \\frac{F_{n-2}}{F_{n-1}} (n \\geq 2)\n\\tag{4}\nTomando límites se obtiene:\n\nI = 1 + \\frac{1}{I}\n\\Rightarrow I^2 = I + 1\n\\Rightarrow I = \\frac{1 + \\sqrt{5}}{2} = \\phi\n\\tag{5}\nEl número \\phi es conocido como la proporción áurea.\n\nCódigolibrary(ggplot2)\n\nfibonacci &lt;- function(n) {\n  F &lt;- numeric(n)\n  F[1] &lt;- 1\n  F[2] &lt;- 1\n  for (i in 3:n) {\n    F[i] &lt;- F[i - 1] + F[i - 2]\n  }\n  return(F)\n}\n\nn &lt;- 20\nF &lt;- fibonacci(n)\nratio &lt;- F[-1] / F[-length(F)]\ndata &lt;- data.frame(n = 2:n, ratio = ratio)\nphi &lt;- (1 + sqrt(5)) / 2\n\nggplot(data, aes(x = n, y = ratio)) +\n  geom_point(color = \"steelblue\", size = 2) +\n  geom_line(color = \"steelblue\") +\n  geom_hline(yintercept = phi,\n             linetype = \"dashed\",\n             color = \"red\") +\n  labs(title = \"Razón entre números consecutivos de Fibonacci\",\n       x = \"n\",\n       y = expression(F[n] / F[n - 1])) +\n  theme_minimal()"
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#package-installation",
-    "href": "projects/02-marketconf-package/index.html#package-installation",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+    "objectID": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
+    "href": "posts/11062025-euclinacci/index.html#el-algoritmo-de-euclides",
+    "title": "Euclinacci",
+    "section": "\n5 EL ALGORITMO DE EUCLIDES",
+    "text": "5 EL ALGORITMO DE EUCLIDES\nLa segunda propiedad se puede demostrar empleando el Algoritmo de Euclides, que es técnica milenaria para encontrar el máximo común divisor (MCD) entre dos números enteros.\nDados a y b, el algoritmo genera la secuencia:\n\n(a, b) = (r_0, r_1) = (r_1, r_2) = \\cdots = (r_{n-1}, r_n)\n\\tag{6}\nCon la siguiente relación de recurrencia:\n\n\\begin{cases}\nr_0 = a \\\\\nr_1 = b \\\\\nr_{i+1} = r_{i-1} - r_i \\cdot \\left\\lfloor \\dfrac{r_{i-1}}{r_i} \\right\\rfloor\n\\end{cases}\n\\tag{7}\nCuando r_{i+1} = 0, entonces \\gcd(a, b) = r_i y el algoritmo se detiene.\nLa notación \\lfloor x \\rfloor corresponde a la denominada función suelo [3] que devuelve el mayor entero menor o igual que x"
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#examples",
-    "href": "projects/02-marketconf-package/index.html#examples",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+    "objectID": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
+    "href": "posts/11062025-euclinacci/index.html#aplicación-a-los-números-de-fibonacci",
+    "title": "Euclinacci",
+    "section": "\n6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI",
+    "text": "6 APLICACIÓN A LOS NÚMEROS DE FIBONACCI\nSea:\n\n(F_n, F_{n-1}) = (r_0, r_1)\n\\tag{8}\nEntonces:\n\n\\begin{aligned}\nr_2 &= F_n - F_{n-1} \\cdot \\left\\lfloor \\dfrac{F_n}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot \\left\\lfloor 1 + \\dfrac{F_{n-2}}{F_{n-1}} \\right\\rfloor \\\\\n&= F_n - F_{n-1} \\cdot (1 + 0) = F_{n-2}\n\\end{aligned}\n\\tag{9}\nRepitiendo el proceso, se obtiene:\n\n(F_n, F_{n-1}) = (F_{n-1}, F_{n-2}) = \\cdots = (2, 1) = 1\n\\tag{10}\nPor lo tanto, dos números de Fibonacci consecutivos son siempre coprimos."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#license",
-    "href": "projects/02-marketconf-package/index.html#license",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+    "objectID": "posts/11062025-euclinacci/index.html#conclusión",
+    "href": "posts/11062025-euclinacci/index.html#conclusión",
+    "title": "Euclinacci",
+    "section": "\n7 CONCLUSIÓN",
+    "text": "7 CONCLUSIÓN\nEl algoritmo de Euclides proporciona una demostración elegante y alternativa de la coprimalidad de dos términos consecutivos de la sucesión de Fibonacci."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#links",
-    "href": "projects/02-marketconf-package/index.html#links",
-    "title": "Stock Market Confidence Indexes",
+    "objectID": "posts/11062025-euclinacci/index.html#footnotes",
+    "href": "posts/11062025-euclinacci/index.html#footnotes",
+    "title": "Euclinacci",
+    "section": "Notas",
+    "text": "Notas\n\nEste artículo es una traducción y actualización del post original titulado EUCLINACCI publicado el domingo 1 de febrero de 2009 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
+    "objectID": "posts/18052024-catalan-numbers/index.html#introducción",
+    "href": "posts/18052024-catalan-numbers/index.html#introducción",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "1 INTRODUCCIÓN",
+    "text": "1 INTRODUCCIÓN\nRelacionar dos secuencias distintas de números enteros en la On-Line Encyclopedia of Integer Sequences (OEIS) abre conexiones entre dentro de la información matemática disponible1. La secuencia de números enteros, A004782 [2], está compuesta por los números n que cumplen:\n\nn \\in \\{A004782\\} \\Leftrightarrow \\frac{2 (2n-3)!}{n! (n-1)!} \\in \\mathbb{N}\n\\tag{1}\nY está estrechamente relacionada con la secuencia A014847 [3], formada por los números n dónde el enésimo número de Catalan C_{n} es divisible por n\n\nn \\in \\{A014847\\} \\Leftrightarrow n \\vert C_{n}\n\\tag{2}\nLos números de Catalan [4] aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: \nC_{n} = \\frac{1}{(n+1)}\\binom{2n}{n}\n\\tag{3}\nestán relacionados con los coeficientes binomiales centrales [5] y los primeros términos de la secuencia de los números de Catalan son:\n\n1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \\dots"
+  },
+  {
+    "objectID": "posts/18052024-catalan-numbers/index.html#enunciado",
+    "href": "posts/18052024-catalan-numbers/index.html#enunciado",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "2 ENUNCIADO",
+    "text": "2 ENUNCIADO\n\nA004782(n) = A014847(n) + 1\n\\tag{4}"
+  },
+  {
+    "objectID": "posts/18052024-catalan-numbers/index.html#demostración",
+    "href": "posts/18052024-catalan-numbers/index.html#demostración",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "3 DEMOSTRACIÓN",
+    "text": "3 DEMOSTRACIÓN\nPartiendo de las funciones f(n) y g(n):\n\nf(n) =  \\frac{2 (2n-3)!}{n! (n-1)!}\n\\tag{5}\n\ng(n) = \\frac{C_{n}}{n} = \\binom{2n}{n}  \\frac{1}{(n+1) n}\n\\tag{6}\nSe puede comprobar como f(n+1) es igual a g(n) por cálculo directo:\n\nf(n+1)=\\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \\frac{2n (2n-1)!}{n(n+1) {(n!)}^2}\n= \\frac{(2n)!}{n (n+1) {(n!)}^2}= \\\\ \\binom{2n}{n} \\frac{1}{(n+1) n} = g(n)\n\\tag{7}\nPor lo tanto:\n\nf(n+1) \\in \\mathbb{N} \\Longleftrightarrow g(n) \\in \\mathbb{N} \\Longleftrightarrow n+1  \\{A004782\\} \\Longleftrightarrow n \\in \\{A014847\\}\n\\tag{8}"
+  },
+  {
+    "objectID": "posts/18052024-catalan-numbers/index.html#footnotes",
+    "href": "posts/18052024-catalan-numbers/index.html#footnotes",
+    "title": "A004782(n) = A014847(n) + 1",
+    "section": "Notas",
+    "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado A004782(n)=A014847(n)+1 publicado el viernes 29 de noviembre de 2013 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html",
+    "href": "posts/05032022-max-determinant/index.html",
+    "title": "Max Determinant",
     "section": "",
-    "text": "Github marketconf R package"
+    "text": "Plot3D of max matrix elements"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#identity",
+    "href": "posts/05032022-max-determinant/index.html#identity",
+    "title": "Max Determinant",
+    "section": "1 Identity",
+    "text": "1 Identity\nThe sequence A181983(n) gives the determinants of the square matrices: M_{n}, where the elements m_{i,j}= \\max(i,j) and \\max denotes the maximum function.\nThis identity appears as follows:\n\\begin{equation}\ndet{\\bigg[ max(i,j) \\bigg] }_{1\\leq i,j \\leq n} = -n \\cdot {(-1)}^{n} = A181983(n)\n\\end{equation}"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#proof",
+    "href": "posts/05032022-max-determinant/index.html#proof",
+    "title": "Max Determinant",
+    "section": "2 Proof",
+    "text": "2 Proof\nA new matrix with the same determinant can be created by subtracting row i from row i+1 starting from the 2nd row. The determinant of this new matrix can then be easily computed using the expansion by minors technique at element m_{1,n}\nThis can be better illustrated with an example:\nWe can transform:\n\\begin{equation}\nM_{10} = \\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n3 & 3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n4 & 4 & 4 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n5 & 5 & 5 & 5 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n6 & 6 & 6 & 6 & 6 & 6 & 7 & 8 & 9 & 10 \\\\\n7 & 7 & 7 & 7 & 7 & 7 & 7 & 8 & 9 & 10 \\\\\n8 & 8 & 8 & 8 & 8 & 8 & 8 & 8 & 9 & 10 \\\\\n9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 9 & 10 \\\\\n10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10\n\\end{array} \\right)\n\\end{equation}\nInto:\n\\begin{equation}\nM^{*}_{10} =\\left(\\begin{array}{cccccccccc}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 \\\\\n1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\end{array} \\right)\n\\end{equation}\nThis proof can be generalized to a very similar type of matrices, resulting in:\n\\begin{equation}\ndet{\\bigg[ max(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = {(-1)}^{n-1} \\cdot n^{k} \\cdot \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}\n\\begin{equation}\ndet{\\bigg[ min(i,j)^k \\bigg]}_{1\\leq i,j \\leq n} = \\prod_{s=1}^{n-1}{(s+1)^k-s^k}\n\\end{equation}"
+  },
+  {
+    "objectID": "posts/05032022-max-determinant/index.html#references",
+    "href": "posts/05032022-max-determinant/index.html#references",
+    "title": "Max Determinant",
+    "section": "3 References",
+    "text": "3 References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
   },
   {
     "objectID": "posts/01082023-blog-logo/index.html",

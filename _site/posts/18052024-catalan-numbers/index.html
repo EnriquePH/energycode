@@ -134,9 +134,30 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 </script>
+<style>
+table, th, td, caption,
+.quarto-table,
+.cell-output-display table {
+  text-transform: none !important;
+}
+</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: true
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -274,46 +295,46 @@ window.Quarto = {
 <p><img src="A014847_plot.png" class="img-fluid"></p>
 <section id="introducción" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">1</span> INTRODUCCIÓN</h2>
-<p>Relacionar dos secuencias distintas de números enteros en la <em>On-Line Encyclopedia of Integer Sequences (OEIS)</em> abre conexiones entre dentro de la información matemática disponible<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. La secuencia de números enteros, <a href="https://oeis.org/A004782">A004782</a> <span class="citation" data-cites="OEIS_A004782"><a href="#ref-OEIS_A004782" role="doc-biblioref">[2]</a></span>, está compuesta por los números <span class="math inline">\(n\)</span> que cumplen:</p>
-<p><span id="eq-cat001"><span class="math display">\[
+<p>Relacionar dos secuencias distintas de números enteros en la <em>On-Line Encyclopedia of Integer Sequences (OEIS)</em> abre conexiones entre dentro de la información matemática disponible<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. La secuencia de números enteros, <a href="https://oeis.org/A004782">A004782</a> <span class="citation" data-cites="OEIS_A004782"><a href="#ref-OEIS_A004782" role="doc-biblioref">[2]</a></span>, está compuesta por los números <span class="math inline">n</span> que cumplen:</p>
+<p><span id="eq-cat001"><span class="math display">
 n \in \{A004782\} \Leftrightarrow \frac{2 (2n-3)!}{n! (n-1)!} \in \mathbb{N}
-\tag{1}\]</span></span></p>
-<p>Y está estrechamente relacionada con la secuencia <a href="https://oeis.org/A014847">A014847</a> <span class="citation" data-cites="OEIS_A014847"><a href="#ref-OEIS_A014847" role="doc-biblioref">[3]</a></span>, formada por los números <span class="math inline">\(n\)</span> dónde el enésimo número de Catalan <span class="math inline">\(C_{n}\)</span> es divisible por <span class="math inline">\(n\)</span></p>
-<p><span id="eq-cat002"><span class="math display">\[
+\tag{1}</span></span></p>
+<p>Y está estrechamente relacionada con la secuencia <a href="https://oeis.org/A014847">A014847</a> <span class="citation" data-cites="OEIS_A014847"><a href="#ref-OEIS_A014847" role="doc-biblioref">[3]</a></span>, formada por los números <span class="math inline">n</span> dónde el enésimo número de Catalan <span class="math inline">C_{n}</span> es divisible por <span class="math inline">n</span></p>
+<p><span id="eq-cat002"><span class="math display">
 n \in \{A014847\} \Leftrightarrow n \vert C_{n}
-\tag{2}\]</span></span></p>
-<p>Los <a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan">números de Catalan</a> <span class="citation" data-cites="OEIS_A000108"><a href="#ref-OEIS_A000108" role="doc-biblioref">[4]</a></span> aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: <span id="eq-cat003"><span class="math display">\[
+\tag{2}</span></span></p>
+<p>Los <a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan">números de Catalan</a> <span class="citation" data-cites="OEIS_A000108"><a href="#ref-OEIS_A000108" role="doc-biblioref">[4]</a></span> aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: <span id="eq-cat003"><span class="math display">
 C_{n} = \frac{1}{(n+1)}\binom{2n}{n}
-\tag{3}\]</span></span></p>
+\tag{3}</span></span></p>
 <p>están relacionados con los <em>coeficientes binomiales centrales</em> <span class="citation" data-cites="OEIS_A000984"><a href="#ref-OEIS_A000984" role="doc-biblioref">[5]</a></span> y los primeros términos de la secuencia de los números de Catalan son:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \dots
-\]</span></p>
+</span></p>
 </section>
 <section id="enunciado" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="enunciado"><span class="header-section-number">2</span> ENUNCIADO</h2>
-<p><span id="eq-cat004"><span class="math display">\[
+<p><span id="eq-cat004"><span class="math display">
 A004782(n) = A014847(n) + 1
-\tag{4}\]</span></span></p>
+\tag{4}</span></span></p>
 </section>
 <section id="demostración" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="demostración"><span class="header-section-number">3</span> DEMOSTRACIÓN</h2>
-<p>Partiendo de las funciones <span class="math inline">\(f(n)\)</span> y <span class="math inline">\(g(n)\)</span>:</p>
-<p><span id="eq-cat005"><span class="math display">\[
+<p>Partiendo de las funciones <span class="math inline">f(n)</span> y <span class="math inline">g(n)</span>:</p>
+<p><span id="eq-cat005"><span class="math display">
 f(n) =  \frac{2 (2n-3)!}{n! (n-1)!}
-\tag{5}\]</span></span></p>
-<p><span id="eq-cat006"><span class="math display">\[
+\tag{5}</span></span></p>
+<p><span id="eq-cat006"><span class="math display">
 g(n) = \frac{C_{n}}{n} = \binom{2n}{n}  \frac{1}{(n+1) n}
-\tag{6}\]</span></span></p>
-<p>Se puede comprobar como <span class="math inline">\(f(n+1)\)</span> es igual a <span class="math inline">\(g(n)\)</span> por cálculo directo:</p>
-<p><span id="eq-cat007"><span class="math display">\[
+\tag{6}</span></span></p>
+<p>Se puede comprobar como <span class="math inline">f(n+1)</span> es igual a <span class="math inline">g(n)</span> por cálculo directo:</p>
+<p><span id="eq-cat007"><span class="math display">
 f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2}
-= \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
-\tag{7}\]</span></span></p>
+= \frac{(2n)!}{n (n+1) {(n!)}^2}= \\ \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
+\tag{7}</span></span></p>
 <p>Por lo tanto:</p>
-<p><span id="eq-cat008"><span class="math display">\[
+<p><span id="eq-cat008"><span class="math display">
 f(n+1) \in \mathbb{N} \Longleftrightarrow g(n) \in \mathbb{N} \Longleftrightarrow n+1  \{A004782\} \Longleftrightarrow n \in \{A014847\}
-\tag{8}\]</span></span></p>
+\tag{8}</span></span></p>
 </section>
 <section id="referencias" class="level2" data-number="4">
 
@@ -330,13 +351,13 @@ f(n+1) \in \mathbb{N} \Longleftrightarrow g(n) \in \mathbb{N} \Longleftrightarro
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">Psychedelic Geometry Blog, <span>«A004782(n)=A014847(n)+1»</span>. <a href="https://psychedelic-geometry.blogspot.com/2013/11/a004782na014847n1.html" class="uri">https://psychedelic-geometry.blogspot.com/2013/11/a004782na014847n1.html</a>, 29 de noviembre de 2013.</div>
 </div>
 <div id="ref-OEIS_A004782" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. K. Guy, <span>«A004782: <span class="math inline">\(2(2n-3)!/(n!(n-1)!)\)</span> is an integer»</span>. <a href="https://oeis.org/A004782">https://oeis.org/A004782</a></div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. K. Guy, <span>«A004782: <span class="math inline">2(2n-3)!/(n!(n-1)!)</span> is an integer»</span>. <a href="https://oeis.org/A004782">https://oeis.org/A004782</a></div>
 </div>
 <div id="ref-OEIS_A014847" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[3] </div><div class="csl-right-inline">N. J. A. Sloane, <span>«A014847: Numbers n such that the n-th Catalan number is divisible by n»</span>. <a href="https://oeis.org/A014847">https://oeis.org/A014847</a></div>
 </div>
 <div id="ref-OEIS_A000108" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">N. J. A. Sloane and The OEIS Foundation Inc., <span>«<span>A000108: Catalan numbers: <span class="math inline">\(C(n) = \binom{2n}{n}/(n+1) = \frac{(2n)!}{n!(n+1)!}\)</span></span>»</span>. <a href="https://oeis.org/A000108">https://oeis.org/A000108</a></div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">N. J. A. Sloane and The OEIS Foundation Inc., <span>«<span>A000108: Catalan numbers: <span class="math inline">C(n) = \binom{2n}{n}/(n+1) = \frac{(2n)!}{n!(n+1)!}</span></span>»</span>. <a href="https://oeis.org/A000108">https://oeis.org/A000108</a></div>
 </div>
 <div id="ref-OEIS_A000984" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[5] </div><div class="csl-right-inline">N. J. A. Sloane, <span>«A000984: Central binomial coefficients»</span>. <a href="https://oeis.org/A000984">https://oeis.org/A000984</a></div>
@@ -1038,7 +1059,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2} </span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>= \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>= \frac{(2n)!}{n (n+1) {(n!)}^2}= <span class="sc">\\</span> \binom{2n}{n} \frac{1}{(n+1) n} = g(n)</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>$${#eq-cat007}</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Por lo tanto:</span>

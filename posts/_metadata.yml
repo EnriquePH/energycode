@@ -3,7 +3,17 @@ format:
   html:
     code-fold: show
     code-tools: true
-
+    html-math-method: katex
+    classoption: fleqn          # flush left equations
+    include-in-header:
+      text: |
+        <style>
+        table, th, td, caption,
+        .quarto-table,
+        .cell-output-display table {
+          text-transform: none !important;
+        }
+        </style>
 cite-method: citeproc
 csl: ieee.csl
 
@@ -15,3 +25,5 @@ freeze: true
 # (see https://quarto.org/docs/authoring/title-blocks.html)
 title-block-banner: true
 code-link: true
+crossref:
+  eq-prefix: ""

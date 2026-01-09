@@ -77,7 +77,7 @@ Se puede comprobar como $f(n+1)$ es igual a $g(n)$ por cálculo directo:
 
 $$
 f(n+1)=\frac{2 (2n-1)!}{(n+1) {(n!)}^2} = \frac{2n (2n-1)!}{n(n+1) {(n!)}^2} 
-= \frac{(2n)!}{n (n+1) {(n!)}^2}= \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
+= \frac{(2n)!}{n (n+1) {(n!)}^2}= \\ \binom{2n}{n} \frac{1}{(n+1) n} = g(n)
 $${#eq-cat007}
 
 Por lo tanto:

@@ -51,14 +51,16 @@ son *coprimos*: $\gcd(F_{n}, F_{n+1}) = 1$.
 
 ## TABLA DE RAZONES
 
-
+::: {.keep-case}
 | $n$ | $F_n$ | $\frac{F_{n+1}}{F_n}$ | Error absoluto $\left| \frac{F_{n+1}}{F_n} - \phi \right|$ |
 |-----|-------|------------------------|-------------------------------------------------------------|
 | 5   | 5     | 1.6666667              | 0.0486327                                                   |
 | 10  | 55    | 1.6176471              | 0.0003869                                                   |
 | 15  | 610   | 1.6180339              | ≈ 2.7 × 10⁻⁷                                               |
 | 20  | 6765  | 1.6180339887           | ≈ 1.3 × 10⁻¹⁰                                              |
-Tabla 1: Convergencia de la razón $\frac{F_{n+1}}{F_n}$ hacia el número áureo $\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887\ldots$
+:::
+Tabla 1: Convergencia de la razón $\frac{F_{n+1}}{F_n}$ hacia el número áureo
+$\phi = \frac{1+\sqrt{5}}{2} \approx 1.6180339887\ldots$
 
 ## LA RAZÓN AUREA
 
@@ -177,7 +179,7 @@ de la coprimalidad de dos términos consecutivos de la _sucesión de Fibonacci_.
 
 
 [^1]: Este artículo es una *traducción y actualización* del post original
-titulado *EUCLINACCI - [1]* publicado el *domingo 1 de febrero de 2009* en el
+titulado *EUCLINACCI* publicado el *domingo 1 de febrero de 2009* en el
 blog *Psychedelic Geometry* [@psychedelic_geometry_2009].
 
 ## REFERENCIAS
