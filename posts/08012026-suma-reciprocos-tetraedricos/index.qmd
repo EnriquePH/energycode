@@ -6,7 +6,6 @@ author: 'Enrique Pérez Herrero'
 image: tetrahedral_numbers.png
 lang: es
 categories:
-  - Python
   - Math
   - Series
   - Especial numbers

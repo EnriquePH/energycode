@@ -5,9 +5,9 @@ author: 'Enrique Pérez Herrero'
 date: '2022-03-05'
 image: plot3dmaxmatrix.png
 categories: 
- - math
- - linear algebra
- - determinant
+ - Math
+ - Linear Algebra
+ - Determinant
 editor: source
 bibliography: references.bib
 nocite: |

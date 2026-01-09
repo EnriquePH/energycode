@@ -8,9 +8,9 @@ bibliography: 13122035-repunits.bib
 nocite: |
   @*
 categories:
-  - math
-  - repunits
-  - series
+  - Math
+  - Repunits
+  - Series
   - OEIS
 editor: source
 draft: true

@@ -5,8 +5,8 @@ editor: source
 author: 'Enrique Pérez Herrero'
 date: '2023-07-31'
 categories:
-  - blog
-  - quarto
+  - Blog
+  - Quarto
 
 image: '../01082023-Blog-Logo/logo.png'
 draft: true

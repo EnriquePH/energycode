@@ -11,7 +11,7 @@ nocite: |
 editor: source
 categories:
   - R
-  - logo
+  - Logo
 image: ../../img/logo/web_logo.png
 image-alt: "Logo hexagonal de ENERGYCODE"
 ---

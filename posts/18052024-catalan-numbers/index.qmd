@@ -10,10 +10,10 @@ nocite: |
   @*
 image: A014847_plot.png
 categories:
-  - math
+  - Math
   - OEIS
   - Catalan's numbers
-  - binomial
+  - Binomial
 editor: source
 draft: false
 ---

@@ -7,9 +7,10 @@ editor: source
 image: 'theta3x3matrix.png'
 draft: false
 categories:
-  - python
-  - numpy
-  - latex
+  - Python
+  - Numpy
+  - Latex
+  - Determinant
 ---
 
 ![Sierra de las Nieves (Málaga)](20180104_134329.jpg)
