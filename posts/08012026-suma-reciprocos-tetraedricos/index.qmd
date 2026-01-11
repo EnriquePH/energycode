@@ -55,7 +55,6 @@ $$
 S(n) = \sum_{k=1}^{n} \frac{6}{k(k+1)(k+2)}.
 $${#eq-tet003}
 
-Los numeradores y denominadores de ([@eq-tet003]) son respectivamente las secuencias designadas como [A118391](https://oeis.org/A118391) y [A118392](https://oeis.org/A118392) en [OEIS](https://oeis.org).
 
 ## DESCOMPOSICIÓN EN FRACCIONES PARCIALES
 
@@ -126,6 +125,8 @@ parcial:
 $$
 S(n) = \frac{3n(n+3)}{2(n+1)(n+2)}
 $${#eq-tet012}
+
+Los numeradores y denominadores de ([@eq-tet012]) son respectivamente las secuencias designadas como [A118391](https://oeis.org/A118391) y [A118392](https://oeis.org/A118392) en [OEIS](https://oeis.org).
 
 ## SUMA INFINITA
 

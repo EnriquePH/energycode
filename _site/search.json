@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -67,7 +67,7 @@
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#la-serie-de-los-recíprocos-de-números-tetraédricos",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS",
-    "text": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS\nNos interesa estudiar la suma parcial\n\nS(n) = \\sum_{k=1}^{n} \\frac{1}{T_k}.\n\\tag{2}\nSustituyendo la expresión explícita de T_k, obtenemos\n\nS(n) = \\sum_{k=1}^{n} \\frac{6}{k(k+1)(k+2)}.\n\\tag{3}\nLos numeradores y denominadores de (3) son respectivamente las secuencias designadas como A118391 y A118392 en OEIS."
+    "text": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS\nNos interesa estudiar la suma parcial\n\nS(n) = \\sum_{k=1}^{n} \\frac{1}{T_k}.\n\\tag{2}\nSustituyendo la expresión explícita de T_k, obtenemos\n\nS(n) = \\sum_{k=1}^{n} \\frac{6}{k(k+1)(k+2)}.\n\\tag{3}"
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#descomposición-en-fracciones-parciales",
@@ -88,7 +88,7 @@
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#fórmula-cerrada",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "6 FÓRMULA CERRADA",
-    "text": "6 FÓRMULA CERRADA\nSimplificando (10), se obtiene una expresión cerrada para la suma parcial:\n\nS(n) = \\frac{3n(n+3)}{2(n+1)(n+2)}\n\\tag{12}"
+    "text": "6 FÓRMULA CERRADA\nSimplificando (10), se obtiene una expresión cerrada para la suma parcial:\n\nS(n) = \\frac{3n(n+3)}{2(n+1)(n+2)}\n\\tag{12}\nLos numeradores y denominadores de (12) son respectivamente las secuencias designadas como A118391 y A118392 en OEIS."
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#suma-infinita",
@@ -144,7 +144,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nBinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nCode\n\n\nMachine Learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nBinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nMachine Learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "TODO.html",
@@ -158,14 +158,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists."
-  },
-  {
-    "objectID": "about.html#author",
-    "href": "about.html#author",
-    "title": "About",
-    "section": "Author",
-    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
+    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.\n\nAuthor\nThe site is maintained by Enrique Pérez Herrero.\n\n\n  \n    \n  \n\n\n\nLicense\nCreative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\n”"
   },
   {
     "objectID": "projects/03-holocene-volcanic-eruptions/index.html",

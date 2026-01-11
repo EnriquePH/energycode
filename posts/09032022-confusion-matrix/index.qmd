@@ -6,7 +6,6 @@ date: '2022-03-09'
 image: conf_matrix.png
 categories:
   - R
-  - Code
   - Machine Learning
 editor: source
 draft: false

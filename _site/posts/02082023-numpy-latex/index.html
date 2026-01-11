@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-08-02">
 <meta name="description" content="LaTeX matrices and determinants from NumPy arrays">
 
-<title>Convert a NumPy array to LaTeX – [energycode]</title>
+<title>Convert a NumPy array to LaTeX – EnergyCode</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,14 +71,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e25cc82807363e79c52e96bc8b7855f1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b5a2fd160fcdb99563bf1c6a167817de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-6bba9c441353dff127c6ffe133358c00.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ee76af1bcef5aea4eed2677d7224456e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-60fdd9dab68af1b440fe3b1e9cb0de33.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -178,7 +177,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">[energycode]</span>
+    <span class="navbar-title">EnergyCode</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -189,7 +188,7 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Blog</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../projects.html"> 
@@ -200,12 +199,30 @@ window.Quarto = {
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/EnriquePH"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://stackoverflow.com/users/4678112/enrique-perez-herrero"> <i class="bi bi-stack-overflow" role="img" aria-label="Stack Overflow">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/energycodeorg"> <i class="bi bi-twitter-x" role="img" aria-label="X / Twitter">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:energycode.org@gmail.com"> <i class="bi bi-envelope-at" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools tools-wide">
-    <a href="https://github.com/EnriquePH" title="" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
-    <a href="https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-stack-overflow"></i></a>
-    <a href="https://twitter.com/energycodeorg" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter-x"></i></a>
-    <a href="mailto:energycode.org@gmail.com" title="" class="quarto-navigation-tool px-1" aria-label="email"><i class="bi bi-envelope-at"></i></a>
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -293,7 +310,7 @@ window.Quarto = {
 <h1 data-number="1"><span class="header-section-number">1</span> Convert Numpy array to <span class="math inline">LaTeX</span></h1>
 <p>Sometimes, when you are writing a statistics or a math article, you must go through a tedious process of typing and testing numerous lines of text until your code works. This can be especially boring when dealing with long matrices. If you want to improve your productivity, automating this process comes in very handy, and <a href="https://www.python.org/">Python</a> is particularly useful for that.</p>
 <section id="functions-for-matrices-and-determinants" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="functions-for-matrices-and-determinants"><span class="header-section-number">1.1</span> Functions for matrices and determinants</h2>
+<h2 data-number="1.1" data-anchor-id="functions-for-matrices-and-determinants"><span class="header-section-number">1.1</span> Functions for matrices and determinants</h2>
 <p>The functions <code>matrix2latex</code> and <code>det2latex</code> generate an indented <span class="math inline">LaTeX</span> string that can be copied or directly rendered in your math article.</p>
 <p>The <code>INDENT_SPACES</code> parameter specifies the number of spaces used for indentation.</p>
 <div id="latex_functions" class="cell" data-execution_count="1">
@@ -342,7 +359,7 @@ window.Quarto = {
 </details>
 </div>
 <section id="output-string" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="output-string"><span class="header-section-number">1.1.1</span> Output string</h3>
+<h3 data-number="1.1.1" data-anchor-id="output-string"><span class="header-section-number">1.1.1</span> Output string</h3>
 <p>Using the <a href="https://numpy.org/">NumPy</a> function <code>np.eye</code>, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.</p>
 <div id="a1d74353" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
@@ -364,7 +381,7 @@ $$</code></pre>
 </section>
 </section>
 <section id="rendering-output-in-a-document" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="rendering-output-in-a-document"><span class="header-section-number">1.2</span> Rendering output in a document</h2>
+<h2 data-number="1.2" data-anchor-id="rendering-output-in-a-document"><span class="header-section-number">1.2</span> Rendering output in a document</h2>
 <p>If you are working in a <a href="https://jupyter.org/">Jupyter</a> notebook, you can render a <span class="math inline">LaTeX</span> string using the <code>Math</code> function from the <code>IPython</code> library, which can be imported as follows:</p>
 <div id="77e5eade" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
@@ -407,7 +424,7 @@ $$</code></pre>
 </div>
 </section>
 <section id="rendering-the-output-to-a-file" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="rendering-the-output-to-a-file"><span class="header-section-number">1.3</span> Rendering the output to a file</h2>
+<h2 data-number="1.3" data-anchor-id="rendering-the-output-to-a-file"><span class="header-section-number">1.3</span> Rendering the output to a file</h2>
 <p>The <span class="math inline">LaTeX</span> string can be rendered and saved to a file using the following function, which is based on the <code>SymPy</code> library.</p>
 <div id="97e029c5" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
@@ -427,9 +444,9 @@ $$</code></pre>
 </div>
 </section>
 <section id="other-types-of-automated-matrices" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="other-types-of-automated-matrices"><span class="header-section-number">1.4</span> Other types of automated matrices</h2>
+<h2 data-number="1.4" data-anchor-id="other-types-of-automated-matrices"><span class="header-section-number">1.4</span> Other types of automated matrices</h2>
 <section id="matrices-with-numbered-elements" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="matrices-with-numbered-elements"><span class="header-section-number">1.4.1</span> Matrices with numbered elements</h3>
+<h3 data-number="1.4.1" data-anchor-id="matrices-with-numbered-elements"><span class="header-section-number">1.4.1</span> Matrices with numbered elements</h3>
 <div id="cd75550a" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -463,7 +480,7 @@ $$</code></pre>
 </div>
 </section>
 <section id="triangular-matrices" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="triangular-matrices"><span class="header-section-number">1.4.2</span> Triangular matrices</h3>
+<h3 data-number="1.4.2" data-anchor-id="triangular-matrices"><span class="header-section-number">1.4.2</span> Triangular matrices</h3>
 <ul>
 <li><em>Upper Triangular Matrix</em>: In an upper triangular matrix, all elements below the main diagonal are zero.</li>
 </ul>
@@ -520,6 +537,51 @@ $$</code></pre>
 </section>
 
 </main> <!-- /main -->
+<!-- partials/_footer.html -->
+<footer class="quarto-footer">
+  <div class="quarto-footer-left">
+    © 2024–2026 Enrique Pérez Herrero
+  </div>
+  <div class="quarto-footer-right">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+      CC BY-SA 4.0
+    </a>
+    &nbsp;•&nbsp;
+    <a href="https://github.com/EnriquePH/energycode.org/blob/main/LICENSE" target="_blank">
+      Code License (MIT)
+    </a>
+  </div>
+</footer>
+
+<style>
+  .quarto-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bs-border-color);
+    font-size: 0.9em;
+    color: var(--bs-secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .quarto-footer-left,
+  .quarto-footer-right {
+    flex: 1;
+  }
+  .quarto-footer-right {
+    text-align: right;
+  }
+  @media (max-width: 768px) {
+    .quarto-footer {
+      flex-direction: column;
+      gap: 0.8rem;
+      text-align: center;
+    }
+    .quarto-footer-right {
+      text-align: center;
+    }
+  }
+</style>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -684,13 +746,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -824,8 +879,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           if (link.getAttribute("rel") === null) {
             link.setAttribute("rel", "noopener");
           }
-          // default icon
-          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

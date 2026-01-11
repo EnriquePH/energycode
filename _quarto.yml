@@ -1,8 +1,7 @@
 #────────────────────────────────────────────────────────────────
-# Main website config
+# Configuración principal del sitio Quarto
 # file: _quarto.yml
-# ───────────────────────────────────────────────────────────────
-
+#────────────────────────────────────────────────────────────────
 project:
   type: website
   output-dir: _site
@@ -12,59 +11,59 @@ project:
 
 execute:
   freeze: auto
-  #cache: true
 
 website:
-  title: "[energycode]"
+  title: "EnergyCode"
+  description: "Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python"
   site-url: "https://www.energycode.org"
   repo-url: "https://github.com/EnriquePH/energycode.org"
   repo-branch: main
   repo-actions: [edit, source, issue]
-  description: >
-    My personal blog on Data Science, Mathematics, Engineering and Programming
   google-analytics: "G-6P3MCX2KHD"
   favicon: /img/logo/favicon.ico
 
-# Main menu and tools
   navbar:
     background: primary
     search: true
-    tools:
+
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects.qmd
+        text: Projects
+      - href: about.qmd
+        text: About
+
+    right:
       - icon: github
         href: https://github.com/EnriquePH
         aria-label: "GitHub"
       - icon: stack-overflow
-        href: https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero
+        href: https://stackoverflow.com/users/4678112/enrique-perez-herrero
+        aria-label: "Stack Overflow"
       - icon: twitter-x
         href: https://twitter.com/energycodeorg
+        aria-label: "X / Twitter"
       - icon: envelope-at
         href: mailto:energycode.org@gmail.com
-        aria-label: "email"
-    left:
-      - index.qmd
-      - projects.qmd
-      - about.qmd
-
+        aria-label: "Email"
 format:
   html:
     theme:
       light: lux
-      dark:  darkly
+      dark: darkly
     css: styles.css
-
     toc: true
     toc-depth: 3
     number-sections: true
     code-fold: show
     code-copy: hover
     code-overflow: wrap
-    highlight-style: github
-
-    # Mejora la accesibilidad y apariencia
-    anchor-sections: true
-    link-external-icon: true
+    highlight-style: atom-one
+    anchor-sections: false
+    link-external-icon: false
     link-external-newwindow: true
+    include-after-body: partials/_footer.html
 
-# Default editor
 editor: source
 email-obfuscation: javascript

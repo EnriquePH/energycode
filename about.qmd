@@ -37,7 +37,7 @@ about:
 informational site that focuses on programming, mathematics, engineering and
 technical topics relevant to developers and data scientists.
 
-## Author
+### Author
 The site is maintained by _Enrique Pérez Herrero_.
 
 ```{=html}
@@ -51,3 +51,9 @@ The site is maintained by _Enrique Pérez Herrero_.
   </a>
 </div>
 ```
+
+### License
+
+**Creative Commons Attribution-ShareAlike 4.0 International** (CC BY-SA 4.0).
+
+[![Licencia Creative Commons BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg){width=160 height=56 loading=lazy}](https://creativecommons.org/licenses/by-sa/4.0/)"

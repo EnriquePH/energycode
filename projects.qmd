@@ -1,9 +1,14 @@
 ---
 title: "Projects"
+toc: false
+editor: source
 listing: 
-  contents: 
-    - projects
+  contents: projects
   type: grid
-  sort: "date desc" 
+  sort:
+    - date desc
+    - title asc
   categories: true
+  date-format: long
+feed: true
 ---
