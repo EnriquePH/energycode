@@ -2,6 +2,7 @@
 title: 'Suma de los recíprocos de los números tetraédricos'
 description: 'Sumas de la serie de los recíprocos de los números tetraédricos'
 date: '2026-01-08'
+editor: source
 author: 'Enrique Pérez Herrero'
 image: tetrahedral_numbers.png
 lang: es
@@ -54,16 +55,19 @@ $$
 S(n) = \sum_{k=1}^{n} \frac{6}{k(k+1)(k+2)}.
 $${#eq-tet003}
 
+Los numeradores y denominadores de ([@eq-tet003]) son respectivamente las secuencias designadas como [A118391](https://oeis.org/A118391) y [A118392](https://oeis.org/A118392) en [OEIS](https://oeis.org).
+
 ## DESCOMPOSICIÓN EN FRACCIONES PARCIALES
 
-La fracción racional puede descomponerse en una suma de otras como
+La fracción racional ([@eq-tet003]) puede descomponerse en una suma de otras
+como:
 
 $$
 \frac{6}{k(k+1)(k+2)} =
 \frac{A}{k} + \frac{B}{k+1} + \frac{C}{k+2}.
 $${#eq-tet004}
 
-Resolviendo el sistema lineal correspondiente se obtiene
+Resolviendo el sistema lineal correspondiente se obtienen los valores de los denominadores de la descomposición en fracciones parciales:
 
 $$
 A = \frac{1}{2}, \qquad
@@ -108,7 +112,11 @@ $${#eq-tet010}
 
 
 Aquí se observa claramente el carácter **telescópico** de la serie: los términos
-$H_n$ se cancelan, evitando la aparición de constantes como $\gamma$ o funciones especiales.
+$H_n$ se cancelan, evitando la aparición de la constante de _Euler-Mascheroni_ ($\gamma$) o la _función digamma_ (\psi) de la extensión clásica de los números armónicos.
+
+$$
+H_{n} = \gamma + \psi(n+1)
+$${#eq-tet011}
 
 ## FÓRMULA CERRADA
 
@@ -117,17 +125,17 @@ parcial:
 
 $$
 S(n) = \frac{3n(n+3)}{2(n+1)(n+2)}
-$${#eq-tet011}
+$${#eq-tet012}
 
 ## SUMA INFINITA
 
-Finalmente, tomando el límite de ([@eq-tet011]) cuando $n \to \infty$,
+Finalmente, tomando el límite de ([@eq-tet012]) cuando $n \to \infty$,
 
 
 $$
 \lim_{n \to \infty} S(n)
 = \frac{3}{2}
-$${#eq-tet012}
+$${#eq-tet013}
 
 Esto muestra que la serie de los recíprocos de los números tetraédricos
 **converge**, y su suma infinita es igual a $\frac{3}{2}$.

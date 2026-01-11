@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nkaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\npackage\n\n\nstock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAug 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -67,35 +67,35 @@
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#la-serie-de-los-recíprocos-de-números-tetraédricos",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS",
-    "text": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS\nNos interesa estudiar la suma parcial\n\nS(n) = \\sum_{k=1}^{n} \\frac{1}{T_k}.\n\\tag{2}\nSustituyendo la expresión explícita de T_k, obtenemos\n\nS(n) = \\sum_{k=1}^{n} \\frac{6}{k(k+1)(k+2)}.\n\\tag{3}"
+    "text": "3 LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS\nNos interesa estudiar la suma parcial\n\nS(n) = \\sum_{k=1}^{n} \\frac{1}{T_k}.\n\\tag{2}\nSustituyendo la expresión explícita de T_k, obtenemos\n\nS(n) = \\sum_{k=1}^{n} \\frac{6}{k(k+1)(k+2)}.\n\\tag{3}\nLos numeradores y denominadores de (3) son respectivamente las secuencias designadas como A118391 y A118392 en OEIS."
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#descomposición-en-fracciones-parciales",
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#descomposición-en-fracciones-parciales",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "4 DESCOMPOSICIÓN EN FRACCIONES PARCIALES",
-    "text": "4 DESCOMPOSICIÓN EN FRACCIONES PARCIALES\nLa fracción racional puede descomponerse en una suma de otras como\n\n\\frac{6}{k(k+1)(k+2)} =\n\\frac{A}{k} + \\frac{B}{k+1} + \\frac{C}{k+2}.\n\\tag{4}\nResolviendo el sistema lineal correspondiente se obtiene\n\nA = \\frac{1}{2}, \\qquad\nB = -1, \\qquad\nC = \\frac{1}{2}\n\\tag{5}\nPor lo tanto,\n\n\\frac{6}{k(k+1)(k+2)}\n= \\frac{1}{2k} - \\frac{1}{k+1} + \\frac{1}{2(k+2)}\n\\tag{6}"
+    "text": "4 DESCOMPOSICIÓN EN FRACCIONES PARCIALES\nLa fracción racional (3) puede descomponerse en una suma de otras como:\n\n\\frac{6}{k(k+1)(k+2)} =\n\\frac{A}{k} + \\frac{B}{k+1} + \\frac{C}{k+2}.\n\\tag{4}\nResolviendo el sistema lineal correspondiente se obtienen los valores de los denominadores de la descomposición en fracciones parciales:\n\nA = \\frac{1}{2}, \\qquad\nB = -1, \\qquad\nC = \\frac{1}{2}\n\\tag{5}\nPor lo tanto,\n\n\\frac{6}{k(k+1)(k+2)}\n= \\frac{1}{2k} - \\frac{1}{k+1} + \\frac{1}{2(k+2)}\n\\tag{6}"
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-armónicos",
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#números-armónicos",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "5 NÚMEROS ARMÓNICOS",
-    "text": "5 NÚMEROS ARMÓNICOS\nEstas tres series se pueden sumar facilmente teniendo en cuenta las siguientes identidades para los números armónicos H_n [4]:\n\n\\sum_{k=1}^{n} \\frac{1}{k} = H_n\n\\tag{7}\n\n\\sum_{k=1}^{n} \\frac{1}{k+1} = H_n - 1 + \\frac{1}{n+1}\n\\tag{8}\n \\sum_{k=1}^{n} \\frac{1}{k+2} = H_n - \\frac{3}{2} + \\frac{1}{n+1} + \\frac{1}{n+2}\n\\tag{9} Sustituyendo estas expresiones en la identidad (6), se obtiene\n\n\\begin{align}\n\\frac{S(n)}{6}\n= \\frac{n}{n+1}\n- \\frac{1}{2}\n- \\frac{1}{4}\n+ \\frac{1}{2(n+1)}\n+ \\frac{1}{2(n+2)}\n\\end{align}\n\\tag{10}\nAquí se observa claramente el carácter telescópico de la serie: los términos H_n se cancelan, evitando la aparición de constantes como \\gamma o funciones especiales."
+    "text": "5 NÚMEROS ARMÓNICOS\nEstas tres series se pueden sumar facilmente teniendo en cuenta las siguientes identidades para los números armónicos H_n [4]:\n\n\\sum_{k=1}^{n} \\frac{1}{k} = H_n\n\\tag{7}\n\n\\sum_{k=1}^{n} \\frac{1}{k+1} = H_n - 1 + \\frac{1}{n+1}\n\\tag{8}\n \\sum_{k=1}^{n} \\frac{1}{k+2} = H_n - \\frac{3}{2} + \\frac{1}{n+1} + \\frac{1}{n+2}\n\\tag{9} Sustituyendo estas expresiones en la identidad (6), se obtiene\n\n\\begin{align}\n\\frac{S(n)}{6}\n= \\frac{n}{n+1}\n- \\frac{1}{2}\n- \\frac{1}{4}\n+ \\frac{1}{2(n+1)}\n+ \\frac{1}{2(n+2)}\n\\end{align}\n\\tag{10}\nAquí se observa claramente el carácter telescópico de la serie: los términos H_n se cancelan, evitando la aparición de la constante de Euler-Mascheroni (\\gamma) o la función digamma () de la extensión clásica de los números armónicos.\n\nH_{n} = \\gamma + \\psi(n+1)\n\\tag{11}"
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#fórmula-cerrada",
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#fórmula-cerrada",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "6 FÓRMULA CERRADA",
-    "text": "6 FÓRMULA CERRADA\nSimplificando (10), se obtiene una expresión cerrada para la suma parcial:\n\nS(n) = \\frac{3n(n+3)}{2(n+1)(n+2)}\n\\tag{11}"
+    "text": "6 FÓRMULA CERRADA\nSimplificando (10), se obtiene una expresión cerrada para la suma parcial:\n\nS(n) = \\frac{3n(n+3)}{2(n+1)(n+2)}\n\\tag{12}"
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#suma-infinita",
     "href": "posts/08012026-suma-reciprocos-tetraedricos/index.html#suma-infinita",
     "title": "Suma de los recíprocos de los números tetraédricos",
     "section": "7 SUMA INFINITA",
-    "text": "7 SUMA INFINITA\nFinalmente, tomando el límite de (11) cuando n \\to \\infty,\n\n\\lim_{n \\to \\infty} S(n)\n= \\frac{3}{2}\n\\tag{12}\nEsto muestra que la serie de los recíprocos de los números tetraédricos converge, y su suma infinita es igual a \\frac{3}{2}."
+    "text": "7 SUMA INFINITA\nFinalmente, tomando el límite de (12) cuando n \\to \\infty,\n\n\\lim_{n \\to \\infty} S(n)\n= \\frac{3}{2}\n\\tag{13}\nEsto muestra que la serie de los recíprocos de los números tetraédricos converge, y su suma infinita es igual a \\frac{3}{2}."
   },
   {
     "objectID": "posts/08012026-suma-reciprocos-tetraedricos/index.html#footnotes",
@@ -144,7 +144,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nBinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\nLogo\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nCode\n\n\nMachine Learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nCatalan’s numbers\n\n\nBinomial\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nCode\n\n\nMachine Learning\n\n\n\nPlotting the Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "TODO.html",
@@ -164,8 +164,8 @@
     "objectID": "about.html#author",
     "href": "about.html#author",
     "title": "About",
-    "section": "1 Author",
-    "text": "1 Author\nThe site is maintained by Enrique Pérez Herrero."
+    "section": "Author",
+    "text": "Author\nThe site is maintained by Enrique Pérez Herrero."
   },
   {
     "objectID": "projects/03-holocene-volcanic-eruptions/index.html",

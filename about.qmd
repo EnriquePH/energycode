@@ -1,38 +1,53 @@
 ---
 title: "About"
 editor: source
+toc: false
+number-sections: false
+image: ./img/logo/web_logo.png
+image-alt: "Website logo"
 about:
-  template: jolla
+  template: trestles
   links:
-    - icon: stack-overflow
-      text: stackoverflow
-      href: https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero
     - icon: github
-      text: Github
+      text: GitHub
       href: https://github.com/EnriquePH
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com/energycodeorg
+  
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/eph3000
+  
+    - icon: twitter-x
+      text: X / Twitter
+      href: https://twitter.com/energycodeorg
+  
+    - icon: stack-overflow
+      text: Stack Overflow
+      href: https://stackoverflow.com/users/4678112/enrique-perez-herrero
+  
+    - icon: kaggle
+      text: kaggle
+      href: https://www.kaggle.com/enrique1500
+  
     - icon: envelope-at
       text: email
       href: mailto:energycode.org@gmail.com
-    - text: kaggle
-      href: https://www.kaggle.com/enrique1500
 ---
 
 [www.energycode.org](https://www.energycode.org/) is a specialized blog and
 informational site that focuses on programming, mathematics, engineering and
 technical topics relevant to developers and data scientists.
 
-[![](./img/logo/web_logo.png){width=35%}](www.energycode.org)
-
 ## Author
 The site is maintained by _Enrique Pérez Herrero_.
 
 ```{=html}
-<!-- Stackoverflow flair -->
-<a href="https://stackoverflow.com/users/4678112/enrique-p%c3%a9rez-herrero"><img src="https://stackoverflow.com/users/flair/4678112.png" width="208" height="58" alt="profile for Enrique P&#233;rez Herrero at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Enrique P&#233;rez Herrero at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+<!-- Stack Overflow Flair - actualizado 2026 -->
+<div>
+  <a href="https://stackoverflow.com/users/4678112/enrique-perez-herrero">
+    <img src="https://stackoverflow.com/users/flair/4678112.png?theme=dark" 
+         width="208" height="58" 
+         alt="profile for Enrique Pérez Herrero at Stack Overflow"
+         title="Perfil en Stack Overflow">
+  </a>
+</div>
 ```

@@ -6,8 +6,8 @@ date: '2023-08-02'
 image: 'USVI-plot.png'
 categories: 
  - R
- - package
- - stock market
+ - Package
+ - Stock market
 editor: source
 draft: false
 ---

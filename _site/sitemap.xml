@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>www.energycode.org/projects.html</loc>
+    <loc>https://www.energycode.org/projects.html</loc>
     <lastmod>2023-08-01T10:36:14.982Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/02082023-numpy-latex/index.html</loc>
+    <loc>https://www.energycode.org/posts/02082023-numpy-latex/index.html</loc>
     <lastmod>2026-01-09T21:56:46.532Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/index.html</loc>
-    <lastmod>2026-01-09T21:52:39.095Z</lastmod>
+    <loc>https://www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/index.html</loc>
+    <lastmod>2026-01-11T19:17:21.983Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/projects/02-marketconf-package/index.html</loc>
-    <lastmod>2023-08-03T11:38:34.708Z</lastmod>
+    <loc>https://www.energycode.org/projects/02-marketconf-package/index.html</loc>
+    <lastmod>2026-01-11T11:55:04.920Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/index.html</loc>
+    <loc>https://www.energycode.org/index.html</loc>
     <lastmod>2023-08-01T10:35:14.653Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/TODO.html</loc>
+    <loc>https://www.energycode.org/TODO.html</loc>
     <lastmod>2025-12-22T23:01:37.303Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/about.html</loc>
-    <lastmod>2025-12-21T16:32:55.580Z</lastmod>
+    <loc>https://www.energycode.org/about.html</loc>
+    <lastmod>2026-01-11T13:50:27.782Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/projects/03-holocene-volcanic-eruptions/index.html</loc>
-    <lastmod>2024-12-01T19:02:17.104Z</lastmod>
+    <loc>https://www.energycode.org/projects/03-holocene-volcanic-eruptions/index.html</loc>
+    <lastmod>2026-01-11T11:55:19.552Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/11062025-euclinacci/index.html</loc>
+    <loc>https://www.energycode.org/posts/11062025-euclinacci/index.html</loc>
     <lastmod>2026-01-09T21:44:14.229Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/18052024-catalan-numbers/index.html</loc>
+    <loc>https://www.energycode.org/posts/18052024-catalan-numbers/index.html</loc>
     <lastmod>2026-01-09T21:55:18.519Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/05032022-max-determinant/index.html</loc>
+    <loc>https://www.energycode.org/posts/05032022-max-determinant/index.html</loc>
     <lastmod>2026-01-09T21:55:48.558Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/01082023-blog-logo/index.html</loc>
-    <lastmod>2026-01-09T21:57:31.386Z</lastmod>
+    <loc>https://www.energycode.org/posts/01082023-blog-logo/index.html</loc>
+    <lastmod>2026-01-11T18:49:33.522Z</lastmod>
   </url>
   <url>
-    <loc>www.energycode.org/posts/09032022-confusion-matrix/index.html</loc>
+    <loc>https://www.energycode.org/posts/09032022-confusion-matrix/index.html</loc>
     <lastmod>2026-01-09T21:57:10.241Z</lastmod>
   </url>
 </urlset>

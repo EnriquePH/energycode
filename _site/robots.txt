@@ -1,1 +1,1 @@
-Sitemap: www.energycode.org/sitemap.xml
+Sitemap: https://www.energycode.org/sitemap.xml
