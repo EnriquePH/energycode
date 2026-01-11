@@ -34,7 +34,7 @@ website:
       - href: about.qmd
         text: About
 
-    right:
+    tools:
       - icon: github
         href: https://github.com/EnriquePH
         aria-label: "GitHub"
