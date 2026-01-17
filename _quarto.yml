@@ -13,7 +13,7 @@ execute:
   freeze: auto
 
 website:
-  title: "EnergyCode"
+  title: "ENERGYCODE"
   description: "Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python"
   site-url: "https://www.energycode.org"
   repo-url: "https://github.com/EnriquePH/energycode.org"

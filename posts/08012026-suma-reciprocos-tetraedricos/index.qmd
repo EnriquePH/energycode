@@ -111,7 +111,7 @@ $${#eq-tet010}
 
 
 Aquí se observa claramente el carácter **telescópico** de la serie: los términos
-$H_n$ se cancelan, evitando la aparición de la constante de _Euler-Mascheroni_ ($\gamma$) o la _función digamma_ (\psi) de la extensión clásica de los números armónicos.
+$H_n$ se cancelan, evitando la aparición de la constante de _Euler-Mascheroni_ ($\gamma$) o la _función digamma_ ($\psi$) partiendo de la extensión clásica de los números armónicos.
 
 $$
 H_{n} = \gamma + \psi(n+1)
