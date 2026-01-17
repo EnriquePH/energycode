@@ -1,9 +1,9 @@
 Package: energycode
-Title: Personal technical blog using Quarto
+Title: Personal Technical Blog Powered by Quarto
 Version: 0.1.0
 Authors@R: person("Enrique", "Perez Herrero", email = "energycode.org@gmail.com", role = c("aut", "cre"))
-Description: Personal blog with R and Python content.
-Config/Description: This is not a conventional R package. It is a Quarto blog/site.
+Description: A personal blog featuring content in R and Python, built using Quarto.
+Config/Description: This is not a traditional R package, but a Quarto-based blog/site framework.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:

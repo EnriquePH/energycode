@@ -1,13 +1,15 @@
-# options specified here will apply to all posts in this folder
+# [ENERGYCODE] (c) 2026
+# Options specified here will apply to all posts in this folder
 format:
   html:
-    code-fold: show
-    code-tools: true
+    code-fold: show           # Show folded code blocks by default
+    code-tools: true          # Enable code tools (copy, run buttons, etc.)
 
-# prevents posts from re-rendering unless explicitly told to do so
-# (for more, see https://quarto.org/docs/projects/code-execution.html#freeze)
+# Prevent posts from re-rendering unless explicitly told to do so
+# More info: https://quarto.org/docs/projects/code-execution.html#freeze
 freeze: true
 
-# enable banner style title blocks
-# (see https://quarto.org/docs/authoring/title-blocks.html)
+# Enable banner style title blocks
+# See: https://quarto.org/docs/authoring/title-blocks.html
 title-block-banner: true
+

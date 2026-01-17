@@ -1,6 +1,6 @@
 ---
 title: "Sumas parciales de los inversos de los repunits"
-description: Propiedades de las sumas parciales de la serie suma de los inversos de los primeros repunits
+description: "Propiedades de las sumas parciales de la serie suma de los inversos de los primeros repunits"
 author: 'Enrique Pérez Herrero'
 date: '2025-12-13'
 lang: es
@@ -18,7 +18,7 @@ draft: true
 
 ## INTRODUCCIÓN
 
-Un *repunit*[^1] es un número formado exclusivamente por dígitos 1 en una base determinada.
+Un *repunit*[^1] es un número cuyos dígitos son todos igual a $1$ en una base determinada de un sistema de numeración posicional.
 
 Para una base $b$, un *repunit* con $n$ dígitos se define como:
 
@@ -28,13 +28,13 @@ $${#eq-rep001}
 
 Los _números de Mersenne_, $M_{n}=2^{n}-1$  son un ejemplo de *repunits* en base
 $2$.
-En este post se estudia las propiedades de las series formadas por las sumas de
-los inversos de los repunits:
+En este post se estudia las propiedades de las series formadas por las sumas infinitas de los inversos de los *repunits*:
 
 $$
 S^{(b)} = \sum_{n=1}^{\infty}{\frac{1}{R_n^{(b)}}}
 $${#eq-rep002}
-Y el comportamiento de las sumas parciales:
+
+Y también el comportamiento de las sumas parciales de sus recíprocos:
 
 $$
 S_{N}^{(b)} = \sum_{n=1}^{N}{\frac{1}{R_n^{(b)}}}
@@ -74,11 +74,10 @@ $${#eq-rep007}
 
 ### Constante de Erdős–Borwein
 
-En el caso particular $b=2$ se obtiene la constante de _Erdős–Borwein_
+En el caso particular cuando $b=2$ se obtiene la constante de _Erdős–Borwein_
 [@OEIS_A065442], definida como la suma de los inversos de los _números de
-Mersenne_. Esta constante $E$ recibe su nombre en honor a los matemáticos Paul
-Erdős, que demostro que es un _número irracional_ [@erdos1948_lambert], y a
-Peter Borwein que extendio la demostración a otras series similares.
+Mersenne_. Esta constante $E$ recibe su nombre en honor al matemático Paul
+Erdős, quien demostró que es un _número irracional_ [@erdos1948_lambert], y también a *Peter Borwein*, quien extendió la demostración a otras series similares.
 
 $$
 E = S^{(2)} = \sum_{k=1}^{\infty} \frac{1}{2^k - 1}
@@ -87,7 +86,7 @@ $${#eq-rep007}
 
 ### <span style='text-transform:none'>$S^{(b)}$</span> es irracional 
 
-El artículo de Peter B. Borwein[@BORWEIN1991253] demuestra que la serie:
+El artículo de _Peter B. Borwein_[@BORWEIN1991253] se demuestra que la serie:
 $$
 \sum_{n=1}^{\infty} \frac{1}{q^{n} + r}
 $${#eq-rep008}
@@ -96,9 +95,10 @@ es irracional (y no un [número de
 Liouville](https://en.wikipedia.org/wiki/Liouville_number)) cuando $q$ es un
 entero mayor que 1 y $r$ es un racional distinto de cero, siempre que
 $r \neq -q^{m}$ para cualquier entero $m$.
+
 La demostración utiliza análisis complejo,
-integrales de contorno y análogos $q$, extendiendo resultados de _Erdős_ y
-relacionándose con generalizaciones de la función divisor.
+integrales de contorno, extendiendo resultados de _Erdős_ y
+relacionando el problema con generalizaciones de la función divisor.
 
 La serie $S^{(b)}$ es una caso particular de la serie estudiada 
 por _Borwein_, con $b=q \gt 2$ y $r = -1$, multiplicada el número entero $b-1$:
@@ -112,10 +112,10 @@ $${#eq-rep009}
 Y por lo tanto es también un _número irracional_.
 
 
-### PROPIEDADES DE LAS SUMAS PARCIALES
+## PROPIEDADES DE LAS SUMAS PARCIALES
 
 Las sumas parciales de los inversos de los *repunits* son numeros fraccionarios
-que son aproximaciones a las constantes $S^{(b)}$:
+que se pueden considerar aproximaciones a las constantes $S^{(b)}$:
 
 $$
 S_{N}^{(b)} = \sum_{n=1}^{N}{\frac{1}{R_n^{(b)}}} =
@@ -123,7 +123,7 @@ S_{N}^{(b)} = \sum_{n=1}^{N}{\frac{1}{R_n^{(b)}}} =
 $${#eq-rep010}
 
 
-#### Crecimiento de los numeradores
+### Crecimiento de los numeradores
 
 Para estudiar el crecimiento de los numeradores es suficiente con estudiar la
 suma parcial:
@@ -134,7 +134,7 @@ S_{N}^{'(b)} = \frac{S_{N}^{(b)}}{b-1}=\sum_{n=1}^{N}{\frac{1}{b^{n}-1}} =
 $${#eq-rep011}
 
 
-#### Crecimiento de los denominadores
+### Crecimiento de los denominadores
 
 Si $R_n$ es el entero positivo formado por $n$ cifras iguales a $1$ en base
 $10$, denominado *repunit*, entonces la sucesión de sumas parciales los
@@ -155,9 +155,8 @@ A_{n+1} > A_n \quad \text{para todo } n \ge 1.
 $$
 
 
-## Enunciado
-[energyCode.org](https://www.energycode.org/) is a specialized blog and
-informational site that focuses on programming, mathematics, engineering and
+## ENUNCIADO
+
 Sea $R_n$ el *repunit* de longitud $n$,
 $$R_n=\underbrace{11\ldots1}_{n\text{ unos}}$$
 y sea
@@ -223,6 +222,6 @@ print(B)
 ```
 
 
-[^1]: En español se usa la denominación en inglés, aunque también se usa el término _repituno_
+[^1]: En español se usa la denominación en inglés _repunit_, aunque también se usa el término _repituno_
 
 ## REFERENCIAS
