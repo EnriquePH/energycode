@@ -36,7 +36,7 @@ website:
 
     tools:
       - icon: github
-        href: https://github.com/EnriquePH
+        href: https://github.com/EnriquePH/energycode
         aria-label: "GitHub"
       - icon: stack-overflow
         href: https://stackoverflow.com/users/4678112/enrique-perez-herrero

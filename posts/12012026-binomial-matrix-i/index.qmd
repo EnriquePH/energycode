@@ -19,7 +19,7 @@ image: tartaglia-portrait.jpg
 
 ## Introduction
 
-By applying yesterday's idea[^2] with light variations, we can derive new
+By applying yesterday's idea[^1] with slight variations, we can derive new
 expressions for matrices whose elements are related to binomial coefficients.
 
 Let $U_n$ be a square matrix with entries:
@@ -29,8 +29,8 @@ u_{i,j} = \binom{j}{i}
 $${#eq-bm1001}
 
 $U_n$ is an *upper triangular matrix* with all diagonal entries equal to $1$, and
-and it closely resembles to Pascal's triangle (which I prefer to call
-[Tartaglia's triangle](https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia))[^1].
+it closely resembles Pascal's triangle (which I prefer to call
+[Tartaglia's triangle[^2]](https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia)).
 
 ## Example matrix $U_{10}$
 
@@ -62,7 +62,7 @@ $$
 \det\!\left[ \binom{i}{i} \right]_{i,j=1}^{n} = 1
 $${#eq-bm1004}
 
-If we multiply this matrix by its transposed one, then we get a symmetrical matrix with:
+If we multiply this matrix by its transpose, we obtain a symmetric matrix with:
 
 $$
 |A_{n}| = |U_{n}^{T} * U_{n}| = |U_{n}^{2}|=1
@@ -77,9 +77,9 @@ A_{10}= \left( \begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 
 \\$${#eq-bm1006}
 
 The most remarkable property of this symmetric matrix is that its determinant
-equals $1$, and therefore it is a _unimodular matrix_.
+equals $1$, making it a _unimodular matrix_.
 
-So we have constructed a new matrix with determinant equal to one:
+Thus, we have constructed a new matrix with determinant equal to one:
 
 $$
 \begin{aligned}
@@ -90,18 +90,10 @@ a_{i,j} &= \sum_{r=1}^n u_{i,r}^* \cdot u_{r,j} \\
 &= -1 + \sum_{r=0}^{i} \binom{i}{r} \binom{j}{r} \\
 &= -1 + \binom{i+j}{i} \\
 &= \binom{i+j}{i} - 1
-\end{aligned}+--+--+--+--+--+
-|  |  |  |  |  |
-+--+--+--+--+--+
-|  |  |  |  |  |
-+--+--+--+--+--+
-|  |  |  |  |  |
-+--+--+--+--+--+
-|  |  |  |  |  |
-+--+--+--+--+--+
+\end{aligned}
 $${#eq-bm1007}
 
-Alternatively in element wise notation:
+Alternatively, in element-wise notation:
 
 $$
 \det\!\left[ \binom{i+j}{i} - 1 \right]_{i,j=1}^{n} = 1
@@ -125,12 +117,14 @@ $${#eq-bm1008}
 |      9      	| [A035927](https://oeis.org/A035927) 	|
 |      10     	|                  –                  	|
 
-[^1]: Portret van Niccolò Tartaglia (1572). Gravure por Philips Galle. under CC0
-1.0 Public Domain Dedication, Rijksmuseum y Wikimedia Commons, [@TartagliaPortrait1572]
 
-[^2]: This article is a translation and update of the original post entitled
+[^1]: This article is a translation and update of the original post entitled
 BINOMIAL MATRIX (I), published on Tuesday, September 22, 2009, on the blog
 Psychedelic Geometry [@psychedelic_geometry_2009_2].
+
+
+[^2]: Portret van Niccolò Tartaglia (1572). Gravure por Philips Galle. under CC0
+1.0 Public Domain Dedication, Rijksmuseum y Wikimedia Commons, [@TartagliaPortrait1572]
 
 <!-- **Continues in:** 
 [BINOMIAL MATRIX (II)](../2009-09-24-binomial-matrix-ii/)-->
