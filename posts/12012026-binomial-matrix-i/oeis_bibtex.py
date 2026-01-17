@@ -53,10 +53,10 @@ def oeis_to_bibtex(oeis_id):
 
     # Build BibTeX entry
     bibtex = f"""@misc{{OEIS_{oeis_id},
-  author = {{{author}}},
-  title = {{{title}}},
-  howpublished = {{\\url{{https://oeis.org/{oeis_id}}}}},
-  note = {{The On-Line Encyclopedia of Integer Sequences (OEIS)}},
+  author = {{OEIS}},
+  title = {{{oeis_id}: {title}}},
+  url = {{https://oeis.org/{oeis_id}}},
+  note = {{{author}}},
   year = {{{year}}}"""
 
     # Month/day are optional in BibTeX styles

@@ -30,7 +30,7 @@ $${#eq-bm1001}
 
 $U_n$ is an *upper triangular matrix* with all diagonal entries equal to $1$, and
 it closely resembles Pascal's triangle (which I prefer to call
-[Tartaglia's triangle[^2]](https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia)).
+[Tartaglia's triangle](https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia))[^2].
 
 ## Example matrix $U_{10}$
 

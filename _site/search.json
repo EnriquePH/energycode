@@ -207,7 +207,7 @@
     "href": "posts/12012026-binomial-matrix-i/index.html#introduction",
     "title": "BINOMIAL MATRIX (I)",
     "section": "1 Introduction",
-    "text": "1 Introduction\nBy applying yesterday’s idea1 with slight variations, we can derive new expressions for matrices whose elements are related to binomial coefficients.\nLet U_n be a square matrix with entries:\n\nu_{i,j} = \\binom{j}{i}\n\\tag{1}\nU_n is an upper triangular matrix with all diagonal entries equal to 1, and it closely resembles Pascal’s triangle (which I prefer to call Tartaglia’s triangle2)."
+    "text": "1 Introduction\nBy applying yesterday’s idea1 with slight variations, we can derive new expressions for matrices whose elements are related to binomial coefficients.\nLet U_n be a square matrix with entries:\n\nu_{i,j} = \\binom{j}{i}\n\\tag{1}\nU_n is an upper triangular matrix with all diagonal entries equal to 1, and it closely resembles Pascal’s triangle (which I prefer to call Tartaglia’s triangle)2."
   },
   {
     "objectID": "posts/12012026-binomial-matrix-i/index.html#example-matrix-u_10",
@@ -354,7 +354,7 @@
     "href": "posts/05032022-max-determinant/index.html#references",
     "title": "Max Determinant",
     "section": "3 References",
-    "text": "3 References\n\n\n[1] N. J. A. Sloane, “A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1).” Available: https://oeis.org/A051125/\n\n\n[2] M. Somos, “A181983: A(n) = (-1)^(n+1) * n.” 2012. Available: https://oeis.org/A181983/\n\n\n[3] E. Deutsch, “A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n.” Jun. 2009. Available: https://oeis.org/A161124/\n\n\n[4] N. J. A. Sloane, “A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).” Available: https://oeis.org/A001147/"
+    "text": "3 References\n\n\n[1] Sloane, N. J. A. A051125: Table t(n,k) = maxn,k read by antidiagonals (n &gt;= 1, k &gt;= 1). T. On-Line Encyclopedia of Integer Sequences, ed.\n\n\n[2] Somos, M. (2012). A181983: A(n) = (-1)^(n+1) * n. T. On-Line Encyclopedia of Integer Sequences, ed.\n\n\n[3] Deutsch, E. (2009). A161124: Number of inversions in all fixed-point-free involutions of 1,2,...,2n. T. On-Line Encyclopedia of Integer Sequences, ed.\n\n\n[4] Sloane, N. J. A. A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1). T. On-Line Encyclopedia of Integer Sequences, ed."
   },
   {
     "objectID": "posts/01082023-blog-logo/index.html",

@@ -17,8 +17,9 @@ format:
         }
         </style>
 
+# https://www.zotero.org/styles?fields=math
 cite-method: citeproc         # Use citeproc for citations
-csl: ieee.csl                 # IEEE citation style
+csl: aims-mathematics.csl     # citation style
 
 # Prevents posts from re-rendering unless explicitly told to do so
 # For more info see: https://quarto.org/docs/projects/code-execution.html#freeze
