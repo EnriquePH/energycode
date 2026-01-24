@@ -1,19 +1,26 @@
 ---
 title: Confusion Matrix in R
-description: Plotting the Confusion Matrix with ggplot in R
+description: Plotting a Confusion Matrix with ggplot in R
 author: 'Enrique Pérez Herrero'
 date: '2022-03-09'
 image: conf_matrix.png
+lang: en
 categories:
   - R
   - Machine Learning
-editor: source
+bibliography: conf_matrix.bib
+nocite: |
+  @*
 draft: false
+editor: source
 ---
 
 # Confusion Matrix
 
-The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package `caret` includes the `confusionMatrix` function, which produces a detailed output.
+The confusion matrix is a useful tool for visualizing the performance of a
+classification algorithm. In this blog post, we provide a function to generate
+an image of the confusion matrix. Additionally, the R package `caret` includes
+the `confusionMatrix` function, which produces detailed output.
 
 ```{r}
 #| label: load_packages
@@ -29,7 +36,8 @@ library(caret)
 ## Classification
 
 We will conduct a [Naive Bayes
-classification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) using the classical Iris dataset.
+classification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) using the
+classic Iris dataset.
 
 ```{r}
 #| label: classification
@@ -48,7 +56,8 @@ cfm
 
 ## Plotting
 
-To plot the obtained confusion matrix as a `ggplot` graphic, we will use the following function:
+To plot the resulting confusion matrix using `ggplot`, we use the following
+function:
 
 ```{r}
 #| label: plot_confusion
@@ -72,6 +81,4 @@ ggplot_confusion_matrix <- function(cfm) {
 ggplot_confusion_matrix(cfm)
 ```
 
-## Links
-
-* StackOverflow: [How to produce a confusion matrix and find the misclassification rate of the Naïve Bayes Classifier?](https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613)
+## References

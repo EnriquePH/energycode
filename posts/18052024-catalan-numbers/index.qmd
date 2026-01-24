@@ -13,7 +13,7 @@ categories:
   - Math
   - OEIS
   - Catalan numbers
-  - Binomial
+  - Combinatorics
 editor: source
 draft: false
 ---

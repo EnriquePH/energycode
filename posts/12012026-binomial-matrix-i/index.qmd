@@ -4,9 +4,9 @@ description: "A matrix related to Pascal’s triangle, also known as Tartaglia�
 author: 'Enrique Pérez Herrero'
 date: 2009-09-22
 categories:
-  - math
-  - matrices
-  - combinatorics
+  - Math
+  - Matrices
+  - Combinatorics
 bibliography: binomial_1.bib
 nocite: |
   @*
