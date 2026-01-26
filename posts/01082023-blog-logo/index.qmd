@@ -2,7 +2,6 @@
 title: Blog Logo Sticker
 description: Blog logo with hexSticker
 draft: false
-author: 'Enrique Pérez Herrero'
 date: '08-01-2023'
 lang: es
 bibliography: hexSticker.bib

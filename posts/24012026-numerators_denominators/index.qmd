@@ -1,0 +1,85 @@
+---
+title: "Numerators and Denominators Involving Tetrahedral Numbers"
+description: "Characterization of Partial Sums of Reciprocal Tetrahedral Numbers"
+date: "01-26-2026"
+lang: en
+categories:
+  - Math
+  - Series
+  - Special Numbers
+  - Python
+bibliography: num_den.bib
+nocite: |
+  @*
+draft: false
+---
+
+```{python}
+import math
+import matplotlib.pyplot as plt
+
+# --- Helper functions -------------------------------------------------
+
+def numerator(n: int) -> int:
+    """
+    Compute the raw numerator of the sum of reciprocals
+    of the first n tetrahedral numbers.
+    """
+    return 3 * n * (n + 3)
+
+def denominator(n: int) -> int:
+    """
+    Compute the raw denominator of the sum of reciprocals
+    of the first n tetrahedral numbers.
+    """
+    return 2 * (n + 1) * (n + 2)
+
+def gcd_value(n: int) -> int:
+    """
+    Greatest common divisor of the raw numerator
+    and denominator for a given n.
+    """
+    return math.gcd(numerator(n), denominator(n))
+
+# --- OEIS sequences ---------------------------------------------------
+
+def a118391(n: int) -> int:
+    """
+    OEIS A118391:
+    Numerator of the reduced fraction representing the sum
+    of reciprocals of the first n tetrahedral numbers.
+    """
+    return numerator(n) // gcd_value(n)
+
+def a118392(n: int) -> int:
+    """
+    OEIS A118392:
+    Denominator of the reduced fraction representing the sum
+    of reciprocals of the first n tetrahedral numbers.
+    """
+    return denominator(n) // gcd_value(n)
+
+# --- Computation and visualization -----------------------------------
+
+N_MAX = 200
+n_values = list(range(1, N_MAX + 1))
+
+# Compute numerators and denominators
+numerators = [a118391(n) for n in n_values]
+denominators = [a118392(n) for n in n_values]
+
+# Plot the sequences
+plt.figure()
+plt.scatter(n_values, numerators, s=5, label="A118391 (Numerators)")
+plt.scatter(n_values, denominators, s=5, label="A118392 (Denominators)")
+plt.legend()
+plt.xlabel("n")
+plt.title("Numerators and Denominators of the Sum of Reciprocals\nof the First n Tetrahedral Numbers")
+plt.show()
+
+
+print(numerators)
+```
+
+
+

@@ -72,15 +72,9 @@ def oeis_to_bibtex(oeis_id):
 
 # List of OEIS sequences to export
 oeis_ids = [
-    "A000027",
-    "A000096",
-    "A062748",
-    "A063258",
-    "A062988",
-    "A124089",
-    "A124090",
-    "A165618",
-    "A035927"
+    "A000292",
+    "A118391",
+    "A118392"
 ]
 
 # Generate BibTeX entries

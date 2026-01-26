@@ -1,5 +1,8 @@
 # [ENERGYCODE] (c) 2026
 # Options specified here apply to all posts in this folder
+author:
+  - name: Enrique Pérez Herrero
+    url: https://github.com/EnriquePH
 format:
   html:
     code-fold: show            # Show folded code chunks by default
@@ -30,6 +33,5 @@ freeze: true
 title-block-banner: true
 
 code-link: true               # Show code links in output for source files
-
 crossref:
   eq-prefix: ""               # Prefix for equation references (empty here)

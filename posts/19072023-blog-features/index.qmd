@@ -2,7 +2,6 @@
 title: Required Blog Features
 description: 'Everything a Data Science Blog Should Have'
 editor: source
-author: 'Enrique Pérez Herrero'
 date: '2023-07-31'
 categories:
   - Blog

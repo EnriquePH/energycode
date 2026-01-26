@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nEnrique Pérez Herrero\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nEnrique Pérez Herrero\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -105,137 +105,11 @@
     "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado TETRAHEDRAL NUMBERS RECIPROCALS SUM publicado el viernes 25 de diciembre de 2009 en el blog Psychedelic Geometry [1].↩︎"
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html",
-    "title": "Volcanic Eruptions in the Holocene Period",
+    "objectID": "posts/24012026-numerators_denominators/index.html",
+    "href": "posts/24012026-numerators_denominators/index.html",
+    "title": "Numerators and Denominators Involving Tetrahedral Numbers",
     "section": "",
-    "text": "Volcán de Teneguía (La Palma)"
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.1 Data source",
-    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
-    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.3 Comments",
-    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.4 Links",
-    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.\n\nAuthor\nThe site is maintained by Enrique Pérez Herrero.\n\n\n  \n    \n  \n\n\n\nLicense\nCreative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\n\n\n\nLicencia Creative Commons BY-SA 4.0"
-  },
-  {
-    "objectID": "TODO.html",
-    "href": "TODO.html",
-    "title": "1 energycode.org TODO.md",
-    "section": "",
-    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nEspecial numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nEnrique Pérez Herrero\n\n\nJan 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nEnrique Pérez Herrero\n\n\nJun 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nCatalan numbers\n\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nEnrique Pérez Herrero\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nEnrique Pérez Herrero\n\n\nAug 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nEnrique Pérez Herrero\n\n\nAug 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nEnrique Pérez Herrero\n\n\nMar 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices.\n\n\n\nEnrique Pérez Herrero\n\n\nMar 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\n\nMatrices\n\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nEnrique Pérez Herrero\n\n\nSep 22, 2009\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html",
-    "href": "projects/02-marketconf-package/index.html",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#package-installation",
-    "href": "projects/02-marketconf-package/index.html#package-installation",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#examples",
-    "href": "projects/02-marketconf-package/index.html#examples",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#license",
-    "href": "projects/02-marketconf-package/index.html#license",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
-  },
-  {
-    "objectID": "projects/02-marketconf-package/index.html#links",
-    "href": "projects/02-marketconf-package/index.html#links",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Github marketconf R package"
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html",
-    "href": "posts/12012026-binomial-matrix-i/index.html",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "",
-    "text": "Figure 1: Niccolò Tartaglia (1572) [1]"
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html#introduction",
-    "href": "posts/12012026-binomial-matrix-i/index.html#introduction",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "1 Introduction",
-    "text": "1 Introduction\nBy applying yesterday’s idea1 with slight variations, we can derive new expressions for matrices whose elements are related to binomial coefficients.\nLet U_n be a square matrix with entries:\n\nu_{i,j} = \\binom{j}{i}\n\\tag{1}\nU_n is an upper triangular matrix with all diagonal entries equal to 1, and it closely resembles Pascal’s triangle (which I prefer to call Tartaglia’s triangle)2."
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html#example-matrix-u_10",
-    "href": "posts/12012026-binomial-matrix-i/index.html#example-matrix-u_10",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "2 Example matrix U_{10}",
-    "text": "2 Example matrix U_{10}\n\nU_{10} =\n\\begin{pmatrix}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n0 & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & 45 \\\\\n0 & 0 & 1 & 4 & 10 & 20 & 35 & 56 & 84 & 120 \\\\\n0 & 0 & 0 & 1 & 5 & 15 & 35 & 70 & 126 & 210 \\\\\n0 & 0 & 0 & 0 & 1 & 6 & 21 & 56 & 126 & 252 \\\\\n0 & 0 & 0 & 0 & 0 & 1 & 7 & 28 & 84 & 210 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 1 & 8 & 36 & 120 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 9 & 45 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 10 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1\n\\end{pmatrix}\n\\tag{2}\nAnd, of course:\n\n|U_{n}|=1\n\\tag{3}\nOr in element wise notation:\n\n\\det\\!\\left[ \\binom{i}{i} \\right]_{i,j=1}^{n} = 1\n\\tag{4}\nIf we multiply this matrix by its transpose, we obtain a symmetric matrix with:\n\n|A_{n}| = |U_{n}^{T} * U_{n}| = |U_{n}^{2}|=1\n\\tag{5}"
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html#example-matrix-a_10",
-    "href": "posts/12012026-binomial-matrix-i/index.html#example-matrix-a_10",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "3 Example matrix A_{10}",
-    "text": "3 Example matrix A_{10}\n\nA_{10}= \\left( \\begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\ 2 & 5 & 9 & 14 & 20 & 27 & 35 & 44 & 54 & 65 \\\\ 3 & 9 & 19 & 34 & 55 & 83 & 119 & 164 & 219 & 285 \\\\ 4 & 14 & 34 & 69 & 125 & 209 & 329 & 494 & 714 & 1000 \\\\ 5 & 20 & 55 & 125 & 251 & 461 & 791 & 1286 & 2001 & 3002 \\\\ 6 & 27 & 83 & 209 & 461 & 923 & 1715 & 3002 & 5004 & 8007 \\\\ 7 & 35 & 119 & 329 & 791 & 1715 & 3431 & 6434 & 11439 & 19447 \\\\ 8 & 44 & 164 & 494 & 1286 & 3002 & 6434 & 12869 & 24309 & 43757 \\\\ 9 & 54 & 219 & 714 & 2001 & 5004 & 11439 & 24309 & 48619 & 92377 \\\\ 10 & 65 & 285 & 1000 & 3002 & 8007 & 19447 & 43757 & 92377 & 184755 \\end{array}\\right)\n\\\\ \\tag{6}\nThe most remarkable property of this symmetric matrix is that its determinant equals 1, making it a unimodular matrix.\nThus, we have constructed a new matrix with determinant equal to one:\n\n\\begin{aligned}\na_{i,j} &= \\sum_{r=1}^n u_{i,r}^* \\cdot u_{r,j} \\\\\n&= \\sum_{r=1}^{\\min(i,j)} u_{r,i} \\cdot u_{r,j} \\\\\n&= \\sum_{r=1}^{\\min(i,j)} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\sum_{r=0}^{\\min(i,j)} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\sum_{r=0}^{i} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\binom{i+j}{i} \\\\\n&= \\binom{i+j}{i} - 1\n\\end{aligned}\n\\tag{7}\nAlternatively, in element-wise notation:\n\n\\det\\!\\left[ \\binom{i+j}{i} - 1 \\right]_{i,j=1}^{n} = 1\n\\tag{8}\nNote: For a proof of the binomial identity used above, see references [3] or [4]."
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html#oeis-related-sequences",
-    "href": "posts/12012026-binomial-matrix-i/index.html#oeis-related-sequences",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "4 OEIS Related Sequences",
-    "text": "4 OEIS Related Sequences\n\n\n\nRow/Col\nOEIS Sequence(s)\n\n\n\n\n1\nA000027\n\n\n2\nA000096\n\n\n3\nA062748\n\n\n4\nA063258\n\n\n5\nA062988\n\n\n6\nA124089\n\n\n7\nA124090\n\n\n8\nA165618\n\n\n9\nA035927\n\n\n10\n–"
-  },
-  {
-    "objectID": "posts/12012026-binomial-matrix-i/index.html#footnotes",
-    "href": "posts/12012026-binomial-matrix-i/index.html#footnotes",
-    "title": "BINOMIAL MATRIX (I)",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis article is a translation and update of the original post entitled BINOMIAL MATRIX (I), published on Tuesday, September 22, 2009, on the blog Psychedelic Geometry [2].↩︎\nPortret van Niccolò Tartaglia (1572). Gravure por Philips Galle. under CC0 1.0 Public Domain Dedication, Rijksmuseum y Wikimedia Commons, [1]↩︎"
+    "text": "Code\nimport math\nimport matplotlib.pyplot as plt\n\n# --- Helper functions -------------------------------------------------\n\ndef numerator(n: int) -&gt; int:\n    \"\"\"\n    Compute the raw numerator of the sum of reciprocals\n    of the first n tetrahedral numbers.\n    \"\"\"\n    return 3 * n * (n + 3)\n\ndef denominator(n: int) -&gt; int:\n    \"\"\"\n    Compute the raw denominator of the sum of reciprocals\n    of the first n tetrahedral numbers.\n    \"\"\"\n    return 2 * (n + 1) * (n + 2)\n\ndef gcd_value(n: int) -&gt; int:\n    \"\"\"\n    Greatest common divisor of the raw numerator\n    and denominator for a given n.\n    \"\"\"\n    return math.gcd(numerator(n), denominator(n))\n\n# --- OEIS sequences ---------------------------------------------------\n\ndef a118391(n: int) -&gt; int:\n    \"\"\"\n    OEIS A118391:\n    Numerator of the reduced fraction representing the sum\n    of reciprocals of the first n tetrahedral numbers.\n    \"\"\"\n    return numerator(n) // gcd_value(n)\n\ndef a118392(n: int) -&gt; int:\n    \"\"\"\n    OEIS A118392:\n    Denominator of the reduced fraction representing the sum\n    of reciprocals of the first n tetrahedral numbers.\n    \"\"\"\n    return denominator(n) // gcd_value(n)\n\n# --- Computation and visualization -----------------------------------\n\nN_MAX = 200\nn_values = list(range(1, N_MAX + 1))\n\n# Compute numerators and denominators\nnumerators = [a118391(n) for n in n_values]\ndenominators = [a118392(n) for n in n_values]\n\n# Plot the sequences\nplt.figure()\nplt.scatter(n_values, numerators, s=5, label=\"A118391 (Numerators)\")\nplt.scatter(n_values, denominators, s=5, label=\"A118392 (Denominators)\")\nplt.legend()\nplt.xlabel(\"n\")\nplt.title(\"Numerators and Denominators of the Sum of Reciprocals\\nof the First n Tetrahedral Numbers\")\nplt.show()\n\n\nprint(numerators)\n\n\n\n\n\n\n\n\n\n[1, 5, 27, 7, 10, 81, 35, 22, 81, 65, 77, 135, 52, 119, 405, 76, 85, 567, 209, 115, 378, 275, 299, 486, 175, 377, 1215, 217, 232, 1485, 527, 280, 891, 629, 665, 1053, 370, 779, 2457, 430, 451, 2835, 989, 517, 1620, 1127, 1175, 1836, 637, 1325, 4131, 715, 742, 4617, 1595, 826, 2565, 1769, 1829, 2835, 976, 2015, 6237, 1072, 1105, 6831, 2345, 1207, 3726, 2555, 2627, 4050, 1387, 2849, 8775, 1501, 1540, 9477, 3239, 1660, 5103, 3485, 3569, 5481, 1870, 3827, 11745, 2002, 2047, 12555, 4277, 2185, 6696, 4559, 4655, 7128, 2425, 4949, 15147, 2575, 2626, 16065, 5459, 2782, 8505, 5777, 5885, 8991, 3052, 6215, 18981, 3220, 3277, 20007, 6785, 3451, 10530, 7139, 7259, 11070, 3751, 7625, 23247, 3937, 4000, 24381, 8255, 4192, 12771, 8645, 8777, 13365, 4522, 9179, 27945, 4726, 4795, 29187, 9869, 5005, 15228, 10295, 10439, 15876, 5365, 10877, 33075, 5587, 5662, 34425, 11627, 5890, 17901, 12089, 12245, 18603, 6280, 12719, 38637, 6520, 6601, 40095, 13529, 6847, 20790, 14027, 14195, 21546, 7267, 14705, 44631, 7525, 7612, 46197, 15575, 7876, 23895, 16109, 16289, 24705, 8326, 16835, 51057, 8602, 8695, 52731, 17765, 8977, 27216, 18335, 18527, 28080, 9457, 19109, 57915, 9751, 9850, 59697, 20099, 10150]\n\n\n\n\n\n\n\n\nReferences\n\n1. OEIS (1991) A000292: Tetrahedral (or triangular pyramidal) numbers: A(n) = c(n+2,3) = n*(n+1)*(n+2)/6.\n\n\n2. OEIS (2006) A118391: Numerator of sum of reciprocals of first n tetrahedral numbers A000292.\n\n\n3. OEIS (2006) A118392: Denominator of sum of reciprocals of first n tetrahedral numbers A000292."
   },
   {
     "objectID": "posts/11062025-euclinacci/index.html",
@@ -299,6 +173,139 @@
     "title": "Euclinacci",
     "section": "Notas",
     "text": "Notas\n\nEste artículo es una traducción y actualización del post original titulado EUCLINACCI publicado el domingo 1 de febrero de 2009 en el blog Psychedelic Geometry [1].↩︎"
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html",
+    "href": "posts/12012026-binomial-matrix-i/index.html",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "",
+    "text": "Figure 1: Niccolò Tartaglia (1572) [1]"
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html#introduction",
+    "href": "posts/12012026-binomial-matrix-i/index.html#introduction",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nBy applying yesterday’s idea1 with slight variations, we can derive new expressions for matrices whose elements are related to binomial coefficients.\nLet U_n be a square matrix with entries:\n\nu_{i,j} = \\binom{j}{i}\n\\tag{1}\nU_n is an upper triangular matrix with all diagonal entries equal to 1, and it closely resembles Pascal’s triangle (which I prefer to call Tartaglia’s triangle)2."
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html#example-matrix-u_10",
+    "href": "posts/12012026-binomial-matrix-i/index.html#example-matrix-u_10",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "2 Example matrix U_{10}",
+    "text": "2 Example matrix U_{10}\n\nU_{10} =\n\\begin{pmatrix}\n1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n0 & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & 45 \\\\\n0 & 0 & 1 & 4 & 10 & 20 & 35 & 56 & 84 & 120 \\\\\n0 & 0 & 0 & 1 & 5 & 15 & 35 & 70 & 126 & 210 \\\\\n0 & 0 & 0 & 0 & 1 & 6 & 21 & 56 & 126 & 252 \\\\\n0 & 0 & 0 & 0 & 0 & 1 & 7 & 28 & 84 & 210 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 1 & 8 & 36 & 120 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 9 & 45 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 10 \\\\\n0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1\n\\end{pmatrix}\n\\tag{2}\nAnd, of course:\n\n|U_{n}|=1\n\\tag{3}\nOr in element wise notation:\n\n\\det\\!\\left[ \\binom{i}{i} \\right]_{i,j=1}^{n} = 1\n\\tag{4}\nIf we multiply this matrix by its transpose, we obtain a symmetric matrix with:\n\n|A_{n}| = |U_{n}^{T} * U_{n}| = |U_{n}^{2}|=1\n\\tag{5}"
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html#example-matrix-a_10",
+    "href": "posts/12012026-binomial-matrix-i/index.html#example-matrix-a_10",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "3 Example matrix A_{10}",
+    "text": "3 Example matrix A_{10}\n\nA_{10}= \\left( \\begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\ 2 & 5 & 9 & 14 & 20 & 27 & 35 & 44 & 54 & 65 \\\\ 3 & 9 & 19 & 34 & 55 & 83 & 119 & 164 & 219 & 285 \\\\ 4 & 14 & 34 & 69 & 125 & 209 & 329 & 494 & 714 & 1000 \\\\ 5 & 20 & 55 & 125 & 251 & 461 & 791 & 1286 & 2001 & 3002 \\\\ 6 & 27 & 83 & 209 & 461 & 923 & 1715 & 3002 & 5004 & 8007 \\\\ 7 & 35 & 119 & 329 & 791 & 1715 & 3431 & 6434 & 11439 & 19447 \\\\ 8 & 44 & 164 & 494 & 1286 & 3002 & 6434 & 12869 & 24309 & 43757 \\\\ 9 & 54 & 219 & 714 & 2001 & 5004 & 11439 & 24309 & 48619 & 92377 \\\\ 10 & 65 & 285 & 1000 & 3002 & 8007 & 19447 & 43757 & 92377 & 184755 \\end{array}\\right)\n\\\\ \\tag{6}\nThe most remarkable property of this symmetric matrix is that its determinant equals 1, making it a unimodular matrix.\nThus, we have constructed a new matrix with determinant equal to one:\n\n\\begin{aligned}\na_{i,j} &= \\sum_{r=1}^n u_{i,r}^* \\cdot u_{r,j} \\\\\n&= \\sum_{r=1}^{\\min(i,j)} u_{r,i} \\cdot u_{r,j} \\\\\n&= \\sum_{r=1}^{\\min(i,j)} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\sum_{r=0}^{\\min(i,j)} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\sum_{r=0}^{i} \\binom{i}{r} \\binom{j}{r} \\\\\n&= -1 + \\binom{i+j}{i} \\\\\n&= \\binom{i+j}{i} - 1\n\\end{aligned}\n\\tag{7}\nAlternatively, in element-wise notation:\n\n\\det\\!\\left[ \\binom{i+j}{i} - 1 \\right]_{i,j=1}^{n} = 1\n\\tag{8}\nNote: For a proof of the binomial identity used above, see references [3] or [4]."
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html#oeis-related-sequences",
+    "href": "posts/12012026-binomial-matrix-i/index.html#oeis-related-sequences",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "4 OEIS Related Sequences",
+    "text": "4 OEIS Related Sequences\n\n\n\nRow/Col\nOEIS Sequence(s)\n\n\n\n\n1\nA000027\n\n\n2\nA000096\n\n\n3\nA062748\n\n\n4\nA063258\n\n\n5\nA062988\n\n\n6\nA124089\n\n\n7\nA124090\n\n\n8\nA165618\n\n\n9\nA035927\n\n\n10\n–"
+  },
+  {
+    "objectID": "posts/12012026-binomial-matrix-i/index.html#footnotes",
+    "href": "posts/12012026-binomial-matrix-i/index.html#footnotes",
+    "title": "BINOMIAL MATRIX (I)",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis article is a translation and update of the original post entitled BINOMIAL MATRIX (I), published on Tuesday, September 22, 2009, on the blog Psychedelic Geometry [2].↩︎\nPortret van Niccolò Tartaglia (1572). Gravure por Philips Galle. under CC0 1.0 Public Domain Dedication, Rijksmuseum y Wikimedia Commons, [1]↩︎"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html",
+    "href": "projects/02-marketconf-package/index.html",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#package-installation",
+    "href": "projects/02-marketconf-package/index.html#package-installation",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#examples",
+    "href": "projects/02-marketconf-package/index.html#examples",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#license",
+    "href": "projects/02-marketconf-package/index.html#license",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#links",
+    "href": "projects/02-marketconf-package/index.html#links",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Github marketconf R package"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Numerators and Denominators Involving Tetrahedral Numbers\n\n\n\nMath\n\n\nSeries\n\n\nSpecial Numbers\n\n\nPython\n\n\n\nCharacterization of Partial Sums of Reciprocal Tetrahedral Numbers\n\n\n\nJanuary 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nSpecial Numbers\n\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\n\nMatrices\n\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "TODO.html",
+    "href": "TODO.html",
+    "title": "1 energycode.org TODO.md",
+    "section": "",
+    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.\n\nAuthor\nThe site is maintained by Enrique Pérez Herrero.\n\n\n  \n    \n  \n\n\n\nLicense\nCreative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\n\n\n\nLicencia Creative Commons BY-SA 4.0"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "",
+    "text": "Volcán de Teneguía (La Palma)"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.1 Data source",
+    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
+    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.3 Comments",
+    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.4 Links",
+    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
   },
   {
     "objectID": "posts/18052024-catalan-numbers/index.html#introducción",

@@ -2,7 +2,6 @@
 title: <span style='text-transform:none'>A004782(n) = A014847(n) + 1</span>
 title-case: false
 description: "Relación entre dos secuencias asociadas con los números de Catalan"
-author: 'Enrique Pérez Herrero'
 date: '2024-05-18'
 lang: es
 bibliography: 18052024-Catalan-Numbers.bib
@@ -12,7 +11,7 @@ image: A014847_plot.png
 categories:
   - Math
   - OEIS
-  - Catalan numbers
+  - Special Numbers
   - Combinatorics
 editor: source
 draft: false

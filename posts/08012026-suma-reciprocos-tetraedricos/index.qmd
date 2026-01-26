@@ -1,15 +1,14 @@
 ---
-title: 'Suma de los recíprocos de los números tetraédricos'
-description: 'Sumas de la serie de los recíprocos de los números tetraédricos'
-date: '2026-01-08'
+title: "Suma de los recíprocos de los números tetraédricos"
+description: "Sumas de la serie de los recíprocos de los números tetraédricos"
+date: "2026-01-08"
 editor: source
-author: 'Enrique Pérez Herrero'
 image: tetrahedral_numbers.png
 lang: es
 categories:
   - Math
   - Series
-  - Especial numbers
+  - Special Numbers
 bibliography: tetrahedral.bib
 nocite: |
   @*

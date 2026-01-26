@@ -1,14 +1,12 @@
 ---
-title: Depósito Cilíndrico
-description: 'Depósito con Superficie Mínima'
+title: "Depósito Cilíndrico"
+description: "Depósito cilíndrico de superficie mínima"
 editor: source
-author: 'Enrique Pérez Herrero'
 date: '2023-07-31'
 categories:
   - blog
   - quarto
   - ingeniería
-
 image: ''
 draft: true
 lang: es

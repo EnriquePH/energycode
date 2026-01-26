@@ -1,8 +1,7 @@
 ---
 title: "BINOMIAL MATRIX (I)"
-description: "A matrix related to Pascal’s triangle, also known as Tartaglia’s triangle"
-author: 'Enrique Pérez Herrero'
-date: 2009-09-22
+description: "A matrix related to Pascal's triangle, also known as Tartaglia's triangle"
+date: "2009-09-22"
 categories:
   - Math
   - Matrices

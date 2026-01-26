@@ -1,14 +1,19 @@
 ---
 title: "Projects"
-toc: false
-editor: source
-listing: 
-  contents: projects
-  type: grid
+toc: false                     # Disable table of contents on this page
+listing:
+  contents: projects          # Directory containing projects
+  type: grid                  # Display style: grid | default | table
   sort:
-    - date desc
-    - title asc
-  categories: true
-  date-format: long
-feed: true
+    - date desc               # Sort posts by date, newest first
+    - title asc               # Then sort by title alphabetically
+  categories: true            # Enable category filtering
+  date-format: long           # Display dates in long format (e.g., January 1, 2026)
+  fields:                     # Metadata fields to display for each post
+    - title
+    - image
+    - date
+    - categories
+    - description
+feed: true                    # Enable RSS feed generation
 ---

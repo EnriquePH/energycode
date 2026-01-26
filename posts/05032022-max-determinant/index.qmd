@@ -1,8 +1,8 @@
 ---
-title: Max Determinant
-description: Determinants of special square matrices with elements defined as the Maximum or Minimum of the Indices.
-author: 'Enrique Pérez Herrero'
+title: "Max Determinant"
+description: "Determinants of special square matrices with elements defined as the Maximum or Minimum of the Indices"
 date: '2022-03-05'
+lang: en
 image: plot3dmaxmatrix.png
 categories: 
  - Math
