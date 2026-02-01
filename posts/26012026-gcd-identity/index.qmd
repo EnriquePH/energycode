@@ -1,0 +1,125 @@
+---
+title: "A Prime-Valuation Proof of a GCD Identity"
+date: "01-26-2026"
+lang: en
+draft: true
+---
+
+## Statement
+
+Let $$n \in \mathbb{Z}$$ and $$k \in \mathbb{N},\ k \ge 1.$$ Then
+
+$$
+\gcd\bigl(n, (n+1)(n+2)\cdots(n+k)\bigr)
+= \gcd(n, k!).
+$$
+
+Equivalently, using the rising factorial (Pochhammer symbol),
+
+$$
+\gcd\bigl(n, \operatorname{Pochhammer}(n+1,k)\bigr) = \gcd(n,k!).
+$$
+
+---
+
+## Notation and preliminaries
+
+- For a prime $$p,$$ let $$v_p(m)$$ denote the *p-adic valuation* of an integer $$m,$$ i.e. the largest exponent $$e$$ such that $$p^e \mid m.$$
+- For any integers $$a,b,$$
+
+$$
+v_p(\gcd(a,b)) = \min\bigl(v_p(a), v_p(b)\bigr).
+$$
+
+- Equality of two positive integers is equivalent to equality of their $$p$$-adic valuations for every prime $$p$$.
+
+---
+
+## Key lemma
+
+**Lemma.** For every prime $$p,$$
+
+$$
+v_p\left(\prod_{i=1}^k (n+i)\right) = v_p(k!).
+$$
+
+### Proof of the lemma
+
+Fix a prime $$p$$ and a positive integer $$r.$$
+
+Observe that
+
+$$
+n+i \equiv i \pmod{p^r}.
+$$
+
+Therefore, for each $$r \ge 1,$$ the number of integers among
+
+$$
+n+1, n+2, \dots, n+k
+$$
+
+that are divisible by $$p^r$$ is exactly the same as the number of integers among
+
+$$
+1, 2, \dots, k
+$$
+
+that are divisible by $$p^r.$$
+
+By definition of the $$p$$-adic valuation, this implies
+
+$$
+v_p\left(\prod_{i=1}^k (n+i)\right) = \sum_{r \ge 1} \left\lfloor \frac{k}{p^r} \right\rfloor = v_p(k!).
+$$
+
+This proves the lemma. $$\square$$
+
+---
+
+## Proof of the main theorem
+
+We compute the $$p$$-adic valuation of both sides.
+
+Let $$p$$ be an arbitrary prime. Then
+
+$$
+\begin{aligned}
+v_p\left(\gcd\bigl(n, \prod_{i=1}^k (n+i)\bigr)\right)
+&= \min\left(v_p(n), v_p\left(\prod_{i=1}^k (n+i)\right)\right) \\
+&= \min\bigl(v_p(n), v_p(k!)\bigr) \\
+&= v_p\bigl(\gcd(n,k!)\bigr).
+\end{aligned}
+$$
+
+Since this equality holds for every prime $$p,$$ the two integers have identical prime factorizations. Hence
+
+$$
+\gcd\bigl(n, (n+1)(n+2)\cdots(n+k)\bigr) = \gcd(n,k!).
+$$
+
+$$\square$$
+
+---
+
+## Remarks
+
+1. Only primes $$p \le k$$ can divide the gcd; primes larger than $$k$$ cannot divide any of $$n+1,\dots,n+k.$$
+2. The proof explains why the result is independent of $$n$$ modulo primes larger than $$k.$$
+3. This argument aligns exactly with computer algebra behavior: symbolic `GCD` simplifies correctly, while `FactorInteger` requires numeric specialization.
+
+---
+
+## Equivalent formulation
+
+Using the Pochhammer symbol,
+
+$$
+\operatorname{Pochhammer}(n+1,k) = (n+1)(n+2)\cdots(n+k),
+$$
+
+so the identity may be written as
+
+$$
+\boxed{\gcd\bigl(n, \operatorname{Pochhammer}(n+1,k)\bigr) = \gcd(n,k!)}.
+$$

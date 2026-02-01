@@ -11,8 +11,113 @@ categories:
 bibliography: num_den.bib
 nocite: |
   @*
-draft: false
+draft: true
 ---
+
+## Tetrahedral numbers reciprocals sum
+
+$$
+S(n) = \sum_{k=1}^{n} {\binom{k+2}{3}}^{-1} =
+\sum_{k=1}^{n} \frac{6}{k(k+1)(k+2)}
+$${#eq-nud001}
+
+## Partial Sums of Reciprocal Tetrahedral Numbers
+
+
+$$
+S(n) = \frac{3n(n+3)}{2(n+1)(n+2)}
+$${#eq-nud002}
+
+## GCD sequence
+
+$$
+g(n) = \gcd\bigl(3n(n + 3),\, 2(n + 1)(n + 2)\bigr)
+$${#eq-nud003}
+
+The function $g(n)$ is always even.  
+Indeed, among any two consecutive integers one is even, so $(n+1)(n+2)$ is always even, and hence
+$2(n+1)(n+2)$ is divisible by $4$.
+
+Moreover, $n$ and $n+3$ have opposite parity, so their product is always even. Therefore,
+$\dfrac{3n(n+3)}{2}$ is an integer, and we may write
+
+$$
+g(n)
+= 2 \cdot \gcd\!\left(\frac{3n(n + 3)}{2},\, (n + 1)(n + 2)\right)
+= 2\,h(n).
+$${#eq-nud004}
+
+---
+
+## General case
+
+The only possible prime factors of $h(n)$ are $2$ and $3$, since the expressions involve products of four consecutive integers: $n,\; n+1,\; n+2$ and $n+3$.
+
+No prime $p \ge 5$ can divide both arguments of the $\gcd$ simultaneously.
+Therefore,
+
+$$
+h(n) \mid 6
+\quad\Rightarrow\quad
+g(n) \mid 12
+$$
+
+Hence,
+
+$$
+g(n) \in \{2,4,6,12\}
+$$
+
+Moreover, divisibility by $2$ and $3$ depends only on:
+- the parity of $n$,
+- the value of $n \bmod 3$.
+
+Consequently, $g(n)$ depends only on $n \bmod 12$.
+
+---
+
+## Classification modulo $12$
+
+The values of $g(n)$ are given by:
+
+$$
+g(n)=
+\begin{cases}
+12, & \text{if } n \equiv \{1,4,5,8\} \pmod{12}, \\[6pt]
+6,  & \text{if } n \equiv \{2,7,10,11\} \pmod{12}, \\[6pt]
+4,  & \text{if } n \equiv \{0,9\} \pmod{12}, \\[6pt]
+2,  & \text{if } n \equiv \{3,6\} \pmod{12}
+\end{cases}
+$$
+n≡{1,4,5,8}(mod12) (OEIS sequence A174398)
+
+$$
+g(n)
+=
+2^{\displaystyle [4 \nmid (n+1)] + [4 \nmid (n+2)]}\cdot
+3^{\displaystyle [3 \nmid n]}
+$$
+
+## Numerators Sequence
+
+OIES sequence A118391
+
+Properties:
+
+* If n is odd then n divides A118391(n)
+* A118391(n) is even if n is congruent to {0, 5} mod 8
+* If p>3 a prime, p divides A118391(n) if n is congruent {0, p-3}, mod p
+
+$$
+A118391(n) = \frac{3n(n+3)}{g(n)}
+$${#eq-nud004}
+
+
+## Denominators sequence
+
+$$
+A118392(n) = \frac{2(n+1)(n+2)}{g(n)}
+$${#eq-nud005}
 
 ```{python}
 import math
@@ -71,15 +176,36 @@ denominators = [a118392(n) for n in n_values]
 # Plot the sequences
 plt.figure()
 plt.scatter(n_values, numerators, s=5, label="A118391 (Numerators)")
-plt.scatter(n_values, denominators, s=5, label="A118392 (Denominators)")
 plt.legend()
 plt.xlabel("n")
-plt.title("Numerators and Denominators of the Sum of Reciprocals\nof the First n Tetrahedral Numbers")
+plt.title("Numerators of the Sum of Reciprocals\nof the First n Tetrahedral Numbers")
 plt.show()
 
+
+# Plot the sequences
+plt.figure()
+plt.scatter(n_values, denominators, s=5, color = 'green', label="A118392 (Denominators)")
+plt.legend()
+plt.xlabel("n")
+plt.title("Denominators of the Sum of Reciprocals\nof the First n Tetrahedral Numbers")
+plt.show()
 
 print(numerators)
 ```
 
+```{python}
+
+N_MAX = 30
+n_values = list(range(1, N_MAX + 1))
+gcd_n = [gcd_value(n) for n in n_values]
+
+# Plot the sequences
+plt.figure()
+plt.plot(n_values, gcd_n, '-o')
+plt.xlabel("n")
+plt.title("g(n) = GCD[3*n*(n + 3), 2*(n + 1)*(n + 2)]")
+plt.show()
+print(gcd_n)
+```
 
 

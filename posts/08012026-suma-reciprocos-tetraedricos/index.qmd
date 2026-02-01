@@ -45,7 +45,7 @@ $${#eq-tet001}
 Nos interesa estudiar la suma parcial
 
 $$
-S(n) = \sum_{k=1}^{n} \frac{1}{T_k}
+S(n) = \sum_{k=1}^{n} \frac{1}{T_k} = \sum_{k=1}^{n} {\binom{k+2}{3}}^{-1}
 $${#eq-tet002}
 
 Sustituyendo la expresión explícita de $T_k$, obtenemos
