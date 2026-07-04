@@ -3,6 +3,7 @@ title: Required Blog Features
 description: 'Everything a Data Science Blog Should Have'
 editor: source
 date: '2023-07-31'
+lang: en
 categories:
   - Blog
   - Quarto

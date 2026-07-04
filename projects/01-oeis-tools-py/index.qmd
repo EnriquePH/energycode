@@ -1,0 +1,74 @@
+---
+title: Package oeis-tools
+description:  A Toolkit for Working with Integer Sequences
+author: 'Enrique Pérez Herrero'
+date: 2026-03-01
+categories:
+  - Mathematics
+  - Python
+  - Package
+editor: source
+lang: en
+draft: true
+---
+
+## Introduction
+
+The [Online Encyclopedia of Integer Sequences](https://oeis.org) (OEIS) is one
+of the most valuable mathematical resources on the web. It provides a massive,
+searchable database of integer sequences used across mathematics, computer
+science, physics, engineering, and data science.
+
+Recently, I explored the GitHub repository:
+
+👉 https://github.com/oeistools/oeis-tools
+
+This open-source project aims to provide programmatic tools for working with
+OEIS sequences. Instead of manually browsing the OEIS website, `oeis-tools`
+helps integrate sequence lookup and analysis directly into computational
+workflows.
+
+---
+
+## Why Programmatic Access to OEIS Matters
+
+The OEIS website is fantastic for interactive exploration. However, many
+workflows require automation:
+
+- Searching sequences from within scripts
+- Comparing generated data to known sequences
+- Downloading extended sequence data
+- Building reproducible notebooks
+- Performing batch analyses
+
+When doing experimental mathematics or algorithm development, manually copying
+and pasting from a browser quickly becomes inefficient. Tools like `oeis-tools`
+bridge this gap by enabling direct integration into code.
+
+---
+
+## What is `oeis-tools`?
+
+`oeis-tools` is an open-source repository designed to support interaction with
+OEIS data. While APIs and features may evolve, the core goal is clear:
+
+> Make OEIS sequences easier to search, retrieve, and process programmatically.
+
+This allows researchers, students, and developers to:
+
+- Query sequences by terms
+- Retrieve metadata (name, description, formula, references)
+- Access related sequences
+- Download extended data files
+- Integrate sequence data into computational experiments
+
+---
+
+## Example Use Cases
+
+### 1. Identifying a Sequence
+
+Suppose you generate a sequence in code:
+
+```python
+[1, 1, 2, 3, 5, 8]

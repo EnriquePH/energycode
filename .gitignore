@@ -65,6 +65,9 @@ _freeze/
 # ═══════════════════════════════════════════════════════════════════
 .ipynb_checkpoints/
 
+# Quarto's intermediate Jupyter notebook (generated on render, not source)
+**/*.quarto_ipynb
+
 # Python cache
 __pycache__/
 *.py[cod]

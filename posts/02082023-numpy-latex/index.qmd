@@ -3,6 +3,7 @@ title: "Convert a NumPy array to LaTeX"
 description: "LaTeX matrices and determinants from NumPy arrays"
 date: '08-02-2023'
 editor: source
+lang: en
 image: 'theta3x3matrix.png'
 draft: false
 categories:
