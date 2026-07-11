@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Volcanic Eruptions in the Holocene Period\n\n\n\nR\n\n\nKaggle\n\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\n\nPackage\n\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Explocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -418,5 +418,61 @@
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the resulting confusion matrix using ggplot, we use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
+  },
+  {
+    "objectID": "projects/04-explocal/index.html",
+    "href": "projects/04-explocal/index.html",
+    "title": "Explocal",
+    "section": "",
+    "text": "Logo de Explocal"
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#descripción",
+    "href": "projects/04-explocal/index.html#descripción",
+    "title": "Explocal",
+    "section": "1 Descripción",
+    "text": "1 Descripción\nExplocal es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española UNE 31-002. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para Windows 3.1 en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (E.T.S.I. de Minas de Madrid, especialidad Laboreo y Explosivos).\nEl repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#historia-del-proyecto",
+    "href": "projects/04-explocal/index.html#historia-del-proyecto",
+    "title": "Explocal",
+    "section": "2 Historia del proyecto",
+    "text": "2 Historia del proyecto\n\n1996 — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación EXPLOCAL.EXE en C++ para Windows 3.1.\n2015-2016 — Primer intento de modernización: exploración de los ficheros *.DAT con R/ggplot, sin llegar a reimplementar el motor de cálculo.\n2026 — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "href": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "title": "Explocal",
+    "section": "3 Estructura del repositorio",
+    "text": "3 Estructura del repositorio\n\ncode/ — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable EXPLOCAL.EXE compilado. Referencia histórica.\nsite/ — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.\ndocs/ — documentos originales sin procesar (.DOC/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de site/.\ncatalog.json — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX)."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#estado-actual",
+    "href": "projects/04-explocal/index.html#estado-actual",
+    "title": "Explocal",
+    "section": "4 Estado actual",
+    "text": "4 Estado actual\n\n✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.\n✅ Código y datos originales de 1996 preservados íntegros en code/.\n🚧 Reimplementación en Python del motor de cálculo: en desarrollo."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#licencia",
+    "href": "projects/04-explocal/index.html#licencia",
+    "title": "Explocal",
+    "section": "5 Licencia",
+    "text": "5 Licencia\nMIT © 1996 Enrique Pérez Herrero."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#cómo-citar",
+    "href": "projects/04-explocal/index.html#cómo-citar",
+    "title": "Explocal",
+    "section": "6 Cómo citar",
+    "text": "6 Cómo citar\nPérez Herrero, Enrique (1996). Proyecto de una aplicación informática\npara el cálculo de las principales características teóricas de los\nexplosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de\nMadrid. https://enriqueph.github.io/EXPLOCAL/\nDOI: 10.5281/zenodo.21306995"
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#enlaces",
+    "href": "projects/04-explocal/index.html#enlaces",
+    "title": "Explocal",
+    "section": "7 Enlaces",
+    "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
   }
 ]
