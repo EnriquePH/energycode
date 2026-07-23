@@ -1,0 +1,144 @@
+---
+title: Package OEIS-Mathematica
+description: A Wolfram Language package for using OEIS data in Mathematica
+author: 'Enrique Pérez Herrero'
+date: '2026-07-23'
+image: 'oeis-mathematica-logo.png'
+image-alt: "Phyllotaxis plot of OEIS sequence A001615, plotted live with OEIS.m"
+categories:
+  - Mathematics
+  - Wolfram Language
+  - Package
+editor: source
+lang: en
+draft: false
+---
+
+## Introduction
+
+The [Online Encyclopedia of Integer Sequences](https://oeis.org) (OEIS) is one
+of the most valuable mathematical resources on the web. `OEIS.m` is a
+multipurpose Wolfram Language package that brings OEIS data directly into
+Mathematica:
+
+👉 https://github.com/EnriquePH/OEIS-Mathematica
+
+This is version 4.0.0 of the package, a streamlined rewrite that queries the
+official OEIS JSON API instead of scraping HTML pages. It works on Wolfram
+Language 11, 13 and 14, keeps the public functions of the earlier package, and
+is now distributed as an installable Wolfram Language **paclet**.
+
+---
+
+## Features
+
+- Access to OEIS sequence metadata through the official JSON API
+- Compatible with Wolfram Language 11, 13 and 14 (paclet installation needs
+  12.1+)
+- Lightweight and easier to maintain than the previous HTML-based
+  implementation
+- Support for common package operations such as validation, import and export
+- `OEISbFile` computes b-file terms beyond what OEIS has published, using a
+  locally defined `id[n_] := ...`, as documented on the
+  [OEIS wiki page](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)
+  for this package
+
+---
+
+## Installation
+
+As a paclet (recommended, WL 12.1+):
+
+```wl
+PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet"]
+Needs["OEIS`"]
+```
+
+Or, working from a local clone without installing anything:
+
+```wl
+PacletDirectoryLoad["/path/to/OEIS-Mathematica"]
+Needs["OEIS`"]
+```
+
+Legacy `Get`, for older Wolfram Language versions or a single-file drop-in:
+
+```wl
+Get["/path/to/OEIS-Mathematica/OEIS.m"]
+```
+
+---
+
+## Quick start
+
+Load the package in a Wolfram notebook with:
+
+```wl
+<<OEIS`
+```
+
+Example:
+
+```wl
+OEISImport["A000045", "Description"]
+```
+
+### Main functions
+
+- `OEISTotalNumberOfSequences`
+- `OEISValidateIDQ`
+- `OEISImport`
+- `OEISURL`
+- `OEISFunction`
+- `OEISExport`
+- `OEISbFile`
+
+See the [Function
+Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html) for full
+signatures, options and links to each reference page.
+
+---
+
+## Documentation and tutorial
+
+A full walkthrough with real, verified output is available at
+[EnriquePH.github.io/OEIS-Mathematica](https://enriqueph.github.io/OEIS-Mathematica/),
+along with a Wolfram Notebook tutorial, a guide page and one reference page
+per function.
+
+---
+
+## Testing
+
+Continuous integration runs the ID-validation/URL-building subset on every
+push and pull request using [Mathics3](https://mathics.org), a free,
+open-source Wolfram Language implementation, so it needs no Wolfram Engine
+license. The full test suite, including live OEIS API calls, still needs a
+licensed `wolframscript`:
+
+```
+wolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls
+wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only
+```
+
+---
+
+## License
+
+The package is distributed under the [GNU General Public License
+v3.0](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/LICENSE).
+
+## How to cite
+
+If you use this package in a project or publication, please cite it using the
+metadata in
+[CITATION.cff](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff),
+which includes the archived Zenodo DOI:
+[10.5281/zenodo.21516520](https://doi.org/10.5281/zenodo.21516520).
+
+## Links
+
+- [GitHub - OEIS-Mathematica](https://github.com/EnriquePH/OEIS-Mathematica)
+- [Documentation and tutorial](https://enriqueph.github.io/OEIS-Mathematica/)
+- [Function Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html)
+- [DOI on Zenodo](https://doi.org/10.5281/zenodo.21516520)

@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Explocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Package OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -158,7 +158,7 @@
     "href": "index.html",
     "title": "Blog",
     "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\n\nSeries\n\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\n\nFibonacci\n\n\nEuclid\n\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\n\nOEIS\n\n\nSpecial Numbers\n\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\n\nNumpy\n\n\nLatex\n\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\n\nLinear Algebra\n\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\n\nMatrices\n\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\nSeries\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\nFibonacci\n\nEuclid\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\nOEIS\n\nSpecial Numbers\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\nNumpy\n\nLatex\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\nLinear Algebra\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\nMatrices\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/02-marketconf-package/index.html",
@@ -474,5 +474,75 @@
     "title": "Explocal",
     "section": "7 Enlaces",
     "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html",
+    "href": "projects/05-OEIS-Mathematica/index.html",
+    "title": "Package OEIS-Mathematica",
+    "section": "",
+    "text": "The Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#introduction",
+    "href": "projects/05-OEIS-Mathematica/index.html#introduction",
+    "title": "Package OEIS-Mathematica",
+    "section": "",
+    "text": "The Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#features",
+    "href": "projects/05-OEIS-Mathematica/index.html#features",
+    "title": "Package OEIS-Mathematica",
+    "section": "2 Features",
+    "text": "2 Features\n\nAccess to OEIS sequence metadata through the official JSON API\nCompatible with Wolfram Language 11, 13 and 14 (paclet installation needs 12.1+)\nLightweight and easier to maintain than the previous HTML-based implementation\nSupport for common package operations such as validation, import and export\nOEISbFile computes b-file terms beyond what OEIS has published, using a locally defined id[n_] := ..., as documented on the OEIS wiki page for this package"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#installation",
+    "href": "projects/05-OEIS-Mathematica/index.html#installation",
+    "title": "Package OEIS-Mathematica",
+    "section": "3 Installation",
+    "text": "3 Installation\nAs a paclet (recommended, WL 12.1+):\nPacletInstall[\"https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet\"]\nNeeds[\"OEIS`\"]\nOr, working from a local clone without installing anything:\nPacletDirectoryLoad[\"/path/to/OEIS-Mathematica\"]\nNeeds[\"OEIS`\"]\nLegacy Get, for older Wolfram Language versions or a single-file drop-in:\nGet[\"/path/to/OEIS-Mathematica/OEIS.m\"]"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#quick-start",
+    "href": "projects/05-OEIS-Mathematica/index.html#quick-start",
+    "title": "Package OEIS-Mathematica",
+    "section": "4 Quick start",
+    "text": "4 Quick start\nLoad the package in a Wolfram notebook with:\n&lt;&lt;OEIS`\nExample:\nOEISImport[\"A000045\", \"Description\"]\n\n4.1 Main functions\n\nOEISTotalNumberOfSequences\nOEISValidateIDQ\nOEISImport\nOEISURL\nOEISFunction\nOEISExport\nOEISbFile\n\nSee the Function Index for full signatures, options and links to each reference page."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
+    "href": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
+    "title": "Package OEIS-Mathematica",
+    "section": "5 Documentation and tutorial",
+    "text": "5 Documentation and tutorial\nA full walkthrough with real, verified output is available at EnriquePH.github.io/OEIS-Mathematica, along with a Wolfram Notebook tutorial, a guide page and one reference page per function."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#testing",
+    "href": "projects/05-OEIS-Mathematica/index.html#testing",
+    "title": "Package OEIS-Mathematica",
+    "section": "6 Testing",
+    "text": "6 Testing\nContinuous integration runs the ID-validation/URL-building subset on every push and pull request using Mathics3, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. The full test suite, including live OEIS API calls, still needs a licensed wolframscript:\nwolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls\nwolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#license",
+    "href": "projects/05-OEIS-Mathematica/index.html#license",
+    "title": "Package OEIS-Mathematica",
+    "section": "7 License",
+    "text": "7 License\nThe package is distributed under the GNU General Public License v3.0."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
+    "href": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
+    "title": "Package OEIS-Mathematica",
+    "section": "8 How to cite",
+    "text": "8 How to cite\nIf you use this package in a project or publication, please cite it using the metadata in CITATION.cff, which includes the archived Zenodo DOI: 10.5281/zenodo.21516520."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#links",
+    "href": "projects/05-OEIS-Mathematica/index.html#links",
+    "title": "Package OEIS-Mathematica",
+    "section": "9 Links",
+    "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nDOI on Zenodo"
   }
 ]
