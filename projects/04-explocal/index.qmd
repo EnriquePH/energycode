@@ -15,6 +15,16 @@ lang: es
 draft: false
 ---
 
+[![Deploy site](https://github.com/EnriquePH/EXPLOCAL/actions/workflows/publish-site.yml/badge.svg)](https://github.com/EnriquePH/EXPLOCAL/actions/workflows/publish-site.yml)
+[![Check site](https://github.com/EnriquePH/EXPLOCAL/actions/workflows/check-site.yml/badge.svg)](https://github.com/EnriquePH/EXPLOCAL/actions/workflows/check-site.yml)
+[![Website](https://img.shields.io/badge/docs-site-blue)](https://enriqueph.github.io/EXPLOCAL/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/EnriquePH/EXPLOCAL/blob/master/LICENSE)
+[![Made with Quarto](https://img.shields.io/badge/made%20with-Quarto-3a86ff)](https://quarto.org)
+[![Since 1996](https://img.shields.io/badge/since-1996-orange)](https://github.com/EnriquePH/EXPLOCAL/blob/master/CONTRIBUTING.md)
+[![Cite this repository](https://img.shields.io/badge/cite-CITATION.cff-informational)](https://github.com/EnriquePH/EXPLOCAL/blob/master/CITATION.cff)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/EnriquePH/EXPLOCAL/blob/master/CODE_OF_CONDUCT.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21306995.svg)](https://doi.org/10.5281/zenodo.21306995)
+
 ![Logo de Explocal](explocal-logo.png){fig-align="center" width="300"}
 
 ## Descripción

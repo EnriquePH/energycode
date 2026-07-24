@@ -14,6 +14,13 @@ lang: en
 draft: false
 ---
 
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+![Wolfram Language](https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg)
+![Package](https://img.shields.io/badge/Package-OEIS.m-success.svg)
+![Paclet](https://img.shields.io/badge/Paclet-4.0.0-9c27b0.svg)
+[![Mathics offline tests](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg)](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516520.svg)](https://doi.org/10.5281/zenodo.21516520)
+
 ## Introduction
 
 The [Online Encyclopedia of Integer Sequences](https://oeis.org) (OEIS) is one
@@ -102,24 +109,42 @@ signatures, options and links to each reference page.
 ## Documentation and tutorial
 
 A full walkthrough with real, verified output is available at
-[EnriquePH.github.io/OEIS-Mathematica](https://enriqueph.github.io/OEIS-Mathematica/),
-along with a Wolfram Notebook tutorial, a guide page and one reference page
-per function.
+[EnriquePH.github.io/OEIS-Mathematica](https://enriqueph.github.io/OEIS-Mathematica/)
+and as a [Function Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html).
+The runnable, plain-script source for that tutorial is
+[test/OEISTutorial.wl](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/test/OEISTutorial.wl).
+
+There is also a real Wolfram Notebook version, with the same live-executed
+output, plus a guide page and one reference page per function:
+
+- [Documentation/English/Tutorials/OEIS.nb](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Tutorials/OEIS.nb)
+- [Documentation/English/Guides/OEIS.nb](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Guides/OEIS.nb)
+- [Documentation/English/ReferencePages/Symbols/](https://github.com/EnriquePH/OEIS-Mathematica/tree/master/Documentation/English/ReferencePages/Symbols)
+
+The original package page, with its own usage examples, is on the OEIS wiki:
+[User:Enrique Pérez Herrero/OEIS Package](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package).
 
 ---
 
 ## Testing
 
-Continuous integration runs the ID-validation/URL-building subset on every
-push and pull request using [Mathics3](https://mathics.org), a free,
-open-source Wolfram Language implementation, so it needs no Wolfram Engine
-license. The full test suite, including live OEIS API calls, still needs a
-licensed `wolframscript`:
-
 ```
 wolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls
 wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only
 ```
+
+CI
+([.github/workflows/mathics-offline.yml](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/.github/workflows/mathics-offline.yml))
+runs the ID-validation/URL-building subset on every push and pull request
+using [Mathics3](https://mathics.org), a free, open-source Wolfram Language
+implementation, so it needs no Wolfram Engine license. It runs
+[Tests/OfflineTests.mathics.wls](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.mathics.wls),
+a hand-ported mirror of
+[Tests/OfflineTests.wlt](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.wlt)
+(Mathics3 doesn't implement `VerificationTest`/`TestReport` or the live JSON
+API path, so the real `.wlt` suite and anything network-dependent still needs
+a licensed `wolframscript`, e.g. locally or in your own CI with
+`WOLFRAMSCRIPT_ENTITLEMENTID` configured).
 
 ---
 
@@ -141,4 +166,9 @@ which includes the archived Zenodo DOI:
 - [GitHub - OEIS-Mathematica](https://github.com/EnriquePH/OEIS-Mathematica)
 - [Documentation and tutorial](https://enriqueph.github.io/OEIS-Mathematica/)
 - [Function Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html)
+- [OEIS wiki page for this package](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)
+- [CHANGELOG](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CHANGELOG.md)
+- [CONTRIBUTING](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md)
+- [Code of Conduct](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md)
+- [CITATION.cff](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)
 - [DOI on Zenodo](https://doi.org/10.5281/zenodo.21516520)

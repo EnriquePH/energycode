@@ -486,8 +486,8 @@
     "objectID": "projects/05-OEIS-Mathematica/index.html#introduction",
     "href": "projects/05-OEIS-Mathematica/index.html#introduction",
     "title": "Package OEIS-Mathematica",
-    "section": "",
-    "text": "The Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
+    "section": "1 Introduction",
+    "text": "1 Introduction\nThe Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#features",
@@ -515,14 +515,14 @@
     "href": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
     "title": "Package OEIS-Mathematica",
     "section": "5 Documentation and tutorial",
-    "text": "5 Documentation and tutorial\nA full walkthrough with real, verified output is available at EnriquePH.github.io/OEIS-Mathematica, along with a Wolfram Notebook tutorial, a guide page and one reference page per function."
+    "text": "5 Documentation and tutorial\nA full walkthrough with real, verified output is available at EnriquePH.github.io/OEIS-Mathematica and as a Function Index. The runnable, plain-script source for that tutorial is test/OEISTutorial.wl.\nThere is also a real Wolfram Notebook version, with the same live-executed output, plus a guide page and one reference page per function:\n\nDocumentation/English/Tutorials/OEIS.nb\nDocumentation/English/Guides/OEIS.nb\nDocumentation/English/ReferencePages/Symbols/\n\nThe original package page, with its own usage examples, is on the OEIS wiki: User:Enrique Pérez Herrero/OEIS Package."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#testing",
     "href": "projects/05-OEIS-Mathematica/index.html#testing",
     "title": "Package OEIS-Mathematica",
     "section": "6 Testing",
-    "text": "6 Testing\nContinuous integration runs the ID-validation/URL-building subset on every push and pull request using Mathics3, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. The full test suite, including live OEIS API calls, still needs a licensed wolframscript:\nwolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls\nwolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only"
+    "text": "6 Testing\nwolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls\nwolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only\nCI (.github/workflows/mathics-offline.yml) runs the ID-validation/URL-building subset on every push and pull request using Mathics3, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. It runs Tests/OfflineTests.mathics.wls, a hand-ported mirror of Tests/OfflineTests.wlt (Mathics3 doesn’t implement VerificationTest/TestReport or the live JSON API path, so the real .wlt suite and anything network-dependent still needs a licensed wolframscript, e.g. locally or in your own CI with WOLFRAMSCRIPT_ENTITLEMENTID configured)."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#license",
@@ -543,6 +543,6 @@
     "href": "projects/05-OEIS-Mathematica/index.html#links",
     "title": "Package OEIS-Mathematica",
     "section": "9 Links",
-    "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nDOI on Zenodo"
+    "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nOEIS wiki page for this package\nCHANGELOG\nCONTRIBUTING\nCode of Conduct\nCITATION.cff\nDOI on Zenodo"
   }
 ]
