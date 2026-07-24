@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Enrique Pérez Herrero">
-<meta name="dcterms.date" content="2026-07-23">
+<meta name="dcterms.date" content="2026-07-24">
 <meta name="description" content="A Wolfram Language package for using OEIS data in Mathematica">
 
 <title>Package OEIS-Mathematica – ENERGYCODE</title>
@@ -360,7 +360,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 23, 2026</p>
+        <p class="date">July 24, 2026</p>
       </div>
     </div>
     
@@ -399,12 +399,12 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 
 
 
-<p><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" class="img-fluid" alt="License: GPL v3"> <img src="https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg" class="img-fluid" alt="Wolfram Language"> <img src="https://img.shields.io/badge/Package-OEIS.m-success.svg" class="img-fluid" alt="Package"> <img src="https://img.shields.io/badge/Paclet-4.0.0-9c27b0.svg" class="img-fluid" alt="Paclet"> <a href="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml"><img src="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg" class="img-fluid" alt="Mathics offline tests"></a> <a href="https://doi.org/10.5281/zenodo.21516520"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21516520.svg" class="img-fluid" alt="DOI"></a></p>
+<p><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" class="img-fluid" alt="License: GPL v3"> <img src="https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg" class="img-fluid" alt="Wolfram Language"> <img src="https://img.shields.io/badge/Package-OEIS.m-success.svg" class="img-fluid" alt="Package"> <img src="https://img.shields.io/badge/Paclet-3.1.0-9c27b0.svg" class="img-fluid" alt="Paclet"> <a href="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml"><img src="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg" class="img-fluid" alt="Mathics offline tests"></a> <a href="https://doi.org/10.5281/zenodo.21539225"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21539225.svg" class="img-fluid" alt="DOI"></a></p>
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The <a href="https://oeis.org">Online Encyclopedia of Integer Sequences</a> (OEIS) is one of the most valuable mathematical resources on the web. <code>OEIS.m</code> is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:</p>
 <p>👉 https://github.com/EnriquePH/OEIS-Mathematica</p>
-<p>This is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language <strong>paclet</strong>.</p>
+<p>This is version 3.1.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language <strong>paclet</strong>.</p>
 <hr>
 </section>
 <section id="features" class="level2" data-number="2">
@@ -421,7 +421,7 @@ gtag('config', 'G-6P3MCX2KHD', { 'anonymize_ip': true});
 <section id="installation" class="level2" data-number="3">
 <h2 data-number="3" data-anchor-id="installation"><span class="header-section-number">3</span> Installation</h2>
 <p>As a paclet (recommended, WL 12.1+):</p>
-<pre class="wl"><code>PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet"]
+<pre class="wl"><code>PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet"]
 Needs["OEIS`"]</code></pre>
 <p>Or, working from a local clone without installing anything:</p>
 <pre class="wl"><code>PacletDirectoryLoad["/path/to/OEIS-Mathematica"]
@@ -446,6 +446,13 @@ Needs["OEIS`"]</code></pre>
 <li><code>OEISFunction</code></li>
 <li><code>OEISExport</code></li>
 <li><code>OEISbFile</code></li>
+<li><code>OEISData</code></li>
+<li><code>OEISSearch</code></li>
+<li><code>OEISRelated</code></li>
+<li><code>OEISCitation</code></li>
+<li><code>OEISGraph</code></li>
+<li><code>OEISRandom</code></li>
+<li><code>OEISSequence</code></li>
 </ul>
 <p>See the <a href="https://enriqueph.github.io/OEIS-Mathematica/functions.html">Function Index</a> for full signatures, options and links to each reference page.</p>
 <hr>
@@ -476,7 +483,7 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 </section>
 <section id="how-to-cite" class="level2" data-number="8">
 <h2 data-number="8" data-anchor-id="how-to-cite"><span class="header-section-number">8</span> How to cite</h2>
-<p>If you use this package in a project or publication, please cite it using the metadata in <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff">CITATION.cff</a>, which includes the archived Zenodo DOI: <a href="https://doi.org/10.5281/zenodo.21516520">10.5281/zenodo.21516520</a>.</p>
+<p>If you use this package in a project or publication, please cite it using the metadata in <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff">CITATION.cff</a>, which includes the archived Zenodo DOI: <a href="https://doi.org/10.5281/zenodo.21539225">10.5281/zenodo.21539225</a>.</p>
 </section>
 <section id="links" class="level2" data-number="9">
 <h2 data-number="9" data-anchor-id="links"><span class="header-section-number">9</span> Links</h2>
@@ -489,7 +496,7 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md">CONTRIBUTING</a></li>
 <li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff">CITATION.cff</a></li>
-<li><a href="https://doi.org/10.5281/zenodo.21516520">DOI on Zenodo</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.21539225">DOI on Zenodo</a></li>
 </ul>
 
 
@@ -1009,7 +1016,7 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Package OEIS-Mathematica</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> A Wolfram Language package for using OEIS data in Mathematica</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> 'Enrique Pérez Herrero'</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> '2026-07-23'</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> '2026-07-24'</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> 'oeis-mathematica-logo.png'</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> "Phyllotaxis plot of OEIS sequence A001615, plotted live with OEIS.m"</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
@@ -1024,9 +1031,9 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="al">![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)</span></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="al">![Wolfram Language](https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg)</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="al">![Package](https://img.shields.io/badge/Package-OEIS.m-success.svg)</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="al">![Paclet](https://img.shields.io/badge/Paclet-4.0.0-9c27b0.svg)</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="al">![Paclet](https://img.shields.io/badge/Paclet-3.1.0-9c27b0.svg)</span></span>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Mathics offline tests](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg)</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml)</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516520.svg)</span><span class="co">](https://doi.org/10.5281/zenodo.21516520)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21539225.svg)</span><span class="co">](https://doi.org/10.5281/zenodo.21539225)</span></span>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
@@ -1037,7 +1044,7 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>👉 https://github.com/EnriquePH/OEIS-Mathematica</span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>This is version 4.0.0 of the package, a streamlined rewrite that queries the</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>This is version 3.1.0 of the package, a streamlined rewrite that queries the</span>
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>official OEIS JSON API instead of scraping HTML pages. It works on Wolfram</span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>Language 11, 13 and 14, keeps the public functions of the earlier package, and</span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>is now distributed as an installable Wolfram Language **paclet**.</span>
@@ -1064,7 +1071,7 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>As a paclet (recommended, WL 12.1+):</span>
 <span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="in">```wl</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="in">PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet"]</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="in">PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet"]</span></span>
 <span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="in">Needs["OEIS`"]</span></span>
 <span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
@@ -1106,79 +1113,86 @@ wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL buildin
 <span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISFunction`</span></span>
 <span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISExport`</span></span>
 <span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISbFile`</span></span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>See the [Function</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html) for full</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>signatures, options and links to each reference page.</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Documentation and tutorial</span></span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>A full walkthrough with real, verified output is available at</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">EnriquePH.github.io/OEIS-Mathematica</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/)</span></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>and as a <span class="co">[</span><span class="ot">Function Index</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/functions.html)</span>.</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>The runnable, plain-script source for that tutorial is</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">test/OEISTutorial.wl</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/test/OEISTutorial.wl)</span>.</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>There is also a real Wolfram Notebook version, with the same live-executed</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>output, plus a guide page and one reference page per function:</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/Tutorials/OEIS.nb</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Tutorials/OEIS.nb)</span></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/Guides/OEIS.nb</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Guides/OEIS.nb)</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/ReferencePages/Symbols/</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/tree/master/Documentation/English/ReferencePages/Symbols)</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISData`</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISSearch`</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISRelated`</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISCitation`</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISGraph`</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISRandom`</span></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`OEISSequence`</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>See the [Function</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html) for full</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>signatures, options and links to each reference page.</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Documentation and tutorial</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>A full walkthrough with real, verified output is available at</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">EnriquePH.github.io/OEIS-Mathematica</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/)</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>and as a <span class="co">[</span><span class="ot">Function Index</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/functions.html)</span>.</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>The runnable, plain-script source for that tutorial is</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">test/OEISTutorial.wl</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/test/OEISTutorial.wl)</span>.</span>
 <span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>The original package page, with its own usage examples, is on the OEIS wiki:</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">User:Enrique Pérez Herrero/OEIS Package</span><span class="co">](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)</span>.</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>There is also a real Wolfram Notebook version, with the same live-executed</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>output, plus a guide page and one reference page per function:</span>
 <span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Testing</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/Tutorials/OEIS.nb</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Tutorials/OEIS.nb)</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/Guides/OEIS.nb</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Guides/OEIS.nb)</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation/English/ReferencePages/Symbols/</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/tree/master/Documentation/English/ReferencePages/Symbols)</span></span>
 <span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="in">wolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls</span></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="in">wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only</span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>The original package page, with its own usage examples, is on the OEIS wiki:</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">User:Enrique Pérez Herrero/OEIS Package</span><span class="co">](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)</span>.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>CI</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">.github/workflows/mathics-offline.yml</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/.github/workflows/mathics-offline.yml)</span>)</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>runs the ID-validation/URL-building subset on every push and pull request</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>using <span class="co">[</span><span class="ot">Mathics3</span><span class="co">](https://mathics.org)</span>, a free, open-source Wolfram Language</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>implementation, so it needs no Wolfram Engine license. It runs</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tests/OfflineTests.mathics.wls</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.mathics.wls)</span>,</span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>a hand-ported mirror of</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tests/OfflineTests.wlt</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.wlt)</span></span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>(Mathics3 doesn't implement <span class="in">`VerificationTest`</span>/<span class="in">`TestReport`</span> or the live JSON</span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>API path, so the real <span class="in">`.wlt`</span> suite and anything network-dependent still needs</span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>a licensed <span class="in">`wolframscript`</span>, e.g. locally or in your own CI with</span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="in">`WOLFRAMSCRIPT_ENTITLEMENTID`</span> configured).</span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="fu">## License</span></span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>The package is distributed under the [GNU General Public License</span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>v3.0](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/LICENSE).</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Testing</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="in">wolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="in">wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>CI</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">.github/workflows/mathics-offline.yml</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/.github/workflows/mathics-offline.yml)</span>)</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>runs the ID-validation/URL-building subset on every push and pull request</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>using <span class="co">[</span><span class="ot">Mathics3</span><span class="co">](https://mathics.org)</span>, a free, open-source Wolfram Language</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>implementation, so it needs no Wolfram Engine license. It runs</span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tests/OfflineTests.mathics.wls</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.mathics.wls)</span>,</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>a hand-ported mirror of</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tests/OfflineTests.wlt</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.wlt)</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>(Mathics3 doesn't implement <span class="in">`VerificationTest`</span>/<span class="in">`TestReport`</span> or the live JSON</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>API path, so the real <span class="in">`.wlt`</span> suite and anything network-dependent still needs</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>a licensed <span class="in">`wolframscript`</span>, e.g. locally or in your own CI with</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="in">`WOLFRAMSCRIPT_ENTITLEMENTID`</span> configured).</span>
 <span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to cite</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>If you use this package in a project or publication, please cite it using the</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>metadata in</span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">CITATION.cff</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)</span>,</span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>which includes the archived Zenodo DOI:</span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">10.5281/zenodo.21516520</span><span class="co">](https://doi.org/10.5281/zenodo.21516520)</span>.</span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub - OEIS-Mathematica</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica)</span></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation and tutorial</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/)</span></span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Function Index</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/functions.html)</span></span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">OEIS wiki page for this package</span><span class="co">](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)</span></span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CHANGELOG</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CHANGELOG.md)</span></span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CONTRIBUTING</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md)</span></span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Code of Conduct</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md)</span></span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CITATION.cff</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)</span></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">DOI on Zenodo</span><span class="co">](https://doi.org/10.5281/zenodo.21516520)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## License</span></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>The package is distributed under the [GNU General Public License</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>v3.0](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/LICENSE).</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to cite</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>If you use this package in a project or publication, please cite it using the</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>metadata in</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">CITATION.cff</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)</span>,</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>which includes the archived Zenodo DOI:</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">10.5281/zenodo.21539225</span><span class="co">](https://doi.org/10.5281/zenodo.21539225)</span>.</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Links</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub - OEIS-Mathematica</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica)</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Documentation and tutorial</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/)</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Function Index</span><span class="co">](https://enriqueph.github.io/OEIS-Mathematica/functions.html)</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">OEIS wiki page for this package</span><span class="co">](https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package)</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CHANGELOG</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CHANGELOG.md)</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CONTRIBUTING</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md)</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Code of Conduct</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md)</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">CITATION.cff</span><span class="co">](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">DOI on Zenodo</span><span class="co">](https://doi.org/10.5281/zenodo.21539225)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

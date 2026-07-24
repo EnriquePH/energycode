@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Package OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Package OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -487,7 +487,7 @@
     "href": "projects/05-OEIS-Mathematica/index.html#introduction",
     "title": "Package OEIS-Mathematica",
     "section": "1 Introduction",
-    "text": "1 Introduction\nThe Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
+    "text": "1 Introduction\nThe Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 3.1.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#features",
@@ -501,14 +501,14 @@
     "href": "projects/05-OEIS-Mathematica/index.html#installation",
     "title": "Package OEIS-Mathematica",
     "section": "3 Installation",
-    "text": "3 Installation\nAs a paclet (recommended, WL 12.1+):\nPacletInstall[\"https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet\"]\nNeeds[\"OEIS`\"]\nOr, working from a local clone without installing anything:\nPacletDirectoryLoad[\"/path/to/OEIS-Mathematica\"]\nNeeds[\"OEIS`\"]\nLegacy Get, for older Wolfram Language versions or a single-file drop-in:\nGet[\"/path/to/OEIS-Mathematica/OEIS.m\"]"
+    "text": "3 Installation\nAs a paclet (recommended, WL 12.1+):\nPacletInstall[\"https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet\"]\nNeeds[\"OEIS`\"]\nOr, working from a local clone without installing anything:\nPacletDirectoryLoad[\"/path/to/OEIS-Mathematica\"]\nNeeds[\"OEIS`\"]\nLegacy Get, for older Wolfram Language versions or a single-file drop-in:\nGet[\"/path/to/OEIS-Mathematica/OEIS.m\"]"
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#quick-start",
     "href": "projects/05-OEIS-Mathematica/index.html#quick-start",
     "title": "Package OEIS-Mathematica",
     "section": "4 Quick start",
-    "text": "4 Quick start\nLoad the package in a Wolfram notebook with:\n&lt;&lt;OEIS`\nExample:\nOEISImport[\"A000045\", \"Description\"]\n\n4.1 Main functions\n\nOEISTotalNumberOfSequences\nOEISValidateIDQ\nOEISImport\nOEISURL\nOEISFunction\nOEISExport\nOEISbFile\n\nSee the Function Index for full signatures, options and links to each reference page."
+    "text": "4 Quick start\nLoad the package in a Wolfram notebook with:\n&lt;&lt;OEIS`\nExample:\nOEISImport[\"A000045\", \"Description\"]\n\n4.1 Main functions\n\nOEISTotalNumberOfSequences\nOEISValidateIDQ\nOEISImport\nOEISURL\nOEISFunction\nOEISExport\nOEISbFile\nOEISData\nOEISSearch\nOEISRelated\nOEISCitation\nOEISGraph\nOEISRandom\nOEISSequence\n\nSee the Function Index for full signatures, options and links to each reference page."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
@@ -536,7 +536,7 @@
     "href": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
     "title": "Package OEIS-Mathematica",
     "section": "8 How to cite",
-    "text": "8 How to cite\nIf you use this package in a project or publication, please cite it using the metadata in CITATION.cff, which includes the archived Zenodo DOI: 10.5281/zenodo.21516520."
+    "text": "8 How to cite\nIf you use this package in a project or publication, please cite it using the metadata in CITATION.cff, which includes the archived Zenodo DOI: 10.5281/zenodo.21539225."
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#links",

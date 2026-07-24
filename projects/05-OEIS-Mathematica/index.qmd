@@ -2,7 +2,7 @@
 title: Package OEIS-Mathematica
 description: A Wolfram Language package for using OEIS data in Mathematica
 author: 'Enrique Pérez Herrero'
-date: '2026-07-23'
+date: '2026-07-24'
 image: 'oeis-mathematica-logo.png'
 image-alt: "Phyllotaxis plot of OEIS sequence A001615, plotted live with OEIS.m"
 categories:
@@ -17,9 +17,9 @@ draft: false
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Wolfram Language](https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg)
 ![Package](https://img.shields.io/badge/Package-OEIS.m-success.svg)
-![Paclet](https://img.shields.io/badge/Paclet-4.0.0-9c27b0.svg)
+![Paclet](https://img.shields.io/badge/Paclet-3.1.0-9c27b0.svg)
 [![Mathics offline tests](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg)](https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21516520.svg)](https://doi.org/10.5281/zenodo.21516520)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21539225.svg)](https://doi.org/10.5281/zenodo.21539225)
 
 ## Introduction
 
@@ -30,7 +30,7 @@ Mathematica:
 
 👉 https://github.com/EnriquePH/OEIS-Mathematica
 
-This is version 4.0.0 of the package, a streamlined rewrite that queries the
+This is version 3.1.0 of the package, a streamlined rewrite that queries the
 official OEIS JSON API instead of scraping HTML pages. It works on Wolfram
 Language 11, 13 and 14, keeps the public functions of the earlier package, and
 is now distributed as an installable Wolfram Language **paclet**.
@@ -57,7 +57,7 @@ is now distributed as an installable Wolfram Language **paclet**.
 As a paclet (recommended, WL 12.1+):
 
 ```wl
-PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-4.0.0.paclet"]
+PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet"]
 Needs["OEIS`"]
 ```
 
@@ -99,6 +99,13 @@ OEISImport["A000045", "Description"]
 - `OEISFunction`
 - `OEISExport`
 - `OEISbFile`
+- `OEISData`
+- `OEISSearch`
+- `OEISRelated`
+- `OEISCitation`
+- `OEISGraph`
+- `OEISRandom`
+- `OEISSequence`
 
 See the [Function
 Index](https://enriqueph.github.io/OEIS-Mathematica/functions.html) for full
@@ -159,7 +166,7 @@ If you use this package in a project or publication, please cite it using the
 metadata in
 [CITATION.cff](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff),
 which includes the archived Zenodo DOI:
-[10.5281/zenodo.21516520](https://doi.org/10.5281/zenodo.21516520).
+[10.5281/zenodo.21539225](https://doi.org/10.5281/zenodo.21539225).
 
 ## Links
 
@@ -171,4 +178,4 @@ which includes the archived Zenodo DOI:
 - [CONTRIBUTING](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md)
 - [Code of Conduct](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md)
 - [CITATION.cff](https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff)
-- [DOI on Zenodo](https://doi.org/10.5281/zenodo.21516520)
+- [DOI on Zenodo](https://doi.org/10.5281/zenodo.21539225)
