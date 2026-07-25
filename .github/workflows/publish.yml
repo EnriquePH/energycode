@@ -23,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      R_LIBS_USER: ''
 
     steps:
       - name: Checkout repository
