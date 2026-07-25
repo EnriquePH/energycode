@@ -93,15 +93,8 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Cache pip dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
-          restore-keys: pip-${{ runner.os }}-
-
       - name: Install Python dependencies
-        run: pip install --no-cache-dir --quiet -r requirements.txt
+        run: pip install --quiet -r requirements.txt
 
       - name: Check Quarto project
         continue-on-error: true
