@@ -2,7 +2,7 @@
 # Workflow to render and deploy the Quarto site
 # - Render → GitHub Pages (automatic on every push to main and manual dispatch)
 # - Render → Netlify (automatically triggered via webhook if configured)
-# Last updated: December 2025
+# Last updated: September 2026 (actions bumped to Node 24 majors)
 
 name: Publish Quarto site
 
@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -44,7 +44,7 @@ jobs:
           use-public-rspm: true
 
       - name: Cache R packages
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         id: cache-r
         with:
           path: ${{ env.R_LIBS_USER }}
@@ -90,7 +90,7 @@ jobs:
           "
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -108,7 +108,7 @@ jobs:
         run: quarto render
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -121,4 +121,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

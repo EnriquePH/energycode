@@ -4,7 +4,8 @@ editor: source
 toc: false
 number-sections: false
 image: ./img/logo/web_logo.png
-image-alt: "Website logo"
+image-alt: "ENERGYCODE logo"
+description: "About ENERGYCODE, a blog on mathematics, data science and scientific computing by Enrique Pérez Herrero."
 about:
   template: trestles
   links:
@@ -25,35 +26,66 @@ about:
       href: https://stackoverflow.com/users/4678112/enrique-perez-herrero
   
     - icon: kaggle
-      text: kaggle
+      text: Kaggle
       href: https://www.kaggle.com/enrique1500
   
     - icon: envelope-at
-      text: email
+      text: Email
       href: mailto:energycode.org@gmail.com
 ---
 
-[www.energycode.org](https://www.energycode.org/) is a specialized blog and
-informational site that focuses on programming, mathematics, engineering and
-technical topics relevant to developers and data scientists.
+**[ENERGYCODE](https://www.energycode.org/)** is a personal technical blog about
+mathematics, statistics, data science and scientific computing. Posts are
+written as reproducible notebooks: the R and Python code that produces every
+figure, table and result is on the page, ready to copy and run.
+
+### What you will find here
+
+- **Number theory and integer sequences**: identities, proofs and computations
+  around [OEIS](https://oeis.org) sequences, repunits, tetrahedral and Catalan
+  numbers.
+- **Linear algebra**: structured matrices, determinants, powers and norms.
+- **Data science and statistics**: model evaluation, exploratory analysis and
+  real-world datasets.
+- **Scientific computing tools**: small packages and utilities in R, Python,
+  PARI/GP and Mathematica, collected under [Projects](projects.qmd).
+
+Posts are written in English or Spanish, depending on the topic.
 
 ### Author
-The site is maintained by _Enrique Pérez Herrero_.
 
-```{=html}
-<!-- Stack Overflow Flair - actualizado 2026 -->
-<div>
-  <a href="https://stackoverflow.com/users/4678112/enrique-perez-herrero">
-    <img src="https://stackoverflow.com/users/flair/4678112.png?theme=dark" 
-         width="208" height="58" 
-         alt="profile for Enrique Pérez Herrero at Stack Overflow"
-         title="Perfil en Stack Overflow">
-  </a>
-</div>
-```
+The site is written and maintained by **Enrique Pérez Herrero**.
+You can follow his work on [GitHub](https://github.com/EnriquePH),
+[Kaggle](https://www.kaggle.com/enrique1500) and
+[Stack Overflow](https://stackoverflow.com/users/4678112/enrique-perez-herrero).
+
+::: {.light-content}
+[![Stack Overflow profile of Enrique Pérez Herrero](https://stackoverflow.com/users/flair/4678112.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+:::
+
+::: {.dark-content}
+[![Stack Overflow profile of Enrique Pérez Herrero](https://stackoverflow.com/users/flair/4678112.png?theme=dark){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+:::
+
+### Feedback
+
+Found an error, or have a question about a post? Use the **Report an issue**
+link at the end of any page to open an issue on
+[GitHub](https://github.com/EnriquePH/energycode/issues), or write to
+[energycode.org@gmail.com](mailto:energycode.org@gmail.com).
+
+### How it is built
+
+The site is made with [Quarto](https://quarto.org). Code cells run on R and
+Python (Jupyter), and the site is deployed to Netlify. The full source is
+available on [GitHub](https://github.com/EnriquePH/energycode).
 
 ### License
 
-**Creative Commons Attribution-ShareAlike 4.0 International** (CC BY-SA 4.0).
+- **Written content** is licensed under
+  [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+  (CC BY-SA 4.0).
+- **Source code** is released under the
+  [MIT License](https://github.com/EnriquePH/energycode/blob/main/LICENSE).
 
-[![Licencia Creative Commons BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg){width=160 height=56 loading=lazy}](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Creative Commons BY-SA 4.0 license](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg){width=160 height=56 loading=lazy}](https://creativecommons.org/licenses/by-sa/4.0/)
