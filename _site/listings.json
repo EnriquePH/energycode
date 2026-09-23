@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/06-pari-gp-engine/index.html",
       "/projects/05-OEIS-Mathematica/index.html",
       "/projects/04-explocal/index.html",
       "/projects/03-holocene-volcanic-eruptions/index.html",
