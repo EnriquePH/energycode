@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.energycode.org/projects.html</loc>
-    <lastmod>2026-01-26T20:03:03.794Z</lastmod>
+    <lastmod>2026-09-23T15:35:32.577Z</lastmod>
   </url>
   <url>
     <loc>https://www.energycode.org/posts/02082023-numpy-latex/index.html</loc>
@@ -13,24 +13,32 @@
     <lastmod>2026-02-01T11:03:25.697Z</lastmod>
   </url>
   <url>
-    <loc>https://www.energycode.org/projects/03-holocene-volcanic-eruptions/index.html</loc>
-    <lastmod>2026-01-11T11:55:19.552Z</lastmod>
+    <loc>https://www.energycode.org/projects/04-explocal/index.html</loc>
+    <lastmod>2026-07-24T18:02:19.685Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.energycode.org/projects/05-OEIS-Mathematica/index.html</loc>
+    <lastmod>2026-07-24T19:43:25.827Z</lastmod>
   </url>
   <url>
     <loc>https://www.energycode.org/about.html</loc>
     <lastmod>2026-01-11T20:42:15.399Z</lastmod>
   </url>
   <url>
-    <loc>https://www.energycode.org/TODO.html</loc>
-    <lastmod>2025-12-22T23:01:37.303Z</lastmod>
-  </url>
-  <url>
     <loc>https://www.energycode.org/index.html</loc>
-    <lastmod>2026-01-26T20:02:39.882Z</lastmod>
+    <lastmod>2026-09-23T15:35:32.571Z</lastmod>
   </url>
   <url>
     <loc>https://www.energycode.org/projects/02-marketconf-package/index.html</loc>
-    <lastmod>2026-01-11T11:55:04.920Z</lastmod>
+    <lastmod>2026-03-01T20:55:16.706Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.energycode.org/projects/06-pari-gp-engine/index.html</loc>
+    <lastmod>2026-09-23T15:16:13.427Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.energycode.org/projects/03-holocene-volcanic-eruptions/index.html</loc>
+    <lastmod>2026-03-01T20:33:51.136Z</lastmod>
   </url>
   <url>
     <loc>https://www.energycode.org/posts/12012026-binomial-matrix-i/index.html</loc>
@@ -55,17 +63,5 @@
   <url>
     <loc>https://www.energycode.org/posts/09032022-confusion-matrix/index.html</loc>
     <lastmod>2026-01-26T19:34:24.832Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.energycode.org/projects/04-explocal/index.html</loc>
-    <lastmod>2026-07-24T18:02:19.685Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.energycode.org/projects/05-OEIS-Mathematica/index.html</loc>
-    <lastmod>2026-07-24T19:43:25.827Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.energycode.org/projects/06-pari-gp-engine/index.html</loc>
-    <lastmod>2026-09-23T15:16:13.427Z</lastmod>
   </url>
 </urlset>

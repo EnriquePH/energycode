@@ -18,9 +18,6 @@
 .env
 .env.local
 
-# RStudio files
-.Rproj.user/
-*.Rproj
 
 # knitr / R Markdown cache
 *_cache/
@@ -44,11 +41,11 @@ cache/
 # ═══════════════════════════════════════════════════════════════════
 # Quarto-specific
 # ═══════════════════════════════════════════════════════════════════
-# Quarto project metadata and freeze (reproducible execution)
+# Quarto project metadata
+# (_freeze/ is committed so CI reuses frozen results instead of re-running code)
 .quarto/
-_freeze/
 
-# Rendered output (nunca subir _site si usas GitHub Actions)
+# Rendered output: _site/ IS committed because Netlify serves it from git
 #_site/
 # Si usas output-dir: docs en _quarto.yml, ignora también:
 # docs/
@@ -92,6 +89,7 @@ po/*~
 
 # Generated README (si lo generas con render)
 README.html
+README_files/
 
 # macOS junk
 .DS_Store
@@ -102,6 +100,10 @@ Thumbs.db
 # Vim swap files
 *.swp
 *.swo
+
+# LaTeX build leftovers
+*.aux
+*.log
 
 # General temp files
 *.tmp

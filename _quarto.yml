@@ -16,7 +16,7 @@ website:
   title: "ENERGYCODE"
   description: "Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python"
   site-url: "https://www.energycode.org"
-  repo-url: "https://github.com/EnriquePH/energycode.org"
+  repo-url: "https://github.com/EnriquePH/energycode"
   repo-branch: main
   repo-actions: [edit, source, issue]
   google-analytics: "G-6P3MCX2KHD"

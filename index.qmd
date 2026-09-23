@@ -8,6 +8,7 @@ listing:
     - date desc               # Sort posts by date, newest first
     - title asc               # Then sort by title alphabetically
   categories: true            # Enable category filtering
+  feed: true                  # Generate an RSS feed (<page>.xml)
   date-format: long           # Display dates in long format (e.g., January 1, 2026)
   fields:                     # Metadata fields to display for each post
     - title
@@ -15,7 +16,6 @@ listing:
     - date
     - categories
     - description
-feed: true                    # Enable RSS feed generation
 ---
 
 

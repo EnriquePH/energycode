@@ -105,39 +105,116 @@
     "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado TETRAHEDRAL NUMBERS RECIPROCALS SUM publicado el viernes 25 de diciembre de 2009 en el blog Psychedelic Geometry [1].↩︎"
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "",
-    "text": "Volcán de Teneguía (La Palma)"
+    "objectID": "projects/04-explocal/index.html#descripción",
+    "href": "projects/04-explocal/index.html#descripción",
+    "title": "Explocal",
+    "section": "1 Descripción",
+    "text": "1 Descripción\nExplocal es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española UNE 31-002. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para Windows 3.1 en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (E.T.S.I. de Minas de Madrid, especialidad Laboreo y Explosivos).\nEl repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages."
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.1 Data source",
-    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
+    "objectID": "projects/04-explocal/index.html#historia-del-proyecto",
+    "href": "projects/04-explocal/index.html#historia-del-proyecto",
+    "title": "Explocal",
+    "section": "2 Historia del proyecto",
+    "text": "2 Historia del proyecto\n\n1996 — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación EXPLOCAL.EXE en C++ para Windows 3.1.\n2015-2016 — Primer intento de modernización: exploración de los ficheros *.DAT con R/ggplot, sin llegar a reimplementar el motor de cálculo.\n2026 — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica."
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
-    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
+    "objectID": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "href": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "title": "Explocal",
+    "section": "3 Estructura del repositorio",
+    "text": "3 Estructura del repositorio\n\ncode/ — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable EXPLOCAL.EXE compilado. Referencia histórica.\nsite/ — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.\ndocs/ — documentos originales sin procesar (.DOC/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de site/.\ncatalog.json — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX)."
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.3 Comments",
-    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+    "objectID": "projects/04-explocal/index.html#estado-actual",
+    "href": "projects/04-explocal/index.html#estado-actual",
+    "title": "Explocal",
+    "section": "4 Estado actual",
+    "text": "4 Estado actual\n\n✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.\n✅ Código y datos originales de 1996 preservados íntegros en code/.\n🚧 Reimplementación en Python del motor de cálculo: en desarrollo."
   },
   {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.4 Links",
-    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+    "objectID": "projects/04-explocal/index.html#licencia",
+    "href": "projects/04-explocal/index.html#licencia",
+    "title": "Explocal",
+    "section": "5 Licencia",
+    "text": "5 Licencia\nMIT © 1996 Enrique Pérez Herrero."
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#cómo-citar",
+    "href": "projects/04-explocal/index.html#cómo-citar",
+    "title": "Explocal",
+    "section": "6 Cómo citar",
+    "text": "6 Cómo citar\nPérez Herrero, Enrique (1996). Proyecto de una aplicación informática\npara el cálculo de las principales características teóricas de los\nexplosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de\nMadrid. https://enriqueph.github.io/EXPLOCAL/\nDOI: 10.5281/zenodo.21306995"
+  },
+  {
+    "objectID": "projects/04-explocal/index.html#enlaces",
+    "href": "projects/04-explocal/index.html#enlaces",
+    "title": "Explocal",
+    "section": "7 Enlaces",
+    "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#introduction",
+    "href": "projects/05-OEIS-Mathematica/index.html#introduction",
+    "title": "Package OEIS-Mathematica",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nThe Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 3.1.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#features",
+    "href": "projects/05-OEIS-Mathematica/index.html#features",
+    "title": "Package OEIS-Mathematica",
+    "section": "2 Features",
+    "text": "2 Features\n\nAccess to OEIS sequence metadata through the official JSON API\nCompatible with Wolfram Language 11, 13 and 14 (paclet installation needs 12.1+)\nLightweight and easier to maintain than the previous HTML-based implementation\nSupport for common package operations such as validation, import and export\nOEISbFile computes b-file terms beyond what OEIS has published, using a locally defined id[n_] := ..., as documented on the OEIS wiki page for this package"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#installation",
+    "href": "projects/05-OEIS-Mathematica/index.html#installation",
+    "title": "Package OEIS-Mathematica",
+    "section": "3 Installation",
+    "text": "3 Installation\nAs a paclet (recommended, WL 12.1+):\nPacletInstall[\"https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet\"]\nNeeds[\"OEIS`\"]\nOr, working from a local clone without installing anything:\nPacletDirectoryLoad[\"/path/to/OEIS-Mathematica\"]\nNeeds[\"OEIS`\"]\nLegacy Get, for older Wolfram Language versions or a single-file drop-in:\nGet[\"/path/to/OEIS-Mathematica/OEIS.m\"]"
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#quick-start",
+    "href": "projects/05-OEIS-Mathematica/index.html#quick-start",
+    "title": "Package OEIS-Mathematica",
+    "section": "4 Quick start",
+    "text": "4 Quick start\nLoad the package in a Wolfram notebook with:\n&lt;&lt;OEIS`\nExample:\nOEISImport[\"A000045\", \"Description\"]\n\n4.1 Main functions\n\nOEISTotalNumberOfSequences\nOEISValidateIDQ\nOEISImport\nOEISURL\nOEISFunction\nOEISExport\nOEISbFile\nOEISData\nOEISSearch\nOEISRelated\nOEISCitation\nOEISGraph\nOEISRandom\nOEISSequence\n\nSee the Function Index for full signatures, options and links to each reference page."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
+    "href": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
+    "title": "Package OEIS-Mathematica",
+    "section": "5 Documentation and tutorial",
+    "text": "5 Documentation and tutorial\nA full walkthrough with real, verified output is available at EnriquePH.github.io/OEIS-Mathematica and as a Function Index. The runnable, plain-script source for that tutorial is test/OEISTutorial.wl.\nThere is also a real Wolfram Notebook version, with the same live-executed output, plus a guide page and one reference page per function:\n\nDocumentation/English/Tutorials/OEIS.nb\nDocumentation/English/Guides/OEIS.nb\nDocumentation/English/ReferencePages/Symbols/\n\nThe original package page, with its own usage examples, is on the OEIS wiki: User:Enrique Pérez Herrero/OEIS Package."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#testing",
+    "href": "projects/05-OEIS-Mathematica/index.html#testing",
+    "title": "Package OEIS-Mathematica",
+    "section": "6 Testing",
+    "text": "6 Testing\nwolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls\nwolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only\nCI (.github/workflows/mathics-offline.yml) runs the ID-validation/URL-building subset on every push and pull request using Mathics3, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. It runs Tests/OfflineTests.mathics.wls, a hand-ported mirror of Tests/OfflineTests.wlt (Mathics3 doesn’t implement VerificationTest/TestReport or the live JSON API path, so the real .wlt suite and anything network-dependent still needs a licensed wolframscript, e.g. locally or in your own CI with WOLFRAMSCRIPT_ENTITLEMENTID configured)."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#license",
+    "href": "projects/05-OEIS-Mathematica/index.html#license",
+    "title": "Package OEIS-Mathematica",
+    "section": "7 License",
+    "text": "7 License\nThe package is distributed under the GNU General Public License v3.0."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
+    "href": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
+    "title": "Package OEIS-Mathematica",
+    "section": "8 How to cite",
+    "text": "8 How to cite\nIf you use this package in a project or publication, please cite it using the metadata in CITATION.cff, which includes the archived Zenodo DOI: 10.5281/zenodo.21539225."
+  },
+  {
+    "objectID": "projects/05-OEIS-Mathematica/index.html#links",
+    "href": "projects/05-OEIS-Mathematica/index.html#links",
+    "title": "Package OEIS-Mathematica",
+    "section": "9 Links",
+    "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nOEIS wiki page for this package\nCHANGELOG\nCONTRIBUTING\nCode of Conduct\nCITATION.cff\nDOI on Zenodo"
   },
   {
     "objectID": "about.html",
@@ -145,13 +222,6 @@
     "title": "About",
     "section": "",
     "text": "www.energycode.org is a specialized blog and informational site that focuses on programming, mathematics, engineering and technical topics relevant to developers and data scientists.\n\nAuthor\nThe site is maintained by Enrique Pérez Herrero.\n\n\n  \n    \n  \n\n\n\nLicense\nCreative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\n\n\n\nLicencia Creative Commons BY-SA 4.0"
-  },
-  {
-    "objectID": "TODO.html",
-    "href": "TODO.html",
-    "title": "1 energycode.org TODO.md",
-    "section": "",
-    "text": "1 energycode.org TODO.md\n\n1.0.1 Todo\n\nOEIS.R package\n\n\n\n1.0.2 In Progress\n\nPost about blog features\n\n\n\n1.0.3 Done\n\nAdd analytics\nDesign a blog logo\nR package marketconf project\nTesting analytics\nPost Nympy to LaTeX\nfavicon.ico\nProject Holocene Volcanic Eruptions\nPost about sticker\nGithub pages publish.yaml\nadd DESCRPTION file"
   },
   {
     "objectID": "index.html",
@@ -194,6 +264,90 @@
     "title": "Stock Market Confidence Indexes",
     "section": "",
     "text": "Github marketconf R package"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#introduction",
+    "href": "projects/06-pari-gp-engine/index.html#introduction",
+    "title": "PARI-GP-ENGINE",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nPARI/GP is a computer algebra system designed for fast computations in number theory: factorizations, algebraic number theory, elliptic curves, modular forms and more. PARI-GP-ENGINE brings it to Quarto, so PARI/GP code can live in a Quarto document, run when the document is rendered, and show its results with proper syntax highlighting:\n👉 https://github.com/oeistools/PARI-GP-ENGINE\nThe repository provides two parts that fit together but can be used apart:\n\n\n\nPart\nWhat it is\n\n\n\n\nEngine\nA Quarto engine extension that executes {gp} cells with the gp interpreter and puts the results in the rendered document.\n\n\nHighlighting\nA KDE/Skylighting syntax definition covering the PARI/GP 2.17 function set, applied automatically, with nothing to configure."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#features",
+    "href": "projects/06-pari-gp-engine/index.html#features",
+    "title": "PARI-GP-ENGINE",
+    "section": "2 Features",
+    "text": "2 Features\n\nExecution. {gp} cells run in one gp session per document, so state carries from cell to cell, exactly as it would at the gp prompt.\nHighlighting. The full function set of PARI/GP 2.17 is recognized out of the box.\nFigures. Plots exported as SVG become real Quarto figures, with captions and cross-references.\nErrors that behave. A PARI/GP error stops the render and tells you which cell failed, unless you asked for the error to be part of the document."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#installation",
+    "href": "projects/06-pari-gp-engine/index.html#installation",
+    "title": "PARI-GP-ENGINE",
+    "section": "3 Installation",
+    "text": "3 Installation\nquarto add oeistools/PARI-GP-ENGINE\nRequirements:\n\nQuarto ≥ 1.9, since engine extensions do not exist in earlier versions.\nPARI/GP ≥ 2.13, with the gp executable on your PATH. CI tests 2.13.3, 2.15.5 and 2.17.3.\nLinux and macOS are tested in CI; Windows is implemented but not tested."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#usage",
+    "href": "projects/06-pari-gp-engine/index.html#usage",
+    "title": "PARI-GP-ENGINE",
+    "section": "4 Usage",
+    "text": "4 Usage\nSet engine: pari-gp in the front matter, then write {gp} cells:\n---\ntitle: \"Mersenne factors\"\nengine: pari-gp\nformat: html\n---\n\n```{gp}\nM = 2^101 - 1\nfactor(M)\n```"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#a-taste",
+    "href": "projects/06-pari-gp-engine/index.html#a-taste",
+    "title": "PARI-GP-ENGINE",
+    "section": "5 A taste",
+    "text": "5 A taste\nFactoring \\(p - 1\\) for the first prime after \\(10^{40}\\):\np = nextprime(10^40)\nfactor(p - 1)\n10000000000000000000000000000000000000121\n[                      2 3]\n[                      5 1]\n[                     11 1]\n[                     17 1]\n[                  12973 1]\n[             1821309023 1]\n[56581485446137975519811 1]\nThe class number and regulator of \\(\\mathbb{Q}(\\sqrt[3]{2})\\):\nK = bnfinit(x^3 - 2, 1);\n[K.no, K.reg]\n[1, 1.3473773483293841009181878914456530463]\nAnd because the session persists, its fundamental units are still one cell away:\nK.fu\n[Mod(x - 1, x^3 - 2)]"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#license",
+    "href": "projects/06-pari-gp-engine/index.html#license",
+    "title": "PARI-GP-ENGINE",
+    "section": "6 License",
+    "text": "6 License\nPARI-GP-ENGINE is distributed under the MIT License. PARI/GP itself is GPL software by the PARI Group; since gp runs as an external program, its GPL does not reach the extension code."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#links",
+    "href": "projects/06-pari-gp-engine/index.html#links",
+    "title": "PARI-GP-ENGINE",
+    "section": "7 Links",
+    "text": "7 Links\n\nGitHub - PARI-GP-ENGINE\nDocumentation\nGet started\nGallery\nPARI/GP home page"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "",
+    "text": "Volcán de Teneguía (La Palma)"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.1 Data source",
+    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
+    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.3 Comments",
+    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.4 Links",
+    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
   },
   {
     "objectID": "posts/12012026-binomial-matrix-i/index.html",
@@ -418,180 +572,5 @@
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the resulting confusion matrix using ggplot, we use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
-  },
-  {
-    "objectID": "projects/04-explocal/index.html",
-    "href": "projects/04-explocal/index.html",
-    "title": "Explocal",
-    "section": "",
-    "text": "Logo de Explocal"
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#descripción",
-    "href": "projects/04-explocal/index.html#descripción",
-    "title": "Explocal",
-    "section": "1 Descripción",
-    "text": "1 Descripción\nExplocal es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española UNE 31-002. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para Windows 3.1 en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (E.T.S.I. de Minas de Madrid, especialidad Laboreo y Explosivos).\nEl repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages."
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#historia-del-proyecto",
-    "href": "projects/04-explocal/index.html#historia-del-proyecto",
-    "title": "Explocal",
-    "section": "2 Historia del proyecto",
-    "text": "2 Historia del proyecto\n\n1996 — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación EXPLOCAL.EXE en C++ para Windows 3.1.\n2015-2016 — Primer intento de modernización: exploración de los ficheros *.DAT con R/ggplot, sin llegar a reimplementar el motor de cálculo.\n2026 — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica."
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#estructura-del-repositorio",
-    "href": "projects/04-explocal/index.html#estructura-del-repositorio",
-    "title": "Explocal",
-    "section": "3 Estructura del repositorio",
-    "text": "3 Estructura del repositorio\n\ncode/ — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable EXPLOCAL.EXE compilado. Referencia histórica.\nsite/ — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.\ndocs/ — documentos originales sin procesar (.DOC/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de site/.\ncatalog.json — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX)."
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#estado-actual",
-    "href": "projects/04-explocal/index.html#estado-actual",
-    "title": "Explocal",
-    "section": "4 Estado actual",
-    "text": "4 Estado actual\n\n✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.\n✅ Código y datos originales de 1996 preservados íntegros en code/.\n🚧 Reimplementación en Python del motor de cálculo: en desarrollo."
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#licencia",
-    "href": "projects/04-explocal/index.html#licencia",
-    "title": "Explocal",
-    "section": "5 Licencia",
-    "text": "5 Licencia\nMIT © 1996 Enrique Pérez Herrero."
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#cómo-citar",
-    "href": "projects/04-explocal/index.html#cómo-citar",
-    "title": "Explocal",
-    "section": "6 Cómo citar",
-    "text": "6 Cómo citar\nPérez Herrero, Enrique (1996). Proyecto de una aplicación informática\npara el cálculo de las principales características teóricas de los\nexplosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de\nMadrid. https://enriqueph.github.io/EXPLOCAL/\nDOI: 10.5281/zenodo.21306995"
-  },
-  {
-    "objectID": "projects/04-explocal/index.html#enlaces",
-    "href": "projects/04-explocal/index.html#enlaces",
-    "title": "Explocal",
-    "section": "7 Enlaces",
-    "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html",
-    "href": "projects/05-OEIS-Mathematica/index.html",
-    "title": "Package OEIS-Mathematica",
-    "section": "",
-    "text": "The Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 4.0.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#introduction",
-    "href": "projects/05-OEIS-Mathematica/index.html#introduction",
-    "title": "Package OEIS-Mathematica",
-    "section": "1 Introduction",
-    "text": "1 Introduction\nThe Online Encyclopedia of Integer Sequences (OEIS) is one of the most valuable mathematical resources on the web. OEIS.m is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:\n👉 https://github.com/EnriquePH/OEIS-Mathematica\nThis is version 3.1.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language paclet."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#features",
-    "href": "projects/05-OEIS-Mathematica/index.html#features",
-    "title": "Package OEIS-Mathematica",
-    "section": "2 Features",
-    "text": "2 Features\n\nAccess to OEIS sequence metadata through the official JSON API\nCompatible with Wolfram Language 11, 13 and 14 (paclet installation needs 12.1+)\nLightweight and easier to maintain than the previous HTML-based implementation\nSupport for common package operations such as validation, import and export\nOEISbFile computes b-file terms beyond what OEIS has published, using a locally defined id[n_] := ..., as documented on the OEIS wiki page for this package"
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#installation",
-    "href": "projects/05-OEIS-Mathematica/index.html#installation",
-    "title": "Package OEIS-Mathematica",
-    "section": "3 Installation",
-    "text": "3 Installation\nAs a paclet (recommended, WL 12.1+):\nPacletInstall[\"https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet\"]\nNeeds[\"OEIS`\"]\nOr, working from a local clone without installing anything:\nPacletDirectoryLoad[\"/path/to/OEIS-Mathematica\"]\nNeeds[\"OEIS`\"]\nLegacy Get, for older Wolfram Language versions or a single-file drop-in:\nGet[\"/path/to/OEIS-Mathematica/OEIS.m\"]"
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#quick-start",
-    "href": "projects/05-OEIS-Mathematica/index.html#quick-start",
-    "title": "Package OEIS-Mathematica",
-    "section": "4 Quick start",
-    "text": "4 Quick start\nLoad the package in a Wolfram notebook with:\n&lt;&lt;OEIS`\nExample:\nOEISImport[\"A000045\", \"Description\"]\n\n4.1 Main functions\n\nOEISTotalNumberOfSequences\nOEISValidateIDQ\nOEISImport\nOEISURL\nOEISFunction\nOEISExport\nOEISbFile\nOEISData\nOEISSearch\nOEISRelated\nOEISCitation\nOEISGraph\nOEISRandom\nOEISSequence\n\nSee the Function Index for full signatures, options and links to each reference page."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
-    "href": "projects/05-OEIS-Mathematica/index.html#documentation-and-tutorial",
-    "title": "Package OEIS-Mathematica",
-    "section": "5 Documentation and tutorial",
-    "text": "5 Documentation and tutorial\nA full walkthrough with real, verified output is available at EnriquePH.github.io/OEIS-Mathematica and as a Function Index. The runnable, plain-script source for that tutorial is test/OEISTutorial.wl.\nThere is also a real Wolfram Notebook version, with the same live-executed output, plus a guide page and one reference page per function:\n\nDocumentation/English/Tutorials/OEIS.nb\nDocumentation/English/Guides/OEIS.nb\nDocumentation/English/ReferencePages/Symbols/\n\nThe original package page, with its own usage examples, is on the OEIS wiki: User:Enrique Pérez Herrero/OEIS Package."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#testing",
-    "href": "projects/05-OEIS-Mathematica/index.html#testing",
-    "title": "Package OEIS-Mathematica",
-    "section": "6 Testing",
-    "text": "6 Testing\nwolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls\nwolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only\nCI (.github/workflows/mathics-offline.yml) runs the ID-validation/URL-building subset on every push and pull request using Mathics3, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. It runs Tests/OfflineTests.mathics.wls, a hand-ported mirror of Tests/OfflineTests.wlt (Mathics3 doesn’t implement VerificationTest/TestReport or the live JSON API path, so the real .wlt suite and anything network-dependent still needs a licensed wolframscript, e.g. locally or in your own CI with WOLFRAMSCRIPT_ENTITLEMENTID configured)."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#license",
-    "href": "projects/05-OEIS-Mathematica/index.html#license",
-    "title": "Package OEIS-Mathematica",
-    "section": "7 License",
-    "text": "7 License\nThe package is distributed under the GNU General Public License v3.0."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
-    "href": "projects/05-OEIS-Mathematica/index.html#how-to-cite",
-    "title": "Package OEIS-Mathematica",
-    "section": "8 How to cite",
-    "text": "8 How to cite\nIf you use this package in a project or publication, please cite it using the metadata in CITATION.cff, which includes the archived Zenodo DOI: 10.5281/zenodo.21539225."
-  },
-  {
-    "objectID": "projects/05-OEIS-Mathematica/index.html#links",
-    "href": "projects/05-OEIS-Mathematica/index.html#links",
-    "title": "Package OEIS-Mathematica",
-    "section": "9 Links",
-    "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nOEIS wiki page for this package\nCHANGELOG\nCONTRIBUTING\nCode of Conduct\nCITATION.cff\nDOI on Zenodo"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#introduction",
-    "href": "projects/06-pari-gp-engine/index.html#introduction",
-    "title": "PARI-GP-ENGINE",
-    "section": "1 Introduction",
-    "text": "1 Introduction\nPARI/GP is a computer algebra system designed for fast computations in number theory: factorizations, algebraic number theory, elliptic curves, modular forms and more. PARI-GP-ENGINE brings it to Quarto, so PARI/GP code can live in a Quarto document, run when the document is rendered, and show its results with proper syntax highlighting:\n👉 https://github.com/oeistools/PARI-GP-ENGINE\nThe repository provides two parts that fit together but can be used apart:\n\n\n\nPart\nWhat it is\n\n\n\n\nEngine\nA Quarto engine extension that executes {gp} cells with the gp interpreter and puts the results in the rendered document.\n\n\nHighlighting\nA KDE/Skylighting syntax definition covering the PARI/GP 2.17 function set, applied automatically, with nothing to configure."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#features",
-    "href": "projects/06-pari-gp-engine/index.html#features",
-    "title": "PARI-GP-ENGINE",
-    "section": "2 Features",
-    "text": "2 Features\n\nExecution. {gp} cells run in one gp session per document, so state carries from cell to cell, exactly as it would at the gp prompt.\nHighlighting. The full function set of PARI/GP 2.17 is recognized out of the box.\nFigures. Plots exported as SVG become real Quarto figures, with captions and cross-references.\nErrors that behave. A PARI/GP error stops the render and tells you which cell failed, unless you asked for the error to be part of the document."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#installation",
-    "href": "projects/06-pari-gp-engine/index.html#installation",
-    "title": "PARI-GP-ENGINE",
-    "section": "3 Installation",
-    "text": "3 Installation\nquarto add oeistools/PARI-GP-ENGINE\nRequirements:\n\nQuarto ≥ 1.9, since engine extensions do not exist in earlier versions.\nPARI/GP ≥ 2.13, with the gp executable on your PATH. CI tests 2.13.3, 2.15.5 and 2.17.3.\nLinux and macOS are tested in CI; Windows is implemented but not tested."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#usage",
-    "href": "projects/06-pari-gp-engine/index.html#usage",
-    "title": "PARI-GP-ENGINE",
-    "section": "4 Usage",
-    "text": "4 Usage\nSet engine: pari-gp in the front matter, then write {gp} cells:\n---\ntitle: \"Mersenne factors\"\nengine: pari-gp\nformat: html\n---\n\n```{gp}\nM = 2^101 - 1\nfactor(M)\n```"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#a-taste",
-    "href": "projects/06-pari-gp-engine/index.html#a-taste",
-    "title": "PARI-GP-ENGINE",
-    "section": "5 A taste",
-    "text": "5 A taste\nFactoring \\(p - 1\\) for the first prime after \\(10^{40}\\):\np = nextprime(10^40)\nfactor(p - 1)\n10000000000000000000000000000000000000121\n[                      2 3]\n[                      5 1]\n[                     11 1]\n[                     17 1]\n[                  12973 1]\n[             1821309023 1]\n[56581485446137975519811 1]\nThe class number and regulator of \\(\\mathbb{Q}(\\sqrt[3]{2})\\):\nK = bnfinit(x^3 - 2, 1);\n[K.no, K.reg]\n[1, 1.3473773483293841009181878914456530463]\nAnd because the session persists, its fundamental units are still one cell away:\nK.fu\n[Mod(x - 1, x^3 - 2)]"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#license",
-    "href": "projects/06-pari-gp-engine/index.html#license",
-    "title": "PARI-GP-ENGINE",
-    "section": "6 License",
-    "text": "6 License\nPARI-GP-ENGINE is distributed under the MIT License. PARI/GP itself is GPL software by the PARI Group; since gp runs as an external program, its GPL does not reach the extension code."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#links",
-    "href": "projects/06-pari-gp-engine/index.html#links",
-    "title": "PARI-GP-ENGINE",
-    "section": "7 Links",
-    "text": "7 Links\n\nGitHub - PARI-GP-ENGINE\nDocumentation\nGet started\nGallery\nPARI/GP home page"
   }
 ]

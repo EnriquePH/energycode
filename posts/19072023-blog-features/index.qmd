@@ -8,7 +8,7 @@ categories:
   - Blog
   - Quarto
 
-image: '../01082023-Blog-Logo/logo.png'
+image: '../01082023-blog-logo/logo.png'
 draft: true
 ---
 

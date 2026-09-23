@@ -21,7 +21,6 @@ if (length(pkgs) > 0) {
 
   install.packages(
     pkgs,
-    repos = "https://packagemanager.posit.co/cran/__linux__/jammy/latest",
     Ncpus = parallel::detectCores(logical = TRUE),
     quiet = TRUE
   )

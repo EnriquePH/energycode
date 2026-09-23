@@ -1,0 +1,2750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ENERGYCODE</title>
+<link>https://www.energycode.org/</link>
+<atom:link href="https://www.energycode.org/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Wed, 07 Jan 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Suma de los recíprocos de los números tetraédricos</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/tetrahedral_numbers.png" class="img-fluid figure-img"></p>
+<figcaption>Tetrahedral Numbers</figcaption>
+</figure>
+</div>
+<section id="introducción" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introducción"><span class="header-section-number">1</span> INTRODUCCIÓN</h2>
+<p>Esta entrada en el blog continúa con ejercicios sobre series relacionadas con los recíprocos de números especiales, siguiendo trabajos previos<sup>1</sup> sobre los <em>números piramidales cuadrados</em> y los <em>números poligonales</em>. En esta ocasión consideramos un ejemplo sencillo: la suma de los recíprocos de los <em>números tetraédricos</em>.</p>
+<p>Aunque el resultado no es particularmente profundo, sirve como una buena ilustración del uso de <em>fracciones parciales</em> y <em>series telescópicas</em>.</p>
+</section>
+<section id="números-tetraédricos" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="números-tetraédricos"><span class="header-section-number">2</span> NÚMEROS TETRAÉDRICOS</h2>
+<p>Los números tetraédricos representan el número de esferas que pueden apilarse formando un <em>tetraedro regular</em> <span class="citation" data-cites="wikiTetrahedralNumber">[2]</span> <span class="citation" data-cites="mathworldTetrahedralNumber">[3]</span> y están definidos por la fórmula</p>
+<p><span id="eq-tet001"><img src="https://latex.codecogs.com/png.latex?%0AT_n%20=%20%5Cfrac%7Bn(n+1)(n+2)%7D%7B6%7D%20=%20%5Cbinom%7Bn+2%7D%7B3%7D%0A%5Ctag%7B1%7D"></span></p>
+</section>
+<section id="la-serie-de-los-recíprocos-de-números-tetraédricos" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="la-serie-de-los-recíprocos-de-números-tetraédricos"><span class="header-section-number">3</span> LA SERIE DE LOS RECÍPROCOS DE NÚMEROS TETRAÉDRICOS</h2>
+<p>Nos interesa estudiar la suma parcial</p>
+<p><span id="eq-tet002"><img src="https://latex.codecogs.com/png.latex?%0AS(n)%20=%20%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%5Cfrac%7B1%7D%7BT_k%7D%20=%20%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%7B%5Cbinom%7Bk+2%7D%7B3%7D%7D%5E%7B-1%7D%0A%5Ctag%7B2%7D"></span></p>
+<p>Sustituyendo la expresión explícita de <img src="https://latex.codecogs.com/png.latex?T_k">, obtenemos</p>
+<p><span id="eq-tet003"><img src="https://latex.codecogs.com/png.latex?%0AS(n)%20=%20%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%5Cfrac%7B6%7D%7Bk(k+1)(k+2)%7D%0A%5Ctag%7B3%7D"></span></p>
+</section>
+<section id="descomposición-en-fracciones-parciales" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="descomposición-en-fracciones-parciales"><span class="header-section-number">4</span> DESCOMPOSICIÓN EN FRACCIONES PARCIALES</h2>
+<p>La fracción racional (3) puede descomponerse en una suma de otras como:</p>
+<p><span id="eq-tet004"><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B6%7D%7Bk(k+1)(k+2)%7D%20=%0A%5Cfrac%7BA%7D%7Bk%7D%20+%20%5Cfrac%7BB%7D%7Bk+1%7D%20+%20%5Cfrac%7BC%7D%7Bk+2%7D%0A%5Ctag%7B4%7D"></span></p>
+<p>Resolviendo el sistema lineal correspondiente se obtienen los valores de los denominadores de la descomposición en fracciones parciales:</p>
+<p><span id="eq-tet005"><img src="https://latex.codecogs.com/png.latex?%0AA%20=%20%5Cfrac%7B1%7D%7B2%7D,%20%5Cqquad%0AB%20=%20-1,%20%5Cqquad%0AC%20=%20%5Cfrac%7B1%7D%7B2%7D%0A%5Ctag%7B5%7D"></span></p>
+<p>Por lo tanto,</p>
+<p><span id="eq-tet006"><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B6%7D%7Bk(k+1)(k+2)%7D%0A=%20%5Cfrac%7B1%7D%7B2k%7D%20-%20%5Cfrac%7B1%7D%7Bk+1%7D%20+%20%5Cfrac%7B1%7D%7B2(k+2)%7D%0A%5Ctag%7B6%7D"></span></p>
+</section>
+<section id="números-armónicos" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="números-armónicos"><span class="header-section-number">5</span> NÚMEROS ARMÓNICOS</h2>
+<p>Estas tres series se pueden sumar facilmente teniendo en cuenta las siguientes identidades para los <em>números armónicos</em> <img src="https://latex.codecogs.com/png.latex?H_n"> <span class="citation" data-cites="wikiHarmonicNumber">[4]</span>:</p>
+<p><span id="eq-tet007"><img src="https://latex.codecogs.com/png.latex?%0A%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%5Cfrac%7B1%7D%7Bk%7D%20=%20H_n%0A%5Ctag%7B7%7D"></span></p>
+<p><span id="eq-tet008"><img src="https://latex.codecogs.com/png.latex?%0A%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%5Cfrac%7B1%7D%7Bk+1%7D%20=%20H_n%20-%201%20+%20%5Cfrac%7B1%7D%7Bn+1%7D%0A%5Ctag%7B8%7D"></span></p>
+<p><span id="eq-tet009"><img src="https://latex.codecogs.com/png.latex?%20%5Csum_%7Bk=1%7D%5E%7Bn%7D%20%5Cfrac%7B1%7D%7Bk+2%7D%20=%20H_n%20-%20%5Cfrac%7B3%7D%7B2%7D%20+%20%5Cfrac%7B1%7D%7Bn+1%7D%20+%20%5Cfrac%7B1%7D%7Bn+2%7D%0A%5Ctag%7B9%7D"></span> Sustituyendo estas expresiones en la identidad (6), se obtiene</p>
+<p><span id="eq-tet010"><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Balign%7D%0A%5Cfrac%7BS(n)%7D%7B6%7D%0A=%20%5Cfrac%7Bn%7D%7Bn+1%7D%0A-%20%5Cfrac%7B1%7D%7B2%7D%0A-%20%5Cfrac%7B1%7D%7B4%7D%0A+%20%5Cfrac%7B1%7D%7B2(n+1)%7D%0A+%20%5Cfrac%7B1%7D%7B2(n+2)%7D%0A%5Cend%7Balign%7D%0A%5Ctag%7B10%7D"></span></p>
+<p>Aquí se observa claramente el carácter <strong>telescópico</strong> de la serie: los términos <img src="https://latex.codecogs.com/png.latex?H_n"> se cancelan, evitando la aparición de la constante de <em>Euler-Mascheroni</em> (<img src="https://latex.codecogs.com/png.latex?%5Cgamma">) o la <em>función digamma</em> (<img src="https://latex.codecogs.com/png.latex?%5Cpsi">) partiendo de la extensión clásica de los números armónicos.</p>
+<p><span id="eq-tet011"><img src="https://latex.codecogs.com/png.latex?%0AH_%7Bn%7D%20=%20%5Cgamma%20+%20%5Cpsi(n+1)%0A%5Ctag%7B11%7D"></span></p>
+</section>
+<section id="fórmula-cerrada" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="fórmula-cerrada"><span class="header-section-number">6</span> FÓRMULA CERRADA</h2>
+<p>Simplificando (10), se obtiene una expresión cerrada para la suma parcial:</p>
+<p><span id="eq-tet012"><img src="https://latex.codecogs.com/png.latex?%0AS(n)%20=%20%5Cfrac%7B3n(n+3)%7D%7B2(n+1)(n+2)%7D%0A%5Ctag%7B12%7D"></span></p>
+<p>Los numeradores y denominadores de (12) son respectivamente las secuencias designadas como <a href="https://oeis.org/A118391">A118391</a> y <a href="https://oeis.org/A118392">A118392</a> en <a href="https://oeis.org">OEIS</a>.</p>
+</section>
+<section id="suma-infinita" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="suma-infinita"><span class="header-section-number">7</span> SUMA INFINITA</h2>
+<p>Finalmente, tomando el límite de (12) cuando <img src="https://latex.codecogs.com/png.latex?n%20%5Cto%20%5Cinfty">,</p>
+<p><span id="eq-tet013"><img src="https://latex.codecogs.com/png.latex?%0A%5Clim_%7Bn%20%5Cto%20%5Cinfty%7D%20S(n)%0A=%20%5Cfrac%7B3%7D%7B2%7D%0A%5Ctag%7B13%7D"></span></p>
+<p>Esto muestra que la serie de los recíprocos de los números tetraédricos <strong>converge</strong>, y su suma infinita es igual a <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B3%7D%7B2%7D">.</p>
+</section>
+<section id="referencias" class="level2" data-number="8">
+
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">8 REFERENCIAS</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-psychedelic2009" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Geometry P (2009) <a href="https://psychedelicgeometry.wordpress.com/2009/12/25/tetrahedral-numbers-reciprocals-sum/">TETRAHEDRAL NUMBERS RECIPROCALS SUM</a>.</div>
+</div>
+<div id="ref-wikiTetrahedralNumber" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Tetrahedral number.</div>
+</div>
+<div id="ref-mathworldTetrahedralNumber" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Weisstein EW <a href="http://mathworld.wolfram.com/TetrahedralNumber.html">Tetrahedral Number</a>.</div>
+</div>
+<div id="ref-wikiHarmonicNumber" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Harmonic number.</div>
+</div>
+<div id="ref-oeisA000292" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Online Encyclopedia of Integer Sequences (2009) Tetrahedral (or triangular pyramidal) numbers: a(n) = C(n+2,3) = n*(n+1)*(n+2)/6.</div>
+</div>
+<div id="ref-caglayan2015" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Caglayan G (2015) <a href="https://doi.org/10.4169/college.math.j.46.2.130">Proof Without Words: Series of Reciprocals of Tetrahedral Numbers</a>. <em>The College Mathematics Journal</em> 46: 130.</div>
+</div>
+<div id="ref-oeisA118391" class="csl-entry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Post JV, Adamchuk A, Greubel GC, et&nbsp;al. (2006) A118391: Numerator of sum of reciprocals of first n tetrahedral numbers.</div>
+</div>
+<div id="ref-oeisA118392" class="csl-entry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Post JV, Dale HP, Greubel GC (2006) A118392: Denominator of sum of reciprocals of first n tetrahedral numbers.</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Este artículo es una <em>traducción y actualización</em> del post original titulado <em>TETRAHEDRAL NUMBERS RECIPROCALS SUM</em> publicado el <em>viernes 25 de diciembre de 2009</em> en el blog <em>Psychedelic Geometry</em> <span class="citation" data-cites="psychedelic2009">[1]</span>.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Math</category>
+  <category>Series</category>
+  <category>Special Numbers</category>
+  <guid>https://www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/</guid>
+  <pubDate>Wed, 07 Jan 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/08012026-suma-reciprocos-tetraedricos/tetrahedral_numbers.png" medium="image" type="image/png" height="96" width="144"/>
+</item>
+<item>
+  <title>Euclinacci</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/11062025-euclinacci/</link>
+  <description><![CDATA[ <section id="introducción" class="level2" data-number="1"><h2 data-number="1" data-anchor-id="introducción">
+<span class="header-section-number">1</span> INTRODUCCIÓN</h2>
+<p>Una igualdad aparentemente trivial como <img src="https://latex.codecogs.com/png.latex?1+1=2"> encierra consecuencias tan profundas que han ocupado bibliotecas enteras<sup>1</sup>:</p>
+<p>Entre ellas destaca la famosa <em>sucesión de Fibonacci</em> <span class="citation" data-cites="oeis-fibonacci">[2]</span>:</p>
+<p><span id="eq-fib001"><img src="https://latex.codecogs.com/png.latex?%0A%5C%7B0,%201,%201,%202,%203,%205,%208,%2013,%2021,%2034,%2055,%20%5Cldots%5C%7D%0A%5Ctag%7B1%7D"></span></p>
+<p>La sucesión de <em>Fibonacci</em> se define de forma recursiva mediante la siguiente expresión:</p>
+<p><span id="eq-fib002"><img src="https://latex.codecogs.com/png.latex?%0AF_n%20=%0A%5Cbegin%7Bcases%7D%0AF_0%20=%200%20%5C%5C%0AF_1%20=%201%20%5C%5C%0AF_n%20=%20F_%7Bn-1%7D%20+%20F_%7Bn-2%7D,%20&amp;%20%5Ctext%7Bpara%20%7D%20n%20%5Cge%202%0A%5Cend%7Bcases%7D%0A%5Ctag%7B2%7D"></span></p>
+</section><section id="propiedades-fundamentales" class="level2" data-number="2"><h2 data-number="2" data-anchor-id="propiedades-fundamentales">
+<span class="header-section-number">2</span> PROPIEDADES FUNDAMENTALES</h2>
+<p>El análisis de la razón entre términos consecutivos de la <em>sucesión de Fibonacci</em> tiene dos propiedades importantes:</p>
+<ol type="1">
+<li><p>La sucesión de razones <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7BF_%7Bn+1%7D%7D%7BF_n%7D"> converge a un límite finito cuando <img src="https://latex.codecogs.com/png.latex?n"> tiende a infinito.</p></li>
+<li><p>Dos números de <em>Fibonacci</em> consecutivos son <em>coprimos</em>: <img src="https://latex.codecogs.com/png.latex?%5Cgcd(F_%7Bn%7D,%20F_%7Bn+1%7D)%20=%201">.</p></li>
+</ol></section><section id="tabla-de-razones" class="level2" data-number="3"><h2 data-number="3" data-anchor-id="tabla-de-razones">
+<span class="header-section-number">3</span> TABLA DE RAZONES</h2>
+<div class="keep-case">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 24%">
+<col style="width: 62%">
+</colgroup>
+<thead><tr class="header">
+<th><img src="https://latex.codecogs.com/png.latex?n"></th>
+<th><img src="https://latex.codecogs.com/png.latex?F_n"></th>
+<th><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7BF_%7Bn+1%7D%7D%7BF_n%7D"></th>
+<th>Error absoluto <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%20%5Cfrac%7BF_%7Bn+1%7D%7D%7BF_n%7D%20-%20%5Cphi%20%5Cright%7C">
+</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>5</td>
+<td>5</td>
+<td>1.6666667</td>
+<td>0.0486327</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>55</td>
+<td>1.6176471</td>
+<td>0.0003869</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>610</td>
+<td>1.6180339</td>
+<td>≈ 2.7 × 10⁻⁷</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>6765</td>
+<td>1.6180339887</td>
+<td>≈ 1.3 × 10⁻¹⁰</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tabla 1: Convergencia de la razón <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7BF_%7Bn+1%7D%7D%7BF_n%7D"> hacia el número áureo <img src="https://latex.codecogs.com/png.latex?%5Cphi%20=%20%5Cfrac%7B1+%5Csqrt%7B5%7D%7D%7B2%7D%20%5Capprox%201.6180339887%5Cldots"></p>
+</section><section id="la-razón-aurea" class="level2" data-number="4"><h2 data-number="4" data-anchor-id="la-razón-aurea">
+<span class="header-section-number">4</span> LA RAZÓN AUREA</h2>
+<p>Sea <img src="https://latex.codecogs.com/png.latex?I"> el límite de la relación entre dos números de <em>Fibonacci</em> consecutivos:</p>
+<p><span id="eq-fib003"><img src="https://latex.codecogs.com/png.latex?%0AI%20=%20%5Clim_%7Bn%20%5Cto%20%5Cinfty%7D%20%5Cfrac%7BF_n%7D%7BF_%7Bn-1%7D%7D%0A%5Ctag%7B3%7D"></span></p>
+<p>Como:</p>
+<p><span id="eq-fib004"><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7BF_%7Bn%7D%7D%7BF_%7Bn-1%7D%7D%20=%20%5Cfrac%7BF_%7Bn-1%7D+F_%7Bn-2%7D%7D%7BF_%7Bn-1%7D%7D%20=%201%20+%20%5Cfrac%7BF_%7Bn-2%7D%7D%7BF_%7Bn-1%7D%7D%20(n%20%5Cgeq%202)%0A%5Ctag%7B4%7D"></span></p>
+<p>Tomando límites se obtiene:</p>
+<p><span id="eq-fib005"><img src="https://latex.codecogs.com/png.latex?%0AI%20=%201%20+%20%5Cfrac%7B1%7D%7BI%7D%0A%5CRightarrow%20I%5E2%20=%20I%20+%201%0A%5CRightarrow%20I%20=%20%5Cfrac%7B1%20+%20%5Csqrt%7B5%7D%7D%7B2%7D%20=%20%5Cphi%0A%5Ctag%7B5%7D"></span></p>
+<p>El número <img src="https://latex.codecogs.com/png.latex?%5Cphi"> es conocido como la <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_%C3%A1ureo">proporción áurea</a>.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">fibonacci</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>  <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span>  <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span>  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">i</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>    <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">i</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">i</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">i</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span>  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span>  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span></span>
+<span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fibonacci</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">ratio</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">data</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span>, ratio <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">ratio</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">phi</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span></span>
+<span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">data</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span>, y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">ratio</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"steelblue"</span>, size <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"steelblue"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>yintercept <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">phi</span>,</span>
+<span>             linetype <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dashed"</span>,</span>
+<span>             color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"red"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>title <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Razón entre números consecutivos de Fibonacci"</span>,</span>
+<span>       x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"n"</span>,</span>
+<span>       y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/expression.html">expression</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">F</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">n</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="https://www.energycode.org/posts/11062025-euclinacci/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="el-algoritmo-de-euclides" class="level2" data-number="5"><h2 data-number="5" data-anchor-id="el-algoritmo-de-euclides">
+<span class="header-section-number">5</span> EL ALGORITMO DE EUCLIDES</h2>
+<p>La segunda propiedad se puede demostrar empleando el <em>Algoritmo de Euclides</em>, que es técnica milenaria para encontrar el máximo común divisor (MCD) entre dos números enteros.</p>
+<p>Dados <img src="https://latex.codecogs.com/png.latex?a"> y <img src="https://latex.codecogs.com/png.latex?b">, el algoritmo genera la secuencia:</p>
+<p><span id="eq-fib006"><img src="https://latex.codecogs.com/png.latex?%0A(a,%20b)%20=%20(r_0,%20r_1)%20=%20(r_1,%20r_2)%20=%20%5Ccdots%20=%20(r_%7Bn-1%7D,%20r_n)%0A%5Ctag%7B6%7D"></span></p>
+<p>Con la siguiente relación de recurrencia:</p>
+<p><span id="eq-fib007"><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bcases%7D%0Ar_0%20=%20a%20%5C%5C%0Ar_1%20=%20b%20%5C%5C%0Ar_%7Bi+1%7D%20=%20r_%7Bi-1%7D%20-%20r_i%20%5Ccdot%20%5Cleft%5Clfloor%20%5Cdfrac%7Br_%7Bi-1%7D%7D%7Br_i%7D%20%5Cright%5Crfloor%0A%5Cend%7Bcases%7D%0A%5Ctag%7B7%7D"></span></p>
+<p>Cuando <img src="https://latex.codecogs.com/png.latex?r_%7Bi+1%7D%20=%200">, entonces <img src="https://latex.codecogs.com/png.latex?%5Cgcd(a,%20b)%20=%20r_i"> y el algoritmo se detiene.</p>
+<p>La notación <img src="https://latex.codecogs.com/png.latex?%5Clfloor%20x%20%5Crfloor"> corresponde a la denominada <em>función suelo</em> <span class="citation" data-cites="weisstein-floor">[3]</span> que devuelve el mayor entero menor o igual que <img src="https://latex.codecogs.com/png.latex?x"></p>
+</section><section id="aplicación-a-los-números-de-fibonacci" class="level2" data-number="6"><h2 data-number="6" data-anchor-id="aplicación-a-los-números-de-fibonacci">
+<span class="header-section-number">6</span> APLICACIÓN A LOS NÚMEROS DE FIBONACCI</h2>
+<p>Sea:</p>
+<p><span id="eq-fib008"><img src="https://latex.codecogs.com/png.latex?%0A(F_n,%20F_%7Bn-1%7D)%20=%20(r_0,%20r_1)%0A%5Ctag%7B8%7D"></span></p>
+<p>Entonces:</p>
+<p><span id="eq-fib009"><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0Ar_2%20&amp;=%20F_n%20-%20F_%7Bn-1%7D%20%5Ccdot%20%5Cleft%5Clfloor%20%5Cdfrac%7BF_n%7D%7BF_%7Bn-1%7D%7D%20%5Cright%5Crfloor%20%5C%5C%0A&amp;=%20F_n%20-%20F_%7Bn-1%7D%20%5Ccdot%20%5Cleft%5Clfloor%201%20+%20%5Cdfrac%7BF_%7Bn-2%7D%7D%7BF_%7Bn-1%7D%7D%20%5Cright%5Crfloor%20%5C%5C%0A&amp;=%20F_n%20-%20F_%7Bn-1%7D%20%5Ccdot%20(1%20+%200)%20=%20F_%7Bn-2%7D%0A%5Cend%7Baligned%7D%0A%5Ctag%7B9%7D"></span></p>
+<p>Repitiendo el proceso, se obtiene:</p>
+<p><span id="eq-fib010"><img src="https://latex.codecogs.com/png.latex?%0A(F_n,%20F_%7Bn-1%7D)%20=%20(F_%7Bn-1%7D,%20F_%7Bn-2%7D)%20=%20%5Ccdots%20=%20(2,%201)%20=%201%0A%5Ctag%7B10%7D"></span></p>
+<p>Por lo tanto, dos números de <em>Fibonacci</em> consecutivos son siempre <em>coprimos</em>.</p>
+</section><section id="conclusión" class="level2" data-number="7"><h2 data-number="7" data-anchor-id="conclusión">
+<span class="header-section-number">7</span> CONCLUSIÓN</h2>
+<p>El <em>algoritmo de Euclides</em> proporciona una demostración elegante y alternativa de la coprimalidad de dos términos consecutivos de la <em>sucesión de Fibonacci</em>.</p>
+</section><section id="referencias" class="level2" data-number="8">
+
+
+<!-- -->
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">
+8 REFERENCIAS</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-psychedelic_geometry_2009" class="csl-entry">
+<div class="csl-left-margin">1. </div>
+<div class="csl-right-inline">Psychedelic Geometry Blog (2009) EUCLINACCI - [1].</div>
+</div>
+<div id="ref-oeis-fibonacci" class="csl-entry">
+<div class="csl-left-margin">2. </div>
+<div class="csl-right-inline">OEIS Foundation Inc. (s.f.) A000045: Fibonacci numbers: <img src="https://latex.codecogs.com/png.latex?F(n)=F(n-1)+F(n-2)">, with <img src="https://latex.codecogs.com/png.latex?F(0)=0">, <img src="https://latex.codecogs.com/png.latex?F(1)=1">, s.f. Disponible en: <a href="https://oeis.org/A000045">https://oeis.org/A000045</a>.</div>
+</div>
+<div id="ref-weisstein-floor" class="csl-entry">
+<div class="csl-left-margin">3. </div>
+<div class="csl-right-inline">Weisstein EW (s.f.) Floor Function, s.f. Disponible en: <a href="https://mathworld.wolfram.com/FloorFunction.html">https://mathworld.wolfram.com/FloorFunction.html</a>.</div>
+</div>
+<div id="ref-leveque1996fundamentals" class="csl-entry">
+<div class="csl-left-margin">4. </div>
+<div class="csl-right-inline">LeVeque WJ (1996) Fundamentals of Number Theory, Mineola, New York, Courier Dover Publications.</div>
+</div>
+<div id="ref-mathforum-fibonacci" class="csl-entry">
+<div class="csl-left-margin">5. </div>
+<div class="csl-right-inline">Math Forum @ Drexel (s.f.) Consecutive <span>Fibonacci</span> Numbers Relatively Prime, s.f. Disponible en: <a href="https://mathforum.org/library/drmath/view/55843.html">https://mathforum.org/library/drmath/view/55843.html</a>.</div>
+</div>
+<div id="ref-koshy2001fibonacci" class="csl-entry">
+<div class="csl-left-margin">6. </div>
+<div class="csl-right-inline">Koshy T (2001) Fibonacci and Lucas Numbers with Applications, New York, Wiley-Interscience.</div>
+</div>
+<div id="ref-dunlap1997golden" class="csl-entry">
+<div class="csl-left-margin">7. </div>
+<div class="csl-right-inline">Dunlap RA (1997) The Golden Ratio and Fibonacci Numbers, Singapore, World Scientific Publishing.</div>
+</div>
+<div id="ref-niven1991introduction" class="csl-entry">
+<div class="csl-left-margin">8. </div>
+<div class="csl-right-inline">Niven I, Zuckerman HS, Montgomery HL (1991) An Introduction to the Theory of Numbers, New York, Wiley.</div>
+</div>
+<div id="ref-rosen2011elementary" class="csl-entry">
+<div class="csl-left-margin">9. </div>
+<div class="csl-right-inline">Rosen KH (2011) Elementary Number Theory and Its Applications, Boston, MA, Pearson.</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+<ol>
+<li id="fn1"><p>Este artículo es una <em>traducción y actualización</em> del post original titulado <em>EUCLINACCI</em> publicado el <em>domingo 1 de febrero de 2009</em> en el blog <em>Psychedelic Geometry</em> <span class="citation" data-cites="psychedelic_geometry_2009">[1]</span>.↩︎</p></li>
+</ol></section></div> ]]></description>
+  <category>R</category>
+  <category>Fibonacci</category>
+  <category>Euclid</category>
+  <category>Math</category>
+  <guid>https://www.energycode.org/posts/11062025-euclinacci/</guid>
+  <pubDate>Tue, 10 Jun 2025 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A004782(n) = A014847(n) + 1</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/18052024-catalan-numbers/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><img src="https://www.energycode.org/posts/18052024-catalan-numbers/A014847_plot.png" class="img-fluid"></p>
+<section id="introducción" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introducción"><span class="header-section-number">1</span> INTRODUCCIÓN</h2>
+<p>Relacionar dos secuencias distintas de números enteros en la <em>On-Line Encyclopedia of Integer Sequences (OEIS)</em> abre conexiones entre dentro de la información matemática disponible<sup>1</sup>. La secuencia de números enteros, <a href="https://oeis.org/A004782">A004782</a> <span class="citation" data-cites="OEIS_A004782">[2]</span>, está compuesta por los números <img src="https://latex.codecogs.com/png.latex?n"> que cumplen:</p>
+<p><span id="eq-cat001"><img src="https://latex.codecogs.com/png.latex?%0An%20%5Cin%20%5C%7BA004782%5C%7D%20%5CLeftrightarrow%20%5Cfrac%7B2%20(2n-3)!%7D%7Bn!%20(n-1)!%7D%20%5Cin%20%5Cmathbb%7BN%7D%0A%5Ctag%7B1%7D"></span></p>
+<p>Y está estrechamente relacionada con la secuencia <a href="https://oeis.org/A014847">A014847</a> <span class="citation" data-cites="OEIS_A014847">[3]</span>, formada por los números <img src="https://latex.codecogs.com/png.latex?n"> dónde el enésimo número de Catalan <img src="https://latex.codecogs.com/png.latex?C_%7Bn%7D"> es divisible por <img src="https://latex.codecogs.com/png.latex?n"></p>
+<p><span id="eq-cat002"><img src="https://latex.codecogs.com/png.latex?%0An%20%5Cin%20%5C%7BA014847%5C%7D%20%5CLeftrightarrow%20n%20%5Cvert%20C_%7Bn%7D%0A%5Ctag%7B2%7D"></span></p>
+<p>Los <a href="https://es.wikipedia.org/wiki/N%C3%BAmeros_de_Catalan">números de Catalan</a> <span class="citation" data-cites="OEIS_A000108">[4]</span> aparecen con mucha frecuencia en combinatoria y otras áreas de las matemáticas y están definidos por la expresión: <span id="eq-cat003"><img src="https://latex.codecogs.com/png.latex?%0AC_%7Bn%7D%20=%20%5Cfrac%7B1%7D%7B(n+1)%7D%5Cbinom%7B2n%7D%7Bn%7D%0A%5Ctag%7B3%7D"></span></p>
+<p>están relacionados con los <em>coeficientes binomiales centrales</em> <span class="citation" data-cites="OEIS_A000984">[5]</span> y los primeros términos de la secuencia de los números de Catalan son:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A1,%201,%202,%205,%2014,%2042,%20132,%20429,%201430,%204862,%2016796,%20%5Cdots%0A"></p>
+</section>
+<section id="enunciado" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="enunciado"><span class="header-section-number">2</span> ENUNCIADO</h2>
+<p><span id="eq-cat004"><img src="https://latex.codecogs.com/png.latex?%0AA004782(n)%20=%20A014847(n)%20+%201%0A%5Ctag%7B4%7D"></span></p>
+</section>
+<section id="demostración" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="demostración"><span class="header-section-number">3</span> DEMOSTRACIÓN</h2>
+<p>Partiendo de las funciones <img src="https://latex.codecogs.com/png.latex?f(n)"> y <img src="https://latex.codecogs.com/png.latex?g(n)">:</p>
+<p><span id="eq-cat005"><img src="https://latex.codecogs.com/png.latex?%0Af(n)%20=%20%20%5Cfrac%7B2%20(2n-3)!%7D%7Bn!%20(n-1)!%7D%0A%5Ctag%7B5%7D"></span></p>
+<p><span id="eq-cat006"><img src="https://latex.codecogs.com/png.latex?%0Ag(n)%20=%20%5Cfrac%7BC_%7Bn%7D%7D%7Bn%7D%20=%20%5Cbinom%7B2n%7D%7Bn%7D%20%20%5Cfrac%7B1%7D%7B(n+1)%20n%7D%0A%5Ctag%7B6%7D"></span></p>
+<p>Se puede comprobar como <img src="https://latex.codecogs.com/png.latex?f(n+1)"> es igual a <img src="https://latex.codecogs.com/png.latex?g(n)"> por cálculo directo:</p>
+<p><span id="eq-cat007"><img src="https://latex.codecogs.com/png.latex?%0Af(n+1)=%5Cfrac%7B2%20(2n-1)!%7D%7B(n+1)%20%7B(n!)%7D%5E2%7D%20=%20%5Cfrac%7B2n%20(2n-1)!%7D%7Bn(n+1)%20%7B(n!)%7D%5E2%7D%0A=%20%5Cfrac%7B(2n)!%7D%7Bn%20(n+1)%20%7B(n!)%7D%5E2%7D=%20%5C%5C%20%5Cbinom%7B2n%7D%7Bn%7D%20%5Cfrac%7B1%7D%7B(n+1)%20n%7D%20=%20g(n)%0A%5Ctag%7B7%7D"></span></p>
+<p>Por lo tanto:</p>
+<p><span id="eq-cat008"><img src="https://latex.codecogs.com/png.latex?%0Af(n+1)%20%5Cin%20%5Cmathbb%7BN%7D%20%5CLongleftrightarrow%20g(n)%20%5Cin%20%5Cmathbb%7BN%7D%20%5CLongleftrightarrow%20n+1%20%20%5C%7BA004782%5C%7D%20%5CLongleftrightarrow%20n%20%5Cin%20%5C%7BA014847%5C%7D%0A%5Ctag%7B8%7D"></span></p>
+</section>
+<section id="referencias" class="level2" data-number="4">
+
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">4 REFERENCIAS</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-psychedelic_geometry_2013" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Psychedelic Geometry Blog (2013) A004782(n)=A014847(n)+1.</div>
+</div>
+<div id="ref-OEIS_A004782" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Guy RK A004782: <img src="https://latex.codecogs.com/png.latex?2(2n-3)!/(n!(n-1)!)"> is an integer. Disponible en: <a href="https://oeis.org/A004782">https://oeis.org/A004782</a>.</div>
+</div>
+<div id="ref-OEIS_A014847" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Sloane NJA A014847: Numbers n such that the n-th Catalan number is divisible by n. Disponible en: <a href="https://oeis.org/A014847">https://oeis.org/A014847</a>.</div>
+</div>
+<div id="ref-OEIS_A000108" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">N. J. A. Sloane and The OEIS Foundation Inc. <span>A000108: Catalan numbers: <img src="https://latex.codecogs.com/png.latex?C(n)%20=%20%5Cbinom%7B2n%7D%7Bn%7D/(n+1)%20=%20%5Cfrac%7B(2n)!%7D%7Bn!(n+1)!%7D"></span>. Disponible en: <a href="https://oeis.org/A000108">https://oeis.org/A000108</a>.</div>
+</div>
+<div id="ref-OEIS_A000984" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Sloane NJA A000984: Central binomial coefficients. Disponible en: <a href="https://oeis.org/A000984">https://oeis.org/A000984</a>.</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Este artículo es una <em>traducción y actualización</em> del post original titulado <em>A004782(n)=A014847(n)+1</em> publicado el <em>viernes 29 de noviembre de 2013</em> en el blog <em>Psychedelic Geometry</em> <span class="citation" data-cites="psychedelic_geometry_2013">[1]</span>.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Math</category>
+  <category>OEIS</category>
+  <category>Special Numbers</category>
+  <category>Combinatorics</category>
+  <guid>https://www.energycode.org/posts/18052024-catalan-numbers/</guid>
+  <pubDate>Fri, 17 May 2024 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/18052024-catalan-numbers/A014847_plot.png" medium="image" type="image/png" height="86" width="144"/>
+</item>
+<item>
+  <title>Convert a NumPy array to LaTeX</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/02082023-numpy-latex/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.energycode.org/posts/02082023-numpy-latex/20180104_134329.jpg" class="img-fluid figure-img"></p>
+<figcaption>Sierra de las Nieves (Málaga)</figcaption>
+</figure>
+</div>
+<section id="convert-numpy-array-to-latex" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Convert Numpy array to <img src="https://latex.codecogs.com/png.latex?LaTeX"></h1>
+<p>Sometimes, when you are writing a statistics or a math article, you must go through a tedious process of typing and testing numerous lines of text until your code works. This can be especially boring when dealing with long matrices. If you want to improve your productivity, automating this process comes in very handy, and <a href="https://www.python.org/">Python</a> is particularly useful for that.</p>
+<section id="functions-for-matrices-and-determinants" class="level2" data-number="1.1">
+<h2 data-number="1.1" data-anchor-id="functions-for-matrices-and-determinants"><span class="header-section-number">1.1</span> Functions for matrices and determinants</h2>
+<p>The functions <code>matrix2latex</code> and <code>det2latex</code> generate an indented <img src="https://latex.codecogs.com/png.latex?LaTeX"> string that can be copied or directly rendered in your math article.</p>
+<p>The <code>INDENT_SPACES</code> parameter specifies the number of spaces used for indentation.</p>
+<div id="latex_functions" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">INDENT_SPACES <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> indent(num_indent<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>):</span>
+<span id="cb1-6">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb1-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Number of spaces for indentation</span></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb1-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> num_indent <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> INDENT_SPACES <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span></span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> matrix2latex(matrix):</span>
+<span id="cb1-12">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Convert a NumPy array to LaTeX code as a matrix</span></span>
+<span id="cb1-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb1-15">    left_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">left</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">(</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> indent(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\b</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">egin{array}"</span></span>
+<span id="cb1-16">    right_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> indent(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">end{array}"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\r</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">ight</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">)</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-17">    m_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> matrix.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb1-18">    array_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"{"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"r"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> m_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"}</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-19">    elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span></span>
+<span id="cb1-20">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> matrix:</span>
+<span id="cb1-21">        elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-22">          elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> indent(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" &amp; "</span>.join([<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(x) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> row]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-23">            <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r" </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-24">    latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> left_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> array_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> right_latex</span>
+<span id="cb1-25">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"$$</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>latex<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">$$"</span></span>
+<span id="cb1-26"></span>
+<span id="cb1-27"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> det2latex(matrix):</span>
+<span id="cb1-28">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb1-29"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Convert a NumPy array to LaTeX code as a determinant</span></span>
+<span id="cb1-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb1-31">    left_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\b</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">egin{vmatrix}"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-32">    right_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">end{vmatrix}"</span></span>
+<span id="cb1-33">    m_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> matrix.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb1-34">    elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span></span>
+<span id="cb1-35">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> matrix:</span>
+<span id="cb1-36">        elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-37">          elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> indent(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" &amp; "</span>.join([<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(x) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> row]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-38">            <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r" </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-39">    latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> left_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> elements_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> right_latex</span>
+<span id="cb1-40">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"$$</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>latex<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">$$"</span></span></code></pre></div></div>
+</details>
+</div>
+<section id="output-string" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" data-anchor-id="output-string"><span class="header-section-number">1.1.1</span> Output string</h3>
+<p>Using the <a href="https://numpy.org/">NumPy</a> function <code>np.eye</code>, we can create an identity matrix of the desired dimensions, making it a convenient tool for testing our functions.</p>
+<div id="938d29c6" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(matrix2latex(np.eye(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)))</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$$
+\left(
+   \begin{array}{rrr}
+      1 &amp; 0 &amp; 0 \\ 
+      0 &amp; 1 &amp; 0 \\ 
+      0 &amp; 0 &amp; 1 \\ 
+   \end{array}
+\right)
+$$</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="rendering-output-in-a-document" class="level2" data-number="1.2">
+<h2 data-number="1.2" data-anchor-id="rendering-output-in-a-document"><span class="header-section-number">1.2</span> Rendering output in a document</h2>
+<p>If you are working in a <a href="https://jupyter.org/">Jupyter</a> notebook, you can render a <img src="https://latex.codecogs.com/png.latex?LaTeX"> string using the <code>Math</code> function from the <code>IPython</code> library, which can be imported as follows:</p>
+<div id="c2d7af03" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> IPython.display <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Math</span></code></pre></div></div>
+</details>
+</div>
+<p>If you are writing a <code>Python</code> chunk in a <code>Quarto</code> file in <a href="https://posit.co/download/rstudio-desktop/">RStudio</a>, you need to include the option <code>#| output: asis</code> at the top of the code chunk. This option determines how the output is rendered in the final document.</p>
+<div id="identity_det" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(det2latex(np.eye(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)))</span></code></pre></div></div>
+</details>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bvmatrix%7D%0A%20%20%201%20&amp;%200%20&amp;%200%20%5C%5C%0A%20%20%200%20&amp;%201%20&amp;%200%20%5C%5C%0A%20%20%200%20&amp;%200%20&amp;%201%20%5C%5C%0A%5Cend%7Bvmatrix%7D%0A"></p>
+</div>
+<div id="identity_matrix" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Identity 4x4 matrix</span></span>
+<span id="cb6-2">identity_4 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.eye(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)</span>
+<span id="cb6-3">identity_4_latex <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">I_4 = "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>matrix2latex(identity_4)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>:]</span>
+<span id="cb6-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(identity_4_latex)</span></code></pre></div></div>
+</details>
+<p><img src="https://latex.codecogs.com/png.latex?I_4%20=%0A%5Cleft(%0A%20%20%20%5Cbegin%7Barray%7D%7Brrrr%7D%0A%20%20%20%20%20%201%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%201%20&amp;%200%20&amp;%200%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%200%20&amp;%201%20&amp;%200%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%200%20&amp;%200%20&amp;%201%20%5C%5C%0A%20%20%20%5Cend%7Barray%7D%0A%5Cright)%0A"></p>
+</div>
+</section>
+<section id="rendering-the-output-to-a-file" class="level2" data-number="1.3">
+<h2 data-number="1.3" data-anchor-id="rendering-the-output-to-a-file"><span class="header-section-number">1.3</span> Rendering the output to a file</h2>
+<p>The <img src="https://latex.codecogs.com/png.latex?LaTeX"> string can be rendered and saved to a file using the following function, which is based on the <code>SymPy</code> library.</p>
+<div id="64d85b8c" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sympy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> preview</span>
+<span id="cb7-2"></span>
+<span id="cb7-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> latex2png(latex, filename, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span>):</span>
+<span id="cb7-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb7-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Render LaTeX code to a PNG image</span></span>
+<span id="cb7-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb7-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> preview(latex,</span>
+<span id="cb7-8">                   viewer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'file'</span>,</span>
+<span id="cb7-9">                   filename<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>filename,</span>
+<span id="cb7-10">                   euler<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,</span>
+<span id="cb7-11">                   dvioptions<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'-D'</span>, <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(fontsize)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>])</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="other-types-of-automated-matrices" class="level2" data-number="1.4">
+<h2 data-number="1.4" data-anchor-id="other-types-of-automated-matrices"><span class="header-section-number">1.4</span> Other types of automated matrices</h2>
+<section id="matrices-with-numbered-elements" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" data-anchor-id="matrices-with-numbered-elements"><span class="header-section-number">1.4.1</span> Matrices with numbered elements</h3>
+<div id="3c9b5fa4" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> element_matrix(n, notation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"x"</span>):</span>
+<span id="cb8-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb8-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Matrix with elements in algebraic notation </span></span>
+<span id="cb8-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb8-5">    vec_function <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb8-6">      np.vectorize(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> i, j: notation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_{"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}{</span>j <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"}"</span>)</span>
+<span id="cb8-7">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> np.fromfunction(vec_function,</span>
+<span id="cb8-8">                           shape<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(n, n),</span>
+<span id="cb8-9">                           dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)</span></code></pre></div></div>
+</details>
+</div>
+<div id="element_matrix_example" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(matrix2latex(element_matrix(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, notation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\t</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">heta"</span>)))</span></code></pre></div></div>
+</details>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft(%0A%20%20%20%5Cbegin%7Barray%7D%7Brrrrr%7D%0A%20%20%20%20%20%20%5Ctheta_%7B11%7D%20&amp;%20%5Ctheta_%7B12%7D%20&amp;%20%5Ctheta_%7B13%7D%20&amp;%20%5Ctheta_%7B14%7D%20&amp;%20%5Ctheta_%7B15%7D%20%5C%5C%0A%20%20%20%20%20%20%5Ctheta_%7B21%7D%20&amp;%20%5Ctheta_%7B22%7D%20&amp;%20%5Ctheta_%7B23%7D%20&amp;%20%5Ctheta_%7B24%7D%20&amp;%20%5Ctheta_%7B25%7D%20%5C%5C%0A%20%20%20%20%20%20%5Ctheta_%7B31%7D%20&amp;%20%5Ctheta_%7B32%7D%20&amp;%20%5Ctheta_%7B33%7D%20&amp;%20%5Ctheta_%7B34%7D%20&amp;%20%5Ctheta_%7B35%7D%20%5C%5C%0A%20%20%20%20%20%20%5Ctheta_%7B41%7D%20&amp;%20%5Ctheta_%7B42%7D%20&amp;%20%5Ctheta_%7B43%7D%20&amp;%20%5Ctheta_%7B44%7D%20&amp;%20%5Ctheta_%7B45%7D%20%5C%5C%0A%20%20%20%20%20%20%5Ctheta_%7B51%7D%20&amp;%20%5Ctheta_%7B52%7D%20&amp;%20%5Ctheta_%7B53%7D%20&amp;%20%5Ctheta_%7B54%7D%20&amp;%20%5Ctheta_%7B55%7D%20%5C%5C%0A%20%20%20%5Cend%7Barray%7D%0A%5Cright)%0A"></p>
+</div>
+</section>
+<section id="triangular-matrices" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" data-anchor-id="triangular-matrices"><span class="header-section-number">1.4.2</span> Triangular matrices</h3>
+<ul>
+<li><em>Upper Triangular Matrix</em>: In an upper triangular matrix, all elements below the main diagonal are zero.</li>
+</ul>
+<div id="ca3bf651" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> up_triangular_matrix(n):</span>
+<span id="cb10-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb10-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Upper Triangular matrix filled with ones and zeros</span></span>
+<span id="cb10-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb10-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> np.fromfunction(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> i, j:  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> np.less_equal(i , j),</span>
+<span id="cb10-6">                           shape<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(n, n),</span>
+<span id="cb10-7">                           dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)</span></code></pre></div></div>
+</details>
+</div>
+<ul>
+<li><em>Lower Triangular Matrix</em>: In a lower triangular matrix, all elements above the main diagonal are zero.</li>
+</ul>
+<div id="fa1f72a1" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> lw_triangular_matrix(n):</span>
+<span id="cb11-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb11-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Lower Triangular matrix filled with ones and zeros</span></span>
+<span id="cb11-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb11-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> np.fromfunction(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> i, j:  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> np.greater_equal(i , j),</span>
+<span id="cb11-6">                           shape<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(n, n),</span>
+<span id="cb11-7">                           dtype<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)</span></code></pre></div></div>
+</details>
+</div>
+<div id="upper_matrix_example" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(matrix2latex(up_triangular_matrix(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)))</span></code></pre></div></div>
+</details>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft(%0A%20%20%20%5Cbegin%7Barray%7D%7Brrrrr%7D%0A%20%20%20%20%20%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%200%20&amp;%201%20&amp;%201%20&amp;%201%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%201%20%5C%5C%0A%20%20%20%20%20%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20%5C%5C%0A%20%20%20%5Cend%7Barray%7D%0A%5Cright)%0A"></p>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <category>Numpy</category>
+  <category>Latex</category>
+  <category>Determinant</category>
+  <guid>https://www.energycode.org/posts/02082023-numpy-latex/</guid>
+  <pubDate>Tue, 01 Aug 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/02082023-numpy-latex/theta3x3matrix.png" medium="image" type="image/png" height="71" width="144"/>
+</item>
+<item>
+  <title>Blog Logo Sticker</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/01082023-blog-logo/</link>
+  <description><![CDATA[ <section id="el-paquete-hexsticker" class="level2" data-number="1"><h2 data-number="1" data-anchor-id="el-paquete-hexsticker">
+<span class="header-section-number">1</span> El paquete <code>hexSticker</code>
+</h2>
+<p>El paquete <code>hexSticker</code> creado por <em>Guangchuang Yu</em> <span class="citation" data-cites="hexSticker">[1]</span> es una herramienta para generar <em>stickers</em> hexagonales reproducibles en R. Estos stickers son ideales como logos para paquetes de programación, blogs, proyectos o presentaciones. En este artículo post se muestra cómo crear el logo del la web <a href="https://www.energycode.org/">ENERGYCODE</a> usando una imagen extraída de un icono de un rayo blanco sobre un fondo negro, con ajustes para obtener el resultado deseado. Además, se soluciona el problema reportado en GitHub sobre que el borde hexagonal a veces se recorta al guardar en PNG o SVG (ver <a href="https://github.com/GuangchuangYu/hexSticker/issues/155?referrer=grok.com">issue #155</a>).</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://github.com/GuangchuangYu/hexSticker">hexSticker</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://magrittr.tidyverse.org">magrittr</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div></div>
+</details>
+</div>
+</section><section id="archivos-de-entrada-y-salida" class="level2" data-number="2"><h2 data-number="2" data-anchor-id="archivos-de-entrada-y-salida">
+<span class="header-section-number">2</span> Archivos de entrada y salida</h2>
+<div class="cell">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">file_icon</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lightning_icon_white.png"</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">file_name</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"logo.png"</span></span></code></pre></div></div>
+</details>
+</div>
+</section><section id="solución-al-recorte-del-borde-del-hexágono" class="level2" data-number="3"><h2 data-number="3" data-anchor-id="solución-al-recorte-del-borde-del-hexágono">
+<span class="header-section-number">3</span> Solución al recorte del borde del hexágono</h2>
+<p>El problema del borde recortado se soluciona ampliando ligeramente los límites del gráfico y es necesario modificar la función del tema gráfico que viene en el paquete <code>hexSticker</code>por defecto. La siguiente función, adaptada de una contribución comunitaria, añade un margen extra para garantizar que el hexágono quede completo.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Solves issue:</span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Border always cut off in .png or .svg #155</span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># https://github.com/GuangchuangYu/hexSticker/issues/155</span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># by https://github.com/emilioxavier</span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| label: tema-personalizado</span></span>
+<span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#| echo: true</span></span>
+<span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Para solución issue #155</span></span>
+<span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">my_theme_sticker</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">size</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.2</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">...</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">center</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">radius</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">h</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">radius</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">w</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">radius</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">m</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.05</span></span>
+<span>  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_transparent</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>      <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot2</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>        plot.margin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/element.html">margin</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>          t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span>          r <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span>          b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span>          l <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span>          unit <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines"</span></span>
+<span>        <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>        strip.text <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>        line <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>        text <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>        title <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>        <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">...</span></span>
+<span>      <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_fixed</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>      expand <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>      limits <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">center</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">h</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">m</span> , <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">center</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">h</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">m</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>      expand <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>      limits <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">center</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">w</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">m</span> , <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">center</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">w</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">m</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</details>
+</div>
+</section><section id="creación-del-sticker" class="level2" data-number="4"><h2 data-number="4" data-anchor-id="creación-del-sticker">
+<span class="header-section-number">4</span> Creación del sticker</h2>
+<p>Ahora generamos el logo ajustando posiciones, tamaños y colores.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Código</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sticker</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span></span>
+<span>  subplot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">file_icon</span>,</span>
+<span>  package <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ENERGYCODE"</span>,</span>
+<span>  p_size <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18</span>,      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Tamaño del texto</span></span>
+<span>  p_y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.3</span>,        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Posición vertical del texto</span></span>
+<span>  p_color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"white"</span>,</span>
+<span>  h_fill <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"black"</span>, <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Fondo del hexágono</span></span>
+<span>  h_color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"grey"</span>, <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Color del borde</span></span>
+<span>  h_size <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>,     <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Grosor del borde</span></span>
+<span>  s_x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Posición horizontal del icono</span></span>
+<span>  s_y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.75</span>,       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Posición vertical del icono</span></span>
+<span>  s_width <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.35</span>,   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ancho del icono</span></span>
+<span>  s_height <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.35</span>,  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Alto del icono</span></span>
+<span>  spotlight <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>, <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Efecto de luz opcional</span></span>
+<span>  l_x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span>,        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Posición de la luz (ajustar si usas spotlight)</span></span>
+<span>  dpi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span>,        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Alta resolución</span></span>
+<span>  filename <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">file_name</span>,</span>
+<span>  theme <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">my_theme_sticker</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div></div>
+</details>
+</div>
+</section><section id="resultado-final" class="level2" data-number="5"><h2 data-number="5" data-anchor-id="resultado-final">
+<span class="header-section-number">5</span> Resultado final</h2>
+<p><img src="https://www.energycode.org/img/logo/web_logo.png" class="img-fluid quarto-figure quarto-figure-left" alt="HexSticker logo">]</p>
+<p>El logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en <code>_quarto.yml</code>:</p>
+<pre><code>website:
+  title: "ENERGYCODE"
+  navbar:
+    logo: logo.png</code></pre>
+</section><section id="referencias" class="level2" data-number="6">
+
+
+<!-- -->
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">
+6 Referencias</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-hexSticker" class="csl-entry">
+<div class="csl-left-margin">1. </div>
+<div class="csl-right-inline">Yu G (2025) <a href="https://CRAN.R-project.org/package=hexSticker">hexSticker: Create Hexagon Sticker in R</a>.</div>
+</div>
+</div></section></div> ]]></description>
+  <category>R</category>
+  <guid>https://www.energycode.org/posts/01082023-blog-logo/</guid>
+  <pubDate>Mon, 31 Jul 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/img/logo/web_logo.png" medium="image" type="image/png" height="167" width="144"/>
+</item>
+<item>
+  <title>Confusion Matrix in R</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/09032022-confusion-matrix/</link>
+  <description><![CDATA[ <section id="confusion-matrix" class="level1" data-number="1"><h1 data-number="1">
+<span class="header-section-number">1</span> Confusion Matrix</h1>
+<p>The confusion matrix is a useful tool for visualizing the performance of a classification algorithm. In this blog post, we provide a function to generate an image of the confusion matrix. Additionally, the R package <code>caret</code> includes the <code>confusionMatrix</code> function, which produces detailed output.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">e1071</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">caTools</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://scales.r-lib.org">scales</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;"><a href="https://github.com/topepo/caret/">caret</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div></div>
+</details>
+</div>
+<section id="classification" class="level2" data-number="1.1"><h2 data-number="1.1" data-anchor-id="classification">
+<span class="header-section-number">1.1</span> Classification</h2>
+<p>We will conduct a <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classification</a> using the classic Iris dataset.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># train and test data</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">spl</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">caTools</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/pkg/caTools/man/sample.split.html">sample.split</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span>, SplitRatio <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">train</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">spl</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">test</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">spl</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris_nb</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/pkg/e1071/man/naiveBayes.html">naiveBayes</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Species</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">.</span>, data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">train</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">nb_train_predict</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">iris_nb</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">test</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">test</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Species"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html">confusionMatrix</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">nb_train_predict</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">test</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Species</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span></span></code></pre></div></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         10          0         0
+  versicolor      0         10         2
+  virginica       0          0         8
+
+Overall Statistics
+                                          
+               Accuracy : 0.9333          
+                 95% CI : (0.7793, 0.9918)
+    No Information Rate : 0.3333          
+    P-Value [Acc &gt; NIR] : 8.747e-12       
+                                          
+                  Kappa : 0.9             
+                                          
+ Mcnemar's Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor Class: virginica
+Sensitivity                 1.0000            1.0000           0.8000
+Specificity                 1.0000            0.9000           1.0000
+Pos Pred Value              1.0000            0.8333           1.0000
+Neg Pred Value              1.0000            1.0000           0.9091
+Prevalence                  0.3333            0.3333           0.3333
+Detection Rate              0.3333            0.3333           0.2667
+Detection Prevalence        0.3333            0.4000           0.2667
+Balanced Accuracy           1.0000            0.9500           0.9000</code></pre>
+</div>
+</div>
+</section><section id="plotting" class="level2" data-number="1.2"><h2 data-number="1.2" data-anchor-id="plotting">
+<span class="header-section-number">1.2</span> Plotting</h2>
+<p>To plot the resulting confusion matrix using <code>ggplot</code>, we use the following function:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">ggplot_confusion_matrix</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">mytitle</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Accuracy"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">overall</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>                   <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Kappa"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">overall</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">p</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;-</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">table</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>,</span>
+<span>           <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Reference</span>, y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Prediction</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>fill <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Freq</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span>, colour <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"white"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>low <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"white"</span>, high <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"steelblue"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Reference</span>, y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Prediction</span>, label <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">Freq</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>legend.position <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span>    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">mytitle</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span>  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">p</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot_confusion_matrix</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">cfm</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="https://www.energycode.org/posts/09032022-confusion-matrix/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="references" class="level2" data-number="1.3">
+
+
+<!-- -->
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">
+1.3 References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-stack_overflow_confusion_matrix_2017" class="csl-entry">
+<div class="csl-left-margin">1. </div>
+<div class="csl-right-inline">Burns C, Herrero EP (2017) How to produce a confusion matrix and find the misclassification rate of the naïve bayes classifier?, 2017. Available from: <a href="https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613">https://stackoverflow.com/questions/46063234/how-to-produce-a-confusion-matrix-and-find-the-misclassification-rate-of-the-na%c3%af/46063613#46063613</a>.</div>
+</div>
+</div></section></div> ]]></description>
+  <category>R</category>
+  <category>Machine Learning</category>
+  <guid>https://www.energycode.org/posts/09032022-confusion-matrix/</guid>
+  <pubDate>Tue, 08 Mar 2022 23:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/09032022-confusion-matrix/conf_matrix.png" medium="image" type="image/png" height="89" width="144"/>
+</item>
+<item>
+  <title>Max Determinant</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/05032022-max-determinant/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.energycode.org/posts/05032022-max-determinant/plot3dmaxmatrix.png" class="img-fluid figure-img"></p>
+<figcaption>Plot3D of max matrix elements</figcaption>
+</figure>
+</div>
+<section id="identity" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="identity"><span class="header-section-number">1</span> Identity</h2>
+<p>The sequence <a href="https://oeis.org/A181983">A181983</a>(n) gives the determinants of the square matrices: <img src="https://latex.codecogs.com/png.latex?M_%7Bn%7D">, where the elements <img src="https://latex.codecogs.com/png.latex?m_%7Bi,j%7D=%20%5Cmax(i,j)"> and <img src="https://latex.codecogs.com/png.latex?%5Cmax"> denotes the maximum function.</p>
+<p>This identity appears as follows:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0Adet%7B%5Cbigg%5B%20max(i,j)%20%5Cbigg%5D%20%7D_%7B1%5Cleq%20i,j%20%5Cleq%20n%7D%20=%20-n%20%5Ccdot%20%7B(-1)%7D%5E%7Bn%7D%20=%20A181983(n)%0A%5Cend%7Bequation%7D"></p>
+</section>
+<section id="proof" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="proof"><span class="header-section-number">2</span> Proof</h2>
+<p>A new matrix with the same determinant can be created by subtracting row <img src="https://latex.codecogs.com/png.latex?i"> from row <img src="https://latex.codecogs.com/png.latex?i+1"> starting from the 2nd row. The determinant of this new matrix can then be easily computed using the expansion by minors technique at element <img src="https://latex.codecogs.com/png.latex?m_%7B1,n%7D"></p>
+<p>This can be better illustrated with an example:</p>
+<p>We can transform:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0AM_%7B10%7D%20=%20%5Cleft(%5Cbegin%7Barray%7D%7Bcccccccccc%7D%0A1%20&amp;%202%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A2%20&amp;%202%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A3%20&amp;%203%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A4%20&amp;%204%20&amp;%204%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A5%20&amp;%205%20&amp;%205%20&amp;%205%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A6%20&amp;%206%20&amp;%206%20&amp;%206%20&amp;%206%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A7%20&amp;%207%20&amp;%207%20&amp;%207%20&amp;%207%20&amp;%207%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A8%20&amp;%208%20&amp;%208%20&amp;%208%20&amp;%208%20&amp;%208%20&amp;%208%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A9%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%209%20&amp;%2010%20%5C%5C%0A10%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%20&amp;%2010%0A%5Cend%7Barray%7D%20%5Cright)%0A%5Cend%7Bequation%7D"></p>
+<p>Into:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0AM%5E%7B*%7D_%7B10%7D%20=%5Cleft(%5Cbegin%7Barray%7D%7Bcccccccccc%7D%0A1%20&amp;%202%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A1%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20&amp;%200%20%5C%5C%0A1%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%201%20&amp;%200%20%5Cend%7Barray%7D%20%5Cright)%0A%5Cend%7Bequation%7D"></p>
+<p>This proof can be generalized to a very similar type of matrices, resulting in:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0Adet%7B%5Cbigg%5B%20max(i,j)%5Ek%20%5Cbigg%5D%7D_%7B1%5Cleq%20i,j%20%5Cleq%20n%7D%20=%20%7B(-1)%7D%5E%7Bn-1%7D%20%5Ccdot%20n%5E%7Bk%7D%20%5Ccdot%20%5Cprod_%7Bs=1%7D%5E%7Bn-1%7D%7B(s+1)%5Ek-s%5Ek%7D%0A%5Cend%7Bequation%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bequation%7D%0Adet%7B%5Cbigg%5B%20min(i,j)%5Ek%20%5Cbigg%5D%7D_%7B1%5Cleq%20i,j%20%5Cleq%20n%7D%20=%20%5Cprod_%7Bs=1%7D%5E%7Bn-1%7D%7B(s+1)%5Ek-s%5Ek%7D%0A%5Cend%7Bequation%7D"></p>
+</section>
+<section id="references" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="references"><span class="header-section-number">3</span> References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-oeisA051125" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Sloane NJA <a href="https://oeis.org/A051125/">A051125: Table t(n,k) = max<span>n,k</span> read by antidiagonals (n &gt;= 1, k &gt;= 1).</a></div>
+</div>
+<div id="ref-oeisA181983" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Somos M (2012) <a href="https://oeis.org/A181983/">A181983: A(n) = (-1)^(n+1) * n.</a></div>
+</div>
+<div id="ref-oeisA161124" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Deutsch E (2009) <a href="https://oeis.org/A161124/">A161124: Number of inversions in all fixed-point-free involutions of <span>1,2,...,2n</span>.</a></div>
+</div>
+<div id="ref-oeisA001147" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Sloane NJA <a href="https://oeis.org/A001147/">A001147: Double factorial of odd numbers: A(n) = (2*n-1)!! = 1*3*5*...*(2*n-1).</a></div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Math</category>
+  <category>Linear Algebra</category>
+  <category>Determinant</category>
+  <guid>https://www.energycode.org/posts/05032022-max-determinant/</guid>
+  <pubDate>Fri, 04 Mar 2022 23:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/05032022-max-determinant/plot3dmaxmatrix.png" medium="image" type="image/png" height="134" width="144"/>
+</item>
+<item>
+  <title>BINOMIAL MATRIX (I)</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/posts/12012026-binomial-matrix-i/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<div id="fig-tartaglia" class="quarto-float quarto-figure quarto-figure-left" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tartaglia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.energycode.org/posts/12012026-binomial-matrix-i/tartaglia-portrait.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tartaglia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Niccolò Tartaglia (1572) <span class="citation" data-cites="TartagliaPortrait1572">[1]</span>
+</figcaption>
+</figure>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>By applying yesterday’s idea<sup>1</sup> with slight variations, we can derive new expressions for matrices whose elements are related to binomial coefficients.</p>
+<p>Let <img src="https://latex.codecogs.com/png.latex?U_n"> be a square matrix with entries:</p>
+<p><span id="eq-bm1001"><img src="https://latex.codecogs.com/png.latex?%0Au_%7Bi,j%7D%20=%20%5Cbinom%7Bj%7D%7Bi%7D%0A%5Ctag%7B1%7D"></span></p>
+<p><img src="https://latex.codecogs.com/png.latex?U_n"> is an <em>upper triangular matrix</em> with all diagonal entries equal to <img src="https://latex.codecogs.com/png.latex?1">, and it closely resembles Pascal’s triangle (which I prefer to call <a href="https://en.wikipedia.org/wiki/Niccol%C3%B2_Fontana_Tartaglia">Tartaglia’s triangle</a>)<sup>2</sup>.</p>
+</section>
+<section id="example-matrix-u_10" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="example-matrix-u_10"><span class="header-section-number">2</span> Example matrix <img src="https://latex.codecogs.com/png.latex?U_%7B10%7D"></h2>
+<p><span id="eq-bm1002"><img src="https://latex.codecogs.com/png.latex?%0AU_%7B10%7D%20=%0A%5Cbegin%7Bpmatrix%7D%0A1%20&amp;%202%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%0A0%20&amp;%201%20&amp;%203%20&amp;%206%20&amp;%2010%20&amp;%2015%20&amp;%2021%20&amp;%2028%20&amp;%2036%20&amp;%2045%20%5C%5C%0A0%20&amp;%200%20&amp;%201%20&amp;%204%20&amp;%2010%20&amp;%2020%20&amp;%2035%20&amp;%2056%20&amp;%2084%20&amp;%20120%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%205%20&amp;%2015%20&amp;%2035%20&amp;%2070%20&amp;%20126%20&amp;%20210%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%206%20&amp;%2021%20&amp;%2056%20&amp;%20126%20&amp;%20252%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%207%20&amp;%2028%20&amp;%2084%20&amp;%20210%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%208%20&amp;%2036%20&amp;%20120%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%209%20&amp;%2045%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%2010%20%5C%5C%0A0%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%0A%5Cend%7Bpmatrix%7D%0A%5Ctag%7B2%7D"></span></p>
+<p>And, of course:</p>
+<p><span id="eq-bm1003"><img src="https://latex.codecogs.com/png.latex?%0A%7CU_%7Bn%7D%7C=1%0A%5Ctag%7B3%7D"></span></p>
+<p>Or in element wise notation:</p>
+<p><span id="eq-bm1004"><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet%5C!%5Cleft%5B%20%5Cbinom%7Bi%7D%7Bi%7D%20%5Cright%5D_%7Bi,j=1%7D%5E%7Bn%7D%20=%201%0A%5Ctag%7B4%7D"></span></p>
+<p>If we multiply this matrix by its transpose, we obtain a symmetric matrix with:</p>
+<p><span id="eq-bm1005"><img src="https://latex.codecogs.com/png.latex?%0A%7CA_%7Bn%7D%7C%20=%20%7CU_%7Bn%7D%5E%7BT%7D%20*%20U_%7Bn%7D%7C%20=%20%7CU_%7Bn%7D%5E%7B2%7D%7C=1%0A%5Ctag%7B5%7D"></span></p>
+</section>
+<section id="example-matrix-a_10" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="example-matrix-a_10"><span class="header-section-number">3</span> Example matrix <img src="https://latex.codecogs.com/png.latex?A_%7B10%7D"></h2>
+<p><span id="eq-bm1006"><img src="https://latex.codecogs.com/png.latex?%0AA_%7B10%7D=%20%5Cleft(%20%5Cbegin%7Barray%7D%7Bcccccccccc%7D%201%20&amp;%202%20&amp;%203%20&amp;%204%20&amp;%205%20&amp;%206%20&amp;%207%20&amp;%208%20&amp;%209%20&amp;%2010%20%5C%5C%202%20&amp;%205%20&amp;%209%20&amp;%2014%20&amp;%2020%20&amp;%2027%20&amp;%2035%20&amp;%2044%20&amp;%2054%20&amp;%2065%20%5C%5C%203%20&amp;%209%20&amp;%2019%20&amp;%2034%20&amp;%2055%20&amp;%2083%20&amp;%20119%20&amp;%20164%20&amp;%20219%20&amp;%20285%20%5C%5C%204%20&amp;%2014%20&amp;%2034%20&amp;%2069%20&amp;%20125%20&amp;%20209%20&amp;%20329%20&amp;%20494%20&amp;%20714%20&amp;%201000%20%5C%5C%205%20&amp;%2020%20&amp;%2055%20&amp;%20125%20&amp;%20251%20&amp;%20461%20&amp;%20791%20&amp;%201286%20&amp;%202001%20&amp;%203002%20%5C%5C%206%20&amp;%2027%20&amp;%2083%20&amp;%20209%20&amp;%20461%20&amp;%20923%20&amp;%201715%20&amp;%203002%20&amp;%205004%20&amp;%208007%20%5C%5C%207%20&amp;%2035%20&amp;%20119%20&amp;%20329%20&amp;%20791%20&amp;%201715%20&amp;%203431%20&amp;%206434%20&amp;%2011439%20&amp;%2019447%20%5C%5C%208%20&amp;%2044%20&amp;%20164%20&amp;%20494%20&amp;%201286%20&amp;%203002%20&amp;%206434%20&amp;%2012869%20&amp;%2024309%20&amp;%2043757%20%5C%5C%209%20&amp;%2054%20&amp;%20219%20&amp;%20714%20&amp;%202001%20&amp;%205004%20&amp;%2011439%20&amp;%2024309%20&amp;%2048619%20&amp;%2092377%20%5C%5C%2010%20&amp;%2065%20&amp;%20285%20&amp;%201000%20&amp;%203002%20&amp;%208007%20&amp;%2019447%20&amp;%2043757%20&amp;%2092377%20&amp;%20184755%20%5Cend%7Barray%7D%5Cright)%0A%5C%5C%20%5Ctag%7B6%7D"></span></p>
+<p>The most remarkable property of this symmetric matrix is that its determinant equals <img src="https://latex.codecogs.com/png.latex?1">, making it a <em>unimodular matrix</em>.</p>
+<p>Thus, we have constructed a new matrix with determinant equal to one:</p>
+<p><span id="eq-bm1007"><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0Aa_%7Bi,j%7D%20&amp;=%20%5Csum_%7Br=1%7D%5En%20u_%7Bi,r%7D%5E*%20%5Ccdot%20u_%7Br,j%7D%20%5C%5C%0A&amp;=%20%5Csum_%7Br=1%7D%5E%7B%5Cmin(i,j)%7D%20u_%7Br,i%7D%20%5Ccdot%20u_%7Br,j%7D%20%5C%5C%0A&amp;=%20%5Csum_%7Br=1%7D%5E%7B%5Cmin(i,j)%7D%20%5Cbinom%7Bi%7D%7Br%7D%20%5Cbinom%7Bj%7D%7Br%7D%20%5C%5C%0A&amp;=%20-1%20+%20%5Csum_%7Br=0%7D%5E%7B%5Cmin(i,j)%7D%20%5Cbinom%7Bi%7D%7Br%7D%20%5Cbinom%7Bj%7D%7Br%7D%20%5C%5C%0A&amp;=%20-1%20+%20%5Csum_%7Br=0%7D%5E%7Bi%7D%20%5Cbinom%7Bi%7D%7Br%7D%20%5Cbinom%7Bj%7D%7Br%7D%20%5C%5C%0A&amp;=%20-1%20+%20%5Cbinom%7Bi+j%7D%7Bi%7D%20%5C%5C%0A&amp;=%20%5Cbinom%7Bi+j%7D%7Bi%7D%20-%201%0A%5Cend%7Baligned%7D%0A%5Ctag%7B7%7D"></span></p>
+<p>Alternatively, in element-wise notation:</p>
+<p><span id="eq-bm1008"><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet%5C!%5Cleft%5B%20%5Cbinom%7Bi+j%7D%7Bi%7D%20-%201%20%5Cright%5D_%7Bi,j=1%7D%5E%7Bn%7D%20=%201%0A%5Ctag%7B8%7D"></span></p>
+<p><strong>Note:</strong> For a proof of the binomial identity used above, see references <span class="citation" data-cites="Graham:1994:CM">[3]</span> or <span class="citation" data-cites="HubbardRoby2006">[4]</span>.</p>
+</section>
+<section id="oeis-related-sequences" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="oeis-related-sequences"><span class="header-section-number">4</span> OEIS Related Sequences</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Row/Col</strong></th>
+<th style="text-align: center;"><strong>OEIS Sequence(s)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><a href="https://oeis.org/A000027">A000027</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><a href="https://oeis.org/A000096">A000096</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><a href="https://oeis.org/A062748">A062748</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><a href="https://oeis.org/A063258">A063258</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><a href="https://oeis.org/A062988">A062988</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><a href="https://oeis.org/A124089">A124089</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><a href="https://oeis.org/A124090">A124090</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><a href="https://oeis.org/A165618">A165618</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"><a href="https://oeis.org/A035927">A035927</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">–</td>
+</tr>
+</tbody>
+</table>
+<!-- **Continues in:** 
+[BINOMIAL MATRIX (II)](../2009-09-24-binomial-matrix-ii/)-->
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0">
+<div id="ref-TartagliaPortrait1572" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Galle P, Montanus BA, Plantijn C (1572) <a href="https://www.rijksmuseum.nl/nl/collectie/RP-P-1909-4459">Portret van niccolò tartaglia. Nicolavs tartaglia brixianvs</a>.</div>
+</div>
+<div id="ref-psychedelic_geometry_2009_2" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Psychedelic Geometry (2009) Binomial matrix (i), 2009. Available from: <a href="https://psychedelic-geometry.blogspot.com/2009/09/binomial-matrix-i.html">https://psychedelic-geometry.blogspot.com/2009/09/binomial-matrix-i.html</a>.</div>
+</div>
+<div id="ref-Graham:1994:CM" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Graham RL, Knuth DE, Patashnik O (1994) Concrete mathematics: A foundation for computer science, Reading, MA, Addison-Wesley.</div>
+</div>
+<div id="ref-HubbardRoby2006" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Hubbard M, Roby T (2006) Pascal’s triangle from top to bottom, 2006. Available from: <a href="https://www.merlot.org/merlot/viewMaterial.htm?id=86655">https://www.merlot.org/merlot/viewMaterial.htm?id=86655</a>.</div>
+</div>
+<div id="ref-OEIS_A000027" class="csl-entry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">OEIS (1991) <a href="https://oeis.org/A000027">A000027: The positive integers. Also called the natural numbers, the whole numbers or the counting numbers, but these terms are ambiguous.</a></div>
+</div>
+<div id="ref-OEIS_A000096" class="csl-entry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">OEIS (1991) <a href="https://oeis.org/A000096">A000096: A(n) = n*(n+3)/2.</a></div>
+</div>
+<div id="ref-OEIS_A062748" class="csl-entry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">OEIS (2003) <a href="https://oeis.org/A062748">A062748: Fourth column (r=3) of FS(3) staircase array A062745.</a></div>
+</div>
+<div id="ref-OEIS_A063258" class="csl-entry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">OEIS (2003) <a href="https://oeis.org/A063258">A063258: A(n) = binomial(n+5,4) - 1.</a></div>
+</div>
+<div id="ref-OEIS_A062988" class="csl-entry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">OEIS (2003) <a href="https://oeis.org/A062988">A062988: A(n) = binomial(n+6,5) - 1.</a></div>
+</div>
+<div id="ref-OEIS_A124089" class="csl-entry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">OEIS (2006) <a href="https://oeis.org/A124089">A124089: A(n) = binomial(n,6)-1.</a></div>
+</div>
+<div id="ref-OEIS_A124090" class="csl-entry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">OEIS (2006) <a href="https://oeis.org/A124090">A124090: C(n,7)-1.</a></div>
+</div>
+<div id="ref-OEIS_A165618" class="csl-entry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">OEIS (2010) <a href="https://oeis.org/A165618">A165618: A(n) = binomial(n+8,8) - 1.</a></div>
+</div>
+<div id="ref-OEIS_A035927" class="csl-entry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">OEIS (1999) <a href="https://oeis.org/A035927">A035927: One less than number of n-multisets chosen from a 10-set.</a></div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This article is a translation and update of the original post entitled BINOMIAL MATRIX (I), published on Tuesday, September 22, 2009, on the blog Psychedelic Geometry <span class="citation" data-cites="psychedelic_geometry_2009_2">[2]</span>.↩︎</p></li>
+<li id="fn2"><p>Portret van Niccolò Tartaglia (1572). Gravure por Philips Galle. under CC0 1.0 Public Domain Dedication, Rijksmuseum y Wikimedia Commons, <span class="citation" data-cites="TartagliaPortrait1572">[1]</span>↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>Math</category>
+  <category>Matrices</category>
+  <category>Combinatorics</category>
+  <guid>https://www.energycode.org/posts/12012026-binomial-matrix-i/</guid>
+  <pubDate>Mon, 21 Sep 2009 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/posts/12012026-binomial-matrix-i/tartaglia-portrait.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

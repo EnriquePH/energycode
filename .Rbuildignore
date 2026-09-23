@@ -60,7 +60,7 @@
 ^.*\.old$
 
 # ── Archivos sobrantes que suelen generar warning/note ───────────────────────────
-^TODO\.md$
+^_TODO\.md$
 ^LICENSE\.md$               # si existe versión markdown del license
 ^styles\.css$
 ^theme-dark\.scss$

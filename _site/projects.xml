@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ENERGYCODE</title>
+<link>https://www.energycode.org/projects.html</link>
+<atom:link href="https://www.energycode.org/projects.xml" rel="self" type="application/rss+xml"/>
+<description>Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Tue, 22 Sep 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>PARI-GP-ENGINE</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/06-pari-gp-engine/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><a href="https://github.com/oeistools/PARI-GP-ENGINE/actions/workflows/test.yml"><img src="https://github.com/oeistools/PARI-GP-ENGINE/actions/workflows/test.yml/badge.svg" class="img-fluid" alt="CI"></a> <a href="https://quarto.org"><img src="https://img.shields.io/badge/quarto-%E2%89%A5%201.9-2596be" class="img-fluid" alt="Quarto"></a> <a href="https://pari.math.u-bordeaux.fr/"><img src="https://img.shields.io/badge/PARI%2FGP-%E2%89%A5%202.13-8b0000" class="img-fluid" alt="PARI/GP"></a> <a href="https://github.com/oeistools/PARI-GP-ENGINE/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.png" class="img-fluid" alt="License: MIT"></a></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/06-pari-gp-engine/pari-gp-engine-logo.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="PARI-GP-ENGINE logo" width="220"></p>
+</figure>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p><a href="https://pari.math.u-bordeaux.fr/">PARI/GP</a> is a computer algebra system designed for fast computations in number theory: factorizations, algebraic number theory, elliptic curves, modular forms and more. <strong>PARI-GP-ENGINE</strong> brings it to <a href="https://quarto.org">Quarto</a>, so PARI/GP code can live in a Quarto document, run when the document is rendered, and show its results with proper syntax highlighting:</p>
+<p>👉 https://github.com/oeistools/PARI-GP-ENGINE</p>
+<p>The repository provides two parts that fit together but can be used apart:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Engine</strong></td>
+<td>A Quarto <a href="https://quarto.org/docs/extensions/engine.html">engine extension</a> that executes <code>{gp}</code> cells with the <code>gp</code> interpreter and puts the results in the rendered document.</td>
+</tr>
+<tr class="even">
+<td><strong>Highlighting</strong></td>
+<td>A KDE/Skylighting syntax definition covering the PARI/GP 2.17 function set, applied automatically, with nothing to configure.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="features" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="features"><span class="header-section-number">2</span> Features</h2>
+<ul>
+<li><strong>Execution.</strong> <code>{gp}</code> cells run in one <code>gp</code> session per document, so state carries from cell to cell, exactly as it would at the <code>gp</code> prompt.</li>
+<li><strong>Highlighting.</strong> The full function set of PARI/GP 2.17 is recognized out of the box.</li>
+<li><strong>Figures.</strong> Plots exported as SVG become real Quarto figures, with captions and cross-references.</li>
+<li><strong>Errors that behave.</strong> A PARI/GP error stops the render and tells you which cell failed, unless you asked for the error to be part of the document.</li>
+</ul>
+<hr>
+</section>
+<section id="installation" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="installation"><span class="header-section-number">3</span> Installation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> add oeistools/PARI-GP-ENGINE</span></code></pre></div></div>
+<p>Requirements:</p>
+<ul>
+<li><strong>Quarto ≥ 1.9</strong>, since engine extensions do not exist in earlier versions.</li>
+<li><strong>PARI/GP ≥ 2.13</strong>, with the <code>gp</code> executable on your <code>PATH</code>. CI tests 2.13.3, 2.15.5 and 2.17.3.</li>
+<li>Linux and macOS are tested in CI; Windows is implemented but not tested.</li>
+</ul>
+<hr>
+</section>
+<section id="usage" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="usage"><span class="header-section-number">4</span> Usage</h2>
+<p>Set <code>engine: pari-gp</code> in the front matter, then write <code>{gp}</code> cells:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb2-2"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">title:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> "Mersenne factors"</span></span>
+<span id="cb2-3"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">engine:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> pari-gp</span></span>
+<span id="cb2-4"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">format:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> html</span></span>
+<span id="cb2-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb2-6"></span>
+<span id="cb2-7"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```{gp}</span></span>
+<span id="cb2-8"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">M = 2^101 - 1</span></span>
+<span id="cb2-9"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">factor(M)</span></span>
+<span id="cb2-10"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```</span></span></code></pre></div></div>
+</section>
+<section id="a-taste" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="a-taste"><span class="header-section-number">5</span> A taste</h2>
+<p>Factoring <img src="https://latex.codecogs.com/png.latex?p%20-%201"> for the first prime after <img src="https://latex.codecogs.com/png.latex?10%5E%7B40%7D">:</p>
+<pre class="gp"><code>p = nextprime(10^40)
+factor(p - 1)</code></pre>
+<pre><code>10000000000000000000000000000000000000121
+[                      2 3]
+[                      5 1]
+[                     11 1]
+[                     17 1]
+[                  12973 1]
+[             1821309023 1]
+[56581485446137975519811 1]</code></pre>
+<p>The class number and regulator of <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BQ%7D(%5Csqrt%5B3%5D%7B2%7D)">:</p>
+<pre class="gp"><code>K = bnfinit(x^3 - 2, 1);
+[K.no, K.reg]</code></pre>
+<pre><code>[1, 1.3473773483293841009181878914456530463]</code></pre>
+<p>And because the session persists, its fundamental units are still one cell away:</p>
+<pre class="gp"><code>K.fu</code></pre>
+<pre><code>[Mod(x - 1, x^3 - 2)]</code></pre>
+<hr>
+</section>
+<section id="license" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="license"><span class="header-section-number">6</span> License</h2>
+<p>PARI-GP-ENGINE is distributed under the <a href="https://github.com/oeistools/PARI-GP-ENGINE/blob/main/LICENSE">MIT License</a>. PARI/GP itself is GPL software by the PARI Group; since <code>gp</code> runs as an external program, its GPL does not reach the extension code.</p>
+</section>
+<section id="links" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="links"><span class="header-section-number">7</span> Links</h2>
+<ul>
+<li><a href="https://github.com/oeistools/PARI-GP-ENGINE">GitHub - PARI-GP-ENGINE</a></li>
+<li><a href="https://oeistools.github.io/PARI-GP-ENGINE/">Documentation</a></li>
+<li><a href="https://oeistools.github.io/PARI-GP-ENGINE/getting-started.html">Get started</a></li>
+<li><a href="https://oeistools.github.io/PARI-GP-ENGINE/gallery.html">Gallery</a></li>
+<li><a href="https://pari.math.u-bordeaux.fr/">PARI/GP home page</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Mathematics</category>
+  <category>PARI/GP</category>
+  <category>Quarto</category>
+  <guid>https://www.energycode.org/projects/06-pari-gp-engine/</guid>
+  <pubDate>Tue, 22 Sep 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/06-pari-gp-engine/pari-gp-engine-logo.png" medium="image" type="image/png" height="149" width="144"/>
+</item>
+<item>
+  <title>Package OEIS-Mathematica</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/05-OEIS-Mathematica/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" class="img-fluid" alt="License: GPL v3"> <img src="https://img.shields.io/badge/Wolfram-Language%2011%2F13%2F14-ff6b6b.svg" class="img-fluid" alt="Wolfram Language"> <img src="https://img.shields.io/badge/Package-OEIS.m-success.svg" class="img-fluid" alt="Package"> <img src="https://img.shields.io/badge/Paclet-3.1.0-9c27b0.svg" class="img-fluid" alt="Paclet"> <a href="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml"><img src="https://github.com/EnriquePH/OEIS-Mathematica/actions/workflows/mathics-offline.yml/badge.svg" class="img-fluid" alt="Mathics offline tests"></a> <a href="https://doi.org/10.5281/zenodo.21539225"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21539225.svg" class="img-fluid" alt="DOI"></a></p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>The <a href="https://oeis.org">Online Encyclopedia of Integer Sequences</a> (OEIS) is one of the most valuable mathematical resources on the web. <code>OEIS.m</code> is a multipurpose Wolfram Language package that brings OEIS data directly into Mathematica:</p>
+<p>👉 https://github.com/EnriquePH/OEIS-Mathematica</p>
+<p>This is version 3.1.0 of the package, a streamlined rewrite that queries the official OEIS JSON API instead of scraping HTML pages. It works on Wolfram Language 11, 13 and 14, keeps the public functions of the earlier package, and is now distributed as an installable Wolfram Language <strong>paclet</strong>.</p>
+<hr>
+</section>
+<section id="features" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="features"><span class="header-section-number">2</span> Features</h2>
+<ul>
+<li>Access to OEIS sequence metadata through the official JSON API</li>
+<li>Compatible with Wolfram Language 11, 13 and 14 (paclet installation needs 12.1+)</li>
+<li>Lightweight and easier to maintain than the previous HTML-based implementation</li>
+<li>Support for common package operations such as validation, import and export</li>
+<li><code>OEISbFile</code> computes b-file terms beyond what OEIS has published, using a locally defined <code>id[n_] := ...</code>, as documented on the <a href="https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package">OEIS wiki page</a> for this package</li>
+</ul>
+<hr>
+</section>
+<section id="installation" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="installation"><span class="header-section-number">3</span> Installation</h2>
+<p>As a paclet (recommended, WL 12.1+):</p>
+<pre class="wl"><code>PacletInstall["https://github.com/EnriquePH/OEIS-Mathematica/releases/latest/download/OEIS-3.1.0.paclet"]
+Needs["OEIS`"]</code></pre>
+<p>Or, working from a local clone without installing anything:</p>
+<pre class="wl"><code>PacletDirectoryLoad["/path/to/OEIS-Mathematica"]
+Needs["OEIS`"]</code></pre>
+<p>Legacy <code>Get</code>, for older Wolfram Language versions or a single-file drop-in:</p>
+<pre class="wl"><code>Get["/path/to/OEIS-Mathematica/OEIS.m"]</code></pre>
+<hr>
+</section>
+<section id="quick-start" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="quick-start"><span class="header-section-number">4</span> Quick start</h2>
+<p>Load the package in a Wolfram notebook with:</p>
+<pre class="wl"><code>&lt;&lt;OEIS`</code></pre>
+<p>Example:</p>
+<pre class="wl"><code>OEISImport["A000045", "Description"]</code></pre>
+<section id="main-functions" class="level3" data-number="4.1">
+<h3 data-number="4.1" data-anchor-id="main-functions"><span class="header-section-number">4.1</span> Main functions</h3>
+<ul>
+<li><code>OEISTotalNumberOfSequences</code></li>
+<li><code>OEISValidateIDQ</code></li>
+<li><code>OEISImport</code></li>
+<li><code>OEISURL</code></li>
+<li><code>OEISFunction</code></li>
+<li><code>OEISExport</code></li>
+<li><code>OEISbFile</code></li>
+<li><code>OEISData</code></li>
+<li><code>OEISSearch</code></li>
+<li><code>OEISRelated</code></li>
+<li><code>OEISCitation</code></li>
+<li><code>OEISGraph</code></li>
+<li><code>OEISRandom</code></li>
+<li><code>OEISSequence</code></li>
+</ul>
+<p>See the <a href="https://enriqueph.github.io/OEIS-Mathematica/functions.html">Function Index</a> for full signatures, options and links to each reference page.</p>
+<hr>
+</section>
+</section>
+<section id="documentation-and-tutorial" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="documentation-and-tutorial"><span class="header-section-number">5</span> Documentation and tutorial</h2>
+<p>A full walkthrough with real, verified output is available at <a href="https://enriqueph.github.io/OEIS-Mathematica/">EnriquePH.github.io/OEIS-Mathematica</a> and as a <a href="https://enriqueph.github.io/OEIS-Mathematica/functions.html">Function Index</a>. The runnable, plain-script source for that tutorial is <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/test/OEISTutorial.wl">test/OEISTutorial.wl</a>.</p>
+<p>There is also a real Wolfram Notebook version, with the same live-executed output, plus a guide page and one reference page per function:</p>
+<ul>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Tutorials/OEIS.nb">Documentation/English/Tutorials/OEIS.nb</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Documentation/English/Guides/OEIS.nb">Documentation/English/Guides/OEIS.nb</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/tree/master/Documentation/English/ReferencePages/Symbols">Documentation/English/ReferencePages/Symbols/</a></li>
+</ul>
+<p>The original package page, with its own usage examples, is on the OEIS wiki: <a href="https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package">User:Enrique Pérez Herrero/OEIS Package</a>.</p>
+<hr>
+</section>
+<section id="testing" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="testing"><span class="header-section-number">6</span> Testing</h2>
+<pre><code>wolframscript -file Tests/RunTests.wls            # everything, incl. live OEIS API calls
+wolframscript -file Tests/RunTests.wls --offline   # ID validation / URL building only</code></pre>
+<p>CI (<a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/.github/workflows/mathics-offline.yml">.github/workflows/mathics-offline.yml</a>) runs the ID-validation/URL-building subset on every push and pull request using <a href="https://mathics.org">Mathics3</a>, a free, open-source Wolfram Language implementation, so it needs no Wolfram Engine license. It runs <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.mathics.wls">Tests/OfflineTests.mathics.wls</a>, a hand-ported mirror of <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/Tests/OfflineTests.wlt">Tests/OfflineTests.wlt</a> (Mathics3 doesn’t implement <code>VerificationTest</code>/<code>TestReport</code> or the live JSON API path, so the real <code>.wlt</code> suite and anything network-dependent still needs a licensed <code>wolframscript</code>, e.g.&nbsp;locally or in your own CI with <code>WOLFRAMSCRIPT_ENTITLEMENTID</code> configured).</p>
+<hr>
+</section>
+<section id="license" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="license"><span class="header-section-number">7</span> License</h2>
+<p>The package is distributed under the <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/LICENSE">GNU General Public License v3.0</a>.</p>
+</section>
+<section id="how-to-cite" class="level2" data-number="8">
+<h2 data-number="8" data-anchor-id="how-to-cite"><span class="header-section-number">8</span> How to cite</h2>
+<p>If you use this package in a project or publication, please cite it using the metadata in <a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff">CITATION.cff</a>, which includes the archived Zenodo DOI: <a href="https://doi.org/10.5281/zenodo.21539225">10.5281/zenodo.21539225</a>.</p>
+</section>
+<section id="links" class="level2" data-number="9">
+<h2 data-number="9" data-anchor-id="links"><span class="header-section-number">9</span> Links</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica">GitHub - OEIS-Mathematica</a></li>
+<li><a href="https://enriqueph.github.io/OEIS-Mathematica/">Documentation and tutorial</a></li>
+<li><a href="https://enriqueph.github.io/OEIS-Mathematica/functions.html">Function Index</a></li>
+<li><a href="https://oeis.org/wiki/User:Enrique_P%C3%A9rez_Herrero/OEIS_Package">OEIS wiki page for this package</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CHANGELOG.md">CHANGELOG</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CONTRIBUTING.md">CONTRIBUTING</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li><a href="https://github.com/EnriquePH/OEIS-Mathematica/blob/master/CITATION.cff">CITATION.cff</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.21539225">DOI on Zenodo</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Mathematics</category>
+  <category>Wolfram Language</category>
+  <category>Package</category>
+  <guid>https://www.energycode.org/projects/05-OEIS-Mathematica/</guid>
+  <pubDate>Thu, 23 Jul 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/05-OEIS-Mathematica/oeis-mathematica-logo.png" medium="image" type="image/png" height="142" width="144"/>
+</item>
+<item>
+  <title>Explocal</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/04-explocal/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><a href="https://github.com/EnriquePH/EXPLOCAL/actions/workflows/publish-site.yml"><img src="https://github.com/EnriquePH/EXPLOCAL/actions/workflows/publish-site.yml/badge.svg" class="img-fluid" alt="Deploy site"></a> <a href="https://github.com/EnriquePH/EXPLOCAL/actions/workflows/check-site.yml"><img src="https://github.com/EnriquePH/EXPLOCAL/actions/workflows/check-site.yml/badge.svg" class="img-fluid" alt="Check site"></a> <a href="https://enriqueph.github.io/EXPLOCAL/"><img src="https://img.shields.io/badge/docs-site-blue.png" class="img-fluid" alt="Website"></a> <a href="https://github.com/EnriquePH/EXPLOCAL/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" class="img-fluid" alt="License: MIT"></a> <a href="https://quarto.org"><img src="https://img.shields.io/badge/made%20with-Quarto-3a86ff.png" class="img-fluid" alt="Made with Quarto"></a> <a href="https://github.com/EnriquePH/EXPLOCAL/blob/master/CONTRIBUTING.md"><img src="https://img.shields.io/badge/since-1996-orange.png" class="img-fluid" alt="Since 1996"></a> <a href="https://github.com/EnriquePH/EXPLOCAL/blob/master/CITATION.cff"><img src="https://img.shields.io/badge/cite-CITATION.cff-informational" class="img-fluid" alt="Cite this repository"></a> <a href="https://github.com/EnriquePH/EXPLOCAL/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" class="img-fluid" alt="Contributor Covenant"></a> <a href="https://doi.org/10.5281/zenodo.21306995"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21306995.svg" class="img-fluid" alt="DOI"></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/04-explocal/explocal-logo.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Logo de Explocal</figcaption>
+</figure>
+</div>
+<section id="descripción" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="descripción"><span class="header-section-number">1</span> Descripción</h2>
+<p><strong>Explocal</strong> es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española <strong>UNE 31-002</strong>. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para <em>Windows 3.1</em> en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (<a href="https://minasyenergia.upm.es/">E.T.S.I. de Minas de Madrid</a>, especialidad Laboreo y Explosivos).</p>
+<p>El repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages.</p>
+</section>
+<section id="historia-del-proyecto" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="historia-del-proyecto"><span class="header-section-number">2</span> Historia del proyecto</h2>
+<ul>
+<li><strong>1996</strong> — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación <code>EXPLOCAL.EXE</code> en C++ para Windows 3.1.</li>
+<li><strong>2015-2016</strong> — Primer intento de modernización: exploración de los ficheros <code>*.DAT</code> con R/ggplot, sin llegar a reimplementar el motor de cálculo.</li>
+<li><strong>2026</strong> — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica.</li>
+</ul>
+</section>
+<section id="estructura-del-repositorio" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="estructura-del-repositorio"><span class="header-section-number">3</span> Estructura del repositorio</h2>
+<ul>
+<li><strong><code>code/</code></strong> — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable <code>EXPLOCAL.EXE</code> compilado. Referencia histórica.</li>
+<li><strong><code>site/</code></strong> — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.</li>
+<li><strong><code>docs/</code></strong> — documentos originales sin procesar (<code>.DOC</code>/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de <code>site/</code>.</li>
+<li><strong><code>catalog.json</code></strong> — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX).</li>
+</ul>
+</section>
+<section id="estado-actual" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="estado-actual"><span class="header-section-number">4</span> Estado actual</h2>
+<ul>
+<li>✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.</li>
+<li>✅ Código y datos originales de 1996 preservados íntegros en <code>code/</code>.</li>
+<li>🚧 Reimplementación en Python del motor de cálculo: en desarrollo.</li>
+</ul>
+</section>
+<section id="licencia" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="licencia"><span class="header-section-number">5</span> Licencia</h2>
+<p><a href="https://github.com/EnriquePH/EXPLOCAL/blob/master/LICENSE">MIT</a> © 1996 Enrique Pérez Herrero.</p>
+</section>
+<section id="cómo-citar" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="cómo-citar"><span class="header-section-number">6</span> Cómo citar</h2>
+<pre><code>Pérez Herrero, Enrique (1996). Proyecto de una aplicación informática
+para el cálculo de las principales características teóricas de los
+explosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de
+Madrid. https://enriqueph.github.io/EXPLOCAL/
+DOI: 10.5281/zenodo.21306995</code></pre>
+</section>
+<section id="enlaces" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="enlaces"><span class="header-section-number">7</span> Enlaces</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/EXPLOCAL">GitHub - Explocal</a></li>
+<li><a href="https://enriqueph.github.io/EXPLOCAL/">Libro / memoria del proyecto</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.21306995">DOI en Zenodo</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>C++</category>
+  <category>Python</category>
+  <category>Quarto</category>
+  <category>Explosivos</category>
+  <guid>https://www.energycode.org/projects/04-explocal/</guid>
+  <pubDate>Fri, 10 Jul 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/04-explocal/explocal-logo.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>Volcanic Eruptions in the Holocene Period</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/03-holocene-volcanic-eruptions/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration"><img src="https://www.energycode.org/projects/03-holocene-volcanic-eruptions/20210115_131231.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<figcaption>Volcán de Teneguía (La Palma)</figcaption>
+</figure>
+</div>
+<section id="volcanic-eruptions-in-the-holocene-period" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Volcanic Eruptions in the Holocene Period</h1>
+<section id="data-source" class="level2" data-number="1.1">
+<h2 data-number="1.1" data-anchor-id="data-source"><span class="header-section-number">1.1</span> Data source</h2>
+<p>The <a href="https://volcano.si.edu/">Smithsonian Institution’s Global Volcanism Program (GVP)</a> documents Earth’s volcanoes and their eruptive history. The <em>Volcanoes of the World</em> database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest.</p>
+</section>
+<section id="eda-exploratory-data-analysis-notebook" class="level2" data-number="1.2">
+<h2 data-number="1.2" data-anchor-id="eda-exploratory-data-analysis-notebook"><span class="header-section-number">1.2</span> EDA (Exploratory Data Analysis) Notebook</h2>
+<p>This notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data.</p>
+<iframe src="https://www.kaggle.com/embed/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Holocene Volcanic Eruptions: Data Exploration">
+</iframe>
+</section>
+<section id="comments" class="level2" data-number="1.3">
+<h2 data-number="1.3" data-anchor-id="comments"><span class="header-section-number">1.3</span> Comments</h2>
+<p>This kaggle notebook is mentioned in <a href="https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks">Hidden Gems: A Collection of Underrated Notebooks</a> <strong>Volume 61 - 2021-07-06</strong></p>
+<p><em>“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”</em></p>
+</section>
+<section id="links" class="level2" data-number="1.4">
+<h2 data-number="1.4" data-anchor-id="links"><span class="header-section-number">1.4</span> Links</h2>
+<ul>
+<li><p><a href="https://www.kaggle.com/code/enrique1500/holocene-volcanic-eruptions-data-exploration?kernelSessionId=1144498">kaggle - Holocene Volcanic Eruptions: Data Exploration</a></p></li>
+<li><p><a href="https://www.kaggle.com/code/headsortails/hidden-gems-a-collection-of-underrated-notebooks">kaggle - Hidden Gems: A Collection of Underrated Notebooks</a></p></li>
+<li><p><a href="https://www.kaggle.com/datasets/smithsonian/volcanic-eruptions">kaggle - Dataset: Volcanic Eruptions in the Holocene Period</a></p></li>
+<li><p><a href="https://volcano.si.edu/">Smithsonian Institution’s Global Volcanism Program (GVP)</a></p></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Kaggle</category>
+  <category>EDA</category>
+  <guid>https://www.energycode.org/projects/03-holocene-volcanic-eruptions/</guid>
+  <pubDate>Wed, 02 Aug 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/03-holocene-volcanic-eruptions/dominant_rock_type.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Stock Market Confidence Indexes</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/02-marketconf-package/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<section id="package-marketconf-stock-market-confidence-indexes" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Package marketconf: Stock Market Confidence Indexes</h1>
+<p>The R package <code>marketconf</code> reads data on <strong>U. S. Stock Market Confidence Indexes</strong> from the <a href="https://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/stock-market-confidence">Yale School of Management’s International Center for Finance</a> web page.</p>
+<p>This package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:</p>
+<p><a href="https://cran.r-project.org/web/packages/quantmod/index.html"><code>quantmod</code></a>, <a href="https://cran.r-project.org/web/packages/TTR/index.html"><code>TTR</code></a> or <a href="https://cran.r-project.org/web/packages/tidyquant/index.html"><code>tidyquant</code></a></p>
+<section id="package-installation" class="level2" data-number="1.1">
+<h2 data-number="1.1" data-anchor-id="package-installation"><span class="header-section-number">1.1</span> Package installation</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(devtools)</span>
+<span id="cb1-2">devtools<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"EnriquePH/marketconf"</span>)</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="examples" class="level2" data-number="1.2">
+<h2 data-number="1.2" data-anchor-id="examples"><span class="header-section-number">1.2</span> Examples</h2>
+<section id="listing-confidence-indices" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" data-anchor-id="listing-confidence-indices"><span class="header-section-number">1.2.1</span> Listing confidence indices</h3>
+<p>The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(marketconf)</span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(knitr)</span>
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">kable</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">US_confidence_indices</span>()[<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)])</span></code></pre></div></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 22%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Info</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">US1YI</td>
+<td style="text-align: left;">U.S. One Year Confidence Index</td>
+<td style="text-align: left;">The percent of the population expecting an increase in the Dow in the coming year.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USVI</td>
+<td style="text-align: left;">U.S. Valuation Confidence Index</td>
+<td style="text-align: left;">The percent of the population who think that the market is not too high.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USBODI</td>
+<td style="text-align: left;">U.S. Buy-On-Dips Confidence Index</td>
+<td style="text-align: left;">The percent of the population expecting a rebound the next day should the market ever drop 3% in one day.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USCI</td>
+<td style="text-align: left;">U.S. Crash Confidence Index</td>
+<td style="text-align: left;">The percent of the population who attach little probability to a stock market crash in the next-six months.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="plotting" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" data-anchor-id="plotting"><span class="header-section-number">1.2.2</span> Plotting</h3>
+<p>This is a basic example that plots the <strong>U.S. Valuation Confidence Index</strong>:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">index_symbol <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"USVI"</span></span>
+<span id="cb3-4">index_df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">get_index</span>(index_symbol)</span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(index_df, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> Date, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> USVI.Value, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> Investor)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggtitle</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">get_index_description</span>(index_symbol))</span></code></pre></div></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/02-marketconf-package/index_files/figure-html/example-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="license" class="level2" data-number="1.3">
+<h2 data-number="1.3" data-anchor-id="license"><span class="header-section-number">1.3</span> License</h2>
+<p>The <code>markerconf</code> package is licensed under the <a href="https://github.com/EnriquePH/marketconf/blob/master/LICENSE">MIT License (MIT)</a>, but the <strong>Stock Market Confidence Indexes</strong> are produced and copyrighted by the <strong>International Center of Finance at the Yale School of Management</strong>. Please refer to the <a href="https://som.yale.edu/centers/international-center-for-finance/data/stock-market-confidence-indices/united-states">TERMS OF USE</a> on <a href="https://som.yale.edu/">Yale University</a>’s web page for further information.</p>
+</section>
+<section id="links" class="level2" data-number="1.4">
+<h2 data-number="1.4" data-anchor-id="links"><span class="header-section-number">1.4</span> Links</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/marketconf">Github marketconf R package</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Package</category>
+  <category>Stock market</category>
+  <guid>https://www.energycode.org/projects/02-marketconf-package/</guid>
+  <pubDate>Tue, 01 Aug 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/02-marketconf-package/USVI-plot.png" medium="image" type="image/png" height="103" width="144"/>
+</item>
+</channel>
+</rss>
