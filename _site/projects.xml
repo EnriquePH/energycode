@@ -10,7 +10,171 @@
 <atom:link href="https://www.energycode.org/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Tue, 22 Sep 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 28 Sep 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>LUNAR-ORBITER-ATLAS</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/07-lunar-orbiter-atlas/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/actions/workflows/ci.yml"><img src="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/actions/workflows/ci.yml/badge.svg" class="img-fluid" alt="CI"></a> <a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/actions/workflows/pages.yml"><img src="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/actions/workflows/pages.yml/badge.svg" class="img-fluid" alt="Pages"></a> <a href="https://enriqueph.github.io/LUNAR-ORBITER-ATLAS/"><img src="https://img.shields.io/badge/project%20page-GitHub%20Pages-ff7547.png" class="img-fluid" alt="Project page"></a> <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.10%2B-3776ab" class="img-fluid" alt="Python 3.10+"></a> <a href="https://dash.plotly.com/"><img src="https://img.shields.io/badge/built%20with-Dash%20%2B%20Plotly-3f4f75.png" class="img-fluid" alt="Dash"></a> <a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.png" class="img-fluid" alt="License: MIT"></a></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/07-lunar-orbiter-atlas/lunar-orbiter-atlas-logo.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="LUNAR-ORBITER-ATLAS logo" width="220"></p>
+</figure>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Between 1966 and 1967, NASA sent five <strong>Lunar Orbiter</strong> spacecraft to map the Moon and pick safe landing sites for Apollo. Their cameras returned hundreds of frames that are still some of the most beautiful pictures of the lunar surface. The <a href="https://www.lpi.usra.edu/resources/lunarorbiter/">Lunar and Planetary Institute (LPI)</a> keeps them online, frame by frame, with the metadata of every shot.</p>
+<p><strong>LUNAR-ORBITER-ATLAS</strong> is a local web app, written in Python with <a href="https://dash.plotly.com/">Dash</a> and <a href="https://plotly.com/python/">Plotly</a>, that puts those photographs back where they were taken: on an interactive 3D Moon.</p>
+<p>👉 https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/07-lunar-orbiter-atlas/mission-4.webp" class="img-fluid figure-img" alt="Screenshot of the atlas showing the Lunar Orbiter 4 mosaic on the 3D globe and frame 4114 in the side panel"></p>
+<figcaption>Lunar Orbiter 4 mosaic: high-altitude frames covering the near side of the Moon</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="features" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="features"><span class="header-section-number">2</span> Features</h2>
+<ul>
+<li><strong>Mission mosaic.</strong> Every frame of the selected mission (890 frames over the five missions) is projected onto the part of the Moon it photographed and labelled with its frame ID.</li>
+<li><strong>Picking photos.</strong> Click a photo, choose it from the selector, type its ID or press <strong>Random</strong> to show it in the side panel.</li>
+<li><strong>Close-up navigation.</strong> Rotation and zoom slow down near the surface, and the camera can come down to about 17 km above it.</li>
+<li><strong>Frame details.</strong> LPI preview, principal point, spacecraft altitude and position, illumination angles (sun azimuth, incidence, emission, phase), camera (80 mm or 610 mm) and ground footprint in km.</li>
+<li><strong>Export.</strong> Download the loaded frames of a mission as <strong>CSV</strong> (metadata and geometry) or <strong>GeoJSON</strong> (projected footprints as polygons).</li>
+<li><strong>Reference tabs.</strong> Short facts about the Moon and the Lunar Orbiter program, summarised from Wikipedia.</li>
+<li><strong>English and Spanish.</strong> Switch with the <strong>ES | EN</strong> control, or open <code>?lang=en</code> / <code>?lang=es</code>.</li>
+</ul>
+<hr>
+</section>
+<section id="how-photos-are-placed" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="how-photos-are-placed"><span class="header-section-number">3</span> How photos are placed</h2>
+<p>The interesting part is geometry. A photo is not just pasted on the globe: each frame is projected <strong>from the spacecraft</strong>. Every pixel becomes a ray that starts at the spacecraft position published by the LPI, goes through the camera aimed at the principal point, and lands where it meets the Moon. So oblique and high-altitude shots cover the area they really saw, and pixels that look past the limb are dropped.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>How it is handled</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Camera</strong></td>
+<td>The 80 mm medium-resolution frame (55 × 65 mm) when the gallery has one, otherwise the middle third of the 610 mm high-resolution frame. From 46 km the model covers 31.7 × 37.5 km, against the documented 31.6 × 37.4 km.</td>
+</tr>
+<tr class="even">
+<td><strong>Check</strong></td>
+<td>For the 890 frames, the emission angle implied by the spacecraft position matches the LPI’s with a median error of 0.06°. The 22 frames whose metadata disagree by more than 5° fall back to a simple north-up patch.</td>
+</tr>
+<tr class="odd">
+<td><strong>Orientation</strong></td>
+<td>The image rotation is not published: near-vertical frames are drawn north-up, oblique ones level with the horizon, and high-altitude frames are turned so their black sky falls off the Moon.</td>
+</tr>
+<tr class="even">
+<td><strong>Limits</strong></td>
+<td>Terrain relief and lens distortion are ignored; positions are as good as the published metadata.</td>
+</tr>
+</tbody>
+</table>
+<p>The coordinate conversions are public, so they can be reused in other projects: <code>selenographic_to_cartesian</code> and <code>cartesian_to_selenographic</code> in <code>orbiter.globe</code>.</p>
+<hr>
+</section>
+<section id="installation" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="installation"><span class="header-section-number">4</span> Installation</h2>
+<p>Requires <strong>Python ≥ 3.10</strong>, on Linux or macOS.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> clone https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS.git</span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> LUNAR-ORBITER-ATLAS</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> install   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># create .venv and install the app</span></span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> download  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># optional: fetch all 890 photos now (MISSIONS="1 4" to limit)</span></span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> run       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start the app</span></span></code></pre></div></div>
+<p>Then open <a href="http://127.0.0.1:8050/" class="uri">http://127.0.0.1:8050/</a>. Without <code>make</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python3</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> venv .venv</span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">.venv/bin/python</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> pip install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-e</span> .</span>
+<span id="cb2-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">.venv/bin/lunar-orbiter</span></span></code></pre></div></div>
+<p>The first time a mission is shown, the app downloads the LPI page and thumbnail of each frame (about 200 per mission) and caches them in <code>data/lpi/</code>, politely: three workers and at most four requests per second. Later runs work from disk.</p>
+<hr>
+</section>
+<section id="exported-files" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="exported-files"><span class="header-section-number">5</span> Exported files</h2>
+<ul>
+<li><strong>CSV</strong>: one row per frame with the LPI metadata (principal point, spacecraft position, illumination angles, preview URL), plus <code>camera</code>, <code>footprint_width_km</code>, <code>footprint_height_km</code>, <code>projected</code> and <code>implied_emission_angle</code>.</li>
+<li><strong>GeoJSON</strong>: a <code>FeatureCollection</code> with one polygon per frame, following the outline drawn on the globe. Coordinates are selenographic degrees, east and north positive, <strong>not</strong> WGS 84.</li>
+</ul>
+<hr>
+</section>
+<section id="license" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="license"><span class="header-section-number">6</span> License</h2>
+<p>The code is distributed under the <a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/blob/main/LICENSE">MIT License</a>. LPI images and metadata belong to their respective owners, and the reference tabs summarise Wikipedia articles under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+</section>
+<section id="how-to-cite" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="how-to-cite"><span class="header-section-number">7</span> How to cite</h2>
+<pre><code>ENERGYCODE (2026). Lunar Orbiter Atlas, version 1.0.0.
+https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS</code></pre>
+<p>For photographs or metadata, also cite the LPI Lunar Orbiter Photo Gallery and the frame record used.</p>
+</section>
+<section id="links" class="level2" data-number="8">
+<h2 data-number="8" data-anchor-id="links"><span class="header-section-number">8</span> Links</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS">GitHub - LUNAR-ORBITER-ATLAS</a></li>
+<li><a href="https://enriqueph.github.io/LUNAR-ORBITER-ATLAS/">Project page</a></li>
+<li><a href="https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS/blob/main/CHANGELOG.md">Changelog</a></li>
+<li><a href="https://www.lpi.usra.edu/resources/lunarorbiter/">LPI - Lunar Orbiter Photo Gallery</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lunar_Orbiter_program">Wikipedia - Lunar Orbiter program</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <category>Dash</category>
+  <category>Plotly</category>
+  <category>Moon</category>
+  <guid>https://www.energycode.org/projects/07-lunar-orbiter-atlas/</guid>
+  <pubDate>Mon, 28 Sep 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/07-lunar-orbiter-atlas/lunar-orbiter-atlas-logo.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>PARI-GP-ENGINE</title>
   <dc:creator>Enrique Pérez Herrero</dc:creator>

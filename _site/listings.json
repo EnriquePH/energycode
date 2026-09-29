@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/07-lunar-orbiter-atlas/index.html",
       "/projects/06-pari-gp-engine/index.html",
       "/projects/05-OEIS-Mathematica/index.html",
       "/projects/04-explocal/index.html",

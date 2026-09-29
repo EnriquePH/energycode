@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "PARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "LUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -572,5 +572,61 @@
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the resulting confusion matrix using ggplot, we use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#introduction",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#introduction",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nBetween 1966 and 1967, NASA sent five Lunar Orbiter spacecraft to map the Moon and pick safe landing sites for Apollo. Their cameras returned hundreds of frames that are still some of the most beautiful pictures of the lunar surface. The Lunar and Planetary Institute (LPI) keeps them online, frame by frame, with the metadata of every shot.\nLUNAR-ORBITER-ATLAS is a local web app, written in Python with Dash and Plotly, that puts those photographs back where they were taken: on an interactive 3D Moon.\n👉 https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\n\n\n\nLunar Orbiter 4 mosaic: high-altitude frames covering the near side of the Moon"
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#features",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#features",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "2 Features",
+    "text": "2 Features\n\nMission mosaic. Every frame of the selected mission (890 frames over the five missions) is projected onto the part of the Moon it photographed and labelled with its frame ID.\nPicking photos. Click a photo, choose it from the selector, type its ID or press Random to show it in the side panel.\nClose-up navigation. Rotation and zoom slow down near the surface, and the camera can come down to about 17 km above it.\nFrame details. LPI preview, principal point, spacecraft altitude and position, illumination angles (sun azimuth, incidence, emission, phase), camera (80 mm or 610 mm) and ground footprint in km.\nExport. Download the loaded frames of a mission as CSV (metadata and geometry) or GeoJSON (projected footprints as polygons).\nReference tabs. Short facts about the Moon and the Lunar Orbiter program, summarised from Wikipedia.\nEnglish and Spanish. Switch with the ES | EN control, or open ?lang=en / ?lang=es."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "3 How photos are placed",
+    "text": "3 How photos are placed\nThe interesting part is geometry. A photo is not just pasted on the globe: each frame is projected from the spacecraft. Every pixel becomes a ray that starts at the spacecraft position published by the LPI, goes through the camera aimed at the principal point, and lands where it meets the Moon. So oblique and high-altitude shots cover the area they really saw, and pixels that look past the limb are dropped.\n\n\n\n\n\n\n\nAspect\nHow it is handled\n\n\n\n\nCamera\nThe 80 mm medium-resolution frame (55 × 65 mm) when the gallery has one, otherwise the middle third of the 610 mm high-resolution frame. From 46 km the model covers 31.7 × 37.5 km, against the documented 31.6 × 37.4 km.\n\n\nCheck\nFor the 890 frames, the emission angle implied by the spacecraft position matches the LPI’s with a median error of 0.06°. The 22 frames whose metadata disagree by more than 5° fall back to a simple north-up patch.\n\n\nOrientation\nThe image rotation is not published: near-vertical frames are drawn north-up, oblique ones level with the horizon, and high-altitude frames are turned so their black sky falls off the Moon.\n\n\nLimits\nTerrain relief and lens distortion are ignored; positions are as good as the published metadata.\n\n\n\nThe coordinate conversions are public, so they can be reused in other projects: selenographic_to_cartesian and cartesian_to_selenographic in orbiter.globe."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#installation",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#installation",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "4 Installation",
+    "text": "4 Installation\nRequires Python ≥ 3.10, on Linux or macOS.\ngit clone https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS.git\ncd LUNAR-ORBITER-ATLAS\nmake install   # create .venv and install the app\nmake download  # optional: fetch all 890 photos now (MISSIONS=\"1 4\" to limit)\nmake run       # start the app\nThen open http://127.0.0.1:8050/. Without make:\npython3 -m venv .venv\n.venv/bin/python -m pip install -e .\n.venv/bin/lunar-orbiter\nThe first time a mission is shown, the app downloads the LPI page and thumbnail of each frame (about 200 per mission) and caches them in data/lpi/, politely: three workers and at most four requests per second. Later runs work from disk."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "5 Exported files",
+    "text": "5 Exported files\n\nCSV: one row per frame with the LPI metadata (principal point, spacecraft position, illumination angles, preview URL), plus camera, footprint_width_km, footprint_height_km, projected and implied_emission_angle.\nGeoJSON: a FeatureCollection with one polygon per frame, following the outline drawn on the globe. Coordinates are selenographic degrees, east and north positive, not WGS 84."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#license",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#license",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "6 License",
+    "text": "6 License\nThe code is distributed under the MIT License. LPI images and metadata belong to their respective owners, and the reference tabs summarise Wikipedia articles under CC BY-SA 4.0."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "7 How to cite",
+    "text": "7 How to cite\nENERGYCODE (2026). Lunar Orbiter Atlas, version 1.0.0.\nhttps://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\nFor photographs or metadata, also cite the LPI Lunar Orbiter Photo Gallery and the frame record used."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#links",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#links",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "8 Links",
+    "text": "8 Links\n\nGitHub - LUNAR-ORBITER-ATLAS\nProject page\nChangelog\nLPI - Lunar Orbiter Photo Gallery\nWikipedia - Lunar Orbiter program"
   }
 ]
