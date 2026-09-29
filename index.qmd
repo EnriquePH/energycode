@@ -10,6 +10,7 @@ listing:
   categories: true            # Enable category filtering
   feed: true                  # Generate an RSS feed (<page>.xml)
   date-format: long           # Display dates in long format (e.g., January 1, 2026)
+  image-height: 200px         # Same thumbnail height on every card
   fields:                     # Metadata fields to display for each post
     - title
     - image

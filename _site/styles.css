@@ -1,1 +1,7 @@
 /* css styles */
+
+/* Listing cards: show the whole thumbnail, centred, instead of cropping it */
+.quarto-grid-item p.card-img-top > img {
+  object-fit: contain;
+  padding: 0.5rem;
+}
