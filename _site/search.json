@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "LUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nPackage oeis-tools\n\n\n\nMathematics\n\nPython\n\nPackage\n\n\n\nA Toolkit for Working with Integer Sequences\n\n\n\nMarch 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -628,5 +628,54 @@
     "title": "LUNAR-ORBITER-ATLAS",
     "section": "8 Links",
     "text": "8 Links\n\nGitHub - LUNAR-ORBITER-ATLAS\nProject page\nChangelog\nLPI - Lunar Orbiter Photo Gallery\nWikipedia - Lunar Orbiter program"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#introduction",
+    "href": "projects/08-oeis-tools-R/index.html#introduction",
+    "title": "Package oeis.tools on CRAN",
+    "section": "1 Introduction",
+    "text": "1 Introduction\noeis.tools is an R package to query the On-Line Encyclopedia of Integer Sequences (OEIS) from R code. It is the R counterpart of the Python oeis-tools project, and version 0.3.1 is now available on CRAN, so it no longer has to be installed from GitHub.\n👉 https://CRAN.R-project.org/package=oeis.tools"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#installation",
+    "href": "projects/08-oeis-tools-R/index.html#installation",
+    "title": "Package oeis.tools on CRAN",
+    "section": "2 Installation",
+    "text": "2 Installation\nRequires R ≥ 4.1.0.\ninstall.packages(\"oeis.tools\")\nlibrary(oeis.tools)"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#examples",
+    "href": "projects/08-oeis-tools-R/index.html#examples",
+    "title": "Package oeis.tools on CRAN",
+    "section": "3 Examples",
+    "text": "3 Examples\n\n3.1 Reading a sequence\nSequence() downloads the OEIS entry of a sequence and exposes its fields (name, keywords, formulas, programs, cross-references…):\nfib &lt;- Sequence(\"A000045\")\n\nfib$name\n#&gt; [1] \"Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.\"\n\nfib$keyword\n#&gt; [1] \"nonn\"    \"core\"    \"nice\"    \"easy\"    \"hear\"    \"changed\"\n\n\n3.2 Cross-references and citations\nget_xref_ids() returns the A-numbers cited in the %Y lines of the entry, and get_bibtex() builds a BibTeX record ready to paste into a paper:\nhead(get_xref_ids(fib))\n#&gt; [1] \"A001622\" \"A039834\" \"A001519\" \"A001906\" \"A001690\" \"A000213\"\n\ncat(get_bibtex(fib))\n#&gt; @misc{A000045,\n#&gt;   author       = {N. J. A. Sloane},\n#&gt;   title        = {A000045: Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.},\n#&gt;   howpublished = {The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences},\n#&gt;   year         = {1991},\n#&gt;   ...\n#&gt;   url          = {https://oeis.org/A000045}\n#&gt; }\n\n\n3.3 Downloading and plotting b-files\nBFile() downloads the b-file of a sequence (the long list of terms), and plot_data() draws it with ggplot2. With return_plot = TRUE it returns the plot object, so it can be themed and saved like any other ggplot:\nlibrary(ggplot2)\n\npsi &lt;- BFile(\"A001615\")\n\np &lt;- plot_data(psi, n = 1000, plot_style = \"scatter\",\n              show = FALSE, return_plot = TRUE,\n              color = \"#1f6fb2\", size = 0.8) +\n  theme_minimal(base_size = 13)\n\nggsave(\"dedekind-psi-A001615.png\", p, width = 7, height = 4.2, dpi = 150, bg = \"white\")\n\n\n\nDedekind psi function \\(\\psi(n) = n \\prod_{p \\mid n} (1 + 1/p)\\) (A001615) for \\(n \\le 1000\\), plotted with plot_data()\n\n\nThe points fall on rays through the origin: the lowest one, \\(\\psi(p) = p + 1\\), is made of the primes, and the steeper rays collect the numbers that share the same set of small prime factors."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
+    "href": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
+    "title": "Package oeis.tools on CRAN",
+    "section": "4 Arbitrary precision",
+    "text": "4 Arbitrary precision\nTerms are stored as gmp::bigz integers, so sequences whose values grow beyond \\(2^{53}\\), the largest range where a double represents every integer exactly, keep all their digits:\nhead(get_bfile_data(psi))\n#&gt; Big Integer ('bigz') object of length 6:\n#&gt; [1] 1  3  4  6  6  12\nWhen the terms are too large to convert to numbers, plot_data() switches to a \\(\\operatorname{sign}(a_n)\\log_{10}|a_n|\\) scale automatically."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#main-functions",
+    "href": "projects/08-oeis-tools-R/index.html#main-functions",
+    "title": "Package oeis.tools on CRAN",
+    "section": "5 Main functions",
+    "text": "5 Main functions\n\n\n\nFunction\nPurpose\n\n\n\n\nSequence()\nDownload an OEIS entry and its fields\n\n\nBFile()\nDownload the b-file (terms) of a sequence\n\n\nget_xref_ids()\nA-numbers cross-referenced by a sequence\n\n\nget_bibtex()\nBibTeX citation of a sequence\n\n\nplot_data()\nPlot the terms of a b-file with ggplot2"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#license",
+    "href": "projects/08-oeis-tools-R/index.html#license",
+    "title": "Package oeis.tools on CRAN",
+    "section": "6 License",
+    "text": "6 License\nThe package is distributed under the MIT License. OEIS content is available under the OEIS End-User License Agreement (CC BY-SA 4.0)."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#links",
+    "href": "projects/08-oeis-tools-R/index.html#links",
+    "title": "Package oeis.tools on CRAN",
+    "section": "7 Links",
+    "text": "7 Links\n\nCRAN - oeis.tools\nGitHub - oeistools/oeis-tools-R\nGitHub - oeistools/oeis-tools (Python)\nThe On-Line Encyclopedia of Integer Sequences"
   }
 ]
