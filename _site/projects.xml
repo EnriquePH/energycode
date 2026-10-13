@@ -12,7 +12,7 @@
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Mon, 12 Oct 2026 22:00:00 GMT</lastBuildDate>
 <item>
-  <title>Package oeis.tools on CRAN</title>
+  <title>R Package oeis.tools on CRAN</title>
   <dc:creator>Enrique Pérez Herrero</dc:creator>
   <link>https://www.energycode.org/projects/08-oeis-tools-R/</link>
   <description><![CDATA[ 
@@ -796,17 +796,6 @@ DOI: 10.5281/zenodo.21306995</code></pre>
   <guid>https://www.energycode.org/projects/04-explocal/</guid>
   <pubDate>Fri, 10 Jul 2026 22:00:00 GMT</pubDate>
   <media:content url="https://www.energycode.org/projects/04-explocal/explocal-logo.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title></title>
-  <dc:creator>Enrique Pérez Herrero</dc:creator>
-  <link>https://www.energycode.org/projects/01-oeis-tools-py/</link>
-  <description><![CDATA[ undefined ]]></description>
-  <category>Mathematics</category>
-  <category>Python</category>
-  <category>Package</category>
-  <guid>https://www.energycode.org/projects/01-oeis-tools-py/</guid>
-  <pubDate>Sat, 28 Feb 2026 23:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Volcanic Eruptions in the Holocene Period</title>

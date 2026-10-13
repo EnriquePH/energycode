@@ -1,5 +1,5 @@
 ---
-title: Package oeis.tools on CRAN
+title: R Package oeis.tools on CRAN
 description: Work with OEIS integer sequences from R, now on CRAN
 author: 'Enrique Pérez Herrero'
 date: '2026-10-13'

@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\nPackage oeis-tools\n\n\n\nMathematics\n\nPython\n\nPackage\n\n\n\nA Toolkit for Working with Integer Sequences\n\n\n\nMarch 1, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "R Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -105,53 +105,242 @@
     "text": "Notas\n\n\nEste artículo es una traducción y actualización del post original titulado TETRAHEDRAL NUMBERS RECIPROCALS SUM publicado el viernes 25 de diciembre de 2009 en el blog Psychedelic Geometry [1].↩︎"
   },
   {
-    "objectID": "projects/04-explocal/index.html#descripción",
-    "href": "projects/04-explocal/index.html#descripción",
-    "title": "Explocal",
-    "section": "1 Descripción",
-    "text": "1 Descripción\nExplocal es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española UNE 31-002. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para Windows 3.1 en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (E.T.S.I. de Minas de Madrid, especialidad Laboreo y Explosivos).\nEl repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages."
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#introduction",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#introduction",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nBetween 1966 and 1967, NASA sent five Lunar Orbiter spacecraft to map the Moon and pick safe landing sites for Apollo. Their cameras returned hundreds of frames that are still some of the most beautiful pictures of the lunar surface. The Lunar and Planetary Institute (LPI) keeps them online, frame by frame, with the metadata of every shot.\nLUNAR-ORBITER-ATLAS is a local web app, written in Python with Dash and Plotly, that puts those photographs back where they were taken: on an interactive 3D Moon.\n👉 https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\n\n\n\nLunar Orbiter 4 mosaic: high-altitude frames covering the near side of the Moon"
   },
   {
-    "objectID": "projects/04-explocal/index.html#historia-del-proyecto",
-    "href": "projects/04-explocal/index.html#historia-del-proyecto",
-    "title": "Explocal",
-    "section": "2 Historia del proyecto",
-    "text": "2 Historia del proyecto\n\n1996 — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación EXPLOCAL.EXE en C++ para Windows 3.1.\n2015-2016 — Primer intento de modernización: exploración de los ficheros *.DAT con R/ggplot, sin llegar a reimplementar el motor de cálculo.\n2026 — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica."
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#features",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#features",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "2 Features",
+    "text": "2 Features\n\nMission mosaic. Every frame of the selected mission (890 frames over the five missions) is projected onto the part of the Moon it photographed and labelled with its frame ID.\nPicking photos. Click a photo, choose it from the selector, type its ID or press Random to show it in the side panel.\nClose-up navigation. Rotation and zoom slow down near the surface, and the camera can come down to about 17 km above it.\nFrame details. LPI preview, principal point, spacecraft altitude and position, illumination angles (sun azimuth, incidence, emission, phase), camera (80 mm or 610 mm) and ground footprint in km.\nExport. Download the loaded frames of a mission as CSV (metadata and geometry) or GeoJSON (projected footprints as polygons).\nReference tabs. Short facts about the Moon and the Lunar Orbiter program, summarised from Wikipedia.\nEnglish and Spanish. Switch with the ES | EN control, or open ?lang=en / ?lang=es."
   },
   {
-    "objectID": "projects/04-explocal/index.html#estructura-del-repositorio",
-    "href": "projects/04-explocal/index.html#estructura-del-repositorio",
-    "title": "Explocal",
-    "section": "3 Estructura del repositorio",
-    "text": "3 Estructura del repositorio\n\ncode/ — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable EXPLOCAL.EXE compilado. Referencia histórica.\nsite/ — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.\ndocs/ — documentos originales sin procesar (.DOC/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de site/.\ncatalog.json — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX)."
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "3 How photos are placed",
+    "text": "3 How photos are placed\nThe interesting part is geometry. A photo is not just pasted on the globe: each frame is projected from the spacecraft. Every pixel becomes a ray that starts at the spacecraft position published by the LPI, goes through the camera aimed at the principal point, and lands where it meets the Moon. So oblique and high-altitude shots cover the area they really saw, and pixels that look past the limb are dropped.\n\n\n\n\n\n\n\nAspect\nHow it is handled\n\n\n\n\nCamera\nThe 80 mm medium-resolution frame (55 × 65 mm) when the gallery has one, otherwise the middle third of the 610 mm high-resolution frame. From 46 km the model covers 31.7 × 37.5 km, against the documented 31.6 × 37.4 km.\n\n\nCheck\nFor the 890 frames, the emission angle implied by the spacecraft position matches the LPI’s with a median error of 0.06°. The 22 frames whose metadata disagree by more than 5° fall back to a simple north-up patch.\n\n\nOrientation\nThe image rotation is not published: near-vertical frames are drawn north-up, oblique ones level with the horizon, and high-altitude frames are turned so their black sky falls off the Moon.\n\n\nLimits\nTerrain relief and lens distortion are ignored; positions are as good as the published metadata.\n\n\n\nThe coordinate conversions are public, so they can be reused in other projects: selenographic_to_cartesian and cartesian_to_selenographic in orbiter.globe."
   },
   {
-    "objectID": "projects/04-explocal/index.html#estado-actual",
-    "href": "projects/04-explocal/index.html#estado-actual",
-    "title": "Explocal",
-    "section": "4 Estado actual",
-    "text": "4 Estado actual\n\n✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.\n✅ Código y datos originales de 1996 preservados íntegros en code/.\n🚧 Reimplementación en Python del motor de cálculo: en desarrollo."
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#installation",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#installation",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "4 Installation",
+    "text": "4 Installation\nRequires Python ≥ 3.10, on Linux or macOS.\ngit clone https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS.git\ncd LUNAR-ORBITER-ATLAS\nmake install   # create .venv and install the app\nmake download  # optional: fetch all 890 photos now (MISSIONS=\"1 4\" to limit)\nmake run       # start the app\nThen open http://127.0.0.1:8050/. Without make:\npython3 -m venv .venv\n.venv/bin/python -m pip install -e .\n.venv/bin/lunar-orbiter\nThe first time a mission is shown, the app downloads the LPI page and thumbnail of each frame (about 200 per mission) and caches them in data/lpi/, politely: three workers and at most four requests per second. Later runs work from disk."
   },
   {
-    "objectID": "projects/04-explocal/index.html#licencia",
-    "href": "projects/04-explocal/index.html#licencia",
-    "title": "Explocal",
-    "section": "5 Licencia",
-    "text": "5 Licencia\nMIT © 1996 Enrique Pérez Herrero."
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "5 Exported files",
+    "text": "5 Exported files\n\nCSV: one row per frame with the LPI metadata (principal point, spacecraft position, illumination angles, preview URL), plus camera, footprint_width_km, footprint_height_km, projected and implied_emission_angle.\nGeoJSON: a FeatureCollection with one polygon per frame, following the outline drawn on the globe. Coordinates are selenographic degrees, east and north positive, not WGS 84."
   },
   {
-    "objectID": "projects/04-explocal/index.html#cómo-citar",
-    "href": "projects/04-explocal/index.html#cómo-citar",
-    "title": "Explocal",
-    "section": "6 Cómo citar",
-    "text": "6 Cómo citar\nPérez Herrero, Enrique (1996). Proyecto de una aplicación informática\npara el cálculo de las principales características teóricas de los\nexplosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de\nMadrid. https://enriqueph.github.io/EXPLOCAL/\nDOI: 10.5281/zenodo.21306995"
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#license",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#license",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "6 License",
+    "text": "6 License\nThe code is distributed under the MIT License. LPI images and metadata belong to their respective owners, and the reference tabs summarise Wikipedia articles under CC BY-SA 4.0."
   },
   {
-    "objectID": "projects/04-explocal/index.html#enlaces",
-    "href": "projects/04-explocal/index.html#enlaces",
-    "title": "Explocal",
-    "section": "7 Enlaces",
-    "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "7 How to cite",
+    "text": "7 How to cite\nENERGYCODE (2026). Lunar Orbiter Atlas, version 1.0.0.\nhttps://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\nFor photographs or metadata, also cite the LPI Lunar Orbiter Photo Gallery and the frame record used."
+  },
+  {
+    "objectID": "projects/07-lunar-orbiter-atlas/index.html#links",
+    "href": "projects/07-lunar-orbiter-atlas/index.html#links",
+    "title": "LUNAR-ORBITER-ATLAS",
+    "section": "8 Links",
+    "text": "8 Links\n\nGitHub - LUNAR-ORBITER-ATLAS\nProject page\nChangelog\nLPI - Lunar Orbiter Photo Gallery\nWikipedia - Lunar Orbiter program"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "",
+    "text": "Volcán de Teneguía (La Palma)"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.1 Data source",
+    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
+    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.3 Comments",
+    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
+  },
+  {
+    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
+    "title": "Volcanic Eruptions in the Holocene Period",
+    "section": "1.4 Links",
+    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#introduction",
+    "href": "projects/06-pari-gp-engine/index.html#introduction",
+    "title": "PARI-GP-ENGINE",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nPARI/GP is a computer algebra system designed for fast computations in number theory: factorizations, algebraic number theory, elliptic curves, modular forms and more. PARI-GP-ENGINE brings it to Quarto, so PARI/GP code can live in a Quarto document, run when the document is rendered, and show its results with proper syntax highlighting:\n👉 https://github.com/oeistools/PARI-GP-ENGINE\nThe repository provides two parts that fit together but can be used apart:\n\n\n\nPart\nWhat it is\n\n\n\n\nEngine\nA Quarto engine extension that executes {gp} cells with the gp interpreter and puts the results in the rendered document.\n\n\nHighlighting\nA KDE/Skylighting syntax definition covering the PARI/GP 2.17 function set, applied automatically, with nothing to configure."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#features",
+    "href": "projects/06-pari-gp-engine/index.html#features",
+    "title": "PARI-GP-ENGINE",
+    "section": "2 Features",
+    "text": "2 Features\n\nExecution. {gp} cells run in one gp session per document, so state carries from cell to cell, exactly as it would at the gp prompt.\nHighlighting. The full function set of PARI/GP 2.17 is recognized out of the box.\nFigures. Plots exported as SVG become real Quarto figures, with captions and cross-references.\nErrors that behave. A PARI/GP error stops the render and tells you which cell failed, unless you asked for the error to be part of the document."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#installation",
+    "href": "projects/06-pari-gp-engine/index.html#installation",
+    "title": "PARI-GP-ENGINE",
+    "section": "3 Installation",
+    "text": "3 Installation\nquarto add oeistools/PARI-GP-ENGINE\nRequirements:\n\nQuarto ≥ 1.9, since engine extensions do not exist in earlier versions.\nPARI/GP ≥ 2.13, with the gp executable on your PATH. CI tests 2.13.3, 2.15.5 and 2.17.3.\nLinux and macOS are tested in CI; Windows is implemented but not tested."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#usage",
+    "href": "projects/06-pari-gp-engine/index.html#usage",
+    "title": "PARI-GP-ENGINE",
+    "section": "4 Usage",
+    "text": "4 Usage\nSet engine: pari-gp in the front matter, then write {gp} cells:\n---\ntitle: \"Mersenne factors\"\nengine: pari-gp\nformat: html\n---\n\n```{gp}\nM = 2^101 - 1\nfactor(M)\n```"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#a-taste",
+    "href": "projects/06-pari-gp-engine/index.html#a-taste",
+    "title": "PARI-GP-ENGINE",
+    "section": "5 A taste",
+    "text": "5 A taste\nFactoring \\(p - 1\\) for the first prime after \\(10^{40}\\):\np = nextprime(10^40)\nfactor(p - 1)\n10000000000000000000000000000000000000121\n[                      2 3]\n[                      5 1]\n[                     11 1]\n[                     17 1]\n[                  12973 1]\n[             1821309023 1]\n[56581485446137975519811 1]\nThe class number and regulator of \\(\\mathbb{Q}(\\sqrt[3]{2})\\):\nK = bnfinit(x^3 - 2, 1);\n[K.no, K.reg]\n[1, 1.3473773483293841009181878914456530463]\nAnd because the session persists, its fundamental units are still one cell away:\nK.fu\n[Mod(x - 1, x^3 - 2)]"
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#license",
+    "href": "projects/06-pari-gp-engine/index.html#license",
+    "title": "PARI-GP-ENGINE",
+    "section": "6 License",
+    "text": "6 License\nPARI-GP-ENGINE is distributed under the MIT License. PARI/GP itself is GPL software by the PARI Group; since gp runs as an external program, its GPL does not reach the extension code."
+  },
+  {
+    "objectID": "projects/06-pari-gp-engine/index.html#links",
+    "href": "projects/06-pari-gp-engine/index.html#links",
+    "title": "PARI-GP-ENGINE",
+    "section": "7 Links",
+    "text": "7 Links\n\nGitHub - PARI-GP-ENGINE\nDocumentation\nGet started\nGallery\nPARI/GP home page"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html",
+    "href": "projects/02-marketconf-package/index.html",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#package-installation",
+    "href": "projects/02-marketconf-package/index.html#package-installation",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#examples",
+    "href": "projects/02-marketconf-package/index.html#examples",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#license",
+    "href": "projects/02-marketconf-package/index.html#license",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+  },
+  {
+    "objectID": "projects/02-marketconf-package/index.html#links",
+    "href": "projects/02-marketconf-package/index.html#links",
+    "title": "Stock Market Confidence Indexes",
+    "section": "",
+    "text": "Github marketconf R package"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "ENERGYCODE is a personal technical blog about mathematics, statistics, data science and scientific computing. Posts are written as reproducible notebooks: the R and Python code that produces every figure, table and result is on the page, ready to copy and run.\n\nWhat you will find here\n\nNumber theory and integer sequences: identities, proofs and computations around OEIS sequences, repunits, tetrahedral and Catalan numbers.\nLinear algebra: structured matrices, determinants, powers and norms.\nData science and statistics: model evaluation, exploratory analysis and real-world datasets.\nScientific computing tools: small packages and utilities in R, Python, PARI/GP and Mathematica, collected under Projects.\n\nPosts are written in English or Spanish, depending on the topic.\n\n\nAuthor\nThe site is written and maintained by Enrique Pérez Herrero. You can follow his work on GitHub, Kaggle and Stack Overflow.\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\nFeedback\nFound an error, or have a question about a post? Use the Report an issue link at the end of any page to open an issue on GitHub, or write to energycode.org at gmail dot com.\n\n\nHow it is built\nThe site is made with Quarto. Code cells run on R and Python (Jupyter), and the site is deployed to Netlify. The full source is available on GitHub.\n\n\nLicense\n\nWritten content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\nSource code is released under the MIT License.\n\n\n\n\nCreative Commons BY-SA 4.0 license"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\nSeries\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\nFibonacci\n\nEuclid\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\nOEIS\n\nSpecial Numbers\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\nNumpy\n\nLatex\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\nLinear Algebra\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\nMatrices\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#introduction",
+    "href": "projects/08-oeis-tools-R/index.html#introduction",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "1 Introduction",
+    "text": "1 Introduction\noeis.tools is an R package to query the On-Line Encyclopedia of Integer Sequences (OEIS) from R code. It is the R counterpart of the Python oeis-tools project, and version 0.3.1 is now available on CRAN, so it no longer has to be installed from GitHub.\n👉 https://CRAN.R-project.org/package=oeis.tools"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#installation",
+    "href": "projects/08-oeis-tools-R/index.html#installation",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "2 Installation",
+    "text": "2 Installation\nRequires R ≥ 4.1.0.\ninstall.packages(\"oeis.tools\")\nlibrary(oeis.tools)"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#examples",
+    "href": "projects/08-oeis-tools-R/index.html#examples",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "3 Examples",
+    "text": "3 Examples\n\n3.1 Reading a sequence\nSequence() downloads the OEIS entry of a sequence and exposes its fields (name, keywords, formulas, programs, cross-references…):\nfib &lt;- Sequence(\"A000045\")\n\nfib$name\n#&gt; [1] \"Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.\"\n\nfib$keyword\n#&gt; [1] \"nonn\"    \"core\"    \"nice\"    \"easy\"    \"hear\"    \"changed\"\n\n\n3.2 Cross-references and citations\nget_xref_ids() returns the A-numbers cited in the %Y lines of the entry, and get_bibtex() builds a BibTeX record ready to paste into a paper:\nhead(get_xref_ids(fib))\n#&gt; [1] \"A001622\" \"A039834\" \"A001519\" \"A001906\" \"A001690\" \"A000213\"\n\ncat(get_bibtex(fib))\n#&gt; @misc{A000045,\n#&gt;   author       = {N. J. A. Sloane},\n#&gt;   title        = {A000045: Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.},\n#&gt;   howpublished = {The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences},\n#&gt;   year         = {1991},\n#&gt;   ...\n#&gt;   url          = {https://oeis.org/A000045}\n#&gt; }\n\n\n3.3 Downloading and plotting b-files\nBFile() downloads the b-file of a sequence (the long list of terms), and plot_data() draws it with ggplot2. With return_plot = TRUE it returns the plot object, so it can be themed and saved like any other ggplot:\nlibrary(ggplot2)\n\npsi &lt;- BFile(\"A001615\")\n\np &lt;- plot_data(psi, n = 1000, plot_style = \"scatter\",\n              show = FALSE, return_plot = TRUE,\n              color = \"#1f6fb2\", size = 0.8) +\n  theme_minimal(base_size = 13)\n\nggsave(\"dedekind-psi-A001615.png\", p, width = 7, height = 4.2, dpi = 150, bg = \"white\")\n\n\n\nDedekind psi function \\(\\psi(n) = n \\prod_{p \\mid n} (1 + 1/p)\\) (A001615) for \\(n \\le 1000\\), plotted with plot_data()\n\n\nThe points fall on rays through the origin: the lowest one, \\(\\psi(p) = p + 1\\), is made of the primes, and the steeper rays collect the numbers that share the same set of small prime factors."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
+    "href": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "4 Arbitrary precision",
+    "text": "4 Arbitrary precision\nTerms are stored as gmp::bigz integers, so sequences whose values grow beyond \\(2^{53}\\), the largest range where a double represents every integer exactly, keep all their digits:\nhead(get_bfile_data(psi))\n#&gt; Big Integer ('bigz') object of length 6:\n#&gt; [1] 1  3  4  6  6  12\nWhen the terms are too large to convert to numbers, plot_data() switches to a \\(\\operatorname{sign}(a_n)\\log_{10}|a_n|\\) scale automatically."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#main-functions",
+    "href": "projects/08-oeis-tools-R/index.html#main-functions",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "5 Main functions",
+    "text": "5 Main functions\n\n\n\nFunction\nPurpose\n\n\n\n\nSequence()\nDownload an OEIS entry and its fields\n\n\nBFile()\nDownload the b-file (terms) of a sequence\n\n\nget_xref_ids()\nA-numbers cross-referenced by a sequence\n\n\nget_bibtex()\nBibTeX citation of a sequence\n\n\nplot_data()\nPlot the terms of a b-file with ggplot2"
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#license",
+    "href": "projects/08-oeis-tools-R/index.html#license",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "6 License",
+    "text": "6 License\nThe package is distributed under the MIT License. OEIS content is available under the OEIS End-User License Agreement (CC BY-SA 4.0)."
+  },
+  {
+    "objectID": "projects/08-oeis-tools-R/index.html#links",
+    "href": "projects/08-oeis-tools-R/index.html#links",
+    "title": "R Package oeis.tools on CRAN",
+    "section": "7 Links",
+    "text": "7 Links\n\nCRAN - oeis.tools\nGitHub - oeistools/oeis-tools-R\nGitHub - oeistools/oeis-tools (Python)\nThe On-Line Encyclopedia of Integer Sequences"
   },
   {
     "objectID": "projects/05-OEIS-Mathematica/index.html#introduction",
@@ -217,137 +406,53 @@
     "text": "9 Links\n\nGitHub - OEIS-Mathematica\nDocumentation and tutorial\nFunction Index\nOEIS wiki page for this package\nCHANGELOG\nCONTRIBUTING\nCode of Conduct\nCITATION.cff\nDOI on Zenodo"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "ENERGYCODE is a personal technical blog about mathematics, statistics, data science and scientific computing. Posts are written as reproducible notebooks: the R and Python code that produces every figure, table and result is on the page, ready to copy and run.\n\nWhat you will find here\n\nNumber theory and integer sequences: identities, proofs and computations around OEIS sequences, repunits, tetrahedral and Catalan numbers.\nLinear algebra: structured matrices, determinants, powers and norms.\nData science and statistics: model evaluation, exploratory analysis and real-world datasets.\nScientific computing tools: small packages and utilities in R, Python, PARI/GP and Mathematica, collected under Projects.\n\nPosts are written in English or Spanish, depending on the topic.\n\n\nAuthor\nThe site is written and maintained by Enrique Pérez Herrero. You can follow his work on GitHub, Kaggle and Stack Overflow.\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\nFeedback\nFound an error, or have a question about a post? Use the Report an issue link at the end of any page to open an issue on GitHub, or write to energycode.org at gmail dot com.\n\n\nHow it is built\nThe site is made with Quarto. Code cells run on R and Python (Jupyter), and the site is deployed to Netlify. The full source is available on GitHub.\n\n\nLicense\n\nWritten content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\nSource code is released under the MIT License.\n\n\n\n\nCreative Commons BY-SA 4.0 license"
+    "objectID": "projects/04-explocal/index.html#descripción",
+    "href": "projects/04-explocal/index.html#descripción",
+    "title": "Explocal",
+    "section": "1 Descripción",
+    "text": "1 Descripción\nExplocal es una aplicación informática que calcula las principales características teóricas de una mezcla explosiva (calor y temperatura de explosión, velocidad y presión de detonación, balance de oxígeno, composición de los productos de explosión…) siguiendo el método simplificado de la norma española UNE 31-002. Se desarrolló en C++ (Borland C++ 3.1 + Object Windows 1.0) para Windows 3.1 en 1996, como Proyecto Fin de Carrera de Enrique Pérez Herrero (E.T.S.I. de Minas de Madrid, especialidad Laboreo y Explosivos).\nEl repositorio conserva el código y los datos originales de 1996 tal cual, y reconstruye la memoria completa del proyecto (texto, fórmulas, figuras, tablas y anexos con el código fuente) como libro digital, publicado en GitHub Pages."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\nSeries\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\nFibonacci\n\nEuclid\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\nOEIS\n\nSpecial Numbers\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\nNumpy\n\nLatex\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\nLinear Algebra\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\nMatrices\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\nNo matching items"
+    "objectID": "projects/04-explocal/index.html#historia-del-proyecto",
+    "href": "projects/04-explocal/index.html#historia-del-proyecto",
+    "title": "Explocal",
+    "section": "2 Historia del proyecto",
+    "text": "2 Historia del proyecto\n\n1996 — Proyecto Fin de Carrera original: memoria en papel/Word y aplicación EXPLOCAL.EXE en C++ para Windows 3.1.\n2015-2016 — Primer intento de modernización: exploración de los ficheros *.DAT con R/ggplot, sin llegar a reimplementar el motor de cálculo.\n2026 — Reconstrucción completa: la memoria original se transcribe y corrige como libro Markdown/Quarto, publicado en GitHub Pages; en paralelo se reimplementa el motor de cálculo en Python. El código C++ de 1996 se conserva sin modificar como referencia histórica."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html",
-    "href": "projects/02-marketconf-package/index.html",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The R package marketconf reads data on U. S. Stock Market Confidence Indexes from the Yale School of Management’s International Center for Finance web page.\nThis package is designed for stock market prediction and risk valuation, and it is compatible with other packages like:\nquantmod, TTR or tidyquant\n\n\n\n\nCode\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")\n\n\n\n\n\n\n\nThe four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information.\n\n\n\n\nGithub marketconf R package"
+    "objectID": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "href": "projects/04-explocal/index.html#estructura-del-repositorio",
+    "title": "Explocal",
+    "section": "3 Estructura del repositorio",
+    "text": "3 Estructura del repositorio\n\ncode/ — código fuente C++ original de 1996 (Borland C++ 3.1 + Object Windows 1.0), datos, recursos y el ejecutable EXPLOCAL.EXE compilado. Referencia histórica.\nsite/ — la memoria (PFC) reconstruida como libro Markdown/Quarto: capítulos numerados, índices de figuras/tablas y los anexos originales. Se publica como web en GitHub Pages y también se compila a PDF/DOCX/LaTeX con pandoc.\ndocs/ — documentos originales sin procesar (.DOC/LaTeX/Word de 1994-2015) de los que parte la reconstrucción de site/.\ncatalog.json — índice machine-readable de todos los capítulos y anexos del libro (título, ruta y URL de cada uno) más los formatos disponibles (HTML/PDF/DOCX/LaTeX)."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#package-installation",
-    "href": "projects/02-marketconf-package/index.html#package-installation",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Code\nlibrary(devtools)\ndevtools::install_github(\"EnriquePH/marketconf\")"
+    "objectID": "projects/04-explocal/index.html#estado-actual",
+    "href": "projects/04-explocal/index.html#estado-actual",
+    "title": "Explocal",
+    "section": "4 Estado actual",
+    "text": "4 Estado actual\n\n✅ Memoria completa reconstruida, corregida y publicada como libro web (HTML), y disponible en PDF/DOCX/LaTeX.\n✅ Código y datos originales de 1996 preservados íntegros en code/.\n🚧 Reimplementación en Python del motor de cálculo: en desarrollo."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#examples",
-    "href": "projects/02-marketconf-package/index.html#examples",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The four U.S. stock market confidence indices are derived monthly from survey data on investors’ behavior. These indices are:\n\n\nCode\nlibrary(marketconf)\nlibrary(knitr)\nkable(US_confidence_indices()[c(1, 3, 4)])\n\n\n\n\n\n\n\n\n\n\nSymbol\nDescription\nInfo\n\n\n\n\nUS1YI\nU.S. One Year Confidence Index\nThe percent of the population expecting an increase in the Dow in the coming year.\n\n\nUSVI\nU.S. Valuation Confidence Index\nThe percent of the population who think that the market is not too high.\n\n\nUSBODI\nU.S. Buy-On-Dips Confidence Index\nThe percent of the population expecting a rebound the next day should the market ever drop 3% in one day.\n\n\nUSCI\nU.S. Crash Confidence Index\nThe percent of the population who attach little probability to a stock market crash in the next-six months.\n\n\n\n\n\n\n\n\nThis is a basic example that plots the U.S. Valuation Confidence Index:\n\n\nCode\nlibrary(ggplot2)\n\nindex_symbol &lt;- \"USVI\"\nindex_df &lt;- get_index(index_symbol)\n\nggplot(index_df, aes(x = Date, y = USVI.Value, color = Investor)) +\n  geom_line() +\n  ggtitle(get_index_description(index_symbol))"
+    "objectID": "projects/04-explocal/index.html#licencia",
+    "href": "projects/04-explocal/index.html#licencia",
+    "title": "Explocal",
+    "section": "5 Licencia",
+    "text": "5 Licencia\nMIT © 1996 Enrique Pérez Herrero."
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#license",
-    "href": "projects/02-marketconf-package/index.html#license",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "The markerconf package is licensed under the MIT License (MIT), but the Stock Market Confidence Indexes are produced and copyrighted by the International Center of Finance at the Yale School of Management. Please refer to the TERMS OF USE on Yale University’s web page for further information."
+    "objectID": "projects/04-explocal/index.html#cómo-citar",
+    "href": "projects/04-explocal/index.html#cómo-citar",
+    "title": "Explocal",
+    "section": "6 Cómo citar",
+    "text": "6 Cómo citar\nPérez Herrero, Enrique (1996). Proyecto de una aplicación informática\npara el cálculo de las principales características teóricas de los\nexplosivos (Explocal). Proyecto Fin de Carrera, E.T.S.I. de Minas de\nMadrid. https://enriqueph.github.io/EXPLOCAL/\nDOI: 10.5281/zenodo.21306995"
   },
   {
-    "objectID": "projects/02-marketconf-package/index.html#links",
-    "href": "projects/02-marketconf-package/index.html#links",
-    "title": "Stock Market Confidence Indexes",
-    "section": "",
-    "text": "Github marketconf R package"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#introduction",
-    "href": "projects/06-pari-gp-engine/index.html#introduction",
-    "title": "PARI-GP-ENGINE",
-    "section": "1 Introduction",
-    "text": "1 Introduction\nPARI/GP is a computer algebra system designed for fast computations in number theory: factorizations, algebraic number theory, elliptic curves, modular forms and more. PARI-GP-ENGINE brings it to Quarto, so PARI/GP code can live in a Quarto document, run when the document is rendered, and show its results with proper syntax highlighting:\n👉 https://github.com/oeistools/PARI-GP-ENGINE\nThe repository provides two parts that fit together but can be used apart:\n\n\n\nPart\nWhat it is\n\n\n\n\nEngine\nA Quarto engine extension that executes {gp} cells with the gp interpreter and puts the results in the rendered document.\n\n\nHighlighting\nA KDE/Skylighting syntax definition covering the PARI/GP 2.17 function set, applied automatically, with nothing to configure."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#features",
-    "href": "projects/06-pari-gp-engine/index.html#features",
-    "title": "PARI-GP-ENGINE",
-    "section": "2 Features",
-    "text": "2 Features\n\nExecution. {gp} cells run in one gp session per document, so state carries from cell to cell, exactly as it would at the gp prompt.\nHighlighting. The full function set of PARI/GP 2.17 is recognized out of the box.\nFigures. Plots exported as SVG become real Quarto figures, with captions and cross-references.\nErrors that behave. A PARI/GP error stops the render and tells you which cell failed, unless you asked for the error to be part of the document."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#installation",
-    "href": "projects/06-pari-gp-engine/index.html#installation",
-    "title": "PARI-GP-ENGINE",
-    "section": "3 Installation",
-    "text": "3 Installation\nquarto add oeistools/PARI-GP-ENGINE\nRequirements:\n\nQuarto ≥ 1.9, since engine extensions do not exist in earlier versions.\nPARI/GP ≥ 2.13, with the gp executable on your PATH. CI tests 2.13.3, 2.15.5 and 2.17.3.\nLinux and macOS are tested in CI; Windows is implemented but not tested."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#usage",
-    "href": "projects/06-pari-gp-engine/index.html#usage",
-    "title": "PARI-GP-ENGINE",
-    "section": "4 Usage",
-    "text": "4 Usage\nSet engine: pari-gp in the front matter, then write {gp} cells:\n---\ntitle: \"Mersenne factors\"\nengine: pari-gp\nformat: html\n---\n\n```{gp}\nM = 2^101 - 1\nfactor(M)\n```"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#a-taste",
-    "href": "projects/06-pari-gp-engine/index.html#a-taste",
-    "title": "PARI-GP-ENGINE",
-    "section": "5 A taste",
-    "text": "5 A taste\nFactoring \\(p - 1\\) for the first prime after \\(10^{40}\\):\np = nextprime(10^40)\nfactor(p - 1)\n10000000000000000000000000000000000000121\n[                      2 3]\n[                      5 1]\n[                     11 1]\n[                     17 1]\n[                  12973 1]\n[             1821309023 1]\n[56581485446137975519811 1]\nThe class number and regulator of \\(\\mathbb{Q}(\\sqrt[3]{2})\\):\nK = bnfinit(x^3 - 2, 1);\n[K.no, K.reg]\n[1, 1.3473773483293841009181878914456530463]\nAnd because the session persists, its fundamental units are still one cell away:\nK.fu\n[Mod(x - 1, x^3 - 2)]"
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#license",
-    "href": "projects/06-pari-gp-engine/index.html#license",
-    "title": "PARI-GP-ENGINE",
-    "section": "6 License",
-    "text": "6 License\nPARI-GP-ENGINE is distributed under the MIT License. PARI/GP itself is GPL software by the PARI Group; since gp runs as an external program, its GPL does not reach the extension code."
-  },
-  {
-    "objectID": "projects/06-pari-gp-engine/index.html#links",
-    "href": "projects/06-pari-gp-engine/index.html#links",
-    "title": "PARI-GP-ENGINE",
-    "section": "7 Links",
-    "text": "7 Links\n\nGitHub - PARI-GP-ENGINE\nDocumentation\nGet started\nGallery\nPARI/GP home page"
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "",
-    "text": "Volcán de Teneguía (La Palma)"
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#data-source",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.1 Data source",
-    "text": "1.1 Data source\nThe Smithsonian Institution’s Global Volcanism Program (GVP) documents Earth’s volcanoes and their eruptive history. The Volcanoes of the World database is a catalog of Holocene and Pleistocene volcanoes, as well as eruptions from the past 12,000 years in the Holocene period. The GVP database includes the names, locations, types, and features of more than 1,500 volcanoes that have erupted during the Holocene period or are currently exhibiting signs of unrest."
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#eda-exploratory-data-analysis-notebook",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.2 EDA (Exploratory Data Analysis) Notebook",
-    "text": "1.2 EDA (Exploratory Data Analysis) Notebook\nThis notebook processes GVP data by simplifying the main variables. It also tests various map plotting systems in R to effectively visualize and explore the data."
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#comments",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.3 Comments",
-    "text": "1.3 Comments\nThis kaggle notebook is mentioned in Hidden Gems: A Collection of Underrated Notebooks Volume 61 - 2021-07-06\n“A well-designed analysis of volcano activity that features a clear structure, clean code, and a set of great interactive visuals.”"
-  },
-  {
-    "objectID": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "href": "projects/03-holocene-volcanic-eruptions/index.html#links",
-    "title": "Volcanic Eruptions in the Holocene Period",
-    "section": "1.4 Links",
-    "text": "1.4 Links\n\nkaggle - Holocene Volcanic Eruptions: Data Exploration\nkaggle - Hidden Gems: A Collection of Underrated Notebooks\nkaggle - Dataset: Volcanic Eruptions in the Holocene Period\nSmithsonian Institution’s Global Volcanism Program (GVP)"
+    "objectID": "projects/04-explocal/index.html#enlaces",
+    "href": "projects/04-explocal/index.html#enlaces",
+    "title": "Explocal",
+    "section": "7 Enlaces",
+    "text": "7 Enlaces\n\nGitHub - Explocal\nLibro / memoria del proyecto\nDOI en Zenodo"
   },
   {
     "objectID": "posts/12012026-binomial-matrix-i/index.html",
@@ -572,110 +677,5 @@
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the resulting confusion matrix using ggplot, we use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#introduction",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#introduction",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "1 Introduction",
-    "text": "1 Introduction\nBetween 1966 and 1967, NASA sent five Lunar Orbiter spacecraft to map the Moon and pick safe landing sites for Apollo. Their cameras returned hundreds of frames that are still some of the most beautiful pictures of the lunar surface. The Lunar and Planetary Institute (LPI) keeps them online, frame by frame, with the metadata of every shot.\nLUNAR-ORBITER-ATLAS is a local web app, written in Python with Dash and Plotly, that puts those photographs back where they were taken: on an interactive 3D Moon.\n👉 https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\n\n\n\nLunar Orbiter 4 mosaic: high-altitude frames covering the near side of the Moon"
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#features",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#features",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "2 Features",
-    "text": "2 Features\n\nMission mosaic. Every frame of the selected mission (890 frames over the five missions) is projected onto the part of the Moon it photographed and labelled with its frame ID.\nPicking photos. Click a photo, choose it from the selector, type its ID or press Random to show it in the side panel.\nClose-up navigation. Rotation and zoom slow down near the surface, and the camera can come down to about 17 km above it.\nFrame details. LPI preview, principal point, spacecraft altitude and position, illumination angles (sun azimuth, incidence, emission, phase), camera (80 mm or 610 mm) and ground footprint in km.\nExport. Download the loaded frames of a mission as CSV (metadata and geometry) or GeoJSON (projected footprints as polygons).\nReference tabs. Short facts about the Moon and the Lunar Orbiter program, summarised from Wikipedia.\nEnglish and Spanish. Switch with the ES | EN control, or open ?lang=en / ?lang=es."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#how-photos-are-placed",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "3 How photos are placed",
-    "text": "3 How photos are placed\nThe interesting part is geometry. A photo is not just pasted on the globe: each frame is projected from the spacecraft. Every pixel becomes a ray that starts at the spacecraft position published by the LPI, goes through the camera aimed at the principal point, and lands where it meets the Moon. So oblique and high-altitude shots cover the area they really saw, and pixels that look past the limb are dropped.\n\n\n\n\n\n\n\nAspect\nHow it is handled\n\n\n\n\nCamera\nThe 80 mm medium-resolution frame (55 × 65 mm) when the gallery has one, otherwise the middle third of the 610 mm high-resolution frame. From 46 km the model covers 31.7 × 37.5 km, against the documented 31.6 × 37.4 km.\n\n\nCheck\nFor the 890 frames, the emission angle implied by the spacecraft position matches the LPI’s with a median error of 0.06°. The 22 frames whose metadata disagree by more than 5° fall back to a simple north-up patch.\n\n\nOrientation\nThe image rotation is not published: near-vertical frames are drawn north-up, oblique ones level with the horizon, and high-altitude frames are turned so their black sky falls off the Moon.\n\n\nLimits\nTerrain relief and lens distortion are ignored; positions are as good as the published metadata.\n\n\n\nThe coordinate conversions are public, so they can be reused in other projects: selenographic_to_cartesian and cartesian_to_selenographic in orbiter.globe."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#installation",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#installation",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "4 Installation",
-    "text": "4 Installation\nRequires Python ≥ 3.10, on Linux or macOS.\ngit clone https://github.com/EnriquePH/LUNAR-ORBITER-ATLAS.git\ncd LUNAR-ORBITER-ATLAS\nmake install   # create .venv and install the app\nmake download  # optional: fetch all 890 photos now (MISSIONS=\"1 4\" to limit)\nmake run       # start the app\nThen open http://127.0.0.1:8050/. Without make:\npython3 -m venv .venv\n.venv/bin/python -m pip install -e .\n.venv/bin/lunar-orbiter\nThe first time a mission is shown, the app downloads the LPI page and thumbnail of each frame (about 200 per mission) and caches them in data/lpi/, politely: three workers and at most four requests per second. Later runs work from disk."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#exported-files",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "5 Exported files",
-    "text": "5 Exported files\n\nCSV: one row per frame with the LPI metadata (principal point, spacecraft position, illumination angles, preview URL), plus camera, footprint_width_km, footprint_height_km, projected and implied_emission_angle.\nGeoJSON: a FeatureCollection with one polygon per frame, following the outline drawn on the globe. Coordinates are selenographic degrees, east and north positive, not WGS 84."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#license",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#license",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "6 License",
-    "text": "6 License\nThe code is distributed under the MIT License. LPI images and metadata belong to their respective owners, and the reference tabs summarise Wikipedia articles under CC BY-SA 4.0."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#how-to-cite",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "7 How to cite",
-    "text": "7 How to cite\nENERGYCODE (2026). Lunar Orbiter Atlas, version 1.0.0.\nhttps://github.com/EnriquePH/LUNAR-ORBITER-ATLAS\nFor photographs or metadata, also cite the LPI Lunar Orbiter Photo Gallery and the frame record used."
-  },
-  {
-    "objectID": "projects/07-lunar-orbiter-atlas/index.html#links",
-    "href": "projects/07-lunar-orbiter-atlas/index.html#links",
-    "title": "LUNAR-ORBITER-ATLAS",
-    "section": "8 Links",
-    "text": "8 Links\n\nGitHub - LUNAR-ORBITER-ATLAS\nProject page\nChangelog\nLPI - Lunar Orbiter Photo Gallery\nWikipedia - Lunar Orbiter program"
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#introduction",
-    "href": "projects/08-oeis-tools-R/index.html#introduction",
-    "title": "Package oeis.tools on CRAN",
-    "section": "1 Introduction",
-    "text": "1 Introduction\noeis.tools is an R package to query the On-Line Encyclopedia of Integer Sequences (OEIS) from R code. It is the R counterpart of the Python oeis-tools project, and version 0.3.1 is now available on CRAN, so it no longer has to be installed from GitHub.\n👉 https://CRAN.R-project.org/package=oeis.tools"
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#installation",
-    "href": "projects/08-oeis-tools-R/index.html#installation",
-    "title": "Package oeis.tools on CRAN",
-    "section": "2 Installation",
-    "text": "2 Installation\nRequires R ≥ 4.1.0.\ninstall.packages(\"oeis.tools\")\nlibrary(oeis.tools)"
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#examples",
-    "href": "projects/08-oeis-tools-R/index.html#examples",
-    "title": "Package oeis.tools on CRAN",
-    "section": "3 Examples",
-    "text": "3 Examples\n\n3.1 Reading a sequence\nSequence() downloads the OEIS entry of a sequence and exposes its fields (name, keywords, formulas, programs, cross-references…):\nfib &lt;- Sequence(\"A000045\")\n\nfib$name\n#&gt; [1] \"Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.\"\n\nfib$keyword\n#&gt; [1] \"nonn\"    \"core\"    \"nice\"    \"easy\"    \"hear\"    \"changed\"\n\n\n3.2 Cross-references and citations\nget_xref_ids() returns the A-numbers cited in the %Y lines of the entry, and get_bibtex() builds a BibTeX record ready to paste into a paper:\nhead(get_xref_ids(fib))\n#&gt; [1] \"A001622\" \"A039834\" \"A001519\" \"A001906\" \"A001690\" \"A000213\"\n\ncat(get_bibtex(fib))\n#&gt; @misc{A000045,\n#&gt;   author       = {N. J. A. Sloane},\n#&gt;   title        = {A000045: Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.},\n#&gt;   howpublished = {The {O}n-{L}ine {E}ncyclopedia of {I}nteger {S}equences},\n#&gt;   year         = {1991},\n#&gt;   ...\n#&gt;   url          = {https://oeis.org/A000045}\n#&gt; }\n\n\n3.3 Downloading and plotting b-files\nBFile() downloads the b-file of a sequence (the long list of terms), and plot_data() draws it with ggplot2. With return_plot = TRUE it returns the plot object, so it can be themed and saved like any other ggplot:\nlibrary(ggplot2)\n\npsi &lt;- BFile(\"A001615\")\n\np &lt;- plot_data(psi, n = 1000, plot_style = \"scatter\",\n              show = FALSE, return_plot = TRUE,\n              color = \"#1f6fb2\", size = 0.8) +\n  theme_minimal(base_size = 13)\n\nggsave(\"dedekind-psi-A001615.png\", p, width = 7, height = 4.2, dpi = 150, bg = \"white\")\n\n\n\nDedekind psi function \\(\\psi(n) = n \\prod_{p \\mid n} (1 + 1/p)\\) (A001615) for \\(n \\le 1000\\), plotted with plot_data()\n\n\nThe points fall on rays through the origin: the lowest one, \\(\\psi(p) = p + 1\\), is made of the primes, and the steeper rays collect the numbers that share the same set of small prime factors."
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
-    "href": "projects/08-oeis-tools-R/index.html#arbitrary-precision",
-    "title": "Package oeis.tools on CRAN",
-    "section": "4 Arbitrary precision",
-    "text": "4 Arbitrary precision\nTerms are stored as gmp::bigz integers, so sequences whose values grow beyond \\(2^{53}\\), the largest range where a double represents every integer exactly, keep all their digits:\nhead(get_bfile_data(psi))\n#&gt; Big Integer ('bigz') object of length 6:\n#&gt; [1] 1  3  4  6  6  12\nWhen the terms are too large to convert to numbers, plot_data() switches to a \\(\\operatorname{sign}(a_n)\\log_{10}|a_n|\\) scale automatically."
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#main-functions",
-    "href": "projects/08-oeis-tools-R/index.html#main-functions",
-    "title": "Package oeis.tools on CRAN",
-    "section": "5 Main functions",
-    "text": "5 Main functions\n\n\n\nFunction\nPurpose\n\n\n\n\nSequence()\nDownload an OEIS entry and its fields\n\n\nBFile()\nDownload the b-file (terms) of a sequence\n\n\nget_xref_ids()\nA-numbers cross-referenced by a sequence\n\n\nget_bibtex()\nBibTeX citation of a sequence\n\n\nplot_data()\nPlot the terms of a b-file with ggplot2"
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#license",
-    "href": "projects/08-oeis-tools-R/index.html#license",
-    "title": "Package oeis.tools on CRAN",
-    "section": "6 License",
-    "text": "6 License\nThe package is distributed under the MIT License. OEIS content is available under the OEIS End-User License Agreement (CC BY-SA 4.0)."
-  },
-  {
-    "objectID": "projects/08-oeis-tools-R/index.html#links",
-    "href": "projects/08-oeis-tools-R/index.html#links",
-    "title": "Package oeis.tools on CRAN",
-    "section": "7 Links",
-    "text": "7 Links\n\nCRAN - oeis.tools\nGitHub - oeistools/oeis-tools-R\nGitHub - oeistools/oeis-tools (Python)\nThe On-Line Encyclopedia of Integer Sequences"
   }
 ]

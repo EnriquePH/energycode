@@ -1,5 +1,5 @@
 ---
-title: Package oeis-tools
+title: Python package oeis-tools
 description:  A Toolkit for Working with Integer Sequences
 author: 'Enrique Pérez Herrero'
 date: 2026-03-01
