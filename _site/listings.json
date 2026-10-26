@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/09-mac-address/index.html",
       "/projects/08-oeis-tools-R/index.html",
       "/projects/07-lunar-orbiter-atlas/index.html",
       "/projects/06-pari-gp-engine/index.html",

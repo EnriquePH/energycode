@@ -10,7 +10,306 @@
 <atom:link href="https://www.energycode.org/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Mon, 12 Oct 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 25 Oct 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>R Package MAC.address on CRAN</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/09-mac-address/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><a href="https://CRAN.R-project.org/package=MAC.address"><img src="https://www.r-pkg.org/badges/version/MAC.address" class="img-fluid" alt="CRAN status"></a> <a href="https://github.com/EnriquePH/mac-address/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/EnriquePH/mac-address/actions/workflows/R-CMD-check.yaml/badge.svg" class="img-fluid" alt="R-CMD-check"></a> <a href="https://www.r-project.org/"><img src="https://img.shields.io/badge/R-%E2%89%A5%204.0.0-276dc3" class="img-fluid" alt="R ≥ 4.0.0"></a> <a href="https://github.com/EnriquePH/mac-address/blob/main/DESCRIPTION"><img src="https://img.shields.io/badge/dependencies-base%20R%20only-brightgreen.png" class="img-fluid" alt="Dependencies: base R only"></a> <a href="https://github.com/EnriquePH/mac-address/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-green.png" class="img-fluid" alt="License: MIT"></a></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/09-mac-address/mac-address-logo.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="MAC.address logo" width="480"></p>
+</figure>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>A <strong>MAC (Media Access Control) address</strong> is the 48-bit hardware identifier of a network interface, usually written as six hexadecimal bytes such as <code>00:00:5E:00:53:2A</code>. The first bytes identify the manufacturer: they are a block assigned by the <a href="https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries">IEEE Registration Authority</a>.</p>
+<p><code>MAC.address</code> is an R package to work with these addresses: list the ones of your own device and of your local network, extract them from text, validate and normalize them, and find out who made the device. Version <strong>0.1.0</strong> is now available on <strong>CRAN</strong>, and it depends only on base R.</p>
+<p>👉 https://CRAN.R-project.org/package=MAC.address</p>
+<hr>
+</section>
+<section id="installation" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="installation"><span class="header-section-number">2</span> Installation</h2>
+<p>Requires <strong>R ≥ 4.0.0</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># From CRAN</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"MAC.address"</span>)</span>
+<span id="cb1-3"></span>
+<span id="cb1-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Development version, from GitHub</span></span>
+<span id="cb1-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># install.packages("remotes")</span></span>
+<span id="cb1-6">remotes<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install_github</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"EnriquePH/mac-address"</span>)</span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(MAC.address)</span></code></pre></div></div>
+<hr>
+</section>
+<section id="examples" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="examples"><span class="header-section-number">3</span> Examples</h2>
+<section id="addresses-of-this-device-and-its-network" class="level3" data-number="3.1">
+<h3 data-number="3.1" data-anchor-id="addresses-of-this-device-and-its-network"><span class="header-section-number">3.1</span> Addresses of this device and its network</h3>
+<p><code>get_MAC()</code> returns the MAC addresses of the local network interfaces, named by interface, on Linux, macOS and Windows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">get_MAC</span>()</span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;            enp3s0f1              wlp2s0</span></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; "9C:5C:8E:12:34:56" "10:02:B5:AB:CD:EF"</span></span></code></pre></div></div>
+<p><code>get_arp_table()</code> reads the ARP cache: the IP and MAC addresses of the neighbors your computer has talked to. Combined with <code>lookup_vendor()</code> it tells you what kind of devices are on the network:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">arp <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">get_arp_table</span>()</span>
+<span id="cb3-2">arp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>vendor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lookup_vendor</span>(arp<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>mac)</span>
+<span id="cb3-3">arp</span>
+<span id="cb3-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt;            ip               mac interface        vendor</span></span>
+<span id="cb3-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; 1 192.168.1.1 D4:61:95:00:11:22    wlp2s0 zte corporation</span></span></code></pre></div></div>
+<p>Both functions only read the local network configuration; they do not send any packets.</p>
+</section>
+<section id="search-validate-and-normalize" class="level3" data-number="3.2">
+<h3 data-number="3.2" data-anchor-id="search-validate-and-normalize"><span class="header-section-number">3.2</span> Search, validate and normalize</h3>
+<p><code>search_MAC()</code> extracts addresses from free text in colon, hyphen and Cisco dotted notation, and can convert them all to a common format:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">txt <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"eth0 00:00:5e:00:53:2a, wlan0 00-1A-2B-3C-4D-5E, switch 001a.2b3c.4d5f"</span></span>
+<span id="cb4-2"></span>
+<span id="cb4-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">search_MAC</span>(txt)</span>
+<span id="cb4-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "00:00:5E:00:53:2A" "00-1A-2B-3C-4D-5E" "001A.2B3C.4D5F"</span></span>
+<span id="cb4-5"></span>
+<span id="cb4-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">search_MAC</span>(txt, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">normalize =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb4-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "00:00:5E:00:53:2A" "00:1A:2B:3C:4D:5E" "00:1A:2B:3C:4D:5F"</span></span>
+<span id="cb4-8"></span>
+<span id="cb4-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is_MAC</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"00:00:5E:00:53:2A"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"00:00:5E:00:53"</span>))</span>
+<span id="cb4-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1]  TRUE FALSE</span></span>
+<span id="cb4-11"></span>
+<span id="cb4-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">normalize_MAC</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0000.5e00.532a"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sep =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-"</span>)</span>
+<span id="cb4-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "00-00-5E-00-53-2A"</span></span></code></pre></div></div>
+</section>
+<section id="who-made-this-device" class="level3" data-number="3.3">
+<h3 data-number="3.3" data-anchor-id="who-made-this-device"><span class="header-section-number">3.3</span> Who made this device?</h3>
+<p><code>lookup_vendor()</code> identifies the manufacturer using the IEEE <strong>MA-L</strong> (the classic 24-bit OUI), <strong>MA-M</strong> (28-bit) and <strong>MA-S</strong> (36-bit) registries. They are downloaded once by <code>get_oui_registry()</code> and cached with <code>tools::R_user_dir()</code>, so later lookups work offline:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lookup_vendor</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">get_MAC</span>())</span>
+<span id="cb5-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "ASUSTek COMPUTER INC." "Intel Corporate"</span></span></code></pre></div></div>
+</section>
+<section id="address-bits-and-conversions" class="level3" data-number="3.4">
+<h3 data-number="3.4" data-anchor-id="address-bits-and-conversions"><span class="header-section-number">3.4</span> Address bits and conversions</h3>
+<p>Two bits of the first byte carry meaning. The <strong>multicast</strong> bit marks group addresses, and the <strong>locally administered</strong> bit marks addresses that were not assigned by the IEEE, such as the randomized addresses of phones or the ones of virtual machines, so they will not have a vendor:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is_local_MAC</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"DA:A1:19:00:00:00"</span>)</span>
+<span id="cb6-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] TRUE</span></span>
+<span id="cb6-3"></span>
+<span id="cb6-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is_multicast_MAC</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"01:00:5E:00:00:FB"</span>)</span>
+<span id="cb6-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] TRUE</span></span>
+<span id="cb6-6"></span>
+<span id="cb6-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Random locally administered addresses, e.g. for virtual machines</span></span>
+<span id="cb6-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb6-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">random_MAC</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb6-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "FA:80:D6:D1:E0:69" "42:A1:2A:BA:54:B5"</span></span></code></pre></div></div>
+<p><code>eui64_MAC()</code> derives the IPv6 interface identifier (modified EUI-64, <a href="https://www.rfc-editor.org/rfc/rfc4291#appendix-A">RFC 4291</a>) and the link-local address of an interface:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">eui64_MAC</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"00:00:5E:00:53:2A"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">link_local =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb7-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#&gt; [1] "fe80::200:5eff:fe00:532a"</span></span></code></pre></div></div>
+<hr>
+</section>
+</section>
+<section id="main-functions" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="main-functions"><span class="header-section-number">4</span> Main functions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>get_MAC()</code></td>
+<td>MAC addresses of the local network interfaces</td>
+</tr>
+<tr class="even">
+<td><code>get_arp_table()</code></td>
+<td>IP and MAC addresses of the neighbors in the ARP cache</td>
+</tr>
+<tr class="odd">
+<td><code>search_MAC()</code></td>
+<td>Extract MAC addresses from text</td>
+</tr>
+<tr class="even">
+<td><code>is_MAC()</code></td>
+<td>Check whether strings are valid MAC addresses</td>
+</tr>
+<tr class="odd">
+<td><code>normalize_MAC()</code></td>
+<td>Convert to a common notation (<code>XX:XX:XX:XX:XX:XX</code> by default)</td>
+</tr>
+<tr class="even">
+<td><code>is_local_MAC()</code></td>
+<td>Check the locally administered bit</td>
+</tr>
+<tr class="odd">
+<td><code>is_multicast_MAC()</code></td>
+<td>Check the multicast (group) bit</td>
+</tr>
+<tr class="even">
+<td><code>random_MAC()</code></td>
+<td>Generate random (by default locally administered) addresses</td>
+</tr>
+<tr class="odd">
+<td><code>eui64_MAC()</code></td>
+<td>IPv6 modified EUI-64 identifier and link-local address</td>
+</tr>
+<tr class="even">
+<td><code>get_oui_registry()</code></td>
+<td>Download (and cache) the IEEE MA-L, MA-M and MA-S registries</td>
+</tr>
+<tr class="odd">
+<td><code>lookup_vendor()</code></td>
+<td>Organization that owns each MAC address block</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="license" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="license"><span class="header-section-number">5</span> License</h2>
+<p>The package is distributed under the <a href="https://github.com/EnriquePH/mac-address/blob/main/LICENSE.md">MIT License</a>.</p>
+</section>
+<section id="links" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="links"><span class="header-section-number">6</span> Links</h2>
+<ul>
+<li><a href="https://CRAN.R-project.org/package=MAC.address">CRAN - MAC.address</a></li>
+<li><a href="https://github.com/EnriquePH/mac-address">GitHub - EnriquePH/mac-address</a></li>
+<li><a href="https://enriqueph.github.io/mac-address/">Documentation (pkgdown)</a></li>
+<li><a href="https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries">IEEE Registration Authority - registries</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc4291#appendix-A">RFC 4291, appendix A - modified EUI-64</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Package</category>
+  <category>Networking</category>
+  <guid>https://www.energycode.org/projects/09-mac-address/</guid>
+  <pubDate>Sun, 25 Oct 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/09-mac-address/mac-address-logo.png" medium="image" type="image/png" height="72" width="144"/>
+</item>
 <item>
   <title>R Package oeis.tools on CRAN</title>
   <dc:creator>Enrique Pérez Herrero</dc:creator>

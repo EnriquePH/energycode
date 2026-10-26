@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "R Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "R Package MAC.address on CRAN\n\n\n\nR\n\nPackage\n\nNetworking\n\n\n\nFind, validate and identify device MAC addresses from R\n\n\n\nOctober 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -677,5 +677,47 @@
     "title": "Confusion Matrix in R",
     "section": "",
     "text": "To plot the resulting confusion matrix using ggplot, we use the following function:\n\nCodeggplot_confusion_matrix &lt;- function(cfm) {\n  mytitle &lt;- paste(\"Accuracy\", percent_format() (cfm$overall[1]),\n                   \"Kappa\", percent_format() (cfm$overall[2]))\n  p &lt;-\n    ggplot(data = as.data.frame(cfm$table),\n           aes(x = Reference, y = Prediction)) +\n    geom_tile(aes(fill = log(Freq)), colour = \"white\") +\n    scale_fill_gradient(low = \"white\", high = \"steelblue\") +\n    geom_text(aes(x = Reference, y = Prediction, label = Freq)) +\n    theme(legend.position = \"none\") +\n    ggtitle(mytitle)\n  return(p)\n}\n\n\n\nCodeggplot_confusion_matrix(cfm)"
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#introduction",
+    "href": "projects/09-mac-address/index.html#introduction",
+    "title": "R Package MAC.address on CRAN",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nA MAC (Media Access Control) address is the 48-bit hardware identifier of a network interface, usually written as six hexadecimal bytes such as 00:00:5E:00:53:2A. The first bytes identify the manufacturer: they are a block assigned by the IEEE Registration Authority.\nMAC.address is an R package to work with these addresses: list the ones of your own device and of your local network, extract them from text, validate and normalize them, and find out who made the device. Version 0.1.0 is now available on CRAN, and it depends only on base R.\n👉 https://CRAN.R-project.org/package=MAC.address"
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#installation",
+    "href": "projects/09-mac-address/index.html#installation",
+    "title": "R Package MAC.address on CRAN",
+    "section": "2 Installation",
+    "text": "2 Installation\nRequires R ≥ 4.0.0.\n# From CRAN\ninstall.packages(\"MAC.address\")\n\n# Development version, from GitHub\n# install.packages(\"remotes\")\nremotes::install_github(\"EnriquePH/mac-address\")\n\nlibrary(MAC.address)"
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#examples",
+    "href": "projects/09-mac-address/index.html#examples",
+    "title": "R Package MAC.address on CRAN",
+    "section": "3 Examples",
+    "text": "3 Examples\n\n3.1 Addresses of this device and its network\nget_MAC() returns the MAC addresses of the local network interfaces, named by interface, on Linux, macOS and Windows:\nget_MAC()\n#&gt;            enp3s0f1              wlp2s0\n#&gt; \"9C:5C:8E:12:34:56\" \"10:02:B5:AB:CD:EF\"\nget_arp_table() reads the ARP cache: the IP and MAC addresses of the neighbors your computer has talked to. Combined with lookup_vendor() it tells you what kind of devices are on the network:\narp &lt;- get_arp_table()\narp$vendor &lt;- lookup_vendor(arp$mac)\narp\n#&gt;            ip               mac interface        vendor\n#&gt; 1 192.168.1.1 D4:61:95:00:11:22    wlp2s0 zte corporation\nBoth functions only read the local network configuration; they do not send any packets.\n\n\n3.2 Search, validate and normalize\nsearch_MAC() extracts addresses from free text in colon, hyphen and Cisco dotted notation, and can convert them all to a common format:\ntxt &lt;- \"eth0 00:00:5e:00:53:2a, wlan0 00-1A-2B-3C-4D-5E, switch 001a.2b3c.4d5f\"\n\nsearch_MAC(txt)\n#&gt; [1] \"00:00:5E:00:53:2A\" \"00-1A-2B-3C-4D-5E\" \"001A.2B3C.4D5F\"\n\nsearch_MAC(txt, normalize = TRUE)\n#&gt; [1] \"00:00:5E:00:53:2A\" \"00:1A:2B:3C:4D:5E\" \"00:1A:2B:3C:4D:5F\"\n\nis_MAC(c(\"00:00:5E:00:53:2A\", \"00:00:5E:00:53\"))\n#&gt; [1]  TRUE FALSE\n\nnormalize_MAC(\"0000.5e00.532a\", sep = \"-\")\n#&gt; [1] \"00-00-5E-00-53-2A\"\n\n\n3.3 Who made this device?\nlookup_vendor() identifies the manufacturer using the IEEE MA-L (the classic 24-bit OUI), MA-M (28-bit) and MA-S (36-bit) registries. They are downloaded once by get_oui_registry() and cached with tools::R_user_dir(), so later lookups work offline:\nlookup_vendor(get_MAC())\n#&gt; [1] \"ASUSTek COMPUTER INC.\" \"Intel Corporate\"\n\n\n3.4 Address bits and conversions\nTwo bits of the first byte carry meaning. The multicast bit marks group addresses, and the locally administered bit marks addresses that were not assigned by the IEEE, such as the randomized addresses of phones or the ones of virtual machines, so they will not have a vendor:\nis_local_MAC(\"DA:A1:19:00:00:00\")\n#&gt; [1] TRUE\n\nis_multicast_MAC(\"01:00:5E:00:00:FB\")\n#&gt; [1] TRUE\n\n# Random locally administered addresses, e.g. for virtual machines\nset.seed(1)\nrandom_MAC(2)\n#&gt; [1] \"FA:80:D6:D1:E0:69\" \"42:A1:2A:BA:54:B5\"\neui64_MAC() derives the IPv6 interface identifier (modified EUI-64, RFC 4291) and the link-local address of an interface:\neui64_MAC(\"00:00:5E:00:53:2A\", link_local = TRUE)\n#&gt; [1] \"fe80::200:5eff:fe00:532a\""
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#main-functions",
+    "href": "projects/09-mac-address/index.html#main-functions",
+    "title": "R Package MAC.address on CRAN",
+    "section": "4 Main functions",
+    "text": "4 Main functions\n\n\n\n\n\n\n\nFunction\nPurpose\n\n\n\n\nget_MAC()\nMAC addresses of the local network interfaces\n\n\nget_arp_table()\nIP and MAC addresses of the neighbors in the ARP cache\n\n\nsearch_MAC()\nExtract MAC addresses from text\n\n\nis_MAC()\nCheck whether strings are valid MAC addresses\n\n\nnormalize_MAC()\nConvert to a common notation (XX:XX:XX:XX:XX:XX by default)\n\n\nis_local_MAC()\nCheck the locally administered bit\n\n\nis_multicast_MAC()\nCheck the multicast (group) bit\n\n\nrandom_MAC()\nGenerate random (by default locally administered) addresses\n\n\neui64_MAC()\nIPv6 modified EUI-64 identifier and link-local address\n\n\nget_oui_registry()\nDownload (and cache) the IEEE MA-L, MA-M and MA-S registries\n\n\nlookup_vendor()\nOrganization that owns each MAC address block"
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#license",
+    "href": "projects/09-mac-address/index.html#license",
+    "title": "R Package MAC.address on CRAN",
+    "section": "5 License",
+    "text": "5 License\nThe package is distributed under the MIT License."
+  },
+  {
+    "objectID": "projects/09-mac-address/index.html#links",
+    "href": "projects/09-mac-address/index.html#links",
+    "title": "R Package MAC.address on CRAN",
+    "section": "6 Links",
+    "text": "6 Links\n\nCRAN - MAC.address\nGitHub - EnriquePH/mac-address\nDocumentation (pkgdown)\nIEEE Registration Authority - registries\nRFC 4291, appendix A - modified EUI-64"
   }
 ]

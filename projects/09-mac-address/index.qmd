@@ -1,0 +1,179 @@
+---
+title: R Package MAC.address on CRAN
+description: Find, validate and identify device MAC addresses from R
+author: 'Enrique Pérez Herrero'
+date: '2026-10-26'
+image: 'mac-address-logo.png'
+image-alt: "MAC.address logo: a circuit hexagon next to the documentation address 00:00:5E:00:53:2A split into vendor (OUI) and device parts"
+categories:
+  - R
+  - Package
+  - Networking
+editor: source
+lang: en
+draft: false
+engine: markdown
+---
+
+[![CRAN status](https://www.r-pkg.org/badges/version/MAC.address)](https://CRAN.R-project.org/package=MAC.address)
+[![R-CMD-check](https://github.com/EnriquePH/mac-address/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EnriquePH/mac-address/actions/workflows/R-CMD-check.yaml)
+[![R ≥ 4.0.0](https://img.shields.io/badge/R-%E2%89%A5%204.0.0-276dc3)](https://www.r-project.org/)
+[![Dependencies: base R only](https://img.shields.io/badge/dependencies-base%20R%20only-brightgreen)](https://github.com/EnriquePH/mac-address/blob/main/DESCRIPTION)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/EnriquePH/mac-address/blob/main/LICENSE.md)
+
+![](mac-address-logo.png){fig-alt="MAC.address logo" width="480" fig-align="left"}
+
+## Introduction
+
+A **MAC (Media Access Control) address** is the 48-bit hardware identifier of a
+network interface, usually written as six hexadecimal bytes such as
+`00:00:5E:00:53:2A`. The first bytes identify the manufacturer: they are a
+block assigned by the [IEEE Registration
+Authority](https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries).
+
+`MAC.address` is an R package to work with these addresses: list the ones of
+your own device and of your local network, extract them from text, validate
+and normalize them, and find out who made the device. Version **0.1.0** is now
+available on **CRAN**, and it depends only on base R.
+
+👉 https://CRAN.R-project.org/package=MAC.address
+
+---
+
+## Installation
+
+Requires **R ≥ 4.0.0**.
+
+```r
+# From CRAN
+install.packages("MAC.address")
+
+# Development version, from GitHub
+# install.packages("remotes")
+remotes::install_github("EnriquePH/mac-address")
+
+library(MAC.address)
+```
+
+---
+
+## Examples
+
+### Addresses of this device and its network
+
+`get_MAC()` returns the MAC addresses of the local network interfaces, named by
+interface, on Linux, macOS and Windows:
+
+```r
+get_MAC()
+#>            enp3s0f1              wlp2s0
+#> "9C:5C:8E:12:34:56" "10:02:B5:AB:CD:EF"
+```
+
+`get_arp_table()` reads the ARP cache: the IP and MAC addresses of the
+neighbors your computer has talked to. Combined with `lookup_vendor()` it tells
+you what kind of devices are on the network:
+
+```r
+arp <- get_arp_table()
+arp$vendor <- lookup_vendor(arp$mac)
+arp
+#>            ip               mac interface        vendor
+#> 1 192.168.1.1 D4:61:95:00:11:22    wlp2s0 zte corporation
+```
+
+Both functions only read the local network configuration; they do not send any
+packets.
+
+### Search, validate and normalize
+
+`search_MAC()` extracts addresses from free text in colon, hyphen and Cisco
+dotted notation, and can convert them all to a common format:
+
+```r
+txt <- "eth0 00:00:5e:00:53:2a, wlan0 00-1A-2B-3C-4D-5E, switch 001a.2b3c.4d5f"
+
+search_MAC(txt)
+#> [1] "00:00:5E:00:53:2A" "00-1A-2B-3C-4D-5E" "001A.2B3C.4D5F"
+
+search_MAC(txt, normalize = TRUE)
+#> [1] "00:00:5E:00:53:2A" "00:1A:2B:3C:4D:5E" "00:1A:2B:3C:4D:5F"
+
+is_MAC(c("00:00:5E:00:53:2A", "00:00:5E:00:53"))
+#> [1]  TRUE FALSE
+
+normalize_MAC("0000.5e00.532a", sep = "-")
+#> [1] "00-00-5E-00-53-2A"
+```
+
+### Who made this device?
+
+`lookup_vendor()` identifies the manufacturer using the IEEE **MA-L** (the
+classic 24-bit OUI), **MA-M** (28-bit) and **MA-S** (36-bit) registries. They
+are downloaded once by `get_oui_registry()` and cached with
+`tools::R_user_dir()`, so later lookups work offline:
+
+```r
+lookup_vendor(get_MAC())
+#> [1] "ASUSTek COMPUTER INC." "Intel Corporate"
+```
+
+### Address bits and conversions
+
+Two bits of the first byte carry meaning. The **multicast** bit marks group
+addresses, and the **locally administered** bit marks addresses that were not
+assigned by the IEEE, such as the randomized addresses of phones or the ones of
+virtual machines, so they will not have a vendor:
+
+```r
+is_local_MAC("DA:A1:19:00:00:00")
+#> [1] TRUE
+
+is_multicast_MAC("01:00:5E:00:00:FB")
+#> [1] TRUE
+
+# Random locally administered addresses, e.g. for virtual machines
+set.seed(1)
+random_MAC(2)
+#> [1] "FA:80:D6:D1:E0:69" "42:A1:2A:BA:54:B5"
+```
+
+`eui64_MAC()` derives the IPv6 interface identifier (modified EUI-64,
+[RFC 4291](https://www.rfc-editor.org/rfc/rfc4291#appendix-A)) and the
+link-local address of an interface:
+
+```r
+eui64_MAC("00:00:5E:00:53:2A", link_local = TRUE)
+#> [1] "fe80::200:5eff:fe00:532a"
+```
+
+---
+
+## Main functions
+
+| Function | Purpose |
+| --- | --- |
+| `get_MAC()` | MAC addresses of the local network interfaces |
+| `get_arp_table()` | IP and MAC addresses of the neighbors in the ARP cache |
+| `search_MAC()` | Extract MAC addresses from text |
+| `is_MAC()` | Check whether strings are valid MAC addresses |
+| `normalize_MAC()` | Convert to a common notation (`XX:XX:XX:XX:XX:XX` by default) |
+| `is_local_MAC()` | Check the locally administered bit |
+| `is_multicast_MAC()` | Check the multicast (group) bit |
+| `random_MAC()` | Generate random (by default locally administered) addresses |
+| `eui64_MAC()` | IPv6 modified EUI-64 identifier and link-local address |
+| `get_oui_registry()` | Download (and cache) the IEEE MA-L, MA-M and MA-S registries |
+| `lookup_vendor()` | Organization that owns each MAC address block |
+
+## License
+
+The package is distributed under the [MIT
+License](https://github.com/EnriquePH/mac-address/blob/main/LICENSE.md).
+
+## Links
+
+- [CRAN - MAC.address](https://CRAN.R-project.org/package=MAC.address)
+- [GitHub - EnriquePH/mac-address](https://github.com/EnriquePH/mac-address)
+- [Documentation (pkgdown)](https://enriqueph.github.io/mac-address/)
+- [IEEE Registration Authority - registries](https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries)
+- [RFC 4291, appendix A - modified EUI-64](https://www.rfc-editor.org/rfc/rfc4291#appendix-A)
