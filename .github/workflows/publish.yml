@@ -82,7 +82,7 @@ jobs:
         run: |
           Rscript -e "
             remotes::install_github(
-              'EnriquePH/marketconf@master',
+              'EnriquePH/marketconf@main',
               auth_token = Sys.getenv('GITHUB_PAT'),
               upgrade = 'never',
               quiet = TRUE
