@@ -1,0 +1,41 @@
+---
+title: "Privacy policy"
+subtitle: "neotevs, the personal server of ENERGYCODE"
+lang: en
+date: 2026-11-12
+tags: [privacy]
+editor: source
+toc: false
+number-sections: false
+description: "Privacy policy of neotevs, a personal application that reads and sends mail of its owner's own Gmail account."
+---
+
+This page describes how **neotevs**, a private application run by Enrique Pérez Herrero
+(<energycode.org@gmail.com>), uses Google user data.
+
+## What the application is
+
+neotevs is a personal home server. It uses the Gmail API only to work with **its owner's own Gmail
+account**: to send automatic reports and notices, and to read, label and file the owner's mail.
+It is not offered to the public and no other person uses it.
+
+## Data accessed
+
+With the owner's permission (scope `gmail.modify`), neotevs can read messages, change their labels
+and send messages from that account. It cannot delete messages permanently.
+
+## How the data is used and kept
+
+- Mail is processed only on the owner's own computers, to file and archive it.
+- No data is sold, shared with third parties, or used for advertising or to train models.
+- The access token is stored only on the owner's server, readable only by its administrator.
+
+Use of information received from Google APIs follows the
+[Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy),
+including the Limited Use requirements.
+
+## Removing the access
+
+The permission can be withdrawn at any time from
+[Google Account › Third-party connections](https://myaccount.google.com/connections).
+For any question, write to <energycode.org@gmail.com>.

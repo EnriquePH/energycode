@@ -719,5 +719,40 @@
     "title": "R Package MAC.address on CRAN",
     "section": "6 Links",
     "text": "6 Links\n\nCRAN - MAC.address\nGitHub - EnriquePH/mac-address\nDocumentation (pkgdown)\nIEEE Registration Authority - registries\nRFC 4291, appendix A - modified EUI-64"
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy policy",
+    "section": "",
+    "text": "This page describes how neotevs, a private application run by Enrique Pérez Herrero (energycode.org at gmail dot com), uses Google user data."
+  },
+  {
+    "objectID": "privacy.html#what-the-application-is",
+    "href": "privacy.html#what-the-application-is",
+    "title": "Privacy policy",
+    "section": "What the application is",
+    "text": "What the application is\nneotevs is a personal home server. It uses the Gmail API only to work with its owner’s own Gmail account: to send automatic reports and notices, and to read, label and file the owner’s mail. It is not offered to the public and no other person uses it."
+  },
+  {
+    "objectID": "privacy.html#data-accessed",
+    "href": "privacy.html#data-accessed",
+    "title": "Privacy policy",
+    "section": "Data accessed",
+    "text": "Data accessed\nWith the owner’s permission (scope gmail.modify), neotevs can read messages, change their labels and send messages from that account. It cannot delete messages permanently."
+  },
+  {
+    "objectID": "privacy.html#how-the-data-is-used-and-kept",
+    "href": "privacy.html#how-the-data-is-used-and-kept",
+    "title": "Privacy policy",
+    "section": "How the data is used and kept",
+    "text": "How the data is used and kept\n\nMail is processed only on the owner’s own computers, to file and archive it.\nNo data is sold, shared with third parties, or used for advertising or to train models.\nThe access token is stored only on the owner’s server, readable only by its administrator.\n\nUse of information received from Google APIs follows the Google API Services User Data Policy, including the Limited Use requirements."
+  },
+  {
+    "objectID": "privacy.html#removing-the-access",
+    "href": "privacy.html#removing-the-access",
+    "title": "Privacy policy",
+    "section": "Removing the access",
+    "text": "Removing the access\nThe permission can be withdrawn at any time from Google Account › Third-party connections. For any question, write to energycode.org at gmail dot com."
   }
 ]
