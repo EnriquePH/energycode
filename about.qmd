@@ -60,11 +60,11 @@ You can follow his work on [GitHub](https://github.com/EnriquePH),
 [Stack Overflow](https://stackoverflow.com/users/4678112/enrique-perez-herrero).
 
 ::: {.light-content}
-[![Stack Overflow profile of Enrique Pérez Herrero](https://stackoverflow.com/users/flair/4678112.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+[![Stack Overflow profile of Enrique Pérez Herrero](img/stackoverflow/flair-light.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
 :::
 
 ::: {.dark-content}
-[![Stack Overflow profile of Enrique Pérez Herrero](https://stackoverflow.com/users/flair/4678112.png?theme=dark){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+[![Stack Overflow profile of Enrique Pérez Herrero](img/stackoverflow/flair-dark.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
 :::
 
 ### Feedback

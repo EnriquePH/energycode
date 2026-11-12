@@ -19,7 +19,7 @@ R_SETUP := \
 export QUARTO_PYTHON := $(abspath $(PYTHON))
 
 .DEFAULT_GOAL := help
-.PHONY: help setup setup-r setup-py check render preview publish clean
+.PHONY: help setup setup-r setup-py check render preview publish clean flair
 
 help: ## List available targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | \
@@ -49,6 +49,14 @@ preview: ## Live preview at http://localhost:4444
 publish: render ## Render and stage _site/ (served by Netlify from git)
 	git add _site
 	@echo "_site/ staged. Review with 'git status', then commit and push."
+
+SO_ID := 4678112
+SO_UA := Mozilla/5.0 (X11; Linux x86_64) energycode-blog
+flair: ## Refresh the local copies of the Stack Overflow profile badge (img/stackoverflow/)
+	@mkdir -p img/stackoverflow
+	@curl -fsS -A "$(SO_UA)" -o img/stackoverflow/flair-light.png "https://stackoverflow.com/users/flair/$(SO_ID).png"
+	@curl -fsS -A "$(SO_UA)" -o img/stackoverflow/flair-dark.png "https://stackoverflow.com/users/flair/$(SO_ID).png?theme=dark"
+	@file img/stackoverflow/flair-*.png
 
 clean: ## Remove Quarto temp files (keeps _site/ and _freeze/)
 	rm -rf .quarto
