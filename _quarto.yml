@@ -19,7 +19,6 @@ website:
   repo-url: "https://github.com/EnriquePH/energycode"
   repo-branch: main
   repo-actions: [edit, source, issue]
-  google-analytics: "G-6P3MCX2KHD"
   favicon: /img/logo/favicon.ico
 
   navbar:
@@ -50,8 +49,8 @@ website:
 format:
   html:
     theme:
-      light: lux
-      dark: darkly
+      light: [lux, sin-google-fonts.scss]
+      dark: [darkly, sin-google-fonts.scss]
     css: styles.css
     toc: true
     toc-depth: 3
