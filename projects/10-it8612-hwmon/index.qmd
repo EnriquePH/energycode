@@ -25,61 +25,91 @@ engine: markdown
 
 ## Introduction
 
-`it8612-hwmon` is a small, **read-only** Linux kernel module for the ITE
-**IT8612E** Super I/O, the chip that measures temperatures and fan speeds on
-some OEM desktop boards. No Linux driver supports it, so on those machines
-Linux shows no fans at all.
+`it8612-hwmon` is a lightweight, **read-only Linux kernel driver** for the ITE **IT8612E Super I/O** controller, responsible for monitoring hardware temperatures and fan speeds on certain OEM desktop motherboards.
 
-With the driver, monitoring tools such as `sensors`, Prometheus and Grafana can
-see the real CPU temperature and warn when a fan stops. It has been tested on
-an HP Pavilion 500-526ns desktop (board HP 2B35, AMD A8-6500).
+The IT8612E is not currently supported by the upstream Linux `it87` driver. Consequently, systems equipped with this controller may lack access to motherboard temperature sensors and fan monitoring through the standard Linux hardware monitoring subsystem.
 
-The source code, documentation and releases are on
-[GitHub: EnriquePH/it8612-hwmon](https://github.com/EnriquePH/it8612-hwmon).
+This driver provides native integration with the Linux `hwmon` framework, making hardware readings available to standard monitoring applications such as `lm-sensors`, Prometheus and Grafana.
+
+The driver has been successfully tested on an **HP Pavilion 500-526ns**, featuring an HP 2B35 motherboard and an AMD A8-6500 APU.
+
+Project source code, documentation and releases are available at [GitHub: EnriquePH/it8612-hwmon](https://github.com/EnriquePH/it8612-hwmon).
 
 ## The problem
 
-- `sensors-detect` finds the chip but cannot name it: *"Found unknown chip with
-  ID 0x8612"*.
-- The in-kernel [`it87`](https://docs.kernel.org/hwmon/it87.html) driver and
-  the out-of-tree [frankcrawford/it87](https://github.com/frankcrawford/it87)
-  do not list ID `0x8612`, so `modprobe it87` fails with *No such device*.
-- On AMD family 15h CPUs (A-series APUs), the only CPU sensor, `k10temp`,
-  reports **Tctl**: a control value relative to the throttling limit, not
-  degrees. It reads 0 at idle. The real temperature comes from a thermistor
-  wired to the Super I/O.
+The IT8612E presents several compatibility issues under Linux:
 
-The usual workaround, `modprobe it87 force_id=0x8603`, treats the chip as the
-related IT8603E. It works, but it relies on a test-only parameter and the
-driver writes several configuration registers when it loads.
+- **Chip identification:** `sensors-detect` detects the controller but cannot identify it, reporting:
+  `Found unknown chip with ID 0x8612`.
 
-## Finding the registers without a datasheet
+- **Missing kernel support:** Neither the upstream Linux [`it87` driver](https://docs.kernel.org/hwmon/it87.html) nor the [out-of-tree frankcrawford/it87 driver](https://github.com/frankcrawford/it87) explicitly supports the IT8612E device ID (`0x8612`). Consequently, loading `it87` normally fails with `No such device`.
 
-ITE does not publish its datasheets. The register map was established by
-dumping the 256 registers of the chip's environment controller with `isadump`
-at rest, under full load on all CPU cores and while cooling down, and seeing
-which ones moved:
+- **Incomplete CPU temperature reporting:** On AMD Family 15h processors, including the A-series APUs, `k10temp` exposes a Tctl reading that represents a thermal control value rather than a directly usable physical temperature measurement. On the tested system, this reading remains at zero under idle conditions.
 
-| Register | At rest | 90 s at full load | Cooling down | Reading |
-| --- | --- | --- | --- | --- |
-| `0x29` | 26 | 38 | 31 | CPU thermistor, °C |
-| `0x2a` | 28 | 28 | 28 | Board, °C |
-| `0x2b` | 0 | 24 | 4 | Tctl, equal to `k10temp` |
-| `0x0e`, `0x19` | | | | Fan 2, about 935 rpm |
-| `0x0f`, `0x1a` | | | | Fan 3, about 850 rpm |
+  The actual CPU temperature is measured by a thermistor connected to the Super I/O controller, but this information is not accessible through the standard Linux drivers.
 
-The map is the one of the IT87 family (IT8603E, IT8613E), and `it87` with
-`force_id=0x8603` gives the same values. The BIOS leaves all three fans in the
-chip's own automatic mode, driven by the Tctl: they never stop and speed up
-from Tctl 25–30.
+A commonly used workaround is:
 
-## What the driver does
+```bash
+sudo modprobe it87 force_id=0x8603
+```
 
-It identifies the chip by its own ID and exposes, through the standard hwmon
-interface (`sensors`, `/sys/class/hwmon`, Prometheus node_exporter):
+This forces the IT87 driver to treat the controller as an IT8603E. Although this approach works on the tested hardware, it relies on a compatibility override intended for testing and uses the existing driver's initialization routines, which may modify controller configuration registers.
+
+`it8612-hwmon` addresses this limitation by implementing dedicated support for the IT8612E and avoiding modifications to the hardware monitoring configuration.
+
+## Register identification without a datasheet
+
+ITE does not publicly provide the IT8612E register-level documentation required for developing an independent monitoring driver.
+
+To establish the register map, the controller's Environment Controller (EC) register space was experimentally investigated.
+
+All 256 registers were inspected using `isadump` under three operating conditions:
+
+1. System at idle.
+2. CPU under sustained full load across all cores.
+3. System cooling down after the load test.
+
+Registers showing temperature-dependent variations were compared with available Linux sensor readings and the physical behaviour of the cooling system.
+
+The following register assignments were identified:
+
+| Register | Idle | Full load (90 s) | Cooling | Identified function |
+| :--- | ---: | ---: | ---: | :--- |
+| `0x29` | 26 | 38 | 31 | CPU thermistor (°C) |
+| `0x2A` | 28 | 28 | 28 | Motherboard temperature (°C) |
+| `0x2B` | 0 | 24 | 4 | Tctl, corresponding to `k10temp` |
+| `0x0E`, `0x19` | | | | Fan 2, approximately 935 RPM |
+| `0x0F`, `0x1A` | | | | Fan 3, approximately 850 RPM |
+
+The register layout is consistent with the IT87 family, particularly the IT8603E and IT8613E controllers.
+
+Cross-validation using the existing `it87` driver with `force_id=0x8603` produced equivalent hardware readings.
+
+### BIOS fan control
+
+The BIOS configures all three fan channels to operate in the controller's autonomous hardware mode.
+
+Fan speed regulation is performed directly by the Super I/O controller, using Tctl as the control input. During testing, the fans remained operational at idle and increased their speed automatically as Tctl rose from approximately 25–30.
+
+This behaviour is important because it allows the Linux driver to remain entirely independent of the motherboard's fan control logic.
+
+## Driver implementation and functionality
+
+The driver identifies the IT8612E using its native hardware ID (`0x8612`) and exposes the available monitoring channels through the standard Linux `hwmon` interface.
+
+This makes the sensor data accessible through:
+
+- `lm-sensors` (`sensors`).
+- `/sys/class/hwmon/`.
+- Prometheus Node Exporter.
+- Grafana and other monitoring applications compatible with Linux hwmon.
+
+Example output:
 
 ```text
 $ sensors it8612-isa-*
+
 it8612-isa-0600
 Adapter: ISA adapter
 fan1:           0 RPM
@@ -90,62 +120,148 @@ temp2:        +30.0°C
 temp3:         +1.0°C
 ```
 
-It **never writes** to the environment controller, so the fans stay under the
-chip's automatic control. The only writes are the standard Super I/O
-configuration sequence used once at load time to find the controller, the same
-one `sensors-detect` and `it87` use. The code passes the kernel's
-`checkpatch.pl --strict` with no errors, warnings or checks, and builds with
-`W=1` without warnings.
+### Read-only operation
 
-On the tested board, under a ten-minute full load, the CPU went from 27 °C to a
-steady 50 °C, and the fans sped up by themselves from about 935/850 to
-2122/1366 rpm.
+A fundamental design principle is that the driver **never modifies the Environment Controller's monitoring registers or fan control settings**.
+
+The driver only reads the hardware monitoring data. Fan speed regulation remains entirely under the control of the Super I/O hardware and the existing BIOS configuration.
+
+The only hardware writes are those required by the standard Super I/O configuration protocol to locate and identify the controller during initialization. This access sequence follows the established approach used by `sensors-detect` and the Linux `it87` driver.
+
+### Code quality and build verification
+
+The implementation has been checked against the Linux kernel coding standards.
+
+Verification results:
+
+- `checkpatch.pl --strict`: no errors, warnings or checks.
+- Kernel build with `W=1`: no compiler warnings.
+- Native device identification using ID `0x8612`.
+- Standard Linux hwmon interface integration.
+
+### Thermal and fan performance test
+
+The driver was validated during a ten-minute sustained CPU full-load test.
+
+Observed results:
+
+| Parameter | Initial | Sustained load |
+| :--- | ---: | ---: |
+| CPU temperature | 27 °C | 50 °C |
+| Fan 2 | 935 RPM | 2,122 RPM |
+| Fan 3 | 850 RPM | 1,366 RPM |
+
+The results confirm that the CPU temperature increases as expected and that the motherboard automatically adjusts fan speeds without requiring any intervention from the Linux driver.
 
 ## Installation
 
-Kernel headers and DKMS (Debian/Ubuntu):
+### Requirements
+
+On Debian and Ubuntu systems, install the required build dependencies:
 
 ```bash
-sudo apt install linux-headers-$(uname -r) dkms build-essential
+sudo apt update
+sudo apt install linux-headers-$(uname -r) dkms build-essential git
+```
+
+### Build and load
+
+Clone the repository and compile the module:
+
+```bash
 git clone https://github.com/EnriquePH/it8612-hwmon.git
 cd it8612-hwmon
+
 make build
+```
+
+Load the driver:
+
+```bash
 sudo insmod ./it8612.ko
+```
+
+Check the detected sensors:
+
+```bash
 sensors it8612-isa-*
 ```
 
-To install it for good, rebuilt with every kernel update and loaded at boot:
+### DKMS installation
+
+For automatic rebuilding whenever a new kernel is installed:
 
 ```bash
 sudo make dkms-install
+```
+
+Configure the module to load automatically at boot:
+
+```bash
 echo it8612 | sudo tee /etc/modules-load.d/it8612.conf
+```
+
+After rebooting, verify that the module is loaded:
+
+```bash
+lsmod | grep it8612
+```
+
+And check the available hardware monitoring devices:
+
+```bash
+ls /sys/class/hwmon/
+sensors
 ```
 
 ## Tested hardware
 
-| Machine | Board / BIOS | CPU | Kernel |
-| --- | --- | --- | --- |
-| HP Pavilion 500-526ns | HP 2B35, AMI 80.06 (2015) | AMD A8-6500 | 6.12 (Debian 13) |
+The driver has been validated on the following hardware configuration:
 
-Reports from other boards are welcome as GitHub issues, with the output of
-`sensors` and, if possible, a register dump.
+| Component | Specification |
+| :--- | :--- |
+| Computer | HP Pavilion 500-526ns |
+| Motherboard | HP 2B35 |
+| BIOS | AMI 80.06 (2015) |
+| Processor | AMD A8-6500 |
+| Super I/O | ITE IT8612E |
+| Linux kernel | 6.12 (Debian 13) |
+
+Testing on additional motherboards is encouraged.
+
+If you have a system equipped with an IT8612E, please consider submitting a GitHub issue including:
+
+- Motherboard manufacturer and model.
+- BIOS version.
+- CPU model.
+- Linux kernel version.
+- Output of `sensors`.
+- Register dump, if available.
+
+Additional hardware reports will help establish compatibility across different motherboard implementations.
 
 ## Disclaimer
 
-The driver is provided **as is, without any warranty** (GPL, sections 11 and
-12): use it at your own risk. It has been tested on one board only, and it does
-not control the fans or protect the hardware. See the
-[full disclaimer](https://github.com/EnriquePH/it8612-hwmon#disclaimer).
+This software is provided **AS IS, without warranty of any kind**, in accordance with Sections 11 and 12 of the GNU General Public License.
+
+The driver has been tested on a single motherboard configuration. Its operation on other systems has not yet been verified.
+
+This driver is intended exclusively for hardware monitoring. It does not control fans, implement thermal protection mechanisms or replace the motherboard's BIOS thermal management.
+
+Use it at your own risk.
+
+See the [full disclaimer](https://github.com/EnriquePH/it8612-hwmon#disclaimer).
 
 ## License
 
-GPL-2.0-or-later. Super I/O access follows `drivers/hwmon/it87.c` from the
-Linux kernel.
+This project is distributed under the **GNU General Public License v2.0 or later (GPL-2.0-or-later)**.
 
-## Links
+Super I/O access follows the established implementation patterns used in the Linux kernel `drivers/hwmon/it87.c` driver.
 
-- [GitHub - EnriquePH/it8612-hwmon](https://github.com/EnriquePH/it8612-hwmon)
-- [Project page](https://enriqueph.github.io/it8612-hwmon/)
-- [Linux kernel - it87 driver](https://docs.kernel.org/hwmon/it87.html)
-- [Linux kernel - hwmon subsystem](https://docs.kernel.org/hwmon/)
-- [frankcrawford/it87 (out-of-tree it87)](https://github.com/frankcrawford/it87)
+## References and project links
+
+- **Source code:** [EnriquePH/it8612-hwmon](https://github.com/EnriquePH/it8612-hwmon)
+- **Project documentation:** [it8612-hwmon](https://enriqueph.github.io/it8612-hwmon/)
+- **Linux kernel documentation:** [IT87 hardware monitoring driver](https://docs.kernel.org/hwmon/it87.html)
+- **Linux kernel documentation:** [Hardware Monitoring (hwmon) subsystem](https://docs.kernel.org/hwmon/)
+- **Related implementation:** [frankcrawford/it87](https://github.com/frankcrawford/it87)
