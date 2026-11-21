@@ -5,6 +5,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - _redirects
   preview:
     port: 4444
     browser: true
@@ -63,6 +65,7 @@ format:
     link-external-icon: false
     link-external-newwindow: true
     include-after-body: partials/_footer.html
+    include-in-header: partials/_umami.html
 
 editor: source
 email-obfuscation: javascript

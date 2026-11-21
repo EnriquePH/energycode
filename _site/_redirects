@@ -1,0 +1,3 @@
+# Umami visit statistics: the tracker and its collector, proxied to the Umami server (status 200 = proxy)
+/stats/script.js  https://stats.tail1462ea.ts.net/script.js  200
+/stats/api/send   https://stats.tail1462ea.ts.net/api/send   200
