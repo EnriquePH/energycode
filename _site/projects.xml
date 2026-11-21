@@ -10,7 +10,210 @@
 <atom:link href="https://www.energycode.org/projects.xml" rel="self" type="application/rss+xml"/>
 <description>Personal blog focused on Data Science, Applied Mathematics, Engineering, and Programming with R and Python</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Sun, 25 Oct 2026 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>it8612-hwmon, a Linux driver for the ITE IT8612E</title>
+  <dc:creator>Enrique Pérez Herrero</dc:creator>
+  <link>https://www.energycode.org/projects/10-it8612-hwmon/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p><a href="https://github.com/EnriquePH/it8612-hwmon/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg" class="img-fluid" alt="License: GPL-2.0-or-later"></a> <a href="https://docs.kernel.org/hwmon/"><img src="https://img.shields.io/badge/platform-Linux-informational?logo=linux&amp;logoColor=white.png" class="img-fluid" alt="Platform: Linux"></a> <a href="https://github.com/EnriquePH/it8612-hwmon#tested-hardware"><img src="https://img.shields.io/badge/tested%20on-kernel%206.12-success" class="img-fluid" alt="Tested on kernel 6.12"></a> <a href="https://github.com/EnriquePH/it8612-hwmon#build-and-install"><img src="https://img.shields.io/badge/DKMS-supported-success.png" class="img-fluid" alt="DKMS"></a> <a href="https://github.com/EnriquePH/it8612-hwmon#safety"><img src="https://img.shields.io/badge/access-read--only-brightgreen.png" class="img-fluid" alt="Read-only"></a></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="https://www.energycode.org/projects/10-it8612-hwmon/it8612-hwmon-logo.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="it8612-hwmon logo" width="300"></p>
+</figure>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p><code>it8612-hwmon</code> is a small, <strong>read-only</strong> Linux kernel module for the ITE <strong>IT8612E</strong> Super I/O, the chip that measures temperatures and fan speeds on some OEM desktop boards. No Linux driver supports it, so on those machines Linux shows no fans at all.</p>
+<p>With the driver, monitoring tools such as <code>sensors</code>, Prometheus and Grafana can see the real CPU temperature and warn when a fan stops. It has been tested on an HP Pavilion 500-526ns desktop (board HP 2B35, AMD A8-6500).</p>
+<p>The source code, documentation and releases are on <a href="https://github.com/EnriquePH/it8612-hwmon">GitHub: EnriquePH/it8612-hwmon</a>.</p>
+</section>
+<section id="the-problem" class="level2" data-number="2">
+<h2 data-number="2" data-anchor-id="the-problem"><span class="header-section-number">2</span> The problem</h2>
+<ul>
+<li><code>sensors-detect</code> finds the chip but cannot name it: <em>“Found unknown chip with ID 0x8612”</em>.</li>
+<li>The in-kernel <a href="https://docs.kernel.org/hwmon/it87.html"><code>it87</code></a> driver and the out-of-tree <a href="https://github.com/frankcrawford/it87">frankcrawford/it87</a> do not list ID <code>0x8612</code>, so <code>modprobe it87</code> fails with <em>No such device</em>.</li>
+<li>On AMD family 15h CPUs (A-series APUs), the only CPU sensor, <code>k10temp</code>, reports <strong>Tctl</strong>: a control value relative to the throttling limit, not degrees. It reads 0 at idle. The real temperature comes from a thermistor wired to the Super I/O.</li>
+</ul>
+<p>The usual workaround, <code>modprobe it87 force_id=0x8603</code>, treats the chip as the related IT8603E. It works, but it relies on a test-only parameter and the driver writes several configuration registers when it loads.</p>
+</section>
+<section id="finding-the-registers-without-a-datasheet" class="level2" data-number="3">
+<h2 data-number="3" data-anchor-id="finding-the-registers-without-a-datasheet"><span class="header-section-number">3</span> Finding the registers without a datasheet</h2>
+<p>ITE does not publish its datasheets. The register map was established by dumping the 256 registers of the chip’s environment controller with <code>isadump</code> at rest, under full load on all CPU cores and while cooling down, and seeing which ones moved:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Register</th>
+<th>At rest</th>
+<th>90 s at full load</th>
+<th>Cooling down</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>0x29</code></td>
+<td>26</td>
+<td>38</td>
+<td>31</td>
+<td>CPU thermistor, °C</td>
+</tr>
+<tr class="even">
+<td><code>0x2a</code></td>
+<td>28</td>
+<td>28</td>
+<td>28</td>
+<td>Board, °C</td>
+</tr>
+<tr class="odd">
+<td><code>0x2b</code></td>
+<td>0</td>
+<td>24</td>
+<td>4</td>
+<td>Tctl, equal to <code>k10temp</code></td>
+</tr>
+<tr class="even">
+<td><code>0x0e</code>, <code>0x19</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Fan 2, about 935 rpm</td>
+</tr>
+<tr class="odd">
+<td><code>0x0f</code>, <code>0x1a</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Fan 3, about 850 rpm</td>
+</tr>
+</tbody>
+</table>
+<p>The map is the one of the IT87 family (IT8603E, IT8613E), and <code>it87</code> with <code>force_id=0x8603</code> gives the same values. The BIOS leaves all three fans in the chip’s own automatic mode, driven by the Tctl: they never stop and speed up from Tctl 25–30.</p>
+</section>
+<section id="what-the-driver-does" class="level2" data-number="4">
+<h2 data-number="4" data-anchor-id="what-the-driver-does"><span class="header-section-number">4</span> What the driver does</h2>
+<p>It identifies the chip by its own ID and exposes, through the standard hwmon interface (<code>sensors</code>, <code>/sys/class/hwmon</code>, Prometheus node_exporter):</p>
+<pre class="text"><code>$ sensors it8612-isa-*
+it8612-isa-0600
+Adapter: ISA adapter
+fan1:           0 RPM
+fan2:         945 RPM
+fan3:         852 RPM
+temp1:        +28.0°C
+temp2:        +30.0°C
+temp3:         +1.0°C</code></pre>
+<p>It <strong>never writes</strong> to the environment controller, so the fans stay under the chip’s automatic control. The only writes are the standard Super I/O configuration sequence used once at load time to find the controller, the same one <code>sensors-detect</code> and <code>it87</code> use. The code passes the kernel’s <code>checkpatch.pl --strict</code> with no errors, warnings or checks, and builds with <code>W=1</code> without warnings.</p>
+<p>On the tested board, under a ten-minute full load, the CPU went from 27 °C to a steady 50 °C, and the fans sped up by themselves from about 935/850 to 2122/1366 rpm.</p>
+</section>
+<section id="installation" class="level2" data-number="5">
+<h2 data-number="5" data-anchor-id="installation"><span class="header-section-number">5</span> Installation</h2>
+<p>Kernel headers and DKMS (Debian/Ubuntu):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> apt install linux-headers-<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">uname</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-r</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span> dkms build-essential</span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> clone https://github.com/EnriquePH/it8612-hwmon.git</span>
+<span id="cb2-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> it8612-hwmon</span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> build</span>
+<span id="cb2-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> insmod ./it8612.ko</span>
+<span id="cb2-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">sensors</span> it8612-isa-<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">*</span></span></code></pre></div></div>
+<p>To install it for good, rebuilt with every kernel update and loaded at boot:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> make dkms-install</span>
+<span id="cb3-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> it8612 <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">|</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> tee /etc/modules-load.d/it8612.conf</span></code></pre></div></div>
+</section>
+<section id="tested-hardware" class="level2" data-number="6">
+<h2 data-number="6" data-anchor-id="tested-hardware"><span class="header-section-number">6</span> Tested hardware</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Machine</th>
+<th>Board / BIOS</th>
+<th>CPU</th>
+<th>Kernel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HP Pavilion 500-526ns</td>
+<td>HP 2B35, AMI 80.06 (2015)</td>
+<td>AMD A8-6500</td>
+<td>6.12 (Debian 13)</td>
+</tr>
+</tbody>
+</table>
+<p>Reports from other boards are welcome as GitHub issues, with the output of <code>sensors</code> and, if possible, a register dump.</p>
+</section>
+<section id="disclaimer" class="level2" data-number="7">
+<h2 data-number="7" data-anchor-id="disclaimer"><span class="header-section-number">7</span> Disclaimer</h2>
+<p>The driver is provided <strong>as is, without any warranty</strong> (GPL, sections 11 and 12): use it at your own risk. It has been tested on one board only, and it does not control the fans or protect the hardware. See the <a href="https://github.com/EnriquePH/it8612-hwmon#disclaimer">full disclaimer</a>.</p>
+</section>
+<section id="license" class="level2" data-number="8">
+<h2 data-number="8" data-anchor-id="license"><span class="header-section-number">8</span> License</h2>
+<p>GPL-2.0-or-later. Super I/O access follows <code>drivers/hwmon/it87.c</code> from the Linux kernel.</p>
+</section>
+<section id="links" class="level2" data-number="9">
+<h2 data-number="9" data-anchor-id="links"><span class="header-section-number">9</span> Links</h2>
+<ul>
+<li><a href="https://github.com/EnriquePH/it8612-hwmon">GitHub - EnriquePH/it8612-hwmon</a></li>
+<li><a href="https://enriqueph.github.io/it8612-hwmon/">Project page</a></li>
+<li><a href="https://docs.kernel.org/hwmon/it87.html">Linux kernel - it87 driver</a></li>
+<li><a href="https://docs.kernel.org/hwmon/">Linux kernel - hwmon subsystem</a></li>
+<li><a href="https://github.com/frankcrawford/it87">frankcrawford/it87 (out-of-tree it87)</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Linux</category>
+  <category>Hardware</category>
+  <category>C</category>
+  <guid>https://www.energycode.org/projects/10-it8612-hwmon/</guid>
+  <pubDate>Fri, 20 Nov 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://www.energycode.org/projects/10-it8612-hwmon/it8612-hwmon-logo.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>R Package MAC.address on CRAN</title>
   <dc:creator>Enrique Pérez Herrero</dc:creator>

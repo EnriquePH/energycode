@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "R Package MAC.address on CRAN\n\n\n\nR\n\nPackage\n\nNetworking\n\n\n\nFind, validate and identify device MAC addresses from R\n\n\n\nOctober 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "it8612-hwmon, a Linux driver for the ITE IT8612E\n\n\n\nLinux\n\nHardware\n\nC\n\n\n\nRead fan speeds and the real CPU temperature on boards with the ITE IT8612E Super I/O\n\n\n\nNovember 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Package MAC.address on CRAN\n\n\n\nR\n\nPackage\n\nNetworking\n\n\n\nFind, validate and identify device MAC addresses from R\n\n\n\nOctober 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nR Package oeis.tools on CRAN\n\n\n\nR\n\nPackage\n\nMathematics\n\nOEIS\n\n\n\nWork with OEIS integer sequences from R, now on CRAN\n\n\n\nOctober 13, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nLUNAR-ORBITER-ATLAS\n\n\n\nPython\n\nDash\n\nPlotly\n\nMoon\n\n\n\nAn interactive 3D atlas of NASA’s Lunar Orbiter photographs (1966–1967)\n\n\n\nSeptember 29, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPARI-GP-ENGINE\n\n\n\nMathematics\n\nPARI/GP\n\nQuarto\n\n\n\nA Quarto engine extension to run PARI/GP code in documents\n\n\n\nSeptember 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nPackage OEIS-Mathematica\n\n\n\nMathematics\n\nWolfram Language\n\nPackage\n\n\n\nA Wolfram Language package for using OEIS data in Mathematica\n\n\n\nJuly 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nExplocal\n\n\n\nC++\n\nPython\n\nQuarto\n\nExplosivos\n\n\n\nCálculo de las características teóricas de mezclas explosivas (UNE 31-002)\n\n\n\nJuly 11, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVolcanic Eruptions in the Holocene Period\n\n\n\nR\n\nKaggle\n\nEDA\n\n\n\nkaggle Data Exploration notebook\n\n\n\nAugust 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nStock Market Confidence Indexes\n\n\n\nR\n\nPackage\n\nStock market\n\n\n\nR Package marketconf\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/02082023-numpy-latex/index.html",
@@ -322,6 +322,20 @@
     "text": "6 Links\n\nCRAN - MAC.address\nGitHub - EnriquePH/mac-address\nDocumentation (pkgdown)\nIEEE Registration Authority - registries\nRFC 4291, appendix A - modified EUI-64"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "ENERGYCODE is a personal technical blog about mathematics, statistics, data science and scientific computing. Posts are written as reproducible notebooks: the R and Python code that produces every figure, table and result is on the page, ready to copy and run.\n\nWhat you will find here\n\nNumber theory and integer sequences: identities, proofs and computations around OEIS sequences, repunits, tetrahedral and Catalan numbers.\nLinear algebra: structured matrices, determinants, powers and norms.\nData science and statistics: model evaluation, exploratory analysis and real-world datasets.\nScientific computing tools: small packages and utilities in R, Python, PARI/GP and Mathematica, collected under Projects.\n\nPosts are written in English or Spanish, depending on the topic.\n\n\nAuthor\nThe site is written and maintained by Enrique Pérez Herrero. You can follow his work on GitHub, Kaggle and Stack Overflow.\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\nFeedback\nFound an error, or have a question about a post? Use the Report an issue link at the end of any page to open an issue on GitHub, or write to energycode.org at gmail dot com.\n\n\nHow it is built\nThe site is made with Quarto. Code cells run on R and Python (Jupyter), and the site is deployed to Netlify. The full source is available on GitHub.\n\n\nLicense\n\nWritten content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\nSource code is released under the MIT License.\n\n\n\n\nCreative Commons BY-SA 4.0 license"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\nSeries\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\nFibonacci\n\nEuclid\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\nOEIS\n\nSpecial Numbers\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\nNumpy\n\nLatex\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\nLinear Algebra\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\nMatrices\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "privacy.html",
     "href": "privacy.html",
     "title": "Privacy policy",
@@ -347,7 +361,7 @@
     "href": "privacy.html#how-the-data-is-used-and-kept",
     "title": "Privacy policy",
     "section": "How the data is used and kept",
-    "text": "How the data is used and kept\n\nMail is processed only on the owner’s own computers, to file and archive it.\nNo data is sold, shared with third parties, or used for advertising or to train models.\nThe access token is stored only on the owner's own computers, readable only by the owner.\n\nUse of information received from Google APIs follows the Google API Services User Data Policy, including the Limited Use requirements."
+    "text": "How the data is used and kept\n\nMail is processed only on the owner’s own computers, to file and archive it.\nNo data is sold, shared with third parties, or used for advertising or to train models.\nThe access token is stored only on the owner’s own computers, readable only by the owner.\n\nUse of information received from Google APIs follows the Google API Services User Data Policy, including the Limited Use requirements."
   },
   {
     "objectID": "privacy.html#removing-the-access",
@@ -357,18 +371,67 @@
     "text": "Removing the access\nThe permission can be withdrawn at any time from Google Account › Third-party connections. For any question, write to energycode.org at gmail dot com."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Suma de los recíprocos de los números tetraédricos\n\n\n\nMath\n\nSeries\n\nSpecial Numbers\n\n\n\nSumas de la serie de los recíprocos de los números tetraédricos\n\n\n\nJanuary 8, 2026\n\n\n\n\n\n\n\n\n\n\n\nEuclinacci\n\n\n\nR\n\nFibonacci\n\nEuclid\n\nMath\n\n\n\nLa sucesión de Fibonacci y el Algoritmo de Euclides\n\n\n\nJune 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nA004782(n) = A014847(n) + 1\n\n\n\nMath\n\nOEIS\n\nSpecial Numbers\n\nCombinatorics\n\n\n\nRelación entre dos secuencias asociadas con los números de Catalan\n\n\n\nMay 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nConvert a NumPy array to LaTeX\n\n\n\nPython\n\nNumpy\n\nLatex\n\nDeterminant\n\n\n\nLaTeX matrices and determinants from NumPy arrays\n\n\n\nAugust 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Logo Sticker\n\n\n\nR\n\n\n\nBlog logo with hexSticker\n\n\n\nAugust 1, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\nConfusion Matrix in R\n\n\n\nR\n\nMachine Learning\n\n\n\nPlotting a Confusion Matrix with ggplot in R\n\n\n\nMarch 9, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nMax Determinant\n\n\n\nMath\n\nLinear Algebra\n\nDeterminant\n\n\n\nDeterminants of special square matrices with elements defined as the Maximum or Minimum of the Indices\n\n\n\nMarch 5, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nBINOMIAL MATRIX (I)\n\n\n\nMath\n\nMatrices\n\nCombinatorics\n\n\n\nA matrix related to Pascal’s triangle, also known as Tartaglia’s triangle\n\n\n\nSeptember 22, 2009\n\n\n\n\n\n\nNo matching items"
+    "objectID": "projects/10-it8612-hwmon/index.html#introduction",
+    "href": "projects/10-it8612-hwmon/index.html#introduction",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "1 Introduction",
+    "text": "1 Introduction\nit8612-hwmon is a small, read-only Linux kernel module for the ITE IT8612E Super I/O, the chip that measures temperatures and fan speeds on some OEM desktop boards. No Linux driver supports it, so on those machines Linux shows no fans at all.\nWith the driver, monitoring tools such as sensors, Prometheus and Grafana can see the real CPU temperature and warn when a fan stops. It has been tested on an HP Pavilion 500-526ns desktop (board HP 2B35, AMD A8-6500).\nThe source code, documentation and releases are on GitHub: EnriquePH/it8612-hwmon."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "ENERGYCODE is a personal technical blog about mathematics, statistics, data science and scientific computing. Posts are written as reproducible notebooks: the R and Python code that produces every figure, table and result is on the page, ready to copy and run.\n\nWhat you will find here\n\nNumber theory and integer sequences: identities, proofs and computations around OEIS sequences, repunits, tetrahedral and Catalan numbers.\nLinear algebra: structured matrices, determinants, powers and norms.\nData science and statistics: model evaluation, exploratory analysis and real-world datasets.\nScientific computing tools: small packages and utilities in R, Python, PARI/GP and Mathematica, collected under Projects.\n\nPosts are written in English or Spanish, depending on the topic.\n\n\nAuthor\nThe site is written and maintained by Enrique Pérez Herrero. You can follow his work on GitHub, Kaggle and Stack Overflow.\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\n\n\nStack Overflow profile of Enrique Pérez Herrero\n\n\n\n\n\nFeedback\nFound an error, or have a question about a post? Use the Report an issue link at the end of any page to open an issue on GitHub, or write to energycode.org at gmail dot com.\n\n\nHow it is built\nThe site is made with Quarto. Code cells run on R and Python (Jupyter), and the site is deployed to Netlify. The full source is available on GitHub.\n\n\nLicense\n\nWritten content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\nSource code is released under the MIT License.\n\n\n\n\nCreative Commons BY-SA 4.0 license"
+    "objectID": "projects/10-it8612-hwmon/index.html#the-problem",
+    "href": "projects/10-it8612-hwmon/index.html#the-problem",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "2 The problem",
+    "text": "2 The problem\n\nsensors-detect finds the chip but cannot name it: “Found unknown chip with ID 0x8612”.\nThe in-kernel it87 driver and the out-of-tree frankcrawford/it87 do not list ID 0x8612, so modprobe it87 fails with No such device.\nOn AMD family 15h CPUs (A-series APUs), the only CPU sensor, k10temp, reports Tctl: a control value relative to the throttling limit, not degrees. It reads 0 at idle. The real temperature comes from a thermistor wired to the Super I/O.\n\nThe usual workaround, modprobe it87 force_id=0x8603, treats the chip as the related IT8603E. It works, but it relies on a test-only parameter and the driver writes several configuration registers when it loads."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#finding-the-registers-without-a-datasheet",
+    "href": "projects/10-it8612-hwmon/index.html#finding-the-registers-without-a-datasheet",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "3 Finding the registers without a datasheet",
+    "text": "3 Finding the registers without a datasheet\nITE does not publish its datasheets. The register map was established by dumping the 256 registers of the chip’s environment controller with isadump at rest, under full load on all CPU cores and while cooling down, and seeing which ones moved:\n\n\n\nRegister\nAt rest\n90 s at full load\nCooling down\nReading\n\n\n\n\n0x29\n26\n38\n31\nCPU thermistor, °C\n\n\n0x2a\n28\n28\n28\nBoard, °C\n\n\n0x2b\n0\n24\n4\nTctl, equal to k10temp\n\n\n0x0e, 0x19\n\n\n\nFan 2, about 935 rpm\n\n\n0x0f, 0x1a\n\n\n\nFan 3, about 850 rpm\n\n\n\nThe map is the one of the IT87 family (IT8603E, IT8613E), and it87 with force_id=0x8603 gives the same values. The BIOS leaves all three fans in the chip’s own automatic mode, driven by the Tctl: they never stop and speed up from Tctl 25–30."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#what-the-driver-does",
+    "href": "projects/10-it8612-hwmon/index.html#what-the-driver-does",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "4 What the driver does",
+    "text": "4 What the driver does\nIt identifies the chip by its own ID and exposes, through the standard hwmon interface (sensors, /sys/class/hwmon, Prometheus node_exporter):\n$ sensors it8612-isa-*\nit8612-isa-0600\nAdapter: ISA adapter\nfan1:           0 RPM\nfan2:         945 RPM\nfan3:         852 RPM\ntemp1:        +28.0°C\ntemp2:        +30.0°C\ntemp3:         +1.0°C\nIt never writes to the environment controller, so the fans stay under the chip’s automatic control. The only writes are the standard Super I/O configuration sequence used once at load time to find the controller, the same one sensors-detect and it87 use. The code passes the kernel’s checkpatch.pl --strict with no errors, warnings or checks, and builds with W=1 without warnings.\nOn the tested board, under a ten-minute full load, the CPU went from 27 °C to a steady 50 °C, and the fans sped up by themselves from about 935/850 to 2122/1366 rpm."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#installation",
+    "href": "projects/10-it8612-hwmon/index.html#installation",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "5 Installation",
+    "text": "5 Installation\nKernel headers and DKMS (Debian/Ubuntu):\nsudo apt install linux-headers-$(uname -r) dkms build-essential\ngit clone https://github.com/EnriquePH/it8612-hwmon.git\ncd it8612-hwmon\nmake build\nsudo insmod ./it8612.ko\nsensors it8612-isa-*\nTo install it for good, rebuilt with every kernel update and loaded at boot:\nsudo make dkms-install\necho it8612 | sudo tee /etc/modules-load.d/it8612.conf"
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#tested-hardware",
+    "href": "projects/10-it8612-hwmon/index.html#tested-hardware",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "6 Tested hardware",
+    "text": "6 Tested hardware\n\n\n\n\n\n\n\n\n\nMachine\nBoard / BIOS\nCPU\nKernel\n\n\n\n\nHP Pavilion 500-526ns\nHP 2B35, AMI 80.06 (2015)\nAMD A8-6500\n6.12 (Debian 13)\n\n\n\nReports from other boards are welcome as GitHub issues, with the output of sensors and, if possible, a register dump."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#disclaimer",
+    "href": "projects/10-it8612-hwmon/index.html#disclaimer",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "7 Disclaimer",
+    "text": "7 Disclaimer\nThe driver is provided as is, without any warranty (GPL, sections 11 and 12): use it at your own risk. It has been tested on one board only, and it does not control the fans or protect the hardware. See the full disclaimer."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#license",
+    "href": "projects/10-it8612-hwmon/index.html#license",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "8 License",
+    "text": "8 License\nGPL-2.0-or-later. Super I/O access follows drivers/hwmon/it87.c from the Linux kernel."
+  },
+  {
+    "objectID": "projects/10-it8612-hwmon/index.html#links",
+    "href": "projects/10-it8612-hwmon/index.html#links",
+    "title": "it8612-hwmon, a Linux driver for the ITE IT8612E",
+    "section": "9 Links",
+    "text": "9 Links\n\nGitHub - EnriquePH/it8612-hwmon\nProject page\nLinux kernel - it87 driver\nLinux kernel - hwmon subsystem\nfrankcrawford/it87 (out-of-tree it87)"
   },
   {
     "objectID": "projects/08-oeis-tools-R/index.html#introduction",
