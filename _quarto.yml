@@ -21,7 +21,7 @@ website:
   repo-url: "https://github.com/EnriquePH/energycode"
   repo-branch: main
   repo-actions: [edit, source, issue]
-  favicon: /img/logo/favicon.ico
+  favicon: /assets/img/logo/favicon.ico
 
   navbar:
     background: primary

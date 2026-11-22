@@ -3,7 +3,7 @@ title: "About"
 editor: source
 toc: false
 number-sections: false
-image: ./img/logo/web_logo.png
+image: ./assets/img/logo/web_logo.png
 image-alt: "ENERGYCODE logo"
 description: "About ENERGYCODE, a blog on mathematics, data science and scientific computing by Enrique Pérez Herrero."
 about:
@@ -60,11 +60,11 @@ You can follow his work on [GitHub](https://github.com/EnriquePH),
 [Stack Overflow](https://stackoverflow.com/users/4678112/enrique-perez-herrero).
 
 ::: {.light-content}
-[![Stack Overflow profile of Enrique Pérez Herrero](img/stackoverflow/flair-light.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+[![Stack Overflow profile of Enrique Pérez Herrero](assets/img/stackoverflow/flair-light.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
 :::
 
 ::: {.dark-content}
-[![Stack Overflow profile of Enrique Pérez Herrero](img/stackoverflow/flair-dark.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
+[![Stack Overflow profile of Enrique Pérez Herrero](assets/img/stackoverflow/flair-dark.png){width=208 height=58 loading=lazy}](https://stackoverflow.com/users/4678112/enrique-perez-herrero)
 :::
 
 ### Feedback

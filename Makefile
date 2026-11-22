@@ -52,11 +52,11 @@ publish: render ## Render and stage _site/ (served by Netlify from git)
 
 SO_ID := 4678112
 SO_UA := Mozilla/5.0 (X11; Linux x86_64) energycode-blog
-flair: ## Refresh the local copies of the Stack Overflow profile badge (img/stackoverflow/)
-	@mkdir -p img/stackoverflow
-	@curl -fsS -A "$(SO_UA)" -o img/stackoverflow/flair-light.png "https://stackoverflow.com/users/flair/$(SO_ID).png"
-	@curl -fsS -A "$(SO_UA)" -o img/stackoverflow/flair-dark.png "https://stackoverflow.com/users/flair/$(SO_ID).png?theme=dark"
-	@file img/stackoverflow/flair-*.png
+flair: ## Refresh the local copies of the Stack Overflow profile badge (assets/img/stackoverflow/)
+	@mkdir -p assets/img/stackoverflow
+	@curl -fsS -A "$(SO_UA)" -o assets/img/stackoverflow/flair-light.png "https://stackoverflow.com/users/flair/$(SO_ID).png"
+	@curl -fsS -A "$(SO_UA)" -o assets/img/stackoverflow/flair-dark.png "https://stackoverflow.com/users/flair/$(SO_ID).png?theme=dark"
+	@file assets/img/stackoverflow/flair-*.png
 
 clean: ## Remove Quarto temp files (keeps _site/ and _freeze/)
 	rm -rf .quarto

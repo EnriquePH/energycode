@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="https://www.energycode.org">
-    <img src="./img/logo/web_logo.png" alt="ENERGYCODE logo" width="260">
+    <img src="./assets/img/logo/web_logo.png" alt="ENERGYCODE logo" width="260">
   </a>
 </p>
 

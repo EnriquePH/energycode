@@ -10,7 +10,7 @@ nocite: |
 editor: source
 categories:
   - R
-image: ../../img/logo/web_logo.png
+image: ../../assets/img/logo/web_logo.png
 image-alt: "Logo hexagonal de ENERGYCODE"
 ---
 
@@ -132,7 +132,7 @@ sticker(
 
 ## Resultado final
 
-![HexSticker logo](../../img/logo/web_logo.png){fig-align="left"}]
+![HexSticker logo](../../assets/img/logo/web_logo.png){fig-align="left"}]
 
 El logo generado tiene un aspecto sencillo, con el borde completo y listo para
 usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un

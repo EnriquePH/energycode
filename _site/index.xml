@@ -1977,7 +1977,7 @@ font-style: inherit;">)</span></span></code></pre></div></div>
 </div>
 </section><section id="resultado-final" class="level2" data-number="5"><h2 data-number="5" data-anchor-id="resultado-final">
 <span class="header-section-number">5</span> Resultado final</h2>
-<p><img src="https://www.energycode.org/img/logo/web_logo.png" class="img-fluid quarto-figure quarto-figure-left" alt="HexSticker logo">]</p>
+<p><img src="https://www.energycode.org/assets/img/logo/web_logo.png" class="img-fluid quarto-figure quarto-figure-left" alt="HexSticker logo">]</p>
 <p>El logo generado tiene un aspecto sencillo, con el borde completo y listo para usar en cualquier sitio web o documentación. Se puede incluir fácilmente en un sitio Quarto añadiendo en <code>_quarto.yml</code>:</p>
 <pre><code>website:
   title: "ENERGYCODE"
@@ -1999,7 +1999,7 @@ font-style: inherit;">)</span></span></code></pre></div></div>
   <category>R</category>
   <guid>https://www.energycode.org/posts/01082023-blog-logo/</guid>
   <pubDate>Mon, 31 Jul 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://www.energycode.org/img/logo/web_logo.png" medium="image" type="image/png" height="167" width="144"/>
+  <media:content url="https://www.energycode.org/assets/img/logo/web_logo.png" medium="image" type="image/png" height="167" width="144"/>
 </item>
 <item>
   <title>Confusion Matrix in R</title>
